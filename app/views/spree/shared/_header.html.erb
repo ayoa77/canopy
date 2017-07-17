@@ -2,10 +2,19 @@
   <header id="header" data-hook>
     <div class="container">
       <div class="row">
-        <figure id="logo" class="col-md-4 col-sm-3" data-hook>
+        <div id="fill" class='col-xs-4'></div>
+        <figure id="logo" class='col-xs-4' data-hook>
           <%= logo %>
         </figure>
-        <%= render partial: 'spree/shared/nav_bar' %>
+        <div id="lastHeaderCol" class='col-xs-4'>
+          <div class="row">
+            <div id="user" class='col-xs-4'></div>
+            <div id="cart" class='col-xs-4'></div>
+            <div id="hamburger" class='col-xs-4'></div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   </header>

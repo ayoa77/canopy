@@ -17,7 +17,9 @@
 
         <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
 
-        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+
+<!-- Sidebar Optional by replacing the second "col-sm-12" with the dimensions for your sidebar and uncommenting the partials -->
+        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-12" %>" data-hook>
           <%= flash_messages %>
           <%= yield %>
         </div>

@@ -1,0 +1,58 @@
+a:hover{
+  text-decoration: none;
+}
+
+#header, #spree-header{
+  background-color: #fff !important;
+}
+
+#logo img{
+  display: block;
+  margin: 0px auto;
+}
+
+#lastHeaderCol{
+  height:100px;
+}
+
+#user {
+  background-color:#999;
+  height: 50px;
+}
+
+#cart {
+  background-color:#888;
+  height: 50px;
+
+}
+
+#hamburger {
+  background-color: #777;
+  height: 50px;
+
+}
+
+.panel-default {
+  border-color: #00B7FF;
+  border-width: medium;
+  border-radius: 0px;
+  img {
+    padding-bottom: 20px;
+  }
+}
+
+.panel-default:hover {
+
+}
+
+.panel-footer {
+  border-color: #00B7FF;
+  border-width: medium;
+  background-color: #fff;
+}
+
+.panel-footer:hover {
+  background-color: #00B7FF;
+  transition: background-color .75s;
+  color: #fff;
+}
