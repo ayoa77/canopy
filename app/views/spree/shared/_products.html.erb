@@ -28,13 +28,23 @@
                 <%= small_image(product, itemprop: "image") %><br/>
                 <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
               <% end %>
-              <br/>
-            </div>
-            <div class="panel-footer text-center">
-              <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
+            </br>
+              <span class="ingredients"><p>
+
+                **Add a list of ingredients.  Apples and stuff**
+              </p>
               </span>
+              <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
             </div>
+            <a href="/cart">
+              <div class="panel-footer text-center">
+                <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <p><big>
+                    Add to Cart
+                  </big></p>
+                </span>
+              </div>
+            </a>
           <% end %>
         </div>
       </div>

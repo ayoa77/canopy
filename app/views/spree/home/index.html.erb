@@ -1,12 +1,58 @@
-<% @body_id = 'home-page' %>
-<% content_for :sidebar do %>
+<!-- <%# @body_id = 'home-page' %>
+<%# content_for :sidebar do %>
   <div data-hook="homepage_sidebar_navigation">
     <%= render partial: 'spree/shared/taxonomies' %>
   </div>
-<% end %>
+<%# end %>
 
 <div data-hook="homepage_products">
-  <% cache(cache_key_for_products) do %>
-    <%= render partial: 'spree/shared/products', locals: { products: @products } %>
-  <% end %>
+  <%# cache(cache_key_for_products) do %>
+    <%#= render partial: 'spree/shared/products', locals: { products: @products } %>
+  <%# end %>
+</div> -->
+
+<div id="big_slider">
+  <img src="/assets/med_pineapple.jpg" alt="slider" />
 </div>
+
+
+
+<div id="featurette">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3">
+        <div class="feature"><img src="/assets/bottle.png" /></div>
+      </div>
+      <div class="col-xs-3">
+        <div class="feature"><img src="/assets/bottle.png" /></div>
+      </div>
+      <div class="col-xs-3">
+        <div class="feature"><img src="/assets/bottle.png" /></div>
+      </div>
+      <div class="col-xs-3">
+        <div class="feature"><img src="/assets/bottle.png" /></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="big-links">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="big-text"></div>
+      </div>
+      <div class="col-xs-6">
+        <div class="big-picture"></div>
+      </div>
+      <div class="col-xs-6">
+        <div class="big-picture"></div>
+      </div>
+      <div class="col-xs-6">
+        <div class="big-text"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- footer partial goes here -->
