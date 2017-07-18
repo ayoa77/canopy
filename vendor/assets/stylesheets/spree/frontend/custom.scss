@@ -1,9 +1,13 @@
+// Site-wide fixes
+
 a:hover{
   text-decoration: none;
 }
 
-#header, #spree-header{
-  background-color: #fff !important;
+// Covers _header.html.erb partial
+
+#spree-header #header{
+  background: #fff;
 }
 
 #logo img{
@@ -11,28 +15,86 @@ a:hover{
   margin: 0px auto;
 }
 
-#lastHeaderCol{
+#navButtons{
   height:100px;
 }
 
 #user {
-  background-color:#999;
   height: 50px;
+  .user-icon{
+      padding-top:10px;
+      display: block;
+      margin: auto;
+  }
 }
 
 #cart {
-  background-color:#888;
   height: 50px;
-
+  .cart-icon{
+      padding-top:10px;
+      display: block;
+      margin: auto;
+  }
 }
 
 #hamburger {
-  background-color: #777;
   height: 50px;
-
+  .ham-icon{
+      padding-top:19px;
+      display: block;
+      margin: auto;
+  }
 }
 
+// index.html.erb
+
+#big_slider{
+  overflow: hidden;
+  height: 400px;
+  width: 100%;
+  background-color: #00B7Ff;
+  margin-bottom: 95px;
+  img{
+    height: 100%;
+
+  }
+}
+
+#featurette {
+  margin-bottom: 30px;
+  .feature {
+    border: 2px solid #00B7FF;
+    // display: block;
+    // margin: 0 auto;
+    height: 250px;
+    width: 100%;
+      img {
+        width: 175px;
+        height: auto;
+        display: block;
+        margin-top: -70px;
+        margin-left: 32%;
+      }
+  }
+}
+
+#big-links {
+  .big-text{
+    margin-bottom: 30px;
+    height: 400px;
+    background-color: #dad;
+  }
+  .big-picture{
+    margin-bottom: 30px;
+    height: 400px;
+    background-color:#bada55;
+  }
+}
+
+// _products.html.erb
+
 .panel-default {
+  height: 300px;
   border-color: #00B7FF;
   border-width: medium;
   border-radius: 0px;
@@ -41,18 +103,50 @@ a:hover{
   }
 }
 
-.panel-default:hover {
-
+.panel-body{
+  height: 244px;
+  .info{
+    font-size: 16px;
+  }
+  .ingredients{
+    color: #bbb;
+  }
 }
 
 .panel-footer {
+  height: 50px;
   border-color: #00B7FF;
   border-width: medium;
   background-color: #fff;
 }
 
 .panel-footer:hover {
+  border-radius: 0px;
   background-color: #00B7FF;
   transition: background-color .75s;
   color: #fff;
+}
+
+
+
+// Responsive (<1200px width)
+
+@media (max-width: 1199px) {
+  #featurette {
+    margin-bottom: 30px;
+    .feature {
+      border: 2px solid #00B7FF;
+      // display: block;
+      // margin: 0 auto;
+      height: 250px;
+      width: 100%;
+        img {
+          width: 146px;
+          height: auto;
+          display: block;
+          margin-top: -70px;
+          margin-left: 32%;
+        }
+    }
+  }
 }
