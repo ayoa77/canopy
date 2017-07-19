@@ -4,10 +4,29 @@ a:hover{
   text-decoration: none;
 }
 
+// Allows me to turn Bootstrap gutters off site-wide
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 // Covers _header.html.erb partial
 
-#spree-header #header{
-  background: #fff;
+#spree-header {
+  height:100px;
+  #header{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    background: #fff;
+  }
 }
 
 #logo img{
@@ -46,57 +65,182 @@ a:hover{
   }
 }
 
-// index.html.erb
-
-#big_slider{
-  overflow: hidden;
+#footer {
   height: 400px;
-  width: 100%;
-  background-color: #00B7Ff;
-  margin-bottom: 95px;
-  img{
-    height: 100%;
-
+  background-color: #dad;
+  margin-top: 50px;
+  p{
+    text-align: center;
+    font-size: 16px;
   }
 }
 
+// index.html.erb
+
+#splash-picture{
+  position: relative;
+  background-image: url("/assets/splashpineapple.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-origin: inherit;
+  background-size: inherit;
+  height: 500px;
+  width: 100%;
+  background-color: #00B7Ff;
+  margin-bottom: 120px;
+  .slider-text p {
+    margin-top: 22%;
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+  }
+}
+
+.ghost-button{
+  height: 50px;
+  width: 300px;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+  border: 2px solid #fff;
+  p {
+    font-size: 20px;
+    padding-top: 8px;
+  }
+
+}
+
+.ghost-button:hover {
+  color: #00B7FF;
+  background-color: #fff;
+  transition: background-color .4s;
+}
+
 #featurette {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   .feature {
     border: 2px solid #00B7FF;
-    // display: block;
-    // margin: 0 auto;
     height: 250px;
     width: 100%;
       img {
-        width: 175px;
+        width: 150px;
         height: auto;
         display: block;
         margin-top: -70px;
-        margin-left: 32%;
+        margin-left: 33%;
       }
+      .productName p{
+        font-size: 20px;
+        color: #00B7FF;
+        text-align: center;
+        padding-top: 15px;
+      }
+      .ingredients p {
+        font-size: 14px;
+        color: #aaa;
+        text-align: center;
+      }
+      .productPrice p {
+        font-size: 20px;
+        text-align: center;
+      }
+  }
+}
+
+#featurette .feature:hover {
+  background-color: #0099D5;
+  border-color: #0099D5;
+  transition: background-color .4s;
+  p{
+    color: #fff;
   }
 }
 
 #big-links {
   .big-text{
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     height: 400px;
     background-color: #dad;
   }
   .big-picture{
-    margin-bottom: 30px;
+    overflow: hidden;
+    margin-bottom: 0px;
     height: 400px;
-    background-color:#bada55;
+    img {
+      height: 100%;
+      width: auto;
+    }
   }
 }
 
 // _products.html.erb
 
+#shop-picture{
+  position: relative;
+  background-image: url("/assets/grapesforshopping.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 200px;
+  width: 100%;
+  background-color: #00B7Ff;
+  margin-bottom: 50px;
+  .slider-text p {
+    margin-top: 15%;
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+  }
+}
+
+// Sorting Menu for Products
+
+#sortin-it-out{
+  height: 200px;
+  margin-bottom: 50px;
+}
+
+.sorting-hat{
+  border: 3px solid #E1007D;
+  margin: 0 auto;
+  height:200px;
+  width: 200px;
+  border-radius: 100%;
+  background-color: #E1007D;
+  img {
+    padding-top: 40px;
+    display: block;
+    margin: auto;
+    height: 150px;
+    width: auto;
+  }
+}
+
+.sorting-text p{
+  color: #E1007D;
+  text-align: center;
+  font-size: 42px;
+  margin-top: -42%;
+  visibility: hidden;
+}
+
+.sorting-hat:hover {
+  background-color: #fff;
+  transition: background-color .4s;
+  .sorting-text p{
+    transition: visibility .4s;
+    visibility: visible;
+  }
+}
+
+
+
+// Product Panels
+
 .panel-default {
   height: 300px;
   border-color: #00B7FF;
-  border-width: medium;
+  border-width: 2px;
   border-radius: 0px;
   img {
     padding-bottom: 20px;
@@ -114,16 +258,16 @@ a:hover{
 }
 
 .panel-footer {
-  height: 50px;
+  height: 52px;
   border-color: #00B7FF;
-  border-width: medium;
+  border-width: 2px;
   background-color: #fff;
 }
 
 .panel-footer:hover {
   border-radius: 0px;
   background-color: #00B7FF;
-  transition: background-color .75s;
+  transition: background-color .4s;
   color: #fff;
 }
 
@@ -136,8 +280,6 @@ a:hover{
     margin-bottom: 30px;
     .feature {
       border: 2px solid #00B7FF;
-      // display: block;
-      // margin: 0 auto;
       height: 250px;
       width: 100%;
         img {

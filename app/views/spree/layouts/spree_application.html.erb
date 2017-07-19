@@ -27,6 +27,9 @@
 
         <%= yield :templates %>
       </div>
+      <% render partial: 'spree/shared/footer.html.erb' %>
     </div>
+
+<!-- I added this line to see if I could get erb to add the footer to every page -->
   </body>
 </html>
