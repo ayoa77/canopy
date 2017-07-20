@@ -11,26 +11,78 @@
   <%# end %>
 </div> -->
 
-<div id="big_slider">
-  <img src="/assets/med_pineapple.jpg" alt="slider" />
+<div id="splash-picture">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-xs-6"></div>
+
+      <div class="col-xs-6">
+        <span class="slider-text">
+          <p>
+            This Pineapple Juice is a kick in the teeth. </br>
+            Boom Boom Juice.
+          </p>
+        </span>
+        <a style="display: block" href="/products">
+          <div class="ghost-button-white">
+            <p>
+              SHOP NOW
+            </p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 
+
+<!-- We can add erb to grab each featured drink and place/style them to match
+the style on the first feature. -->
 
 <div id="featurette">
   <div class="container">
     <div class="row">
       <div class="col-xs-3">
-        <div class="feature"><img src="/assets/bottle.png" /></div>
+        <div class="feature">
+          <img src="/assets/bottle.png" />
+          <span class="productName">
+            <p>
+              <!-- erb to grab featured product name -->
+              Product Name
+            </p>
+          </span>
+          <span class="ingredients">
+            <p>
+              <!-- erb to grab featured product ingredients -->
+              Ingredients like Apples, Kiwi, Banana, Powersauce, Hint of green
+            </p>
+          </span>
+          <span class="productPrice">
+            <p>
+              <!-- erb to grab featured product price -->
+              $120
+            </p>
+
+          </span>
+        </div>
       </div>
       <div class="col-xs-3">
-        <div class="feature"><img src="/assets/bottle.png" /></div>
+        <div class="feature"><img src="/assets/bottle.png" />
+
+        </div>
       </div>
       <div class="col-xs-3">
-        <div class="feature"><img src="/assets/bottle.png" /></div>
+        <div class="feature"><img src="/assets/bottle.png" />
+
+        </div>
       </div>
       <div class="col-xs-3">
-        <div class="feature"><img src="/assets/bottle.png" /></div>
+        <div class="feature"><img src="/assets/bottle.png" />
+
+        </div>
       </div>
     </div>
   </div>
@@ -38,18 +90,50 @@
 
 <div id="big-links">
   <div class="container-fluid">
-    <div class="row">
+    <div class="row no-gutters">
       <div class="col-xs-6">
-        <div class="big-text"></div>
+        <div class="big-text-box">
+          <span class="big-text">
+            <p>
+              Test Test Test </br>
+              Boom Boom Juice.
+            </p>
+          </span>
+          <a style="display: block" href="/products">
+            <div class="ghost-button-blue">
+              <p>
+                ABOUT US
+              </p>
+            </div>
+          </a>
+        </div>
       </div>
       <div class="col-xs-6">
-        <div class="big-picture"></div>
+        <div class="big-picture-fruit">
+          <!-- <img src="assets/grapefruit_sm.jpg" /> -->
+        </div>
       </div>
       <div class="col-xs-6">
-        <div class="big-picture"></div>
+        <div class="big-picture-yoga">
+          <!-- <img src="assets/yoga_sm.jpg" /> -->
+        </div>
       </div>
       <div class="col-xs-6">
-        <div class="big-text"></div>
+        <div class="big-text-box">
+          <span class="big-text">
+            <p>
+              Test Test Test </br>
+              Boom Boom Juice.
+            </p>
+          </span>
+          <a style="display: block" href="/products">
+            <div class="ghost-button-pink">
+              <p>
+                ABOUT US
+              </p>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
