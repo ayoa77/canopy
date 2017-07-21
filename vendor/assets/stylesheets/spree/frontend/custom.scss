@@ -159,9 +159,10 @@ a:hover{
 }
 
 .ghost-button-orange{
+  background-color: #fff;
   height: 50px;
   width: 300px;
-  margin: 0 auto;
+  margin: 30px auto 30px auto;
   color: #F8776A;
   text-align: center;
   border: 2px solid #F8776A;
@@ -367,6 +368,11 @@ a:hover{
 .cart-item-image img {
   height: 50px;
   width: auto;
+}
+
+.cart-item-description h4 {
+  padding: 0;
+  margin: 0;
 }
 
 .lead.text-primary.cart-item-price {
