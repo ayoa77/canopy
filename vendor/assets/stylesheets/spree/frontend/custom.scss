@@ -396,6 +396,15 @@ a:hover{
   margin-top: 20px;
 }
 
+@media screen and (min-width: 359px) {}
+@media screen and (min-width: 374px) {}
+@media screen and (min-width: 411px) {}
+@media screen and (min-width: 767px) {}
+@media screen and (max-width: 900px) {}
+@media screen and (min-width: 992px) {}
+@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 1700px) {}
+
 // Responsive (<1200px width)
 
 @media (max-width: 1199px) {
