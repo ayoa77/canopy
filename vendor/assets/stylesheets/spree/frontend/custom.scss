@@ -119,6 +119,7 @@ a:hover{
 }
 
 .ghost-button-blue{
+  background-color: #fff;
   height: 50px;
   width: 300px;
   margin: 0 auto;
@@ -396,6 +397,47 @@ a:hover{
   margin-top: 20px;
 }
 
+// products/show.html.erb, handles the full size product page.
+
+.product-splash-image {
+  height: 100vh;
+  background-image: url("/images/splat.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+  img {
+    height: 25vw;
+    margin-top: 2%;
+    margin-left: 12%;
+  }
+}
+
+.product-name p {
+  text-align: center;
+  margin-top: 175px;
+  font-size:48px;
+}
+
+.productdesc p {
+  padding: 0 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 20px;
+  color: #bbb;
+}
+
+.productmakeup p {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.button-contain button {
+    width: 300px;
+    display: block;
+}
+
+// Responsive (<1200px width)
+
 @media screen and (min-width: 359px) {}
 @media screen and (min-width: 374px) {}
 @media screen and (min-width: 411px) {}
@@ -404,8 +446,6 @@ a:hover{
 @media screen and (min-width: 992px) {}
 @media screen and (min-width: 1200px) {}
 @media screen and (min-width: 1700px) {}
-
-// Responsive (<1200px width)
 
 @media (max-width: 1199px) {
   #featurette {
