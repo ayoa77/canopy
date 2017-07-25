@@ -34,7 +34,8 @@
       </div>
 
       <div class="col-xs-10">
-            <div class="col-xs-4">
+
+            <div class="col-xs-4 visible-md visible-lg">
               <div class="sorting-hat">
                 <img src="assets/bottle_search.png" />
                 <span class="sorting-text">
@@ -45,7 +46,7 @@
               </div>
             </div>
 
-            <div class="col-xs-4">
+            <div class="col-xs-4 visible-md visible-lg">
               <div class="sorting-hat">
                 <img src="assets/cup_search.png" />
                 <span class="sorting-text">
@@ -56,7 +57,7 @@
               </div>
             </div>
 
-            <div class="col-xs-4">
+            <div class="col-md-4 visible-md visible-lg">
               <div class="sorting-hat">
                 <img src="assets/glass_search.png" />
                 <span class="sorting-text">
@@ -64,6 +65,29 @@
                     Tea
                   </p>
                 </span>
+              </div>
+            </div>
+
+            <div class="col-xs-12 visible-xs visible-sm">
+
+                <div class="btn-group" data-toggle="buttons">
+
+                  <label class="btn btn-primary">
+                      <input type="radio" name="options" id="option1" autocomplete="off"> Juice
+                  </label>
+
+                  <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Smoothie
+                  </label>
+
+                  <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> Tea
+                  </label>
+                </div>
+
+              </div>
+
+
               </div>
             </div>
 
@@ -97,10 +121,13 @@
       <div id="products" class="row" data-hook>
         <% products.each do |product| %>
           <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
-          <div id="product_<%= product.id %>" class="col-md-3 col-sm-6 col-xs-6 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
+          <div id="product_<%= product.id %>" class="col-md-4 col-sm-6 col-xs-12 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
             <div class="panel panel-default">
               <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
+              <!-- this <a> tag needs to link to teh variable url -->
+              <a href="#">
                 <div class="panel-body text-center product-body">
+
                   <%= link_to url, itemprop: "url" do %>
                     <%= small_image(product, itemprop: "image") %><br/>
                     <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
@@ -113,6 +140,7 @@
                   </span>
                   <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
                 </div>
+              </a>
                 <a href="/cart">
                   <div class="panel-footer text-center">
                     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
