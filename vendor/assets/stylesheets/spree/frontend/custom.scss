@@ -47,8 +47,7 @@ a:hover{
   }
 }
 
-#cart {
-  height: 50px;
+#shopcart {
   .cart-icon{
       padding-top:10px;
       display: block;
@@ -84,19 +83,21 @@ a:hover{
   background-repeat: no-repeat;
   background-origin: inherit;
   background-size: inherit;
+  background-position: left left;
   height: 500px;
   width: 100%;
   background-color: #00B7Ff;
   margin-bottom: 120px;
   .slider-text p {
-    margin-top: 22%;
+    line-height: 12%;
+    margin-bottom: 20px;
     text-align: center;
     color: #fff;
     font-size: 40px;
   }
 }
 
-// .ghost-button-color (color=white, blue, or pink)
+// .ghost-button-color (color=white, blue, orange, or pink)
 
 .ghost-button-white{
   height: 50px;
@@ -199,16 +200,18 @@ a:hover{
         font-size: 20px;
         color: #00B7FF;
         text-align: center;
-        padding-top: 15px;
+        padding: 15px 15px 0px;
       }
       .ingredients p {
         font-size: 14px;
         color: #aaa;
         text-align: center;
+        padding: 0px 15px;
       }
       .productPrice p {
         font-size: 20px;
         text-align: center;
+        padding: 0px 15px;
       }
   }
 }
@@ -234,7 +237,7 @@ a:hover{
   }
   .big-picture-fruit{
     background-image: url("/images/grapefruitsm.jpg");
-    background-position: center center;
+    background-position: center left;
     background-size: cover;
     background-repeat: no-repeat;
     background-origin: inherit;
@@ -245,7 +248,7 @@ a:hover{
   }
   .big-picture-yoga{
     background-image: url('/images/yogasm.jpg');
-    background-position: center center;
+    background-position: center left;
     background-size: cover;
     background-repeat: no-repeat;
     background-origin: inherit;
@@ -268,8 +271,8 @@ a:hover{
   background-color: #00B7Ff;
   margin-bottom: 50px;
   .slider-text p {
-    margin-top: 15%;
-    text-align: center;
+    line-height: 200px;
+    text-align: left;
     color: #fff;
     font-size: 40px;
   }
@@ -316,7 +319,6 @@ a:hover{
 }
 
 
-
 // Product Panels
 
 .panel-default {
@@ -340,10 +342,15 @@ a:hover{
 }
 
 .panel-footer {
+  padding: 0px;
   height: 52px;
   border-color: #00B7FF;
   border-width: 2px;
   background-color: #fff;
+  p {
+    line-height: 52px;
+    vertical-align: center;
+  }
 }
 
 .panel-footer:hover {
@@ -442,25 +449,11 @@ a:hover{
 @media screen and (min-width: 374px) {}
 @media screen and (min-width: 411px) {}
 @media screen and (min-width: 767px) {}
-@media screen and (max-width: 900px) {}
-@media screen and (min-width: 992px) {}
+@media screen and (max-width: 992px) {
+  #sortin-it-out{
+    height: 30px;
+  }
+
+}
 @media screen and (min-width: 1200px) {}
 @media screen and (min-width: 1700px) {}
-
-@media (max-width: 1199px) {
-  #featurette {
-    margin-bottom: 30px;
-    .feature {
-      border: 2px solid #00B7FF;
-      height: 250px;
-      width: 100%;
-        img {
-          width: 146px;
-          height: auto;
-          display: block;
-          margin-top: -70px;
-          margin-left: 32%;
-        }
-    }
-  }
-}
