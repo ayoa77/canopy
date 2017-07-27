@@ -60,6 +60,7 @@ height:50px;}
 #nav-icon1 {
   // left: calc(50% - 12.5px);
   width: 60px;
+  height: 60px;
   display: block;
   margin: 0 auto;
   position: relative;
@@ -103,12 +104,12 @@ height:50px;}
   top: 20px;
 }
 
-#nav-icon1:hover span:nth-child(1) {
+#nav-icon1:hover > span:nth-child(1) {
   transition: top 0.1s;
   top: 10px;
 }
 
-#nav-icon1:hover span:nth-child(2) {
+#nav-icon1:hover > span:nth-child(2) {
   transition: top 0.1s;
   top: 22px;
 }
@@ -140,7 +141,6 @@ height:50px;}
 }
 
 #hamburger {
-  display: table;
   height: 50px;
 
   .ham-icon {
