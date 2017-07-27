@@ -1,7 +1,7 @@
 <%= order_form.fields_for :line_items, line_item do |item_form| %>
 <% variant = line_item.variant %>
 
-<div class="line-item">
+<div id="line-item">
   <div class="row">
 
 
@@ -18,7 +18,6 @@
     <div class="col-xs-4">
       <div class="cart-item-description" data-hook="cart_item_description">
         <h4><%= link_to line_item.name, product_path(variant.product) %></h4>
-        <%= variant.options_text %>
         <% if line_item.insufficient_stock? %>
           <span class="out-of-stock">
             <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br />
