@@ -1,0 +1,25 @@
+<html>
+
+   <head>
+      <meta content = 'text/html; charset = UTF-8' http-equiv = 'Content-Type' />
+   </head>
+
+   <body>
+      <h1>You have received a comment from, <%= @name %>, <%= @email %>.</h1>
+
+      <p>
+    They have sent the below message to you -<br>
+         <%= @message%>.<br>
+      </p>
+
+      <p>
+        This message was sent from the website at
+         <%= @time %>.
+      </p>
+
+      <p>If required, please respond to this message as soon as possible.</p>
+
+           <a href="mailto:#{<%=@email%>}">
+
+   </body>
+</html>

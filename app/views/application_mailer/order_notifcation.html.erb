@@ -1,0 +1,33 @@
+<html>
+
+   <head>
+      <meta content = 'text/html; charset = UTF-8' http-equiv = 'Content-Type' />
+   </head>
+
+   <body>
+      <h1>You have received a reservation request from, <%= @name %>, <%= @email %>.</h1>
+<hr>
+      <p><%= @name %> has requested to book a/the - </p><br>
+      <p><%= @room %></p><br>
+      <p>from <%= @start %> to <%= @finish %></p><br>
+<hr>
+  <p>Information about <%= @name %> - </p><br>
+      <p>nationality - <%= @nationality %></p><br>
+      <p>phone number - <%= @phone %></p><br>
+      <hr>
+
+   <p><%= @name %>'s message - </p><br>
+         <p><%= @message %></p><br>
+
+      <p>
+        This message was sent from the website at
+         <%= @time %>.
+      </p>
+
+      <p>Please respond to this message as soon as possible by clicking on <%= @name %>'s email or phone number below.</p>
+
+           <a href="mailto:#{<%=@email%>}"><%=@email%></a>
+              <a href="tel:#{<%=@phone%>}"><%=@phone%></a>
+
+   </body>
+</html>
