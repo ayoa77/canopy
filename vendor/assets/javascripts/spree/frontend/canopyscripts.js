@@ -7,5 +7,6 @@ $(document).on('ready', function() {
       $('body').toggleClass('menuDown');
       $('html').toggleClass('menuDown');
 
+      $('#header').toggleClass('menuUp');
     });
 });

@@ -9,7 +9,7 @@
   // background-position: center center;
 }
 
- .navUser {
+.navUser {
   background-repeat: no-repeat;
   width: 60px;
   height: 44px;
@@ -35,9 +35,16 @@
   top: 70%;
   transition: all 0.4s;
 }
-#logo{height: 100px;}
-#logocenter{display: table;
-height:50px;}
+
+#logo {
+  height: 100px;
+}
+
+#logocenter {
+  display: table;
+  height: 50px;
+}
+
 .navLogo {
   display: table-cell;
   height: 50px;
@@ -150,51 +157,75 @@ height:50px;}
     margin: auto;
   }
 }
-#navigation{height:100px;
+
+#navigation {
+  height: 100px;
   transition: height 400;
 }
-#navigation.menuDown{
+
+#navigation.menuDown {
   transition: height 400;
-
-height:100%;
-  background: -webkit-linear-gradient(#EAF7D6, #B3D57C); /* Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#EAF7D6, #B3D57C); /* Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#EAF7D6, #B3D57C); /* Firefox 3.6 to 15 */
-  background: linear-gradient(#EAF7D6, #B3D57C); /* Standard syntax */}
-
-.menuBar{height:0px;
-width:100%;
-transition: all 0.4s;
-position:relative;}
-.menuText{
-  margin: 0px auto;
-    margin-top: calc(45vh - 110px);
-  }
-  .menuBar.downMenu{height:100vh;}
-
-.menuText .col-sm-3.menuDown{display: block;
-}
-  .menuText .col-sm-3{
-    display:none;
-    font-weight: 500;
-    margin: 0px auto;
-    text-align: center;
-    color:white;
-    font-size:40px;
-    transition: color .4s;
-  }
-  .menuText .col-sm-3:hover{
-    color:#595857;
-    transition: color .4s;
-  }
-  body.menuDown {width:100%; height:100%; overflow:hidden; margin:0;}
-html.menuDown {width:100%; height:100%; overflow:hidden;}
-
-
-#spree-header #header{
-  padding: 0px;
+  height: 100%;
+  background: -webkit-linear-gradient(#EAF7D6, #B3D57C);
+  /* Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#EAF7D6, #B3D57C);
+  /* Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#EAF7D6, #B3D57C);
+  /* Firefox 3.6 to 15 */
+  background: linear-gradient(#EAF7D6, #B3D57C);
+  /* Standard syntax */
 }
 
+.menuBar {
+  height: 0;
+  width: 100%;
+  transition: all 0.4s;
+  position: relative;
+}
+
+.menuText {
+  margin: calc(45vh - 110px) auto 0;
+}
+
+.menuBar.downMenu {
+  height: 100vh;
+}
+
+.menuText .col-sm-3.menuDown {
+  display: block;
+}
+
+.menuText .col-sm-3 {
+  display: none;
+  font-weight: 500;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  transition: color 0.4s;
+}
+
+.menuText .col-sm-3:hover {
+  color: #595857;
+  transition: color 0.4s;
+}
+
+body.menuDown {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+html.menuDown {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#spree-header #header {
+  padding: 0;
+}
 @media screen and (min-width: 359px) {}
 @media screen and (min-width: 374px) {}
 @media screen and (min-width: 411px) {}
@@ -202,10 +233,10 @@ html.menuDown {width:100%; height:100%; overflow:hidden;}
   .menuText {
     margin: calc(25vh - 110px) auto 0 auto;
   }
+
   .menuText .col-sm-3 {
     font-size: 50px;
     text-align: left;
-
   }
 }
 @media screen and (max-width: 900px) {}
