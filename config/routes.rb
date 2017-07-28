@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   mount Spree::Core::Engine, at: '/'
 
   get '/shop' => 'spree/products#index'
+  get '/about' => 'spree/custom#about'
+  get '/instore-menu' => 'spree/custom#instoreMenu'
+  get '/nutrition' => 'spree/custom#nutrition'
+  # get '/product-information' => 'spree/admin/'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

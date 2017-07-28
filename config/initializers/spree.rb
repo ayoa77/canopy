@@ -14,6 +14,5 @@ Spree.config do |config|
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
 end
-Spree::Auth::Config[:confirmable] = true
 
 Spree.user_class = "Spree::User"
