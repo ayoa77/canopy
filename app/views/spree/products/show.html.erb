@@ -123,14 +123,7 @@
 
       <div class="col-xs-12">
         <div class="button-contain">
-
-
-        <!-- Need to Add functionality to this button -->
-        <%= button_tag class: 'ghost-button-blue', id: 'add-to-cart-button', type: :submit do %>
-          <p>
-            ADD TO CART
-          </p>
-          <% end %>
+          <%= render partial: 'cart_form' %>
         </div>
       </div>
     </div>

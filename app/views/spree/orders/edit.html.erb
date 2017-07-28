@@ -13,7 +13,9 @@
             Shopping Cart
           </p>
         </span>
+
       </div>
+
       <div class="col-xs-2"></div>
 
     </div>
@@ -48,10 +50,22 @@
           </p>
         </div>
       </a>
-    </div>
+
 
 <!-- If your cart has stuff in it -->
     <% else %>
+
+      <div class="row">
+        <div class="col-md-3 navbar-form pull-right text-right">
+          <%= button_tag class: 'ghost-button-orange', id: 'checkout-link', name: 'checkout' do %>
+            <p>
+              PROCEED TO CHECKOUT
+            </p>
+          <% end %>
+
+        </div>
+      </div>
+
       <div data-hook="outside_cart_form">
         <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
 
@@ -95,6 +109,7 @@
         <% end %>
       </div>
     <% end %>
+    
   </div>
 </div>
 

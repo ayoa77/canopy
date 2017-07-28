@@ -1,7 +1,11 @@
 // Site-wide fixes
+a {
+  color: #00B7FF;
+}
 
 a:hover{
   text-decoration: none;
+  color: #0099D5;
 }
 
 // Allows me to turn Bootstrap gutters off site-wide
@@ -27,6 +31,9 @@ a:hover{
     top: 0;
     width: 100%;
     background: #fff;
+    .menuUp {
+      height: 100px;
+    }
   }
 }
 
@@ -38,32 +45,6 @@ a:hover{
 #navButtons{
   height:100px;
 }
-
-// #user {
-//   height: 50px;
-//   .user-icon{
-//       padding-top:10px;
-//       display: block;
-//       margin: auto;
-//   }
-// }
-//
-// #shopcart {
-//   .cart-icon{
-//       padding-top:10px;
-//       display: block;
-//       margin: auto;
-//   }
-// }
-//
-// #hamburger {
-//   height: 50px;
-//   .ham-icon{
-//       padding-top:19px;
-//       display: block;
-//       margin: auto;
-//   }
-// }
 
 
 #footer {
@@ -103,7 +84,7 @@ a:hover{
   }
 }
 
-// .ghost-button-color (color=white, blue, orange, or pink)
+// .ghost-button-color (color=white, blue, orange, pink, or green)
 
 .ghost-button-white{
   height: 50px;
@@ -171,7 +152,7 @@ a:hover{
   background-color: #fff;
   height: 50px;
   width: 300px;
-  margin: 30px auto 30px auto;
+  margin: 20px auto;
   color: #F8776A;
   text-align: center;
   border: 2px solid #F8776A;
@@ -185,6 +166,27 @@ a:hover{
 .ghost-button-orange:hover {
   color: #fff;
   background-color: #F8776A;
+  transition: background-color .4s;
+}
+
+.ghost-button-green{
+  display: block;
+  background-color: #fff;
+  height: 50px;
+  width: 300px;
+  margin: 20px auto;
+  color: #B3D57C;
+  text-align: center;
+  border: 2px solid #B3D57C;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding-top: 8px;
+
+}
+
+.ghost-button-green:hover {
+  color: #fff;
+  background-color: #B3D57C;
   transition: background-color .4s;
 }
 
@@ -388,6 +390,10 @@ a:hover{
 
 // _line_item.html.erb
 
+.line-item {
+  height: 50px;
+}
+
 #no-items-in-cart {
   text-align: center;
   font-size: 20px;
@@ -403,10 +409,19 @@ a:hover{
 .cart-item-description h4 {
   padding: 0;
   margin: 0;
+  line-height: 50px;
 }
 
 .lead.text-primary.cart-item-price {
-  vertical-align: middle;
+  line-height: 50px;
+}
+
+.lead.text-primary.cart-item-total {
+  line-height: 50px;
+}
+
+.cart-item-delete {
+  line-height: 50px;
 }
 
 .glyphicon {
@@ -423,7 +438,8 @@ a:hover{
 }
 
 .cart-subtotal {
-  margin-top: 20px;
+  margin-top: 40px;
+  text-align: right;
 }
 
 // products/show.html.erb, handles the full size product page.
@@ -494,6 +510,15 @@ a:hover{
   font-size: 16px;
 }
 
+#product-price {
+  text-align: center;
+  font-size: 20px;
+}
+
+.quantity-cart {
+  margin: 20px auto
+}
+
 .breadcrumb {
   background-color: rgba(0,0,0,0);
   border-radius: 0px;
@@ -503,13 +528,77 @@ a:hover{
   }
 }
 
+.top-of-page-text {
+  height: 100px;
+  width: 100%;
+  margin: 20px 0px 30px 0px;
+  p {
+    line-height: 60px;
+    text-align: center;
+    color: #595857;
+    font-size: 40px;
+  }
+}
+
+.title-text {
+  font-weight:700;
+  font-size: 20px;
+}
+
+.italic-subtitle {
+  font-style: italic;
+  color: #bbb;
+}
+
+.benefits {
+  margin-left: 40px;
+}
+
+.forgotten-password {
+  font-size: 14px;
+  text-align: right;
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.form-control {
+  height: 50px;
+  color: #B3D57C;
+  border: 1px solid #B3D57C;
+  border-radius: 0px;
+}
 
 
 // Responsive (<1200px width)
 
-@media screen and (min-width: 359px) {}
+@media screen and (max-width: 359px) {
+
+  .ghost-button-blue{
+    width: 260px;
+  }
+
+  .ghost-button-blue{
+    width: 260px;
+  }
+
+  .ghost-button-orange{
+    width: 260px;
+  }
+
+  .ghost-button-pink{
+    width: 260px;
+  }
+
+  .ghost-button-green{
+    width: 260px;
+  }
+
+}
 @media screen and (min-width: 374px) {}
-@media screen and (min-width: 411px) {}
+@media screen and (max-width: 411px) {}
 @media screen and (min-width: 767px) {}
 @media screen and (max-width: 992px) {
   #sortin-it-out{
@@ -539,8 +628,6 @@ a:hover{
   .productdesc p {
     font-size: 18px;
   }
-
-
 
 }
 @media screen and (min-width: 1200px) {
