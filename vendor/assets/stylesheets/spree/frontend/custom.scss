@@ -48,9 +48,9 @@ a:hover{
 
 
 #footer {
-  height: 400px;
+  height: 250px;
   background-color: #dad;
-  margin-top: 50px;
+  margin-top: 10px;
   p{
     text-align: center;
     font-size: 16px;
@@ -194,42 +194,102 @@ a:hover{
 
 #featurette {
   margin-bottom: 60px;
-  .feature {
+
+  .juice {
     border: 2px solid #00B7FF;
-    height: 250px;
+    height: 275px;
     width: 100%;
-      img {
-        width: 150px;
-        height: auto;
-        display: block;
-        margin-top: -70px;
-        margin-left: 33%;
-      }
-      .productName p{
-        font-size: 20px;
-        color: #00B7FF;
-        text-align: center;
-        padding: 15px 15px 0px;
-      }
-      .ingredients p {
-        font-size: 14px;
-        color: #aaa;
-        text-align: center;
-        padding: 0px 15px;
-      }
-      .productPrice p {
-        font-size: 20px;
-        text-align: center;
-        padding: 0px 15px;
-      }
+    p.productName {
+      color: #00B7FF;
+    }
+    img {
+      width: 150px;
+      height: auto;
+      display: block;
+      margin-top: -70px;
+      margin-left: 33%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .smoothie {
+    border: 2px solid #F7C664;
+    height: 275px;
+    width: 100%;
+    p.productName{
+      color: #F7C664;
+    }
+    img {
+      width: 164px;
+      height: auto;
+      display: block;
+      margin-top: -70px;
+      margin-left: 27%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .tea {
+    border: 2px solid #DA82B6;
+    height: 275px;
+    width: 100%;
+    p.productName {
+      color: #DA82B6;
+    }
+    img {
+      width: 176px;
+      height: auto;
+      display: block;
+      margin-top: -56px;
+      margin-left: 33%;
+      margin-bottom: 20px;
+    }
+  }
+
+  p.productName{
+    font-size: 20px;
+    text-align: center;
+    padding: 0 15px;
+  }
+  p.ingredients {
+    font-size: 14px;
+    color: #aaa;
+    text-align: center;
+    padding: 0px 15px;
+  }
+  p.productPrice {
+    font-size: 20px;
+    text-align: center;
+    padding: 0px 15px;
+    position: absolute;
+    bottom: 5px;
+    left: 40%;
   }
 }
 
-#featurette .feature:hover {
+#featurette .juice:hover {
   background-color: #0099D5;
   border-color: #0099D5;
-  transition: background-color .4s;
-  p{
+  transition: all .4s;
+  p {
+    color: #fff;
+  }
+}
+
+#featurette .smoothie:hover {
+  background-color: #E9B959;
+  border-color: #E9B959;
+  transition: all .4s;
+  p {
+    color: #fff;
+  }
+}
+
+#featurette .tea:hover {
+  background-color: #D070B0;
+  border-color: #D070B0;
+  transition: all .4s;
+  p {
     color: #fff;
   }
 }
@@ -531,7 +591,7 @@ a:hover{
 .top-of-page-text {
   height: 100px;
   width: 100%;
-  margin: 20px 0px 30px 0px;
+  margin: 20px 0px 0px 0px;
   p {
     line-height: 60px;
     text-align: center;
@@ -570,6 +630,60 @@ a:hover{
   border: 1px solid #B3D57C;
   border-radius: 0px;
 }
+
+// nutrition.html.erb (Bootstrap Table Stylings)
+#nutrition-category-markers {
+  height: 20px;
+  p.product-name-marker {
+    text-align: left;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+#nutrition-list-item {
+  height:50px;
+  width: 100%;
+  p {
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+  }
+  p.drink-name {
+    text-align: left;
+  }
+}
+
+#mobile-accordion {
+  .panel.panel-default {
+    height: auto;
+  }
+}
+
+.accordion-numbers {
+  text-align: right;
+}
+
+.panel-body.height-adjustment {
+  height: 150px;
+}
+
+.add-bottom-border {
+  border-bottom: 2px dotted #B3D57C;
+}
+
+// edit.html.erb - Checkout Process
+
+.checkout-form-email {
+  height: 80px;
+  margin: 30px 0px;
+}
+
+
+// -=-=-=-=-=- Responsive No Man's Land -=-=-=-=-=-
+
+
 
 
 // Responsive (<1200px width)
@@ -628,6 +742,11 @@ a:hover{
   .productdesc p {
     font-size: 18px;
   }
+
+  .add-bottom-border {
+    border-bottom: 0px dotted #B3D57C;
+  }
+
 
 }
 @media screen and (min-width: 1200px) {
