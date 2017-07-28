@@ -48,103 +48,95 @@ the style on the first feature. -->
     <div class="row">
 
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="feature">
+        <div class="juice">
+
           <img src="/assets/bottle.png" />
-          <span class="productName">
-            <p>
+
+          <p class="productName">
               <!-- erb to grab featured product name -->
               <%=@featured.first.name %>
             </p>
-          </span>
-          <span class="ingredients">
-            <p>
+
+          <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
               <%=@featured.first.description%>
             </p>
-          </span>
-          <span class="productPrice">
-            <p>
+
+          <p class="productPrice">
               $<%=@featured.first.price.to_i%>
               <!-- erb to grab featured product price -->
             </p>
 
-          </span>
         </div>
       </div>
 
       <div class="col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
-        <div class="feature"><img src="/assets/bottle.png" />
-          <span class="productName">
-            <p>
+        <div class="smoothie">
+
+          <img src="/assets/cup.png" />
+
+          <p class="productName">
               <!-- erb to grab featured product name -->
               <%=@featured.second.name %>
-            </p>
-          </span>
-          <span class="ingredients">
-            <p>
+          </p>
+
+          <p class="ingredients">
+
               <!-- erb to grab featured product ingredients -->
               <%=@featured.second.description%>
-            </p>
-          </span>
-          <span class="productPrice">
-            <p>
+          </p>
+
+          <p class="productPrice">
+
               $<%=@featured.second.price.to_i%>
               <!-- erb to grab featured product price -->
-            </p>
-
-          </span>
+          </p>
 
         </div>
       </div>
 
       <div class="col-md-4 col-lg-3 visible-md visible-lg">
-        <div class="feature"><img src="/assets/bottle.png" />
-          <span class="productName">
-            <p>
+        <div class="tea">
+
+          <img src="/assets/glass.png" />
+
+          <p class="productName">
               <!-- erb to grab featured product name -->
               <%=@featured.third.name %>
-            </p>
-          </span>
-          <span class="ingredients">
-            <p>
+          </p>
+
+          <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
               <%=@featured.third.description%>
-            </p>
-          </span>
-          <span class="productPrice">
-            <p>
+          </p>
+
+          <p class="productPrice">
               $<%=@featured.third.price.to_i%>
               <!-- erb to grab featured product price -->
-            </p>
-
-          </span>
-
+          </p>
 
         </div>
       </div>
 
       <div class="col-lg-3 visible-lg">
-        <div class="feature"><img src="/assets/bottle.png" />
-          <span class="productName">
-            <p>
+        <div class="juice">
+
+          <img src="/assets/bottle.png" />
+
+          <p class="productName">
               <!-- erb to grab featured product name -->
               <%=@featured.fourth.name %>
-            </p>
-          </span>
-          <span class="ingredients">
-            <p>
+          </p>
+
+          <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
               <%=@featured.fourth.description%>
-            </p>
-          </span>
-          <span class="productPrice">
-            <p>
+          </p>
+
+          <p class="productPrice">
               $<%=@featured.fourth.price.to_i%>
               <!-- erb to grab featured product price -->
-            </p>
-
-          </span>
-
+          </p>
 
         </div>
       </div>
@@ -154,7 +146,6 @@ the style on the first feature. -->
 </div>
 
 <div id="big-links">
-  <div class="container-fluid">
     <div class="row no-gutters">
 
       <div class="col-md-6">
@@ -206,7 +197,6 @@ the style on the first feature. -->
       </div>
 
     </div>
-  </div>
 </div>
 
 <!-- footer partial goes here -->
