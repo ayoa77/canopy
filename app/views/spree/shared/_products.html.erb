@@ -127,10 +127,10 @@
                 </br>
                   <span class="ingredients"><p>
 
-                    **Add a list of ingredients.  Apples and stuff**
+                  <%=  product.description %>
                   </p>
                   </span>
-                  <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
+                  <span class="price selling lead" itemprop="price"><%= display_price(product)[0..-4] %></span>
                 </div>
               </a>
                 <a href="/cart">

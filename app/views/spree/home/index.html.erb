@@ -53,19 +53,19 @@ the style on the first feature. -->
           <span class="productName">
             <p>
               <!-- erb to grab featured product name -->
-              Product Name
+              <%=@featured.first.name %>
             </p>
           </span>
           <span class="ingredients">
             <p>
               <!-- erb to grab featured product ingredients -->
-              Ingredients like Apples, Kiwi, Banana, Powersauce, Hint of green
+              <%=@featured.first.description%>
             </p>
           </span>
           <span class="productPrice">
             <p>
+              $<%=@featured.first.price.to_i%>
               <!-- erb to grab featured product price -->
-              $120
             </p>
 
           </span>
@@ -74,18 +74,77 @@ the style on the first feature. -->
 
       <div class="col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
         <div class="feature"><img src="/assets/bottle.png" />
+          <span class="productName">
+            <p>
+              <!-- erb to grab featured product name -->
+              <%=@featured.second.name %>
+            </p>
+          </span>
+          <span class="ingredients">
+            <p>
+              <!-- erb to grab featured product ingredients -->
+              <%=@featured.second.description%>
+            </p>
+          </span>
+          <span class="productPrice">
+            <p>
+              $<%=@featured.second.price.to_i%>
+              <!-- erb to grab featured product price -->
+            </p>
+
+          </span>
 
         </div>
       </div>
 
       <div class="col-md-4 col-lg-3 visible-md visible-lg">
         <div class="feature"><img src="/assets/bottle.png" />
+          <span class="productName">
+            <p>
+              <!-- erb to grab featured product name -->
+              <%=@featured.third.name %>
+            </p>
+          </span>
+          <span class="ingredients">
+            <p>
+              <!-- erb to grab featured product ingredients -->
+              <%=@featured.third.description%>
+            </p>
+          </span>
+          <span class="productPrice">
+            <p>
+              $<%=@featured.third.price.to_i%>
+              <!-- erb to grab featured product price -->
+            </p>
+
+          </span>
+
 
         </div>
       </div>
 
       <div class="col-lg-3 visible-lg">
         <div class="feature"><img src="/assets/bottle.png" />
+          <span class="productName">
+            <p>
+              <!-- erb to grab featured product name -->
+              <%=@featured.fourth.name %>
+            </p>
+          </span>
+          <span class="ingredients">
+            <p>
+              <!-- erb to grab featured product ingredients -->
+              <%=@featured.fourth.description%>
+            </p>
+          </span>
+          <span class="productPrice">
+            <p>
+              $<%=@featured.fourth.price.to_i%>
+              <!-- erb to grab featured product price -->
+            </p>
+
+          </span>
+
 
         </div>
       </div>
@@ -106,7 +165,7 @@ the style on the first feature. -->
               Boom Boom Juice.
             </p>
           </span>
-          <a style="display: block" href="/products">
+          <a style="display: block" href="/about">
             <div class="ghost-button-blue">
               <p>
                 ABOUT US
@@ -130,10 +189,10 @@ the style on the first feature. -->
               Boom Boom Juice.
             </p>
           </span>
-          <a style="display: block" href="/products">
+          <a style="display: block" href="/nutrition">
             <div class="ghost-button-pink">
               <p>
-                ABOUT US
+                NUTRITION
               </p>
             </div>
           </a>
