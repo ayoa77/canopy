@@ -1,46 +1,65 @@
 <!-- Checkout Billing and Shipping Address -->
 
 <div class="row">
-  <div class="col-sm-6" data-hook="billing_fieldset_wrapper">
-    <div class="panel panel-default" id="billing" data-hook>
+  <div class="col-sm-12" data-hook="billing_fieldset_wrapper">
+    <div class="change-me" id="billing" data-hook>
       <%= form.fields_for :bill_address do |bill_form| %>
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= Spree.t(:billing_address) %></h3>
-        </div>
-        <div class="panel-body">
-          <%= render partial: 'spree/address/form', locals: { form: bill_form, address_type: 'billing', address: @order.bill_address } %>
-        </div>
+      <div class="change-me-2">
+        <p class="checkout-head-type"><%= Spree.t(:billing_address) %></p>
+      </div>
+      <div class="address-pad">
+        <%= render partial: 'spree/address/form', locals: { form: bill_form, address_type: 'billing', address: @order.bill_address } %>
+      </div>
       <% end %>
     </div>
   </div>
 
-  <div class="col-sm-6" data-hook="shipping_fieldset_wrapper">
-    <div class="panel panel-default" id="shipping" data-hook>
+  <div class="col-sm-12" data-hook="shipping_fieldset_wrapper">
+    <div class="change-me" id="shipping" data-hook>
       <%= form.fields_for :ship_address do |ship_form| %>
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= Spree.t(:shipping_address) %></h3>
-        </div>
-        <div class="panel-body">
-          <p class="field checkbox" data-hook="use_billing">
-            <%= label_tag :order_use_billing, id: 'use_billing' do %>
-              <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address? %>
-              <%= Spree.t(:use_billing_address) %>
-            <% end %>
-          </p>
-          <%= render partial: 'spree/address/form', locals: { form: ship_form, address_type: 'shipping', address: @order.ship_address } %>
-        </div>
+      <div class="change-me-2">
+        <p class="checkout-head-type"><%= Spree.t(:shipping_address) %></p>
+      </div>
+      <div class="address-pad">
+
+        <p class="field checkbox" data-hook="use_billing">
+          <%= label_tag :order_use_billing, id: 'use_billing' do %>
+          <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address? %>
+          <%= Spree.t(:use_billing_address) %>
+          <% end %>
+        </p>
+
+        <!-- aj help : We need this checkbox to have the pick-up at store option.
+            it should create a date and time for pick-up -->
+        <p class="field checkbox" data-hook="use_billing">
+          <%= label_tag :order_use_billing, id: 'use_billing' do %>
+          <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address? %>
+          <%= Spree.t(:use_billing_address) %>
+          <% end %>
+        </p>
+
+        <%= render partial: 'spree/address/form', locals: { form: ship_form, address_type: 'shipping', address: @order.ship_address } %>
+      </div>
       <% end %>
     </div>
   </div>
 </div>
+<div class="row">
 
-<div class="well text-right form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-success' %>
-  <% if try_spree_current_user %>
-    <span data-hook="save_user_address">
-      &nbsp; &nbsp;
-      <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
-      <%= label_tag :save_user_address, Spree.t(:save_my_address) %>
-    </span>
-  <% end %>
+  <div class="col-xs-12 col-md-4 col-md-offset-8 save-and-continue-button" data-hook="buttons">
+    <%= submit_tag Spree.t(:save_and_continue), class: 'ghost-button-orange' %>
+  </div>
+
+  <div class="col-xs-12 col-md-4 col-md-offset-8" data-hook="buttons">
+    <div class="check-box-center">
+      <% if try_spree_current_user %>
+      <span data-hook="save_user_address">
+        &nbsp; &nbsp;
+        <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
+        <%= label_tag :save_user_address, Spree.t(:save_my_address) %>
+      </span>
+      <% end %>
+    </div>
+  </div>
+
 </div>
