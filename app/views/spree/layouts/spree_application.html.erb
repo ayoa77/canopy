@@ -7,29 +7,35 @@
   <head data-hook="inside_head">
     <%= render partial: 'spree/shared/head' %>
   </head>
-  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+
+  <body class="<%= body_class %> Site" id="<%= @body_id || 'default' %>" data-hook="body">
     <%= render partial: 'spree/shared/google_analytics.js' %>
     <%= render partial: 'spree/shared/header' %>
+    <div class="main">
 
-    <div class="container-fluid">
-      <div class="row" data-hook>
-        <%= breadcrumbs(@taxon) %>
+      <div class="container-fluid">
+        <div class="row" data-hook>
+          <%= breadcrumbs(@taxon) %>
 
-        <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
+          <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
 
 
-<!-- original line here removed because it affected the slider image touching the edge of the page -->
-<!-- class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-12" %>"  -->
-        <!-- <div id="content" data-hook> -->
-          <%= flash_messages %>
-          <%= yield %>
-        <!-- </div> -->
+  <!-- original line here removed because it affected the slider image touching the edge of the page -->
+  <!-- class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-12" %>"  -->
+          <!-- <div id="content" data-hook> -->
+            <%= flash_messages %>
+            <%= yield %>
+          <!-- </div> -->
 
-        <%= yield :templates %>
+          <%= yield :templates %>
+        </div>
+        <!-- I added this line to see if I could get erb to add the footer to every page -->
       </div>
-      <!-- I added this line to see if I could get erb to add the footer to every page -->
+      
     </div>
 
   </body>
+
+
   <%= render partial: 'spree/shared/footer' %>
 </html>

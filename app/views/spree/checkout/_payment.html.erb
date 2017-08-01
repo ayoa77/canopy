@@ -37,6 +37,8 @@
 
     <%= render partial: 'spree/checkout/payment/storecredit' %>
 
+    <!-- aj help : We're only taking CC payments, we should eliminate check as an option. -->
+
     <ul class="list-group" id="payment-method-fields" data-hook>
       <% @order.available_payment_methods.each do |method| %>
         <li class="list-group-item">
@@ -65,7 +67,7 @@
   </div>
 </div>
 
-<div class="well text-right form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-success primary' %>
+<div class="col-xs-12 col-md-4 col-md-offset-8 save-and-continue-button" data-hook="buttons">
+  <%= submit_tag Spree.t(:save_and_continue), class: 'ghost-button-orange' %>
   <script>Spree.disableSaveOnClick();</script>
 </div>
