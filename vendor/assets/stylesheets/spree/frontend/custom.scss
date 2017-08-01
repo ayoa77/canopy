@@ -48,16 +48,13 @@ a:hover{
 
 
 #footer {
-  height: 250px;
+  width: 100%;
   background-color: #dad;
   p{
     text-align: center;
     font-size: 16px;
+    margin-top: 20px;
   }
-}
-
-.footer-margins {
-  margin-top: 20px;
 }
 
 // index.html.erb
@@ -162,6 +159,7 @@ a:hover{
   border: 2px solid #F8776A;
   font-size: 20px;
   text-transform: uppercase;
+  line-height: 43px;
 
 }
 
@@ -191,6 +189,11 @@ a:hover{
   transition: background-color .4s;
 }
 
+.button-center {
+  display: block;
+  width: 300px;
+  margin: 20px auto;
+}
 
 
 #featurette {
@@ -733,6 +736,45 @@ a:hover{
   float: right;
 }
 
+// checkout/_delivery.html.erb
+
+.delivery-margin-top {
+  margin-top: 30px;
+}
+
+.checkout-subtext {
+  font-size: 16px;
+
+}
+
+.label-row {
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.label-line-items {
+  font-size: 16px;
+  margin-top: 20px;
+  height: 50px;
+  line-height: 50px;
+  .label-line-items-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.checkout-shipping {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #595857;
+}
+
+.rate-name {
+  font-size: 16px;
+}
+
+
 // -=-=-=-=-=- Responsive No Man's Land -=-=-=-=-=-
 
 
@@ -765,7 +807,13 @@ a:hover{
 }
 @media screen and (min-width: 374px) {}
 @media screen and (max-width: 411px) {}
-@media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
+
+  #footer p {
+      text-align: left;
+  }
+
+}
 @media screen and (max-width: 992px) {
   #sortin-it-out{
     height: 60px;
