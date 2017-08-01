@@ -68,8 +68,19 @@ a:hover{
   p{
     text-align: center;
     font-size: 16px;
-    margin-top: 20px;
   }
+}
+
+#footer-top {
+  height: 50px;
+}
+
+#footer-middle {
+  height: 125px;
+}
+
+#footer-bottom {
+  height: 50px;
 }
 
 // index.html.erb
@@ -211,8 +222,19 @@ a:hover{
   margin: 20px auto;
 }
 
+.featurette-mobile {
+  margin: 0 auto;
+  width: 100%;
+  color: #333;
+}
 
-#featurette {
+.slick-slide {
+  text-align: center;
+  margin: 10px;
+}
+
+
+#featurette, .featurette-mobile {
   margin-bottom: 60px;
 
   .juice {

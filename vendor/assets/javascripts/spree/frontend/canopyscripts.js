@@ -8,5 +8,42 @@ $(document).on('ready', function() {
       $('html').toggleClass('menuDown');
 
       $('#header').toggleClass('menuUp');
+  });
+
+// Slick
+
+    // $(".single-item").slick({
+    //   dots: true,
+    //   slidesToShow: 1,
+    //   centerMode: true,
+    //   centerPadding: '40px',
+    // });
+
+    $('.center').slick({
+      centerMode: true,
+      centerPadding: '60px',
+      slidesToShow: 1,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            slidesToShow: 1
+          }
+        }
+      ]
     });
+
+
+
+
 });
