@@ -1,4 +1,9 @@
 // Site-wide fixes
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 a {
   color: #00B7FF;
 }
@@ -6,6 +11,16 @@ a {
 a:hover{
   text-decoration: none;
   color: #0099D5;
+}
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
 }
 
 // Allows me to turn Bootstrap gutters off site-wide
@@ -180,6 +195,7 @@ a:hover{
   border: 2px solid #B3D57C;
   font-size: 20px;
   text-transform: uppercase;
+  line-height: 43px;
 
 }
 
@@ -450,8 +466,6 @@ a:hover{
 
 // edit.html.erb cart css
 
-
-
 // _line_item.html.erb
 
 .line-item {
@@ -506,7 +520,16 @@ a:hover{
   text-align: right;
 }
 
+#clear_cart_link {
+  margin-top: 8px;
+}
+
+
 // products/show.html.erb, handles the full size product page.
+
+#product-container {
+  margin-bottom: 75px;
+}
 
 .product-splash-image {
   opacity: 0.5;

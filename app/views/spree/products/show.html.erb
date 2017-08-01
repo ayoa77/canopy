@@ -3,135 +3,137 @@
 <% cache cache_key_for_product do %>
 
 <!-- handles splash image and product image -->
+<div id="product-container">
 
-<div class="row no-gutters">
+  <div class="row no-gutters">
 
-  <div class="col-md-6">
+    <div class="col-md-6">
 
-    <div class="product-splash-image">
-      <!-- background-image: url("/images/splat.png") -->
+      <div class="product-splash-image">
+        <!-- background-image: url("/images/splat.png") -->
+      </div>
+
+      <!-- holds the product image -->
+
+      <div class="product-holder-image">
+          <%= product_image(@product, itemprop: "image") %>
+
+          <!-- additional-information is the Nutrition information Hover state -->
+          <div class="additional-information">
+
+            <div class="row">
+
+            <div class="col-xs-12">
+              <strong>Nutrition Information</strong>
+            </div>
+
+            <div class="col-xs-9">
+              Calories
+            </div>
+            <div class="col-xs-3">
+              240
+            </div>
+
+            <div class="col-xs-9">
+              Total Fat
+            </div>
+            <div class="col-xs-3">
+              0g
+            </div>
+
+            <div class="col-xs-9">
+              Cholesterol
+            </div>
+            <div class="col-xs-3">
+              0g
+            </div>
+
+            <div class="col-xs-9">
+              Sodium
+            </div>
+            <div class="col-xs-3">
+              20mg
+            </div>
+
+            <div class="col-xs-12">
+              Vitamins
+            </div>
+
+            <div class="col-xs-3">
+              A
+            </div>
+            <div class="col-xs-3">
+              20%
+            </div>
+            <div class="col-xs-3">
+              C
+            </div>
+            <div class="col-xs-3">
+              20%
+            </div>
+
+            <div class="col-xs-3">
+              B-6
+            </div>
+            <div class="col-xs-3">
+              20%
+            </div>
+            <div class="col-xs-3">
+              B-12
+            </div>
+            <div class="col-xs-3">
+              20%
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
-    <!-- holds the product image -->
+  <!-- handles product text -->
 
-    <div class="product-holder-image">
-        <%= product_image(@product, itemprop: "image") %>
+    <div class="col-md-6">
 
-        <!-- additional-information is the Nutrition information Hover state -->
-        <div class="additional-information">
-
-          <div class="row">
-
-          <div class="col-xs-12">
-            <strong>Nutrition Information</strong>
+      <div class="row no-gutters">
+        <div class="col-xs-12">
+          <div class="product-name">
+            <p>
+              <%= @product.name %>
+            </p>
           </div>
-
-          <div class="col-xs-9">
-            Calories
-          </div>
-          <div class="col-xs-3">
-            240
-          </div>
-
-          <div class="col-xs-9">
-            Total Fat
-          </div>
-          <div class="col-xs-3">
-            0g
-          </div>
-
-          <div class="col-xs-9">
-            Cholesterol
-          </div>
-          <div class="col-xs-3">
-            0g
-          </div>
-
-          <div class="col-xs-9">
-            Sodium
-          </div>
-          <div class="col-xs-3">
-            20mg
-          </div>
-
-          <div class="col-xs-12">
-            Vitamins
-          </div>
-
-          <div class="col-xs-3">
-            A
-          </div>
-          <div class="col-xs-3">
-            20%
-          </div>
-          <div class="col-xs-3">
-            C
-          </div>
-          <div class="col-xs-3">
-            20%
-          </div>
-
-          <div class="col-xs-3">
-            B-6
-          </div>
-          <div class="col-xs-3">
-            20%
-          </div>
-          <div class="col-xs-3">
-            B-12
-          </div>
-          <div class="col-xs-3">
-            20%
-          </div>
-
         </div>
 
-      </div>
-    </div>
+        <div class="col-xs-12">
+          <div class="productdesc">
+            <p>
+              <%= product_description(@product) %>
+            </p>
+          </div>
+        </div>
 
-  </div>
+        <div class="col-xs-12">
+          <div class="productmakeup">
+            <p>
+              Generic Text for Product Ingredients, Apples, Boom boom, and Guava.
+              <#%= @product.ingredients %>
+            </p>
+          </div>
+        </div>
 
-<!-- handles product text -->
-
-  <div class="col-md-6">
-
-    <div class="row no-gutters">
-      <div class="col-xs-12">
-        <div class="product-name">
-          <p>
-            <%= @product.name %>
-          </p>
+        <div class="col-xs-12">
+          <div class="button-contain">
+            <%= render partial: 'cart_form' %>
+          </div>
         </div>
       </div>
 
-      <div class="col-xs-12">
-        <div class="productdesc">
-          <p>
-            <%= product_description(@product) %>
-          </p>
-        </div>
-      </div>
-
-      <div class="col-xs-12">
-        <div class="productmakeup">
-          <p>
-            Generic Text for Product Ingredients, Apples, Boom boom, and Guava.
-            <#%= @product.ingredients %>
-          </p>
-        </div>
-      </div>
-
-      <div class="col-xs-12">
-        <div class="button-contain">
-          <%= render partial: 'cart_form' %>
-        </div>
-      </div>
     </div>
 
   </div>
 
 </div>
-
 
 
 
