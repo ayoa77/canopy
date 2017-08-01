@@ -1,44 +1,66 @@
-<div class="panel panel-default" id='shipping_method' data-hook>
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= Spree.t(:delivery) %></h3>
+<!-- aj help : Somewhere in this file, it separates totes and t-shirts into two blocks
+and requires independent shipping rates for each one.  I can't figure out why it does that
+and how to turn it off.  :D -->
+
+<div class="change-me" id='shipping_method' data-hook>
+  <div class="delivery-margin-top">
+    <p class="checkout-head-type"><%= Spree.t(:delivery) %></p>
   </div>
-  <div class="panel-body" data-hook="shipping_method_inner">
+  <div class="checkout-head-type" data-hook="shipping_method_inner">
     <div id="methods">
       <%= form.fields_for :shipments do |ship_form| %>
         <div class="shipment">
-          <h4 class="stock-location" data-hook="stock-location">
+          <p class="checkout-subtext" data-hook="stock-location">
             <%= Spree.t(:package_from) %>
             <strong class="stock-location-name" data-hook="stock-location-name"><%= ship_form.object.stock_location.name %></strong>
-          </h4>
+          </p>
 
-          <table class="table stock-contents" data-hook="stock-contents">
-            <colgroup>
-              <col style="width: 10%;" />
-              <col style="width: 60%;" />
-              <col style="width: 10%;" />
-              <col style="width: 20%;" />
-            </colgroup>
-            <thead>
-              <tr class="active">
-                <th></th>
-                <th align='left'><%= Spree.t(:item) %></th>
-                <th><%= Spree.t(:qty) %></th>
-                <th><%= Spree.t(:price) %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% ship_form.object.manifest.each do |item| %>
-                <tr class="stock-item">
-                  <td class="item-image"><%= mini_image(item.variant) %></td>
-                  <td class="item-name"><%= item.variant.name %></td>
-                  <td class="item-qty"><%= item.quantity %></td>
-                  <td class="item-price"><%= display_price(item.variant) %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
+          <div class="row label-row">
 
-          <h4 class="stock-shipping-method-title"><%= Spree.t(:shipping_method) %></h4>
+            <div class="col-xs-2 ">
+              <%= Spree.t(:item) %>
+            </div>
+
+            <div class="col-xs-5">
+
+            </div>
+
+            <div class="col-xs-2">
+              <%= Spree.t(:qty) %>
+            </div>
+
+            <div class="col-xs-3">
+              <%= Spree.t(:price) %>
+            </div>
+
+          </div>
+
+          <% ship_form.object.manifest.each do |item| %>
+
+          <!-- aj help : can we make odd numbered label-line-items have a color? -->
+          <div class="row label-line-items">
+
+            <div class="col-xs-2">
+              <%= mini_image(item.variant) %>
+            </div>
+
+            <div class="col-xs-5 label-line-items-text">
+              <%= item.variant.name %>
+            </div>
+
+            <div class="col-xs-2 label-line-items-text">
+              <%= item.quantity %>
+            </div>
+
+            <div class="col-xs-3 label-line-items-text">
+              <%= display_price(item.variant) %>
+            </div>
+
+
+          </div>
+          <% end %>
+
+          <p class="checkout-shipping"><%= Spree.t(:shipping_method) %></p>
           <ul class="list-group shipping-methods">
             <% ship_form.object.shipping_rates.each do |rate| %>
               <li class="list-group-item shipping-method">
@@ -52,6 +74,8 @@
           </ul>
         </div>
       <% end %>
+
+      <!-- aj help : I don't know what all this is below this line :D -->
 
       <% if @differentiator.try(:missing?) %>
         <div class="shipment unshippable">
@@ -96,8 +120,8 @@
 
 <br />
 
-<div class="well text-right form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-success' %>
+<div class="col-xs-12 col-md-4 col-md-offset-8 save-and-continue-button" data-hook="buttons">
+  <%= submit_tag Spree.t(:save_and_continue), class: 'ghost-button-orange' %>
 </div>
 
 <%= javascript_include_tag 'spree/frontend/checkout/shipment' %>
