@@ -21,7 +21,6 @@ $(document).on('ready', function() {
 
     $('.center').slick({
       centerMode: true,
-      centerPadding: '60px',
       slidesToShow: 1,
       responsive: [
         {

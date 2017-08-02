@@ -92,11 +92,11 @@ a:hover{
   background-repeat: no-repeat;
   background-origin: inherit;
   background-size: inherit;
-  background-position: left left;
+  background-position: top left;
   height: 500px;
   width: 100%;
   background-color: #00B7Ff;
-  margin-bottom: 120px;
+  margin-bottom: 40px;
   .slider-text {
     position: absolute;
     width: 100%;
@@ -236,38 +236,58 @@ a:hover{
 
 #featurette, .featurette-mobile {
   margin-bottom: 60px;
+  padding: 0 0 0 0;
+
+  .juice-box {
+    height: 345px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: auto;
+      height: 180px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      position: absolute;
+      z-index: 3;
+    }
+
+  }
 
   .juice {
     border: 2px solid #00B7FF;
     height: 275px;
     width: 100%;
+    margin-top: 70px;
+    padding-top: 115px;
+    .juice-box {
+      border: 2px solid #00b7ff;
+      height: 275px;
+      margin-top: 70px;
+    }
     p.productName {
       color: #00B7FF;
     }
-    img {
-      width: 150px;
-      height: auto;
-      display: block;
-      margin-top: -70px;
-      margin-left: 33%;
-      margin-bottom: 20px;
-    }
+
   }
 
   .smoothie {
     border: 2px solid #F7C664;
     height: 275px;
     width: 100%;
-    p.productName{
-      color: #F7C664;
+    margin-top: 70px;
+    padding-top: 115px;
+    .juice-box {
+      border: 2px solid #F7C664;
+      height: 275px;
+      margin-top: 70px;
     }
-    img {
-      width: 164px;
-      height: auto;
-      display: block;
-      margin-top: -70px;
-      margin-left: 27%;
-      margin-bottom: 20px;
+    p.productName {
+      color: #F7C664;
     }
   }
 
@@ -275,16 +295,15 @@ a:hover{
     border: 2px solid #DA82B6;
     height: 275px;
     width: 100%;
+    margin-top: 70px;
+    padding-top: 115px;
+    .juice-box {
+      border: 2px solid #DA82B6;
+      height: 275px;
+      margin-top: 70px;
+    }
     p.productName {
       color: #DA82B6;
-    }
-    img {
-      width: 176px;
-      height: auto;
-      display: block;
-      margin-top: -56px;
-      margin-left: 33%;
-      margin-bottom: 20px;
     }
   }
 
@@ -910,6 +929,12 @@ a:hover{
   }
 
 
+}
+
+@media screen and (min-width: 993) {
+  #featurette {
+    margin-bottom: 60px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .slider-text {
