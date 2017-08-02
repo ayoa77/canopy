@@ -42,7 +42,7 @@ a:hover{
   margin-bottom: 0px;
   #header{
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     top: 0;
     width: 100%;
     background: #fff;
@@ -61,10 +61,10 @@ a:hover{
   height:100px;
 }
 
+// footer.html.erb
 
 #footer {
   width: 100%;
-  background-color: #dad;
   p{
     text-align: center;
     font-size: 16px;
@@ -73,14 +73,18 @@ a:hover{
 
 #footer-top {
   height: 50px;
+  background-color: #FEE3BA;
 }
 
 #footer-middle {
-  height: 125px;
+  height: 150px;
+  background-color: #FDF2E2;
 }
 
 #footer-bottom {
   height: 50px;
+  background-color: #FEE3BA;
+
 }
 
 // index.html.erb
@@ -543,7 +547,7 @@ a:hover{
   line-height: 50px;
 }
 
-.glyphicon {
+.glyphicon .glyphicon-remove {
   transition: font-size .4s;
   color: #F8776A;
   font-size: 20px;
@@ -551,7 +555,7 @@ a:hover{
   top: 4px;
 }
 
-.glyphicon:hover {
+.glyphicon .glyphicon-remove:hover {
   transition: font-size .4s;
   font-size: 24px;
 }
