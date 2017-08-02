@@ -12,16 +12,8 @@ $(document).on('ready', function() {
 
 // Slick
 
-    // $(".single-item").slick({
-    //   dots: true,
-    //   slidesToShow: 1,
-    //   centerMode: true,
-    //   centerPadding: '40px',
-    // });
-
     $('.center').slick({
       centerMode: true,
-      centerPadding: '60px',
       slidesToShow: 1,
       responsive: [
         {
@@ -29,7 +21,8 @@ $(document).on('ready', function() {
           settings: {
             arrows: false,
             centerMode: true,
-            slidesToShow: 1
+            slidesToShow: 1,
+            speed: 100
           }
         },
         {
@@ -37,7 +30,8 @@ $(document).on('ready', function() {
           settings: {
             arrows: false,
             centerMode: true,
-            slidesToShow: 1
+            slidesToShow: 1,
+            speed: 100
           }
         }
       ]
