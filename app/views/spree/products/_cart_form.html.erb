@@ -32,7 +32,7 @@
     <% if @product.price_in(current_currency) && !@product.price.nil? %>
       <div data-hook="product_price" class="col-xs-12">
         <div id="product-price">
-          <span class="product-section-title"><%= display_price(@product) %></span>
+          <span class="product-section-title"><%= display_price(@product)[0..-4] %></span>
           <div>
             <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
           </div>

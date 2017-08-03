@@ -117,7 +117,7 @@
             <div class="panel panel-default">
               <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
               <!-- this <a> tag needs to link to teh variable url -->
-              <a href="#">
+              <a href="/<%=url%>">
                 <div class="panel-body text-center product-body">
 
                   <%= link_to url, itemprop: "url" do %>
@@ -132,16 +132,21 @@
                   </span>
                   <span class="price selling lead" itemprop="price"><%= display_price(product)[0..-4] %></span>
                 </div>
+                <%= form_for :order, id: "add-to-cart-from-product-index", remote: true, url: populate_orders_path, method: 'post' do |f| %>
+                <%= hidden_field_tag "variant_id", product.master.id %>
+                <%= hidden_field_tag "quantity", 1 %>
               </a>
-                <a href="/cart">
+
                   <div class="panel-footer text-center">
                     <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                       <p><big>
-                        Add to Cart
+                        <%= f.submit "Add to Cart", class: '' do %>
+                        <%= Spree.t(:add_to_cart) %>
+                        <% end %>
                       </big></p>
                     </span>
                   </div>
-                </a>
+                <% end %>
               <% end %>
             </div>
           </div>
