@@ -496,8 +496,13 @@ a:hover{
   border-color: #00B7FF;
   border-width: 2px;
   background-color: #fff;
+  color: #00B7FF;
   p {
     line-height: 52px;
+    vertical-align: center;
+  }
+  input {
+    line-height: 43px;
     vertical-align: center;
   }
 }
