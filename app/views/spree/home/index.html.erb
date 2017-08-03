@@ -22,9 +22,8 @@
       <div class="col-xs-12 col-sm-6">
         <div class="slider-text">
           <p class="splash-text">
-            This Pineapple Juice
-            is a kick in the teeth. </br>
-            Boom Boom Juice.
+            人生不一定<span class='rwd-break'>要最好，</span><br />
+            但一定要更好
           </p>
           <a style="display: block" href="/products">
             <div class="ghost-button-white">
@@ -83,16 +82,16 @@
 
           <p class="productName">
             <!-- erb to grab featured product name -->
-            <%=@featured.first.name %>
+            <%=@featured.second.name %>
           </p>
 
           <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
-              <%=@featured.first.description%>
+              <%=@featured.second.description%>
           </p>
 
           <p class="productPrice">
-              $<%=@featured.first.price.to_i%>
+              $<%=@featured.second.price.to_i%>
               <!-- erb to grab featured product price -->
           </p>
 
@@ -110,16 +109,16 @@
 
           <p class="productName">
             <!-- erb to grab featured product name -->
-            <%=@featured.first.name %>
+            <%=@featured.third.name %>
           </p>
 
           <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
-              <%=@featured.first.description%>
+              <%=@featured.third.description%>
           </p>
 
           <p class="productPrice">
-              $<%=@featured.first.price.to_i%>
+              $<%=@featured.third.price.to_i%>
               <!-- erb to grab featured product price -->
           </p>
 
@@ -136,16 +135,16 @@
 
           <p class="productName">
             <!-- erb to grab featured product name -->
-            <%=@featured.first.name %>
+            <%=@featured.fourth.name %>
           </p>
 
           <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
-              <%=@featured.first.description%>
+              <%=@featured.fourth.description%>
           </p>
 
           <p class="productPrice">
-              $<%=@featured.first.price.to_i%>
+              $<%=@featured.fourth.price.to_i%>
               <!-- erb to grab featured product price -->
           </p>
 
@@ -202,16 +201,16 @@ the style on the first feature. -->
 
             <p class="productName">
               <!-- erb to grab featured product name -->
-              <%=@featured.first.name %>
+              <%=@featured.second.name %>
             </p>
 
             <p class="ingredients">
                 <!-- erb to grab featured product ingredients -->
-                <%=@featured.first.description%>
+                <%=@featured.second.description%>
             </p>
 
             <p class="productPrice">
-                $<%=@featured.first.price.to_i%>
+                $<%=@featured.second.price.to_i%>
                 <!-- erb to grab featured product price -->
             </p>
 
@@ -228,16 +227,16 @@ the style on the first feature. -->
 
             <p class="productName">
               <!-- erb to grab featured product name -->
-              <%=@featured.first.name %>
+              <%=@featured.third.name %>
             </p>
 
             <p class="ingredients">
                 <!-- erb to grab featured product ingredients -->
-                <%=@featured.first.description%>
+                <%=@featured.third.description%>
             </p>
 
             <p class="productPrice">
-                $<%=@featured.first.price.to_i%>
+                $<%=@featured.third.price.to_i%>
                 <!-- erb to grab featured product price -->
             </p>
 
@@ -254,16 +253,16 @@ the style on the first feature. -->
 
             <p class="productName">
               <!-- erb to grab featured product name -->
-              <%=@featured.first.name %>
+              <%=@featured.fourth.name %>
             </p>
 
             <p class="ingredients">
                 <!-- erb to grab featured product ingredients -->
-                <%=@featured.first.description%>
+                <%=@featured.fourth.description%>
             </p>
 
             <p class="productPrice">
-                $<%=@featured.first.price.to_i%>
+                $<%=@featured.fourth.price.to_i%>
                 <!-- erb to grab featured product price -->
             </p>
 
