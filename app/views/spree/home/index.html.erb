@@ -11,6 +11,8 @@
   <%# end %>
 </div> -->
 
+<!-- Splash Picture -->
+
 <div id="splash-picture">
   <div class="container">
     <div class="row">
@@ -38,7 +40,121 @@
   </div>
 </div>
 
+<!-- Slick Mobile Featurette -->
 
+<div class='featurette-mobile col-xs-12 visible-xs'>
+  <div class='center'>
+    <div>
+
+      <div class="juice-box">
+
+        <img src="/assets/bottle.png" />
+
+        <div class="juice">
+
+          <p class="productName">
+            <!-- erb to grab featured product name -->
+            <%=@featured.first.name %>
+          </p>
+
+          <p class="ingredients">
+              <!-- erb to grab featured product ingredients -->
+              <%=@featured.first.description%>
+          </p>
+
+          <p class="productPrice">
+              $<%=@featured.first.price.to_i%>
+              <!-- erb to grab featured product price -->
+          </p>
+
+        </div>
+
+    </div>
+
+
+    </div>
+
+    <div>
+      <div class="juice-box">
+
+        <img src="/assets/cup.png" />
+
+        <div class="smoothie">
+
+          <p class="productName">
+            <!-- erb to grab featured product name -->
+            <%=@featured.first.name %>
+          </p>
+
+          <p class="ingredients">
+              <!-- erb to grab featured product ingredients -->
+              <%=@featured.first.description%>
+          </p>
+
+          <p class="productPrice">
+              $<%=@featured.first.price.to_i%>
+              <!-- erb to grab featured product price -->
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div>
+      <div class="juice-box">
+
+        <img src="/assets/bottle.png" />
+
+        <div class="juice">
+
+          <p class="productName">
+            <!-- erb to grab featured product name -->
+            <%=@featured.first.name %>
+          </p>
+
+          <p class="ingredients">
+              <!-- erb to grab featured product ingredients -->
+              <%=@featured.first.description%>
+          </p>
+
+          <p class="productPrice">
+              $<%=@featured.first.price.to_i%>
+              <!-- erb to grab featured product price -->
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+    <div>
+      <div class="juice-box">
+
+        <img src="/assets/glass.png" />
+
+        <div class="tea">
+
+          <p class="productName">
+            <!-- erb to grab featured product name -->
+            <%=@featured.first.name %>
+          </p>
+
+          <p class="ingredients">
+              <!-- erb to grab featured product ingredients -->
+              <%=@featured.first.description%>
+          </p>
+
+          <p class="productPrice">
+              $<%=@featured.first.price.to_i%>
+              <!-- erb to grab featured product price -->
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- We can add erb to grab each featured drink and place/style them to match
 the style on the first feature. -->
@@ -47,100 +163,114 @@ the style on the first feature. -->
   <div class="container">
     <div class="row">
 
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="juice">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
+
+        <div class="juice-box">
 
           <img src="/assets/bottle.png" />
 
-          <p class="productName">
+          <div class="juice">
+
+            <p class="productName">
               <!-- erb to grab featured product name -->
               <%=@featured.first.name %>
             </p>
 
-          <p class="ingredients">
-              <!-- erb to grab featured product ingredients -->
-              <%=@featured.first.description%>
+            <p class="ingredients">
+                <!-- erb to grab featured product ingredients -->
+                <%=@featured.first.description%>
             </p>
 
-          <p class="productPrice">
-              $<%=@featured.first.price.to_i%>
-              <!-- erb to grab featured product price -->
+            <p class="productPrice">
+                $<%=@featured.first.price.to_i%>
+                <!-- erb to grab featured product price -->
             </p>
+
+          </div>
 
         </div>
+
       </div>
 
+
       <div class="col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
-        <div class="smoothie">
+        <div class="juice-box">
 
           <img src="/assets/cup.png" />
 
-          <p class="productName">
+          <div class="smoothie">
+
+            <p class="productName">
               <!-- erb to grab featured product name -->
-              <%=@featured.second.name %>
-          </p>
+              <%=@featured.first.name %>
+            </p>
 
-          <p class="ingredients">
+            <p class="ingredients">
+                <!-- erb to grab featured product ingredients -->
+                <%=@featured.first.description%>
+            </p>
 
-              <!-- erb to grab featured product ingredients -->
-              <%=@featured.second.description%>
-          </p>
+            <p class="productPrice">
+                $<%=@featured.first.price.to_i%>
+                <!-- erb to grab featured product price -->
+            </p>
 
-          <p class="productPrice">
-
-              $<%=@featured.second.price.to_i%>
-              <!-- erb to grab featured product price -->
-          </p>
-
+          </div>
         </div>
       </div>
 
       <div class="col-md-4 col-lg-3 visible-md visible-lg">
-        <div class="tea">
+        <div class="juice-box">
 
           <img src="/assets/glass.png" />
 
-          <p class="productName">
+          <div class="tea">
+
+            <p class="productName">
               <!-- erb to grab featured product name -->
-              <%=@featured.third.name %>
-          </p>
+              <%=@featured.first.name %>
+            </p>
 
-          <p class="ingredients">
-              <!-- erb to grab featured product ingredients -->
-              <%=@featured.third.description%>
-          </p>
+            <p class="ingredients">
+                <!-- erb to grab featured product ingredients -->
+                <%=@featured.first.description%>
+            </p>
 
-          <p class="productPrice">
-              $<%=@featured.third.price.to_i%>
-              <!-- erb to grab featured product price -->
-          </p>
+            <p class="productPrice">
+                $<%=@featured.first.price.to_i%>
+                <!-- erb to grab featured product price -->
+            </p>
 
+          </div>
         </div>
       </div>
 
       <div class="col-lg-3 visible-lg">
-        <div class="juice">
+        <div class="juice-box">
 
           <img src="/assets/bottle.png" />
 
-          <p class="productName">
+          <div class="juice">
+
+            <p class="productName">
               <!-- erb to grab featured product name -->
-              <%=@featured.fourth.name %>
-          </p>
+              <%=@featured.first.name %>
+            </p>
 
-          <p class="ingredients">
-              <!-- erb to grab featured product ingredients -->
-              <%=@featured.fourth.description%>
-          </p>
+            <p class="ingredients">
+                <!-- erb to grab featured product ingredients -->
+                <%=@featured.first.description%>
+            </p>
 
-          <p class="productPrice">
-              $<%=@featured.fourth.price.to_i%>
-              <!-- erb to grab featured product price -->
-          </p>
+            <p class="productPrice">
+                $<%=@featured.first.price.to_i%>
+                <!-- erb to grab featured product price -->
+            </p>
 
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
 </div>
