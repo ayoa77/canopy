@@ -4,12 +4,13 @@
     <%= render partial: 'spree/shared/taxonomies' %>
   </div>
 <%# end %>
-
 <div data-hook="homepage_products">
   <%# cache(cache_key_for_products) do %>
     <%#= render partial: 'spree/shared/products', locals: { products: @products } %>
   <%# end %>
 </div> -->
+
+<!-- Splash Picture -->
 
 <div id="splash-picture">
   <div class="container">
@@ -20,9 +21,8 @@
       <div class="col-xs-12 col-sm-6">
         <div class="slider-text">
           <p class="splash-text">
-            This Pineapple Juice
-            is a kick in the teeth. </br>
-            Boom Boom Juice.
+            人生不一定<span class='rwd-break'>要最好，</span><br />
+            但一定要更好
           </p>
           <a style="display: block" href="/products">
             <div class="ghost-button-white">
@@ -38,104 +38,112 @@
   </div>
 </div>
 
+<!-- Slick Mobile Featurette -->
+<% if @products.count >= 4 %>
+<div class='featurette-mobile col-xs-12 visible-xs'>
+  <div class='center'>
+    <div>
 
+      <div class="juice-box">
 
-<!-- We can add erb to grab each featured drink and place/style them to match
-the style on the first feature. -->
+      <%= spree.product_path(featured_one) do %>
+        <img src="/assets/bottle.png" />
+        <% end %>
 
-<div id="featurette">
-  <div class="container">
-    <% if @products.count >= 4 %>
-    <div class="row">
-
-<%= link_to spree.product_path(@featured_one) do %>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="juice">
 
-          <img src="/assets/bottle.png" />
-
+          <%= spree.product_path(featured_one) do %>
           <p class="productName">
-              <!-- erb to grab featured product name -->
-              <%=@featured_one.name %>
-            </p>
+            <!-- erb to grab featured product name -->
+            <%=@featured_one.name %>
+          </p>
+          <% end %>
 
           <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
               <%=@featured_one.description%>
-            </p>
+          </p>
 
           <p class="productPrice">
               $<%=@featured_one.price.to_i%>
               <!-- erb to grab featured product price -->
-            </p>
-
-        </div>
-      </div>
-      <% end %>
-
-      <%= link_to spree.product_path(@featured_two) do %>
-      <div class="col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
-        <div class="smoothie">
-
-          <img src="/assets/cup.png" />
-
-          <p class="productName">
-              <!-- erb to grab featured product name -->
-              <%=@featured_two.name %>
           </p>
 
-          <p class="ingredients">
+        </div>
 
+    </div>
+
+
+    </div>
+
+    <div>
+      <div class="juice-box">
+        <%= spree.product_path(featured_two) do %>
+        <img src="/assets/cup.png" />
+        <% end %>
+        <div class="smoothie">
+          <%= spree.product_path(featured_two) do %>
+          <p class="productName">
+            <!-- erb to grab featured product name -->
+            <%=@featured_two.name %>
+          </p>
+          <% end %>
+
+          <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
               <%=@featured_two.description%>
           </p>
 
           <p class="productPrice">
-
               $<%=@featured_two.price.to_i%>
               <!-- erb to grab featured product price -->
           </p>
 
         </div>
+
       </div>
-      <% end %>
+    </div>
 
-      <%= link_to spree.product_path(@featured_three) do %>
-      <div class="col-md-4 col-lg-3 visible-md visible-lg">
-        <div class="tea">
-
-          <img src="/assets/glass.png" />
+    <div>
+      <div class="juice-box">
+        <%= spree.product_path(featured_three) do %>
+        <img src="/assets/bottle.png" />
+        <% end %>
+        <div class="juice">
+          <%= spree.product_path(featured_three) do %>
 
           <p class="productName">
-              <!-- erb to grab featured product name -->
-              <%=@featured_three.name %>
+            <!-- erb to grab featured product name -->
+            <%=@featured_third.name %>
           </p>
-
+          <% end %>
           <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
-              <%=@featured_three.description%>
+              <%=@featured_third.description%>
           </p>
 
           <p class="productPrice">
-              $<%=@featured_three.price.to_i%>
+              $<%=@featured_third.price.to_i%>
               <!-- erb to grab featured product price -->
           </p>
 
         </div>
+
       </div>
-      <% end %>
+    </div>
+    <div>
+      <div class="juice-box">
+        <%= spree.product_path(featured_four) do %>
+        <img src="/assets/glass.png" />
+        <% end %>
+        <div class="tea">
 
-
-      <%= link_to spree.product_path(@featured_four) do %>
-      <div class="col-lg-3 visible-lg">
-        <div class="juice">
-
-          <img src="/assets/bottle.png" />
-
+          <%= spree.product_path(featured_four) do %>
           <p class="productName">
-              <!-- erb to grab featured product name -->
-              <%=@featured_four.name %>
+            <!-- erb to grab featured product name -->
+            <%=@featured_four.name %>
           </p>
+          <% end %>
 
           <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
@@ -148,10 +156,140 @@ the style on the first feature. -->
           </p>
 
         </div>
-      </div>
-      <% end %>
 
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- We can add erb to grab each featured drink and place/style them to match
+the style on the first feature. -->
+
+<div id="featurette">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
+        <%= spree.product_path(featured_one) do %>
+
+        <div class="juice-box">
+
+          <img src="/assets/bottle.png" />
+
+          <div class="juice">
+
+            <p class="productName">
+              <!-- erb to grab featured product name -->
+              <%=@featured_one.name %>
+            </p>
+
+            <p class="ingredients">
+                <!-- erb to grab featured product ingredients -->
+                <%=@featured_one.description%>
+            </p>
+
+            <p class="productPrice">
+                $<%=@featured_one.price.to_i%>
+                <!-- erb to grab featured product price -->
+            </p>
+
+          </div>
+
+        </div>
+        <% end %>
+
+      </div>
+
+
+      <div class="col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
+        <%= spree.product_path(featured_two) do %>
+        <div class="juice-box">
+
+          <img src="/assets/cup.png" />
+
+          <div class="smoothie">
+
+            <p class="productName">
+              <!-- erb to grab featured product name -->
+              <%=@featured_two.name %>
+            </p>
+
+            <p class="ingredients">
+                <!-- erb to grab featured product ingredients -->
+                <%=@featured_two.description%>
+            </p>
+
+            <p class="productPrice">
+                $<%=@featured_two.price.to_i%>
+                <!-- erb to grab featured product price -->
+            </p>
+
+          </div>
+        </div>
+        <%end%>
+      </div>
+
+      <div class="col-md-4 col-lg-3 visible-md visible-lg">
+        <%= spree.product_path(featured_three) do %>
+
+        <div class="juice-box">
+
+          <img src="/assets/glass.png" />
+
+          <div class="tea">
+
+            <p class="productName">
+              <!-- erb to grab featured product name -->
+              <%=@featured_three.name %>
+            </p>
+
+            <p class="ingredients">
+                <!-- erb to grab featured product ingredients -->
+                <%=@featured_three.description%>
+            </p>
+
+            <p class="productPrice">
+                $<%=@featured_three.price.to_i%>
+                <!-- erb to grab featured product price -->
+            </p>
+
+          </div>
+        </div>
+        <%end%>
+      </div>
+
+      <div class="col-lg-3 visible-lg">
+        <%= spree.product_path(featured_four) do %>
+
+        <div class="juice-box">
+
+          <img src="/assets/bottle.png" />
+
+          <div class="juice">
+
+            <p class="productName">
+              <!-- erb to grab featured product name -->
+              <%=@featured_four.name %>
+            </p>
+
+            <p class="ingredients">
+                <!-- erb to grab featured product ingredients -->
+                <%=@featured_four.description%>
+            </p>
+
+            <p class="productPrice">
+                $<%=@featured_four.price.to_i%>
+                <!-- erb to grab featured product price -->
+            </p>
+
+          </div>
+        </div>
+        <%end%>
+
+      </div>
+    </div>
+  </div>
+</div>
     <%else%>
     <div class="row">
       <a style="display: block" href="/admin">
