@@ -191,7 +191,7 @@ a:hover{
 .ghost-button-white:hover {
   color: #00B7FF;
   background-color: #fff;
-  transition: background-color .4s;
+  transition: background-color .3s;
 }
 
 .ghost-button-blue{
@@ -213,7 +213,7 @@ a:hover{
 .ghost-button-blue:hover {
   color: #fff;
   background-color: #00B7FF;
-  transition: background-color .4s;
+  transition: background-color .3s;
 }
 
 .ghost-button-pink{
@@ -233,7 +233,7 @@ a:hover{
 .ghost-button-pink:hover {
   color: #fff;
   background-color: #DC83B8;
-  transition: background-color .4s;
+  transition: background-color .3s;
 }
 
 .ghost-button-orange{
@@ -254,7 +254,7 @@ a:hover{
 .ghost-button-orange:hover {
   color: #fff;
   background-color: #F8776A;
-  transition: background-color .4s;
+  transition: background-color .3s;
 }
 
 .ghost-button-green{
@@ -275,7 +275,7 @@ a:hover{
 .ghost-button-green:hover {
   color: #fff;
   background-color: #B3D57C;
-  transition: background-color .4s;
+  transition: background-color .3s;
 }
 
 .button-center {
@@ -393,7 +393,7 @@ a:hover{
 #featurette .juice-box:hover > .juice {
   background-color: #0099D5;
   border-color: #0099D5;
-  transition: all .4s;
+  transition: all .3s;
   p {
     color: #fff;
   }
@@ -402,7 +402,7 @@ a:hover{
 #featurette .juice-box:hover > .smoothie{
   background-color: #E9B959;
   border-color: #E9B959;
-  transition: all .4s;
+  transition: all .3s;
   p {
     color: #fff;
   }
@@ -411,7 +411,7 @@ a:hover{
 #featurette .juice-box:hover > .tea {
   background-color: #D070B0;
   border-color: #D070B0;
-  transition: all .4s;
+  transition: all .3s;
   p {
     color: #fff;
   }
@@ -474,38 +474,73 @@ a:hover{
 
 #sortin-it-out{
   height: 200px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .sorting-hat{
-  border: 3px solid #E1007D;
+  height:150px;
+  width: 150px;
   margin: 0 auto;
-  height:200px;
-  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
   border-radius: 100%;
   background-color: #E1007D;
+  border: 3px solid #E1007D;
+  transition: all .3s;
   img {
-    padding-top: 40px;
-    display: block;
-    margin: auto;
-    height: 150px;
+    height: 100px;
     width: auto;
   }
 }
 
-.sorting-text p{
+.sorting-text{
+  margin-bottom: 20px;
   color: #E1007D;
   text-align: center;
-  font-size: 42px;
-  margin-top: -42%;
+  font-size: 36px;
   visibility: hidden;
+}
+
+.sorting-hat-all {
+  height:150px;
+  width: 150px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: #E1007D;
+  border: 3px solid #E1007D;
+  transition: all .3s;
+}
+
+.sorting-hat-all:hover {
+  background-color: #fff;
+  transition: background-color .3s;
+}
+
+.sorting-text-all {
+  margin: 0;
+  color: #fff;
+  opacity: .6;
+  text-align: center;
+  font-size: 36px;
+  transition: all .3s;
+}
+
+.sorting-hat-all:hover > .sorting-text-all {
+  color: #E1007D;
+  transition: all .3s;
 }
 
 .sorting-hat:hover {
   background-color: #fff;
-  transition: background-color .4s;
-  .sorting-text p{
-    transition: visibility .4s;
+  transition: background-color .3s;
+  .sorting-text {
+    transition: visibility .3s;
     visibility: visible;
   }
 }
@@ -568,7 +603,7 @@ a:hover{
 .panel-footer:hover {
   border-radius: 0px;
   background-color: #00B7FF;
-  transition: background-color .4s;
+  transition: background-color .3s;
   color: #fff;
 }
 
@@ -611,7 +646,7 @@ a:hover{
 }
 
 .glyphicon .glyphicon-remove {
-  transition: font-size .4s;
+  transition: font-size .3s;
   color: #F8776A;
   font-size: 20px;
   text-align: center;
@@ -619,7 +654,7 @@ a:hover{
 }
 
 .glyphicon .glyphicon-remove:hover {
-  transition: font-size .4s;
+  transition: font-size .3s;
   font-size: 24px;
 }
 
@@ -664,7 +699,7 @@ a:hover{
   width: 320px;
   height: 200px;
   opacity: 1;
-  transition: all .4s ease;
+  transition: all .3s ease;
 }
 
 .additional-information {
@@ -679,7 +714,7 @@ a:hover{
   width: 320px;
   height: 200px;
   opacity: 0;
-  transition: all .4s ease;
+  transition: all .3s ease;
   padding: 15px;
 }
 
@@ -1110,7 +1145,7 @@ a:hover{
     margin-bottom: 30px;
     width: 100%;
     .btn {
-      width: 33.3333333%
+      width: 25%
     }
   }
 
