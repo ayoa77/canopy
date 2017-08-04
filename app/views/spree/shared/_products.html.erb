@@ -110,43 +110,43 @@
 
   <% if products.any? %>
 
-      <div id="products" class="row" data-hook>
-        <% products.each do |product| %>
-          <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
-          <div id="product_<%= product.id %>" class="col-md-4 col-sm-6 col-xs-12 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
-            <div class="panel panel-default">
-              <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
-              <!-- this <a> tag needs to link to teh variable url -->
-              <a href="/<%=url%>">
-                <div class="panel-body text-center product-body">
+  <div id="products" class="row" data-hook>
+<% products.each do |product| %>
+  <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
+  <div id="product_<%= product.id %>" class="col-md-4 col-sm-6 col-xs-12 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
+    <div class="panel panel-default">
+      <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
+      <!-- this <a> tag needs to link to teh variable url -->
+      <a href="<%=url%>">
+        <div class="panel-body text-center product-body">
 
-                  <%= link_to url, itemprop: "url" do %>
-                    <%= small_image(product, itemprop: "image") %><br/>
-                    <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
-                  <% end %>
-                </br>
-                  <span class="ingredients"><p>
+          <%= link_to url, itemprop: "url" do %>
+            <%= small_image(product, itemprop: "image", class:"item__img") %><br/>
+            <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+          <% end %>
+        </br>
+          <span class="ingredients"><p>
 
-                  <%=  product.description %>
-                  </p>
-                  </span>
-                  <span class="price selling lead" itemprop="price"><%= display_price(product)[0..-4] %></span>
-                </div>
-                <%= form_for :order, id: "add-to-cart-from-product-index", remote: true, url: populate_orders_path, method: 'post' do |f| %>
-                <%= hidden_field_tag "variant_id", product.master.id %>
-                <%= hidden_field_tag "quantity", 1 %>
-              </a>
+          <%=  product.description %>
+          </p>
+          </span>
+          <span class="price selling lead" itemprop="price"><%= display_price(product)[0..-4] %></span>
+        </div>
+        <%= form_for :order, id: "add-to-cart-from-product-index", remote: true, url: populate_orders_path, method: 'post' do |f| %>
+        <%= hidden_field_tag "variant_id", product.master.id %>
+        <%= hidden_field_tag "quantity", 1 %>
+      </a>
 
-                  <div class="panel-footer text-center">
-                    <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <%= f.submit "Add to Cart", class: 'add-to-cart ghost-button-blue' do %>
+                  <!-- <div class="panel-footer text-center"> -->
+                    <!-- <span itemprop="offers" itemscope itemtype="https://schema.org/Offer"> -->
                       <p><big>
-                        <%= f.submit "Add to Cart", class: '' do %>
-                        <%= Spree.t(:add_to_cart) %>
-                        <% end %>
+                        <!-- <%= Spree.t(:add_to_cart) %> -->
                       </big></p>
-                    </span>
-                  </div>
-                <% end %>
+                    <!-- </span> -->
+                  <!-- </div> -->
+                  <% end %>
+                  <% end %>
               <% end %>
             </div>
           </div>

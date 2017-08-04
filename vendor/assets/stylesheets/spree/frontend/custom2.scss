@@ -24,6 +24,7 @@
 }
 
 .navCart {
+  padding-top: 10px;
   background-repeat: no-repeat;
   width: 60px;
   height: 42px;
@@ -34,6 +35,29 @@
   position: relative;
   top: 70%;
   transition: all 0.4s;
+}
+
+.navCartCount {
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 42px;
+  display: block;
+  margin: 0 auto;
+  background-color: #B3D57C;
+  border-radius: 50%;
+  color:white;
+  position: relative;
+  top: 70%;
+  transition: all 0.4s;
+  text-align:center;
+  line-height: 40px;
+}
+.navCartCount:hover{
+  text-decoration: none;
+  cursor: pointer;
+  background-color: white;
+  color: #B3D57C;
+  text-align: center;
 }
 
 #logo {
@@ -146,6 +170,15 @@
   display: table;
   height: 50px;
 }
+
+#shopcount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+
+}
+
 
 #hamburger {
   height: 50px;
@@ -274,14 +307,6 @@ html.menuDown {
     }
   }
 
-  .b-items__item__title {
-    display: block;
-    font-size: 18px;
-    margin-top: 9px;
-    font-family: "Helvetica Neue";
-    color: #95A5A6;
-  }
-
   .b-items__item__add-to-cart {
     font-family: "Helvetica Neue";
     display: block;
@@ -294,7 +319,7 @@ html.menuDown {
   }
 }
 
-.b-flying-img {
+.flying-img {
   position: absolute;
   width: 200px;
   height: 200px;
