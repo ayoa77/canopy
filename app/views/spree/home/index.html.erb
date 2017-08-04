@@ -46,13 +46,13 @@
 
       <div class="juice-box">
 
-      <%= spree.product_path(@featured_one) do %>
+      <%= link_to spree.product_path(@featured_one) do %>
         <img src="/assets/bottle.png" />
         <% end %>
 
         <div class="juice">
 
-          <%= spree.product_path(@featured_one) do %>
+          <%= link_to spree.product_path(@featured_one) do %>
           <p class="productName">
             <!-- erb to grab featured product name -->
             <%=@featured_one.name %>
@@ -78,11 +78,11 @@
 
     <div>
       <div class="juice-box">
-        <%= spree.product_path(@featured_two) do %>
+        <%= link_to spree.product_path(@featured_two) do %>
         <img src="/assets/cup.png" />
         <% end %>
         <div class="smoothie">
-          <%= spree.product_path(@featured_two) do %>
+          <%= link_to spree.product_path(@featured_two) do %>
           <p class="productName">
             <!-- erb to grab featured product name -->
             <%=@featured_two.name %>
@@ -106,11 +106,11 @@
 
     <div>
       <div class="juice-box">
-        <%= spree.product_path(@featured_three) do %>
+        <%= link_to spree.product_path(@featured_three) do %>
         <img src="/assets/bottle.png" />
         <% end %>
         <div class="juice">
-          <%= spree.product_path(@featured_three) do %>
+          <%= link_to spree.product_path(@featured_three) do %>
 
           <p class="productName">
             <!-- erb to grab featured product name -->
@@ -133,12 +133,12 @@
     </div>
     <div>
       <div class="juice-box">
-        <%= spree.product_path(@featured_four) do %>
+        <%= link_to spree.product_path(@featured_four) do %>
         <img src="/assets/glass.png" />
         <% end %>
         <div class="tea">
 
-          <%= spree.product_path(@featured_four) do %>
+          <%= link_to spree.product_path(@featured_four) do %>
           <p class="productName">
             <!-- erb to grab featured product name -->
             <%=@featured_four.name %>
@@ -169,8 +169,8 @@ the style on the first feature. -->
   <div class="container">
     <div class="row">
 
+      <%= link_to link_to spree.product_path(@featured_one) do %>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
-        <%= spree.product_path(@featured_one) do %>
 
         <div class="juice-box">
 
@@ -196,13 +196,13 @@ the style on the first feature. -->
           </div>
 
         </div>
-        <% end %>
 
       </div>
+      <% end %>
 
 
       <div class="col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
-        <%= spree.product_path(@featured_two) do %>
+        <%= link_to spree.product_path(@featured_two) do %>
         <div class="juice-box">
 
           <img src="/assets/cup.png" />
@@ -230,7 +230,7 @@ the style on the first feature. -->
       </div>
 
       <div class="col-md-4 col-lg-3 visible-md visible-lg">
-        <%= spree.product_path(@featured_three) do %>
+        <%= link_to spree.product_path(@featured_three) do %>
 
         <div class="juice-box">
 
@@ -259,7 +259,7 @@ the style on the first feature. -->
       </div>
 
       <div class="col-lg-3 visible-lg">
-        <%= spree.product_path(@featured_four) do %>
+        <%= link_to spree.product_path(@featured_four) do %>
 
         <div class="juice-box">
 
