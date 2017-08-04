@@ -1,6 +1,6 @@
-<!-- Events Page /events -->
-<!-- aj help : this page needs a route and it is setup to take
-     Date and Time, Place, Event Name, and Description.  -->
+<!-- This will be the events page -->
+<!-- aj help : We can build this page like app/views/spree/orders/_line_item.html.erb
+     The modal-description id needs to load after the down arrow that is clicked. :O Gooood Luck, buddy.-->
 
 <div class="container-fluid">
   <div class="row">
@@ -22,10 +22,118 @@
 
   <div class="row">
 
-    <div class="col-xs-12 col-md-6">
-      <div class="current-events">
+    <div class = "col-xs-12">
+      <p>
+        Current Events
+      </p>
+    </div>
 
-        <div class="event-time">
+    <div class = "col-xs-12 col-md-6">
+      <div class = "events current">
+
+        <div class = "event-time current-bkgnd">
+          <p class="p-event">
+            星期一 <span class="rwd-break">@ 4pm</span>
+          </p>
+        </div>
+
+        <div class = "event-info">
+
+          <div class = "event-name">
+            <p class="p-event">
+              Health Yoga ;)
+            </p>
+
+          </div>
+
+          <div class= "event-place">
+            <a href="http://maps.google.com/?q=Nanjing, Fuxing Taipei, Taiwan">
+              <p class="p-event">
+                <span class="glyphicon glyphicon-map-marker"></span>
+                Nanjing, Fuxing
+              </p>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="more-info">
+
+            <div class="dropdown-link-area" data-toggle="collapse" data-target="#modal-description">
+              <span class="glyphicon glyphicon-chevron-down"></span>
+            </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class = "col-xs-12 col-md-6">
+      <div class = "events current">
+
+        <div class = "event-time current-bkgnd">
+          <p class="p-event">
+            8.13.17 <span class="rwd-break">@ 4pm</span>
+          </p>
+        </div>
+
+        <div class = "event-info">
+
+          <div class = "event-name">
+            <p class = "p-event">
+              One Punch Man Cosplay Event
+            </p>
+          </div>
+
+          <div class= "event-place">
+            <a href="http://maps.google.com/?q=Lakeshore Hotel Suao, Yilan, Taiwan">
+              <p class="p-event">
+                <span class="glyphicon glyphicon-map-marker"></span>
+                Lakeshore Hotel Suao
+              </p>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="more-info">
+
+            <div class="dropdown-link-area" data-toggle="collapse" data-target="#modal-description">
+              <span class="glyphicon glyphicon-chevron-down"></span>
+            </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+<!-- Open Modal Attempt -->
+
+  <div id = "modal-description" class="collapse">
+    <div class="modal-data-load">
+    Healthy Yoga is a really enjoyable activity that involves ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sit amet lorem ac egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam vitae est eleifend est maximus cursus. Praesent a mauris dapibus, vulputate leo ut, facilisis massa. Aliquam ex tellus, vulputate sollicitudin viverra bibendum, fermentum sit amet diam. Duis nisl diam, elementum et sem eget, tempus consectetur velit. Cras at maximus nunc, nec dictum est. Curabitur cursus eu dolor in posuere. Vestibulum imperdiet justo vel nisl blandit malesuada. Ut mollis nisi eu consequat congue. Sed augue nibh, scelerisque sit amet fermentum sed, consequat quis tortor.
+
+Sed turpis leo, ultrices eget scelerisque eget, hendrerit semper metus. Quisque eu eros ultrices, scelerisque magna non, convallis ligula. Nam eu pharetra dolor. Ut eu justo quam. Fusce auctor tortor mauris, eget congue nisl efficitur in. Phasellus ornare nibh nulla, in lacinia tellus suscipit eu. Nam quis lacus efficitur, facilisis lacus ac, consectetur libero. Nunc pharetra non odio vel accumsan. Pellentesque vel eleifend erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In pharetra blandit ultrices. Vestibulum tincidunt, tellus luctus euismod vehicula, lectus nisl vehicula libero, et laoreet urna nunc vel leo. Sed vitae congue ante.
+    </div>
+  </div>
+
+<!-- Events that have already passed -->
+
+  <div class="row">
+
+    <div class = "col-xs-12">
+      <p>
+        Past Events
+      </p>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <div class="events expired">
+
+        <div class="event-time expired-bkgnd">
           <p class="p-event">
             星期一
             <span class="rwd-break">@ 4pm</span>
@@ -34,14 +142,14 @@
 
         <div class="event-info">
 
-          <div class="event-name">
+          <div class="event-name expired-text">
             <p class="p-event">
               Health Yoga ;)
             </p>
 
           </div>
 
-          <div class="event-place">
+          <div class="event-place expired-text">
             <a href="#">
               <p class="p-event">
                 <span class="glyphicon glyphicon-map-marker"></span>
@@ -58,19 +166,15 @@
               <span class="glyphicon glyphicon-chevron-down"></span>
             </div>
 
-            <div id = "modal-description" class="collapse">
-              Hello :D
-            </div>
-
         </div>
 
       </div>
     </div>
 
     <div class="col-xs-12 col-md-6">
-      <div class="current-events">
+      <div class="events expired">
 
-        <div class="event-time">
+        <div class="event-time expired-bkgnd">
           <p class="p-event">
             8.13.17
             <span class="rwd-break">@ 4pm</span>
@@ -79,13 +183,13 @@
 
         <div class="event-info">
 
-          <div class="event-name">
+          <div class="event-name expired-text">
             <p class="p-event">
               One Punch Man Cosplay Event
             </p>
           </div>
 
-          <div class="event-place">
+          <div class="event-place expired-text">
             <a href="#">
               <p class="p-event">
                 <span class="glyphicon glyphicon-map-marker"></span>
@@ -97,19 +201,16 @@
         </div>
 
         <div class="more-info">
-          <a href="#">
-            <div class="dropdown-link-area">
+
+            <div class="dropdown-link-area" data-toggle="collapse" data-target="#modal-description">
               <span class="glyphicon glyphicon-chevron-down"></span>
             </div>
-          </a>
+
         </div>
 
       </div>
     </div>
 
   </div>
-
-
-
 
 </div>
