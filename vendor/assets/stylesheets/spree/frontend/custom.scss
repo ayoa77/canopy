@@ -907,33 +907,104 @@ a:hover{
 
 // events - events.html.erb
 
-#current-events {
-
+.current-events {
+  height: 75px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 2px solid #00B7FF;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
-.event {
-  width: 300px;
-  height: 100px;
-  background-color: #dad;
-  display: block;
-  margin: 0 auto 20px;
+.event-time {
+  height: 73px;
+  width: 80px;
+  background-color: #00B7FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
   p {
-    margin-left: 10px;
+    color: #fff;
+    text-align: center;
+    white-space:normal;
   }
 }
 
-.image-src {
-  height: 100px;
-  width: 100px;
-  float: left;
-  margin-right: 12px;
-  background-color: #ccc;
+.p-event {
+  margin: 0;
+  font-weight: bold;
+}
+
+.event-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  width: 55%;
 }
 
 .event-name {
-  padding-top: 5px;
+  min-width: 0;
+  height: 57%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-overflow: ellipsis;
+  p {
+    font-size: 20px;
+    color: #595857;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
 }
 
+.event-place {
+  min-width: 0;
+  height: 43%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-overflow: ellipsis;
+  a {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  p {
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.more-info {
+  height: 73px;
+  width: 40px;
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  a {
+    height: 100%;
+    width: 100%;
+  }
+  .dropdown-link-area {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  span {
+    color: #595857;
+  }
+}
 
 // -=-=-=-=-=- Responsive No Man's Land -=-=-=-=-=-
 
