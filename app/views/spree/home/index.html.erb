@@ -4,7 +4,6 @@
     <%= render partial: 'spree/shared/taxonomies' %>
   </div>
 <%# end %>
-
 <div data-hook="homepage_products">
   <%# cache(cache_key_for_products) do %>
     <%#= render partial: 'spree/shared/products', locals: { products: @products } %>
@@ -40,29 +39,33 @@
 </div>
 
 <!-- Slick Mobile Featurette -->
-
+<% if @products.count >= 4 %>
 <div class='featurette-mobile col-xs-12 visible-xs'>
   <div class='center'>
     <div>
 
       <div class="juice-box">
 
+      <%= spree.product_path(featured_one) do %>
         <img src="/assets/bottle.png" />
+        <% end %>
 
         <div class="juice">
 
+          <%= spree.product_path(featured_one) do %>
           <p class="productName">
             <!-- erb to grab featured product name -->
-            <%=@featured.first.name %>
+            <%=@featured_one.name %>
           </p>
+          <% end %>
 
           <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
-              <%=@featured.first.description%>
+              <%=@featured_one.description%>
           </p>
 
           <p class="productPrice">
-              $<%=@featured.first.price.to_i%>
+              $<%=@featured_one.price.to_i%>
               <!-- erb to grab featured product price -->
           </p>
 
@@ -75,23 +78,24 @@
 
     <div>
       <div class="juice-box">
-
+        <%= spree.product_path(featured_two) do %>
         <img src="/assets/cup.png" />
-
+        <% end %>
         <div class="smoothie">
-
+          <%= spree.product_path(featured_two) do %>
           <p class="productName">
             <!-- erb to grab featured product name -->
-            <%=@featured.second.name %>
+            <%=@featured_two.name %>
           </p>
+          <% end %>
 
           <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
-              <%=@featured.second.description%>
+              <%=@featured_two.description%>
           </p>
 
           <p class="productPrice">
-              $<%=@featured.second.price.to_i%>
+              $<%=@featured_two.price.to_i%>
               <!-- erb to grab featured product price -->
           </p>
 
@@ -102,23 +106,24 @@
 
     <div>
       <div class="juice-box">
-
+        <%= spree.product_path(featured_three) do %>
         <img src="/assets/bottle.png" />
-
+        <% end %>
         <div class="juice">
+          <%= spree.product_path(featured_three) do %>
 
           <p class="productName">
             <!-- erb to grab featured product name -->
-            <%=@featured.third.name %>
+            <%=@featured_third.name %>
           </p>
-
+          <% end %>
           <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
-              <%=@featured.third.description%>
+              <%=@featured_third.description%>
           </p>
 
           <p class="productPrice">
-              $<%=@featured.third.price.to_i%>
+              $<%=@featured_third.price.to_i%>
               <!-- erb to grab featured product price -->
           </p>
 
@@ -128,23 +133,25 @@
     </div>
     <div>
       <div class="juice-box">
-
+        <%= spree.product_path(featured_four) do %>
         <img src="/assets/glass.png" />
-
+        <% end %>
         <div class="tea">
 
+          <%= spree.product_path(featured_four) do %>
           <p class="productName">
             <!-- erb to grab featured product name -->
-            <%=@featured.fourth.name %>
+            <%=@featured_four.name %>
           </p>
+          <% end %>
 
           <p class="ingredients">
               <!-- erb to grab featured product ingredients -->
-              <%=@featured.fourth.description%>
+              <%=@featured_four.description%>
           </p>
 
           <p class="productPrice">
-              $<%=@featured.fourth.price.to_i%>
+              $<%=@featured_four.price.to_i%>
               <!-- erb to grab featured product price -->
           </p>
 
@@ -163,6 +170,7 @@ the style on the first feature. -->
     <div class="row">
 
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
+        <%= spree.product_path(featured_one) do %>
 
         <div class="juice-box">
 
@@ -172,27 +180,29 @@ the style on the first feature. -->
 
             <p class="productName">
               <!-- erb to grab featured product name -->
-              <%=@featured.first.name %>
+              <%=@featured_one.name %>
             </p>
 
             <p class="ingredients">
                 <!-- erb to grab featured product ingredients -->
-                <%=@featured.first.description%>
+                <%=@featured_one.description%>
             </p>
 
             <p class="productPrice">
-                $<%=@featured.first.price.to_i%>
+                $<%=@featured_one.price.to_i%>
                 <!-- erb to grab featured product price -->
             </p>
 
           </div>
 
         </div>
+        <% end %>
 
       </div>
 
 
       <div class="col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
+        <%= spree.product_path(featured_two) do %>
         <div class="juice-box">
 
           <img src="/assets/cup.png" />
@@ -201,24 +211,27 @@ the style on the first feature. -->
 
             <p class="productName">
               <!-- erb to grab featured product name -->
-              <%=@featured.second.name %>
+              <%=@featured_two.name %>
             </p>
 
             <p class="ingredients">
                 <!-- erb to grab featured product ingredients -->
-                <%=@featured.second.description%>
+                <%=@featured_two.description%>
             </p>
 
             <p class="productPrice">
-                $<%=@featured.second.price.to_i%>
+                $<%=@featured_two.price.to_i%>
                 <!-- erb to grab featured product price -->
             </p>
 
           </div>
         </div>
+        <%end%>
       </div>
 
       <div class="col-md-4 col-lg-3 visible-md visible-lg">
+        <%= spree.product_path(featured_three) do %>
+
         <div class="juice-box">
 
           <img src="/assets/glass.png" />
@@ -227,24 +240,27 @@ the style on the first feature. -->
 
             <p class="productName">
               <!-- erb to grab featured product name -->
-              <%=@featured.third.name %>
+              <%=@featured_three.name %>
             </p>
 
             <p class="ingredients">
                 <!-- erb to grab featured product ingredients -->
-                <%=@featured.third.description%>
+                <%=@featured_three.description%>
             </p>
 
             <p class="productPrice">
-                $<%=@featured.third.price.to_i%>
+                $<%=@featured_three.price.to_i%>
                 <!-- erb to grab featured product price -->
             </p>
 
           </div>
         </div>
+        <%end%>
       </div>
 
       <div class="col-lg-3 visible-lg">
+        <%= spree.product_path(featured_four) do %>
+
         <div class="juice-box">
 
           <img src="/assets/bottle.png" />
@@ -253,24 +269,39 @@ the style on the first feature. -->
 
             <p class="productName">
               <!-- erb to grab featured product name -->
-              <%=@featured.fourth.name %>
+              <%=@featured_four.name %>
             </p>
 
             <p class="ingredients">
                 <!-- erb to grab featured product ingredients -->
-                <%=@featured.fourth.description%>
+                <%=@featured_four.description%>
             </p>
 
             <p class="productPrice">
-                $<%=@featured.fourth.price.to_i%>
+                $<%=@featured_four.price.to_i%>
                 <!-- erb to grab featured product price -->
             </p>
 
           </div>
         </div>
+        <%end%>
 
       </div>
     </div>
+  </div>
+</div>
+    <%else%>
+    <div class="row">
+      <a style="display: block" href="/admin">
+        <div class="ghost-button-blue">
+          <p>
+            Add four products or more here
+          </p>
+        </div>
+      </a>
+
+    </div>
+    <%end%>
   </div>
 </div>
 
