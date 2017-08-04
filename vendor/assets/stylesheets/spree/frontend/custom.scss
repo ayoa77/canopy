@@ -907,20 +907,26 @@ a:hover{
 
 // events - events.html.erb
 
-.current-events {
+.events{
   height: 75px;
   width: 100%;
   margin-bottom: 20px;
-  border: 2px solid #00B7FF;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
 
+.current {
+  border: 2px solid #00B7FF;
+}
+
+.expired {
+  border: 2px solid #ccc;
+}
+
 .event-time {
   height: 73px;
   width: 80px;
-  background-color: #00B7FF;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -930,6 +936,10 @@ a:hover{
     text-align: center;
     white-space:normal;
   }
+}
+
+.current-bkgnd {
+  background-color: #00B7FF;
 }
 
 .p-event {
@@ -990,11 +1000,8 @@ a:hover{
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  a {
-    height: 100%;
-    width: 100%;
-  }
   .dropdown-link-area {
+    cursor: pointer;
     height: 100%;
     width: 100%;
     display: flex;
@@ -1003,6 +1010,20 @@ a:hover{
   }
   span {
     color: #595857;
+  }
+}
+
+.modal-data-load {
+  padding: 0 20px 20px;
+}
+
+.expired-bkgnd {
+  background-color: #ccc;
+}
+
+.expired-text {
+  p, span {
+    color: #ccc;
   }
 }
 
