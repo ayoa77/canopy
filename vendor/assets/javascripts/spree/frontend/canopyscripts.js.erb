@@ -73,13 +73,20 @@ $(document).on('ready', function() {
     });
 
 
-$('.linedelete').click(function() {
-  var lineid = $(this).attr('id');
-  $("#form").submit();
+// $('.linedelete').click(function() {
+//   var lineid = $(this).attr('id');
+//   var deleteformid = '' + lineid
+//   y.submit();
+// });
 
-
-  // this. get id and then use that to call on the form id and submit it.
-
+if (($('form#update-cart')).is('*')) {
+  return ($('form#update-cart a.destroy')).show().one('click', function() {
+    ($(this)).parents('#line-item').first().find('input.line_item_quantity').val(0);
+    ($(this)).parents('form').first().submit();
+    return false;
+  });
+}  // this. get id and then use that to call on the form id and submit it.
 
 }
-});
+
+);
