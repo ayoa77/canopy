@@ -10,25 +10,25 @@
     <div class="cart-subtotal">
       <div class="row">
 
-        <div class="col-xs-2 pull-right">
+        <div class="col-xs-6 pull-right">
           <% if @order.adjustments.nonzero.exists? || @order.line_item_adjustments.nonzero.exists? || @order.shipment_adjustments.nonzero.exists? || @order.shipments.any? %>
           <%= order_form.object.display_item_total %>
         </div>
-        <div class="col-xs-2 pull-right">
+        <div class="col-xs-4 pull-right">
           <%= Spree.t(:cart_subtotal, count: @order.line_items.sum(:quantity)) %>
         </div>
 
       </div>
 
       <div class="row">
-        <div class="col-xs-2 pull-right">
+        <div class="col-xs-6 pull-right">
           <%= render "spree/orders/adjustments" %>
           <% end %>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-xs-2 pull-right">
+        <div class="col-xs-6 pull-right">
           <%= Spree.t(:total) %>
           <%= order_form.object.display_total %>
         </div>
