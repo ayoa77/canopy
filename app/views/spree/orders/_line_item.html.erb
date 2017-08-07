@@ -4,51 +4,117 @@
 <div id="line-item">
   <div class="row">
 
+<!-- visible classes added to test small version -->
 
-    <div class="col-xs-1">
-      <div class="cart-item-image" data-hook="cart_item_image">
-        <% if variant.images.length == 0 %>
-          <%= link_to small_image(variant.product), variant.product %>
-        <% else %>
-          <%= link_to image_tag(variant.images.first.attachment.url(:small)), variant.product %>
-        <% end %>
+    <div class="col-xs-12 visible-sm visible-md visible-lg">
+
+      <div class="col-xs-2 col-sm-1">
+        <div class="cart-item-image" data-hook="cart_item_image">
+          <% if variant.images.length == 0 %>
+            <%= link_to small_image(variant.product), variant.product %>
+          <% else %>
+            <%= link_to image_tag(variant.images.first.attachment.url(:small)), variant.product %>
+          <% end %>
+        </div>
       </div>
+
+      <div class="col-xs-3 col-sm-4">
+        <div class="cart-item-description" data-hook="cart_item_description">
+          <h4><%= link_to line_item.name, product_path(variant.product) %></h4>
+          <% if line_item.insufficient_stock? %>
+            <span class="out-of-stock">
+              <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br />
+            </span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-sm-2 visible-sm visible-md visible-lg">
+        <div class="lead text-primary cart-item-price" data-hook="cart_item_price">
+          <%= line_item.single_money.to_html[0..-4] %>
+        </div>
+      </div>
+
+      <div class="col-xs-3 col-sm-2">
+        <div class="cart-item-quantity" data-hook="cart_item_quantity" valign="center">
+          <%= item_form.number_field :quantity, min: 0, class: "form-control line_item_quantity", size: 5 %>
+        </div>
+      </div>
+
+      <div class="col-xs-2">
+        <div class="lead text-primary cart-item-total" data-hook="cart_item_total">
+          <%= line_item.display_amount.to_html[0..-4] unless line_item.quantity.nil? %>
+        </div>
+      </div>
+
+      <div class="col-xs-2 col-sm-1">
+        <div class="cart-item-delete" data-hook="cart_item_delete">
+          <%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-remove'), '#', class: 'destroy', id: "delete_#{dom_id(line_item)}" %>
+          <%end%>
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="col-xs-4">
-      <div class="cart-item-description" data-hook="cart_item_description">
-        <h4><%= link_to line_item.name, product_path(variant.product) %></h4>
-        <% if line_item.insufficient_stock? %>
-          <span class="out-of-stock">
-            <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br />
-          </span>
-        <% end %>
-      </div>
-    </div>
+    <!-- Test Time -->
+    <div class="col-xs-12 visible-xs">
+      <div class="col-xs-3">
 
-    <div class="col-xs-2">
-      <div class="lead text-primary cart-item-price" data-hook="cart_item_price">
-        <%= line_item.single_money.to_html[0..-4] %>
-      </div>
-    </div>
+        <!-- Picture -->
 
-    <div class="col-xs-2">
-      <div class="cart-item-quantity" data-hook="cart_item_quantity" valign="center">
-        <%= item_form.number_field :quantity, min: 0, class: "form-control line_item_quantity", size: 5 %>
-      </div>
-    </div>
+        <div class="cart-item-image" data-hook="cart_item_image">
+          <% if variant.images.length == 0 %>
+            <%= link_to small_image(variant.product), variant.product %>
+          <% else %>
+            <%= link_to image_tag(variant.images.first.attachment.url(:small)), variant.product %>
+          <% end %>
+        </div>
 
-    <div class="col-xs-2">
-      <div class="lead text-primary cart-item-total" data-hook="cart_item_total">
-        <%= line_item.display_amount.to_html[0..-4] unless line_item.quantity.nil? %>
       </div>
-    </div>
 
-    <div class="col-xs-1">
-      <div class="cart-item-delete" data-hook="cart_item_delete">
-        <%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-remove'), '#', class: 'destroy', id: "delete_#{dom_id(line_item)}" %>
-        <%end%>
+      <!-- dividing the box appropriately -->
+      <div class="col-xs-9">
+
+        <!-- Name and X button -->
+        <div class="col-xs-12">
+
+          <!-- dividing the top-right into sections -->
+          <div class="col-xs-10">
+            <div class="cart-item-description" data-hook="cart_item_description">
+              <h4><%= link_to line_item.name, product_path(variant.product) %></h4>
+              <% if line_item.insufficient_stock? %>
+              <span class="out-of-stock">
+                <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br />
+              </span>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="col-xs-2">
+            <div class="cart-item-delete" data-hook="cart_item_delete">
+              <%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-remove'), '#', class: 'destroy', id: "delete_#{dom_id(line_item)}" %>
+              <%end%>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-xs-12">
+          <!-- Prices and Quantity -->
+
+        </div>
+
       </div>
+
+
+
+
+
+
+
+
+
 
     </div>
 

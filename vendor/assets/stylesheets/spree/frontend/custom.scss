@@ -64,6 +64,7 @@ a:hover{
 // footer.html.erb
 
 #footer {
+  margin-top: 30px;
   width: 100%;
   p{
     text-align: center;
@@ -461,11 +462,24 @@ a:hover{
   background-color: #F77669;
   margin-bottom: 50px;
   .shop-slider-text p {
-    line-height: 200px;
     text-align: left;
     color: #fff;
     font-size: 40px;
   }
+}
+
+.flex-fix-big {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 515px;
+}
+
+.flex-fix {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 215px;
 }
 
 // Sorting Menu for Products
@@ -629,8 +643,8 @@ a:hover{
 
 // _line_item.html.erb
 
-.line-item {
-  height: 50px;
+#line-item {
+  margin-bottom: 20px;
 }
 
 #no-items-in-cart {
@@ -651,16 +665,27 @@ a:hover{
   line-height: 50px;
 }
 
+.lead {
+  margin: 0;
+}
+
 .lead.text-primary.cart-item-price {
+  text-align: right;
   line-height: 50px;
 }
 
 .lead.text-primary.cart-item-total {
+  text-align:right;
   line-height: 50px;
 }
 
 .cart-item-delete {
   line-height: 50px;
+  text-align: right;
+  padding-right: 10px;
+  .destroy {
+    color: #FF5555;
+  }
 }
 
 .glyphicon .glyphicon-remove {
@@ -685,6 +710,33 @@ a:hover{
   margin-top: 8px;
 }
 
+#empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.special-btn {
+  margin: 0 10px;
+}
+
+.left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 
 // products/show.html.erb, handles the full size product page.
 
@@ -1149,6 +1201,14 @@ a:hover{
     align-items: flex-start;
   }
 
+  .centering {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    justify-content: center;
+    align-items: center;
+  }
 
 }
 
