@@ -292,10 +292,6 @@ html.menuDown {
     border-radius: 4px;
     margin: 0 12px 21px 12px;
 
-    .b-items__item__img {
-      border-radius: 4px 4px 0 0;
-    }
-
     a {
       display: block;
       text-decoration: none;
@@ -323,27 +319,25 @@ html.menuDown {
   position: absolute;
   width: 200px;
   height: 200px;
-  top: 0;
-  left: 0;
+  top: inherit;
   z-index: 5;
-
-  animation:fly 0.8s 1;
-  -webkit-animation:fly 0.8s 1;
+  animation:fly 1s 1;
+  -webkit-animation:fly 1s 1;
   -webkit-backface-visibility: hidden;
 }
 
 @keyframes fly {
     0% {
-        -moz-transform: rotate(0deg); /* Для Firefox */
-        -ms-transform: rotate(0deg); /* Для IE */
-        -o-transform: rotate(0deg); /* Для Opera */
+        -moz-transform: rotate(0deg); 
+        -ms-transform: rotate(0deg); 
+        -o-transform: rotate(0deg);
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     100% {
-        -moz-transform: rotate(360deg); /* Для Firefox */
-        -ms-transform: rotate(360deg); /* Для IE */
-        -o-transform: rotate(360deg); /* Для Opera */
+        -moz-transform: rotate(360deg); 
+        -ms-transform: rotate(360deg); 
+        -o-transform: rotate(360deg); 
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
@@ -351,10 +345,10 @@ html.menuDown {
 
 @-webkit-keyframes fly {
     0% {
-        -webkit-transform: rotate(0deg); /* Для Safari, Chrome, iOS */
+        -webkit-transform: rotate(0deg); 
     }
     100% {
-        -webkit-transform: rotate(360deg); /* Для Safari, Chrome, iOS */
+        -webkit-transform: rotate(360deg); 
     }
 }
 

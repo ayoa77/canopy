@@ -8,6 +8,7 @@ end
 gem 'test-unit'
 gem 'minitest'
 # spree gems
+gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings'
 gem 'spree', '~> 3.3.0.rc1'
 gem 'spree_auth_devise', '~> 3.3.0.rc1'
 gem 'spree_gateway', '~> 3.3.0.rc1'

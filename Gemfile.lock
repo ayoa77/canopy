@@ -9,6 +9,14 @@ GIT
       routing-filter
       spree_core (>= 3.1.0, < 4.0)
 
+GIT
+  remote: https://github.com/spree-contrib/spree_mail_settings.git
+  revision: 35af3a561e7067a63289825bebe147bcd3aa8d78
+  specs:
+    spree_mail_settings (3.2.0.alpha)
+      spree_auth_devise (>= 3.1.0, < 4.0)
+      spree_backend (>= 3.1.0, < 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -389,6 +397,7 @@ DEPENDENCIES
   spree_auth_devise (~> 3.3.0.rc1)
   spree_gateway (~> 3.3.0.rc1)
   spree_i18n!
+  spree_mail_settings!
   spring
   spring-watcher-listen (~> 2.0.0)
   test-unit
@@ -398,4 +407,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.1
+   1.15.3
