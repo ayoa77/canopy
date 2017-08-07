@@ -1,13 +1,11 @@
 <!-- /account -->
 <!-- to complete this design we need to complete a few orders -->
 
-
-
 <div class="container">
   <div class="row">
       <div class="top-of-page-text">
         <p>
-          Hello, <%= @user.email %>!
+          Hello, <%= @user.bill_address != nil ? @user.bill_address.full_name : @user.email %>
         </p>
       </div>
   </div>
