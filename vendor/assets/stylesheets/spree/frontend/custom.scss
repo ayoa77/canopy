@@ -106,9 +106,7 @@ a:hover{
 
 .footer-middle-text-center {
   height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding-top: 20px;
 }
 
 .fa {
@@ -484,23 +482,43 @@ a:hover{
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   flex-direction: column;
   border-radius: 100%;
   background-color: #E1007D;
   border: 3px solid #E1007D;
   transition: all .3s;
-  img {
-    height: 100px;
-    width: auto;
-  }
+}
+
+.juice-picture {
+  background-image: url("/assets/bottle_search.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50px auto;
+}
+
+.smoothie-picture {
+  background-image: url("/assets/cup_search.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 70px auto;
+}
+
+.tea-picture {
+  background-image: url("/assets/glass_search.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 60px auto;
+
 }
 
 .sorting-text{
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
   color: #E1007D;
   text-align: center;
-  font-size: 36px;
+  font-size: 32px;
   visibility: hidden;
 }
 
@@ -527,7 +545,7 @@ a:hover{
   color: #fff;
   opacity: .6;
   text-align: center;
-  font-size: 36px;
+  font-size: 32px;
   transition: all .3s;
 }
 
