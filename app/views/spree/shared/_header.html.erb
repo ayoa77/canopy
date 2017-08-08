@@ -2,26 +2,56 @@
   <header id="header" class="menuUp" data-hook>
     <div id="navigation" class="container-fluid">
       <div class="row">
-        <div id="fill" class='col-xs-3'></div>
-        <figure id="logo" class='col-xs-6' data-hook>
-          <div class="row">
+        <div id="fill" class='col-xs-0 col-md-3'></div>
+        <figure id="logo" class='col-xs-6 flex-nav' data-hook>
             <div id="logocenter" class="col-xs-12">
 
               <div class="navLogo">
                 <%= logo %>
               </div>
             </div>
-          </div>
 
         </figure>
-        <div id="navButtons" class='col-xs-3'>
-          <div class="row">
-            <div id="user" class='col-xs-3 visible-md visible-lg'>
+        <div id="navButtons" class='col-xs-6 col-md-3'>
+
+          <div class='col-xs-4 flex-nav nav-element'>
+
+            <a href="/account">
+              <div id = "user-test"></div>
+            </a>
+
+          </div>
+
+          <div class = 'col-xs-4 col-sm-3 col-md-4 pull-right flex-nav nav-element'>
+
+            <div id="nav-icon1" class="open-burger">
+              <span></span>
+              <span></span>
+            </div>
+
+          </div>
+
+          <div class = 'col-xs-4 col-sm-3 col-md-4 pull-right flex-nav-shop nav-element'>
+
+            <div id="shopcount" class="flex-nav">
+                <a href = "/cart" class=".b-cart__count navCartCount"><%=!current_order.nil? ? current_order.item_count  : 0%></a>
+              </a>
+            </div>
+
+            <a href="/cart">
+              <div id = "cart-test"></div>
+            </a>
+
+          </div>
+
+        </div>
+
+            <!-- <div id="user" class='col-xs-3 visible-md visible-lg'>
               <a href="/account" class="navUser">
               </a>
             </div>
-            <div id="shopcount" class='col-xs-3 visible-md visible-lg'>
-                <a href = "/cart" class=".b-cart__count navCartCount"><%=!current_order.nil? ? current_order.item_count  : 0%></a>
+            <div id="shopcount" class='col-xs-3'>
+                <a href = "/cart" class=".b-cart__count navCartCount"><%#=!current_order.nil? ? current_order.item_count  : 0%></a>
               </a>
             </div>
 
@@ -30,36 +60,36 @@
               </a>
             </div>
 
-            <div id="hamburger" class='col-xs-3'>
+            <div id="hamburger" class='col-xs-3 pull-right'>
               <div id="nav-icon1" class="open-burger">
                 <span></span>
                 <span></span>
               </div>
-            </div>
+            </div> -->
+
+        </div>
+
+
+        <div id="menuBar" class="menuBar">
+
+          <div class="menuText row">
+            <a href="/" class="col-sm-3 homelink">home
+
+            </a>
+            <a href="/shop" class="col-sm-3 shoplink">shop
+
+            </a>
+            <a href="/about" class="col-sm-3 aboutlink">our story
+
+            </a>
+            <a href="/account" class="col-sm-3 loginlink">login
+
+            </a>
 
           </div>
         </div>
+
       </div>
-
-      <div id="menuBar" class="menuBar">
-
-        <div class="menuText row">
-          <a href="/" class="col-sm-3 homelink">home
-
-          </a>
-          <a href="/shop" class="col-sm-3 shoplink">shop
-
-          </a>
-          <a href="/about" class="col-sm-3 aboutlink">our story
-
-          </a>
-          <a href="/account" class="col-sm-3 loginlink">login
-
-          </a>
-
-        </div>
-      </div>
-
     </div>
   </header>
 </div>
