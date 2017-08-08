@@ -654,6 +654,12 @@ a:hover{
   margin-bottom: 20px;
 }
 
+#mobile-line-items {
+  border: 1px solid black;
+  padding: 10px;
+  overflow: hidden;
+}
+
 .cart-item-image img {
   height: 50px;
   width: auto;
@@ -1162,10 +1168,29 @@ a:hover{
   }
 
 }
-@media screen and (min-width: 374px) {}
+@media screen and (max-width: 375px) {}
 @media screen and (max-width: 425px) {
   #splash-picture {
     background-position: top right;
+  }
+
+  .cart-item-image img {
+    height: 75px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .cart-item-description h4 {
+    text-align: center;
+  }
+
+}
+@media screen and (min-width: 767px) {
+  #mobile-line-items {
+    border: 0px solid black;
+    padding: 0px;
+    overflow: hidden;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1205,9 +1230,16 @@ a:hover{
     flex-direction: column;
   }
 
-  .left, .right {
+  .left {
     justify-content: center;
     align-items: center;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
 }
