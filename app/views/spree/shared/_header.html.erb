@@ -21,7 +21,7 @@
               </a>
             </div>
             <div id="shopcount" class='col-xs-3 visible-md visible-lg'>
-                <a href = "/cart" class=".b-cart__count navCartCount"><%=current_order.item_count if !current_order.nil?%></a>
+                <a href = "/cart" class=".b-cart__count navCartCount"><%=!current_order.nil? ? current_order.item_count  : 0%></a>
               </a>
             </div>
 
