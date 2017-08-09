@@ -17,10 +17,17 @@ Rails.application.routes.draw do
 
     scope "/admin" do
       ### Use these for initial setup
+<<<<<<< HEAD
+       # get "custom" => 'spree/admin/customs#new'
+       # post "custom" => 'spree/admin/customs#create'
+       get "events" => 'spree/admin/events#new'
+       post "events" => 'spree/admin/events#create'
+=======
       #  get "custom" => 'spree/admin/customs#new'
       #  post "custom" => 'spree/admin/customs#create'
        get "/events" => 'spree/admin/events#new'
        post "/events" => 'spree/admin/events#create'
+>>>>>>> master
 
 
       ### Use these for client editiing ###
