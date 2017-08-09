@@ -95,8 +95,10 @@ if (($('form#update-cart')).is('*')) {
     ($(this)).parents('form').first().submit();
     return false;
   });
-}  // this. get id and then use that to call on the form id and submit it.
-
 }
 
-);
+$('form#update-cart a.submit').click(function() {
+  $('form#update-cart').submit();
+  });// this. get id and then use that to call on the form id and submit it.
+
+});

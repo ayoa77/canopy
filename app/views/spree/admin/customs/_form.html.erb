@@ -1,0 +1,61 @@
+<%= form_for @custom, url: '/admin/custom', html: { multipart: true } do |f| %>
+
+<div data-hook="admin_product_form_description">
+  <%= f.field_container :about1, class: ['form-group'] do %>
+  <%= f.label :ingredients, Spree.t(:about1) %>
+<%= f.text_area :about1, { rows: 10, class: 'form-control' } %>
+  <%= f.error_message_on :about1 %>
+  <% end %>
+</div>
+
+<div data-hook="admin_product_form_description">
+  <%= f.field_container :about2, class: ['form-group'] do %>
+  <%= f.label :ingredients, Spree.t(:about2) %>
+<%= f.text_area :about2, { rows: 10, class: 'form-control' } %>
+  <%= f.error_message_on :about2 %>
+  <% end %>
+</div>
+
+<div data-hook="admin_product_form_description">
+  <%= f.field_container :about3, class: ['form-group'] do %>
+  <%= f.label :ingredients, Spree.t(:about3) %>
+<%= f.text_area :about3, { rows: 10, class: 'form-control' } %>
+  <%= f.error_message_on :about3 %>
+  <% end %>
+</div>
+
+<div data-hook="admin_product_form_description">
+  <%= f.field_container :about4, class: ['form-group'] do %>
+  <%= f.label :ingredients, Spree.t(:about4) %>
+<%= f.text_area :about4, { rows: 10, class: 'form-control' } %>
+  <%= f.error_message_on :about4 %>
+  <% end %>
+</div>
+<div class="row">
+
+<div data-hook="file" class="form-group">
+  <%= f.label :photo1, Spree.t(:photo1) %>
+  <%= f.file_field :photo1 %>
+  <%= image_tag @custom.photo1.url if @custom.photo1.url %>
+</div>
+<div data-hook="file" class="form-group">
+  <%= f.label :photo2, Spree.t(:photo2) %>
+  <%= f.file_field :photo2 %>
+  <%= image_tag @custom.photo2.url if @custom.photo2.url %>
+</div>
+<div data-hook="file" class="form-group">
+  <%= f.label :photo3, Spree.t(:photo3) %>
+  <%= f.file_field :photo3 %>
+  <%= image_tag @custom.photo3.url if @custom.photo3.url %>
+</div>
+<div data-hook="file" class="form-group">
+  <%= f.label :photo4, Spree.t(:photo4) %>
+  <%= f.file_field :photo4 %>
+  <%= image_tag @custom.photo4.url if @custom.photo4.url %>
+</div>
+<div data-hook="file" class="form-group pull-right">
+  <%= f.submit %>
+</div>
+
+</div>
+<% end %>

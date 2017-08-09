@@ -60,6 +60,7 @@
       <div class="col-xs-2 col-sm-1 mobile-destroy">
         <div class="cart-item-delete" data-hook="cart_item_delete">
           <%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-remove'), '#', class: 'destroy', id: "delete_#{dom_id(line_item)}" %>
+
             <% end %>
         </div>
 
@@ -68,5 +69,7 @@
     </div>
 
   </div>
+
+  <% end %>
 
 </div>

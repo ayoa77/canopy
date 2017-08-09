@@ -7,6 +7,7 @@ end
 
 gem 'test-unit'
 gem 'minitest'
+gem 'rubocop'
 # spree gems
 gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings'
 gem 'spree', '~> 3.3.0.rc1'
