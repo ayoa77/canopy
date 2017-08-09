@@ -19,18 +19,17 @@ Rails.application.routes.draw do
       ### Use these for initial setup
       #  get "custom" => 'spree/admin/customs#new'
       #  post "custom" => 'spree/admin/customs#create'
+      ### Use these for client editiing ###
        get "/events" => 'spree/admin/events#new'
        post "/events" => 'spree/admin/events#create'
-
-
-      ### Use these for client editiing ###
        get "/custom" => 'spree/admin/customs#edit'
        patch "/custom" => 'spree/admin/customs#update'
-      #  get "events" => 'spree/admin/events#edit'
-      #  patch "events" => 'spree/admin/events#update'
+       get "/event" => 'spree/admin/events#edit'
+       patch "/event" => 'spree/admin/events#update'
+       destroy "/event" => 'spree/admin/events#destroy'
+       get "/event" => 'spree/admin/events#show'
 
 
-      resources :events
     end
 
   # get '/product-information' => 'spree/admin/'
