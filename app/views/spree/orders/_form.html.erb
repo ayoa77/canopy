@@ -5,7 +5,25 @@
 
   <!-- render line items -->
   <%= render partial: 'spree/orders/line_item', collection: order_form.object.line_items, locals: { order_form: order_form } %>
+  <div class = "row centering">
 
+    <div class='col-xs-12 col-xs-push-0 col-sm-6 col-sm-push-6 gimme-some-space-top'>
+
+      <%= button_tag class: 'btn btn-primary special-btn to-the-right', id: 'update-button', name: 'update' do %>
+      <%= Spree.t(:update) %>
+      <% end %>
+
+    </div>
+
+    <div class='col-xs-12 col-xs-pull-0 col-sm-6 col-sm-pull-6 gimme-some-space-top left' data-hook='coupon_code'>
+      <label>
+        <%= order_form.text_field :coupon_code, placeholder: 'Coupon Code', size: '30', class: 'form-control' %>
+      </label>
+
+      <%= button_tag Spree.t(:coupon_code_apply), class: 'btn btn-default special-btn' %>
+    </div>
+
+  </div>
 
     <div class="cart-subtotal">
       <div class="row">
