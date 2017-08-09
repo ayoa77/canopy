@@ -6,10 +6,46 @@
     <% end %>
   </td>
   <td class='property_name'>
-    <%= f.text_field :property_name, class: 'autocomplete form-control' %>
+    <%= f.label :Calories, class: 'autocomplete form-control' %>
   </td>
   <td class='value'>
-    <%= f.text_field :value, class: 'form-control' %>
+    <%= f.text_field :calories, class: 'form-control' %>
+  </td>
+  <td class='property_name'>
+    <%= f.label :Protein, class: 'autocomplete form-control' %>
+  </td>
+  <td class='value'>
+    <%= f.text_field :protein, class: 'form-control' %>
+  </td>
+  <td class='property_name'>
+    <%= f.label :Fat, class: 'autocomplete form-control' %>
+  </td>
+  <td class='value'>
+    <%= f.text_field :fat, class: 'form-control' %>
+  </td>
+  <td class='property_name'>
+    <%= f.label :Carbs, class: 'autocomplete form-control' %>
+  </td>
+  <td class='value'>
+    <%= f.text_field :carbs, class: 'form-control' %>
+  </td>
+  <td class='property_name'>
+    <%= f.label :Sugar, class: 'autocomplete form-control' %>
+  </td>
+  <td class='value'>
+    <%= f.text_field :sugar, class: 'form-control' %>
+  </td>
+  <td class='property_name'>
+    <%= f.label :Fiber, class: 'autocomplete form-control' %>
+  </td>
+  <td class='value'>
+    <%= f.text_field :fiber, class: 'form-control' %>
+  </td>
+  <td class='property_name'>
+    <%= f.label :Sodium, class: 'autocomplete form-control' %>
+  </td>
+  <td class='value'>
+    <%= f.text_field :sodium, class: 'form-control' %>
   </td>
   <td class="actions actions-1">
     <% if f.object.persisted? && can?(:destroy, f.object) %>

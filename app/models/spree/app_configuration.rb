@@ -21,7 +21,7 @@ module Spree
   class AppConfiguration < Preferences::Configuration
     # Alphabetized to more easily lookup particular preferences
     preference :address_requires_state, :boolean, default: true # should state/state_name be required
-    preference :admin_interface_logo, :string, default: 'admin/logo.png'
+    preference :admin_interface_logo, :string, default: 'logo/logo.png'
     preference :admin_path, :string, default: '/admin'
     preference :admin_products_per_page, :integer, default: Kaminari.config.default_per_page
     preference :admin_orders_per_page, :integer, default: Kaminari.config.default_per_page
@@ -41,14 +41,14 @@ module Spree
     preference :binary_inventory_cache, :boolean, default: false # only invalidate product cache when a stock item changes whether it is in_stock
     preference :checkout_zone, :string, default: nil # replace with the name of a zone if you would like to limit the countries
     preference :company, :boolean, default: false # Request company field for billing and shipping addr
-    preference :currency, :string, default: "USD"
+    preference :currency, :string, default: "TWD"
     preference :default_country_id, :integer
     preference :expedited_exchanges, :boolean, default: false # NOTE this requires payment profiles to be supported on your gateway of choice as well as a delayed job handler to be configured with activejob. kicks off an exchange shipment upon return authorization save. charge customer if they do not return items within timely manner.
     preference :expedited_exchanges_days_window, :integer, default: 14 # the amount of days the customer has to return their item after the expedited exchange is shipped in order to avoid being charged
     preference :layout, :string, default: 'spree/layouts/spree_application'
-    preference :logo, :string, default: 'logo/spree_50.png'
+    preference :logo, :string, default: 'logo/logo.png'
     preference :max_level_in_taxons_menu, :integer, default: 1 # maximum nesting level in taxons menu
-    preference :products_per_page, :integer, default: 12
+    preference :products_per_page, :integer, default: 100
     preference :require_master_price, :boolean, default: true
     preference :restock_inventory, :boolean, default: true # Determines if a return item is restocked automatically once it has been received
     preference :return_eligibility_number_of_days, :integer, default: 365

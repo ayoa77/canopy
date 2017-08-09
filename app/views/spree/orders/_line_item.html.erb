@@ -57,9 +57,6 @@
 
     </div>
 
-  <% end %>
-  <% variant = line_item.variant %>
-  <%= order_form.fields_for :line_items, line_item do |item_form| %>
 
     <!-- Test Time -->
     <div id="mobile-line-items">
@@ -120,12 +117,12 @@
 
         </div>
 
-
       </div>
 
     </div>
-    <%end%>
 
   </div>
+
+  <% end %>
 
 </div>

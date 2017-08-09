@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727102244) do
+ActiveRecord::Schema.define(version: 20170808135339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -147,6 +147,42 @@ ActiveRecord::Schema.define(version: 20170727102244) do
     t.datetime "updated_at", null: false
     t.index ["number"], name: "index_spree_customer_returns_on_number", unique: true
     t.index ["stock_location_id"], name: "index_spree_customer_returns_on_stock_location_id"
+  end
+
+  create_table "spree_customs", force: :cascade do |t|
+    t.string "about1"
+    t.string "about2"
+    t.string "about3"
+    t.string "about4"
+    t.string "photo1_file_name"
+    t.string "photo1_content_type"
+    t.integer "photo1_file_size"
+    t.datetime "photo1_updated_at"
+    t.string "photo2_file_name"
+    t.string "photo2_content_type"
+    t.integer "photo2_file_size"
+    t.datetime "photo2_updated_at"
+    t.string "photo3_file_name"
+    t.string "photo3_content_type"
+    t.integer "photo3_file_size"
+    t.datetime "photo3_updated_at"
+    t.string "photo4_file_name"
+    t.string "photo4_content_type"
+    t.integer "photo4_file_size"
+    t.datetime "photo4_updated_at"
+  end
+
+  create_table "spree_events", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "description"
+    t.string "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "event_photo_file_name"
+    t.string "event_photo_content_type"
+    t.integer "event_photo_file_size"
+    t.datetime "event_photo_updated_at"
   end
 
   create_table "spree_gateways", id: :serial, force: :cascade do |t|
@@ -419,6 +455,13 @@ ActiveRecord::Schema.define(version: 20170727102244) do
     t.string "description1"
     t.string "description2"
     t.string "category"
+    t.string "calories"
+    t.string "protein"
+    t.string "fat"
+    t.string "sugar"
+    t.string "fiber"
+    t.string "sodium"
+    t.string "carbs"
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
