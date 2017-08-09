@@ -19,22 +19,19 @@ Rails.application.routes.draw do
       ### Use these for initial setup
       #  get "custom" => 'spree/admin/customs#new'
       #  post "custom" => 'spree/admin/customs#create'
-       get "events" => 'spree/admin/events#new'
-       post "events" => 'spree/admin/events#create'
+       get "/events" => 'spree/admin/events#new'
+       post "/events" => 'spree/admin/events#create'
 
 
       ### Use these for client editiing ###
-       get "custom" => 'spree/admin/customs#edit'
-       patch "custom" => 'spree/admin/customs#update'
+       get "/custom" => 'spree/admin/customs#edit'
+       patch "/custom" => 'spree/admin/customs#update'
       #  get "events" => 'spree/admin/events#edit'
       #  patch "events" => 'spree/admin/events#update'
 
 
       resources :events
     end
-namespace :admin do
-  resources :customs, :events
-end
 
   # get '/product-information' => 'spree/admin/'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
