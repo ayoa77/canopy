@@ -65,6 +65,10 @@ a:hover{
   margin: 0px auto;
 }
 
+#spree-header #logo img {
+  max-height: 90px;
+}
+
 #navButtons{
   height:120px;
 }
@@ -1238,6 +1242,61 @@ a:hover{
 .expired-text {
   p, span {
     color: #ccc;
+  }
+}
+
+// about.html.erb
+
+.our-story {
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.about-us {
+  font-size: 14px;
+  line-height: 28px;
+}
+
+#about-picture-1 {
+  height:200px;
+  width: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 200px;
+    width: auto;
+  }
+}
+
+#about-picture-2 {
+  height:200px;
+  width: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 200px;
+    width: auto;
+  }
+}
+
+
+#about-picture-3 {
+  height:200px;
+  width: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 200px;
+    width: auto;
   }
 }
 
