@@ -69,27 +69,27 @@
 
       </div>
 
-      <div class="row centering">
+      <div class="row">
 
-        <div class="col-xs-12 col-md-push-6 col-md-6 right" data-hook="cart_buttons">
-          <%= button_tag class: 'btn btn-primary special-btn', id: 'update-button', name: 'update' do %>
-          <%= Spree.t(:update) %>
+        <div class="col-xs-12 col-md-6 col-md-offset-6 right" data-hook="cart_buttons">
+          <%#= button_tag class: 'btn btn-primary special-btn', id: 'update-button', name: 'update' do %>
+          <%#= Spree.t(:update) %>
 
           <%= button_tag class: 'ghost-button-orange', id: 'checkout-link', name: 'checkout' do %>
           <p>
             PROCEED TO CHECKOUT
           </p>
-          <% end %>
+
         </div>
 
-        <div class='col-xs-12 col-md-pull-6 col-md-6 left' data-hook='coupon_code'>
+        <!-- <div class='col-xs-12 col-md-pull-6 col-md-6 left' data-hook='coupon_code'>
           <label>
-            <%= order_form.text_field :coupon_code, placeholder: 'Coupon Code', size: '30', class: 'form-control' %>
+            <%#= order_form.text_field :coupon_code, placeholder: 'Coupon Code', size: '30', class: 'form-control' %>
           </label>
 
-          <%= button_tag Spree.t(:coupon_code_apply), class: 'btn btn-default special-btn' %>
+          <%#= button_tag Spree.t(:coupon_code_apply), class: 'btn btn-default special-btn' %>
         </div>
-
+         -->
 
         <% end %>
         <%end%>

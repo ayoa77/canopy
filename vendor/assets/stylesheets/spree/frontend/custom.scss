@@ -715,6 +715,12 @@ a:hover{
 
 // _line_item.html.erb
 
+.flex-line-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #line-item {
   margin-bottom: 20px;
 }
@@ -740,7 +746,10 @@ a:hover{
 .cart-item-description h4 {
   padding: 0;
   margin: 0;
-  line-height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #00B7FF;
 }
 
 .lead {
@@ -755,6 +764,24 @@ a:hover{
 .lead.text-primary.cart-item-total {
   text-align:right;
   line-height: 50px;
+}
+
+.draw-dotted-line {
+  border-bottom: 2px dotted #00b7ff;
+  margin-top: 15px;
+  display: none;
+}
+
+#quantity-text {
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#total-text {
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .cart-item-delete {
@@ -772,11 +799,6 @@ a:hover{
   font-size: 20px;
   text-align: center;
   top: 4px;
-}
-
-.glyphicon .glyphicon-remove:hover {
-  transition: font-size .3s;
-  font-size: 24px;
 }
 
 .cart-subtotal {
@@ -798,6 +820,14 @@ a:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.gimme-some-space-top {
+  margin-top: 30px;
+}
+
+.to-the-right {
+  float: right;
 }
 
 .special-btn {
@@ -1243,19 +1273,41 @@ a:hover{
 }
 @media screen and (max-width: 375px) {}
 @media screen and (max-width: 425px) {
+
   #splash-picture {
     background-position: top right;
   }
 
-  .cart-item-image img {
-    height: 75px;
-    width: auto;
+  .flex-line-item {
+    padding-top: 20px;
+    background-color: #f8f8f8;
     display: block;
-    margin: 0 auto;
   }
 
-  .cart-item-description h4 {
-    text-align: center;
+  #quantity-text {
+    height: 50px;
+    padding-left: 20px;
+    display: flex;
+  }
+
+  #total-text {
+    height: 50px;
+    padding-left: 20px;
+    display: flex;
+  }
+
+  .draw-dotted-line {
+    display: block;
+  }
+
+  .mobile-destroy {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .lead.text-primary.cart-item-price {
+    text-align: left;
   }
 
 }
@@ -1321,6 +1373,7 @@ a:hover{
   .navLogo {
     float: left;
   }
+
 }
 
 @media screen and (max-width: 992px) {
