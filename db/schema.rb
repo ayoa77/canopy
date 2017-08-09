@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170808135339) do
+ActiveRecord::Schema.define(version: 20170809110018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -183,6 +183,10 @@ ActiveRecord::Schema.define(version: 20170808135339) do
     t.string "event_photo_content_type"
     t.integer "event_photo_file_size"
     t.datetime "event_photo_updated_at"
+    t.date "date"
+    t.time "time"
+    t.boolean "recurring_monthly_event", default: false
+    t.boolean "recurring_weekly_event", default: false
   end
 
   create_table "spree_gateways", id: :serial, force: :cascade do |t|
