@@ -1258,51 +1258,46 @@ a:hover{
 
 // about.html.erb
 
-.our-story {
-  font-size: 14px;
-  line-height: 28px;
-}
-
-.about-us {
+.about {
   font-size: 14px;
   line-height: 28px;
 }
 
 .photo-gallery {
-  height: auto;
   width: 100%;
-  overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin: 6px 0 20px 0;
 }
 
-.photo-crop {
-  float: left;
-  width: 25vw;
-  height: 25vw;
-  margin: 10px;
+
+.about-picture {
+  width:23vw;
+  height:23vw;
+  margin: 2vw 5px;
   overflow: hidden;
+}
+
+.picture-centering {
   display: flex;
   justify-content: center;
   align-items: center;
   img {
-    height: auto;
-    width: 100%;
+    height: 23vw;
+    width: auto;
   }
 }
 
-
-#about-picture-3 {
-  height:200px;
-  width: 100%;
-  overflow: hidden;
+.center-single-picture {
+  height: 25vw;
+  width: auto;
+  margin: 6px 0 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
 
   img {
-    height: 200px;
+    height: 100%;
     width: auto;
   }
 }
@@ -1374,6 +1369,10 @@ a:hover{
 
   .lead.text-primary.cart-item-price {
     text-align: left;
+  }
+
+  .center-single-picture {
+    height: 50vw;
   }
 
 }
