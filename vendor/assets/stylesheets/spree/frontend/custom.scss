@@ -45,6 +45,7 @@ a:hover{
 #spree-header {
   height:120px;
   margin-bottom: 0px;
+  background-color: #fff;
   #header{
     position: fixed;
     z-index: 100;
@@ -852,6 +853,13 @@ a:hover{
 
 // products/show.html.erb, handles the full size product page.
 
+.flex-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 #product-container {
   margin-bottom: 75px;
 }
@@ -859,7 +867,7 @@ a:hover{
 .product-splash-image {
   opacity: 0.5;
   height: 100vh;
-  width: 100%;
+  width: 50%;
   position: absolute;
   z-index: -200;
   background-image: url("/images/splat.png");
@@ -869,9 +877,13 @@ a:hover{
 
 .product-holder-image {
   //change width to product image width
-  width: 240px;
+  width: 290px;
   display: block;
-  margin: 120px auto;
+  margin: 50px auto;
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .product-holder-image:hover > .additional-information {
@@ -902,7 +914,6 @@ a:hover{
 
 .product-name p {
   text-align: center;
-  margin-top: 125px;
   font-size:48px;
   margin-bottom: 30px;
 }
@@ -1247,55 +1258,46 @@ a:hover{
 
 // about.html.erb
 
-.our-story {
+.about {
   font-size: 14px;
   line-height: 28px;
 }
 
-.about-us {
-  font-size: 14px;
-  line-height: 28px;
+.photo-gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 6px 0 20px 0;
 }
 
-#about-picture-1 {
-  height:200px;
-  width: 200px;
+
+.about-picture {
+  width:23vw;
+  height:23vw;
+  margin: 2vw 5px;
   overflow: hidden;
+}
+
+.picture-centering {
   display: flex;
   justify-content: center;
   align-items: center;
-
   img {
-    height: 200px;
+    height: 23vw;
     width: auto;
   }
 }
 
-#about-picture-2 {
-  height:200px;
-  width: 200px;
-  overflow: hidden;
+.center-single-picture {
+  height: 25vw;
+  width: auto;
+  margin: 6px 0 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
 
   img {
-    height: 200px;
-    width: auto;
-  }
-}
-
-
-#about-picture-3 {
-  height:200px;
-  width: 200px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    height: 200px;
+    height: 100%;
     width: auto;
   }
 }
@@ -1309,23 +1311,23 @@ a:hover{
 
 @media screen and (max-width: 359px) {
 
-  .ghost-button-blue{
+  .ghost-button-blue {
     width: 260px;
   }
 
-  .ghost-button-blue{
+  .ghost-button-blue {
     width: 260px;
   }
 
-  .ghost-button-orange{
+  .ghost-button-orange {
     width: 260px;
   }
 
-  .ghost-button-pink{
+  .ghost-button-pink {
     width: 260px;
   }
 
-  .ghost-button-green{
+  .ghost-button-green {
     width: 260px;
   }
 
@@ -1369,6 +1371,10 @@ a:hover{
     text-align: left;
   }
 
+  .center-single-picture {
+    height: 50vw;
+  }
+
 }
 @media screen and (min-width: 767px) {
   #mobile-line-items {
@@ -1376,6 +1382,7 @@ a:hover{
     padding: 0px;
     overflow: hidden;
   }
+
 }
 @media screen and (max-width: 767px) {
 
@@ -1431,6 +1438,10 @@ a:hover{
 @media screen and (max-width: 768px) {
   .navLogo {
     float: left;
+  }
+
+  .product-splash-image {
+    width: 100%;
   }
 
 }
