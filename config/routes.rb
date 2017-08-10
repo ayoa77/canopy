@@ -28,6 +28,7 @@ Rails.application.routes.draw do
         get "/event-edit/:id" => 'spree/admin/events#edit', as: :edit_events
         patch "/event/:id" => 'spree/admin/events#update'
         get "/events/:id" => 'spree/admin/events#show'
+        get "/event-delete/:id" => 'spree/admin/events#destroy'
         delete "/event-delete/:id" => 'spree/admin/events#destroy', as: :delete_event
 
 

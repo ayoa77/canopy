@@ -7,6 +7,7 @@ def about
 end
 
 def instoreMenu
+  @custom = Spree::Custom.first
 end
 
 def nutrition
