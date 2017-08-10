@@ -13,6 +13,7 @@ def filter_events(events)
     elsif e.date < Time.now + 1.day && e.recurring_monthly_event == false && e.recurring_weekly_event == true
       e.date = e.date + 1.week
       e.save
+      return events
     end
   end
 
