@@ -1,0 +1,42 @@
+<div data-hook="admin_product_form_description">
+  <%= f.field_container :events, class: ['form-group'] do %>
+  <%= f.label :name, Spree.t(:name) %>
+<%= f.text_field :name, class: 'form-control', required: true   %>
+  <%= f.error_message_on :name %>
+
+  <%= f.label :location, Spree.t(:location) %>
+<%= f.text_field :location, { rows: 1, class: 'form-control', required: true  } %>
+  <%= f.error_message_on :location %>
+
+  <%= f.label :description, Spree.t(:description) %>
+<%= f.text_area :description, { rows: 2, class: 'form-control', required: true  } %>
+  <%= f.error_message_on :description %>
+
+  <%= f.label :price, Spree.t(:price) %>
+<%= f.text_field :price, class: 'form-control', required: true   %>
+  <%= f.error_message_on :price %>
+
+  <%= f.label :date, Spree.t(:date) %>
+<%= f.date_field :date, class: 'form-control', required: true  %>
+  <%= f.error_message_on :date %>
+
+  <%= f.label :time, Spree.t(:time) %>
+<%= f.time_field :time, class: 'form-control'  %>
+  <%= f.error_message_on :time %>
+
+  <%= f.check_box :recurring_weekly_event, id: "weekly_check" %><label for="recurring_weekly_event">weekly</label>
+  <%= f.check_box :recurring_monthly_event, id: "monthly_check" %><label for="recurring_monthly_event">monthly</label>
+
+  <div data-hook="file" class="form-group">
+    <%= f.label :event_photo, Spree.t(:event_photo) %>
+    <%= f.file_field :event_photo %>
+    <%= image_tag @event.event_photo.url(:small) if @event.event_photo.url(:small) %>
+  </div>
+  <% end %>
+  <div data-hook="file" class="form-group pull-right">
+
+    <form action="admin/event/#{@event.id}">
+       <input type="submit" value="Edit Event">
+    </form>
+  </div>
+</div>

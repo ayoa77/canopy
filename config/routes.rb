@@ -10,26 +10,26 @@ Rails.application.routes.draw do
   mount Spree::Core::Engine, at: '/'
 
   get '/shop' => 'spree/products#index'
-  get '/about' => 'spree/custom#about'
-  get '/instore-menu' => 'spree/custom#instoreMenu'
-  get '/nutrition' => 'spree/custom#nutrition'
-  get '/events' =>  'spree/events#show'
+  get '/about' => 'spree/custom#about', as: :about
+  get '/instore-menu' => 'spree/custom#instoreMenu', as: :menu
+  get '/nutrition' => 'spree/custom#nutrition', as: :nutrition
+  get '/events' =>  'spree/events#index', as: :events
 
     scope "/admin" do
-      ### Use these for initial setup
 
-      #  get "custom" => 'spree/admin/customs#new'
-      #  post "custom" => 'spree/admin/customs#create'
-      ### Use these for client editiing ###
-       get "/events" => 'spree/admin/events#new'
-       post "/events" => 'spree/admin/events#create'
-
-       get "/custom" => 'spree/admin/customs#edit'
+       get "/customnew" => 'spree/admin/customs#new'
+       post "/customnew" => 'spree/admin/customs#create'
+       get "/custom" => 'spree/admin/customs#edit', as: :edit_custom
        patch "/custom" => 'spree/admin/customs#update'
-       get "/event" => 'spree/admin/events#edit'
-       patch "/event" => 'spree/admin/events#update'
-       destroy "/event" => 'spree/admin/events#destroy'
-       get "/event" => 'spree/admin/events#show'
+
+        get "/events" => 'spree/admin/events#index'
+        get "/event-new" => 'spree/admin/events#new'
+        post "/event-new" => 'spree/admin/events#create'
+        get "/event-edit/:id" => 'spree/admin/events#edit', as: :edit_events
+        patch "/event/:id" => 'spree/admin/events#update'
+        get "/events/:id" => 'spree/admin/events#show'
+        delete "/event-delete/:id" => 'spree/admin/events#destroy', as: :delete_event
+
 
 
     end

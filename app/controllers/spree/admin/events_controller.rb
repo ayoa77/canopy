@@ -16,7 +16,8 @@ module Spree
       # t.boolean "recurring_weekly_event", default: false
 
   def index
-    @event = Spree::Event.all
+    @events = Spree::Event.all
+    @events.sort_by &:date
   end
 
   def show
@@ -30,7 +31,7 @@ module Spree
   def create
     @event = Spree::Event.create(event_params)
     if @event.save
-      redirect_to :back
+      redirect_to '/admin/events'
     else
       render 'new'
     end
@@ -43,7 +44,7 @@ module Spree
   def update
     @event = Spree::Event.find(params[:id])
     if @event.update(event_params)
-      redirect_to :back
+      redirect_to '/admin/events' 
     else
       render 'edit'
     end
@@ -51,13 +52,13 @@ module Spree
 
   def destroy
     @event.destroy
-    redirect_to :back
+    redirect_to '/admin/events'
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:name, :location, :description, :price, :date, :time, :event_photo, :recurring_weekly_event, :recurring_monthly_event)
+    params.require(:event).permit(:id, :name, :location, :description, :price, :date, :time, :event_photo, :recurring_weekly_event, :recurring_monthly_event)
   end
 
 

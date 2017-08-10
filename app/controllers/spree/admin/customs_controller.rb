@@ -18,7 +18,7 @@ module Spree
   def create
     @custom = Spree::Custom.create(custom_params)
     if @custom.save
-        redirect_to :back
+        redirect_back fallback_location: root_path
     else
       render 'edit'
     end
