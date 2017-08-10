@@ -1302,6 +1302,61 @@ a:hover{
   }
 }
 
+// instoreMenu.html.erb
+.menu-top-of-page-text {
+  height: 75px;
+  width: 100%;
+  margin: 0px 0px 0px 0px;
+  p {
+    line-height: 60px;
+    text-align: center;
+    color: #595857;
+    font-size: 40px;
+  }
+}
+
+.category-for-menu {
+  color: #00b7ff;
+  font-size: 20px;
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+.menu-item {
+  color: #595857;
+  font-size: 16px;
+  text-align: left;
+  font-weight: 500;
+  line-height: 16px;
+  padding-left: 30px;
+}
+
+.menu-item-ingredients {
+  color: #595857;
+  font-size: 16px;
+  text-align: left;
+  font-weight: 200;
+  padding-left: 30px;
+  }
+
+.menu-picture {
+  width:15vw;
+  height:15vw;
+  margin: 2vw 5px;
+  overflow: hidden;
+}
+
+.menu-picture-centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 15vw;
+    width: auto;
+  }
+}
+
 // -=-=-=-=-=- Responsive No Man's Land -=-=-=-=-=-
 
 
@@ -1443,6 +1498,16 @@ a:hover{
   .product-splash-image {
     width: 100%;
   }
+
+  .menu-picture {
+    width:20vw;
+    height:20vw;
+  }
+
+  .menu-picture-centering img {
+      height: 20vw;
+  }
+
 
 }
 
