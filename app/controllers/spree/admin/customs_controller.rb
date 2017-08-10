@@ -39,7 +39,7 @@ module Spree
 
   def destroy
     @custom.destroy
-    redirect_to custom_index_path
+    redirect_to custom_new_path
   end
 
   private

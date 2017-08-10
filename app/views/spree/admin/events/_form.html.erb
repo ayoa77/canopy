@@ -33,10 +33,17 @@
     <%= image_tag @event.event_photo.url(:small) if @event.event_photo.url(:small) %>
   </div>
   <% end %>
+  <div data-hook="file" class="form-group pull-left">
+<%= link_to 'Back', "admin/events" %>
+  </div>
+
+
   <div data-hook="file" class="form-group pull-right">
+
 
     <form action="admin/event/#{@event.id}">
        <input type="submit" value="Edit Event">
     </form>
+
   </div>
 </div>

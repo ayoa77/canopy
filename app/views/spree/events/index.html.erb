@@ -1,0 +1,83 @@
+<!-- This will be the events page -->
+<!-- aj help : We can build this page like app/views/spree/orders/_line_item.html.erb
+     The modal-description id needs to load after the down arrow that is clicked. :O Gooood Luck, buddy.-->
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="top-of-page-text">
+
+      <p>
+        Events
+      </p>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+
+<!-- Current Events -->
+
+  <div class="row">
+
+    <div class = "col-xs-12">
+      <p>
+        Current Events
+      </p>
+    </div>
+    <% @events.each do |eve| %>
+
+    <div class = "col-xs-12 col-md-6">
+      <div class = "events current">
+
+        <div class = "event-time current-bkgnd">
+          <p class="p-event">
+      <%= eve.date.year.to_s[-2..-1]%>.<%= eve.date.month %>.<%= eve.date.day %> <span class="rwd-break">@<%=eve.time.strftime("%l:%M %P")%></span>
+          </p>
+        </div>
+
+        <div class = "event-info">
+
+          <div class = "event-name">
+            <p class="p-event">
+            <%= eve.name %>
+            </p>
+
+          </div>
+
+          <div class= "event-place">
+            <a href="http://maps.google.com/?q=<%= eve.location %>">
+              <p class="p-event">
+                <span class="glyphicon glyphicon-map-marker"></span>
+                <%= eve.location %>
+              </p>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="more-info">
+
+            <div class="dropdown-link-area" data-toggle="collapse" data-target="#modal-description<%=eve.id%>">
+              <span class="glyphicon glyphicon-chevron-down"></span>
+            </div>
+
+        </div>
+
+      </div>
+      <div id = "modal-description<%=eve.id%>" class="collapse">
+        <div class="modal-data-load">
+          <%=eve.description%>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <!-- Open Modal Attempt -->
+
+
+
+</div>
