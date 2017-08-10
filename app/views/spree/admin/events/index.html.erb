@@ -1,0 +1,33 @@
+<% @events.each do |e|%>
+<div class="container">
+  <div class="row">
+<div class="col-xs-3">
+  <p>Name: <%=e.name%></p>
+  <p>Location: <%=e.location%></p>
+  <p>Price: <%=e.price%></p>
+</div>
+<div class="col-xs-6">
+  <p>Description: <%=e.description%></p>
+  <p>Date: <%=e.date%></p>
+  <p>Time: <%=e.time%></p>
+  <% if e.recurring_weekly_event == true %>
+  <p>Recurring: weekly</p>
+
+  <% elsif e.recurring_monthly_event == true %>
+  <p>Recurring: monthly</p>
+  <% else %>
+  <p>Not Recurring</p>
+<%end%>
+</div>
+<div class="col-xs-3">
+  <%=image_tag(e.event_photo.url(:small)) if e.event_photo.url(:small)%>
+  <%= link_to'edit',  "/admin/event-edit/#{e.id}", controller: 'spree/admin/events', action: 'edit' %>
+  <%= link_to 'delete', "/admin/event-delete/#{e.id}", controller: 'spree/admin/events', action: 'destroy' %>
+
+</div>
+  </div>
+
+</div>
+
+
+<%end%>

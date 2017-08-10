@@ -1,2 +1,4 @@
 <p>Customs New</p>
-<%=render partial: 'spree/admin/customs/form' %>
+<%= form_for @custom, url: '/admin/customnew', html: { multipart: true } do |f| %>
+<%=render partial: 'spree/admin/customs/form', :locals => { :f => f } %>
+<%end%>

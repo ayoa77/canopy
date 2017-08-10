@@ -1,0 +1,4 @@
+<p>New Event</p>
+<%= form_for @event, url: '/admin/event-new', html: { multipart: true } do |f| %>
+<%=render partial: 'spree/admin/events/form', :locals => { :f => f } %>
+<%end%>
