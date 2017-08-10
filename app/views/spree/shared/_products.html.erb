@@ -77,11 +77,19 @@
     <div class="col-xs-12 visible-xs visible-sm">
       <div id="sortin-it-out">
         <div class="btn-group btn-block" style="margin:5px 0 10px 0;">
-          <button type="button" class="btn btn-primary"><span style="font-size: smaller">Juice</span></button>
-          <button type="button" class="btn btn-primary"><span style="font-size: smaller">Smoothie</span></button>
-          <button type="button" class="btn btn-primary"><span style="font-size: smaller">Tea</span></button>
-          <button type="button" class="btn btn-primary"><span style="font-size: smaller">All</span></button>
-        </div>
+
+        <a data-method="get" href="/products?categories=Juice" type="button" class="btn btn-primary">
+        <span style="font-size: smaller">Juice</span></a>
+
+        <a data-method="get" href="/products?categories=Smoothies" type="button" class="btn btn-primary">
+        <span style="font-size: smaller">Smoothies</span></a>
+
+        <a data-method="get" href="/products?categories=Tea" type="button" class="btn btn-primary">
+        <span style="font-size: smaller">Tea</span></a>
+
+        <a data-method="get" href="/products" type="button" class="btn btn-primary">
+        <span style="font-size: smaller">All</span></a>
+            </div>
       </div>
     </div>
 

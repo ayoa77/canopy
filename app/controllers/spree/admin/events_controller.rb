@@ -17,7 +17,8 @@ module Spree
 
   def index
     @events = Spree::Event.all
-    @events.sort_by &:date
+    @events = filter_events(@events)
+    @events = @events.sort_by &:date
   end
 
   def show
@@ -44,7 +45,7 @@ module Spree
   def update
     @event = Spree::Event.find(params[:id])
     if @event.update(event_params)
-      redirect_to '/admin/events' 
+      redirect_to '/admin/events'
     else
       render 'edit'
     end

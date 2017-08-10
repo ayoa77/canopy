@@ -52,6 +52,28 @@
   <%= f.file_field :photo4 %>
   <%= image_tag @custom.photo4.url if @custom.photo4.url %>
 </div>
+<p><strong>InStore Menu photos</strong></p>
+<div data-hook="file" class="form-group">
+  <%= f.label :photo5, Spree.t(:photo5) %>
+  <%= f.file_field :photo5 %>
+  <%= image_tag @custom.photo5.url if @custom.photo5.url %>
+</div>
+<div data-hook="file" class="form-group">
+  <%= f.label :photo6, Spree.t(:photo6) %>
+  <%= f.file_field :photo6 %>
+  <%= image_tag @custom.photo6.url if @custom.photo6.url %>
+</div>
+<div data-hook="file" class="form-group">
+  <%= f.label :photo7, Spree.t(:photo7) %>
+  <%= f.file_field :photo7 %>
+  <%= image_tag @custom.photo7.url if @custom.photo7.url %>
+</div>
+<!-- <div data-hook="file" class="form-group">
+  <%= f.label :photo8, Spree.t(:photo8) %>
+  <%= f.file_field :photo8 %>
+  <%= image_tag @custom.photo8.url if @custom.photo8.url %>
+</div> -->
+
 <div data-hook="file" class="form-group pull-right">
   <%= f.submit %>
 </div>

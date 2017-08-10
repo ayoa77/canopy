@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809110018) do
+ActiveRecord::Schema.define(version: 20170810163910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -170,6 +170,22 @@ ActiveRecord::Schema.define(version: 20170809110018) do
     t.string "photo4_content_type"
     t.integer "photo4_file_size"
     t.datetime "photo4_updated_at"
+    t.string "photo5_file_name"
+    t.string "photo5_content_type"
+    t.integer "photo5_file_size"
+    t.datetime "photo5_updated_at"
+    t.string "photo6_file_name"
+    t.string "photo6_content_type"
+    t.integer "photo6_file_size"
+    t.datetime "photo6_updated_at"
+    t.string "photo7_file_name"
+    t.string "photo7_content_type"
+    t.integer "photo7_file_size"
+    t.datetime "photo7_updated_at"
+    t.string "photo8_file_name"
+    t.string "photo8_content_type"
+    t.integer "photo8_file_size"
+    t.datetime "photo8_updated_at"
   end
 
   create_table "spree_events", force: :cascade do |t|
