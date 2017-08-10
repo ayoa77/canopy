@@ -4,16 +4,12 @@
 
 <!-- handles splash image and product image -->
 <div id="product-container">
-
-  <div class="row no-gutters">
+  <div class="product-splash-image">
+    <!-- background-image: url("/images/splat.png") -->
+  </div>
+  <!-- <div class="row no-gutters"> -->
 
     <div class="col-md-6">
-
-      <div class="product-splash-image">
-        <!-- background-image: url("/images/splat.png") -->
-      </div>
-
-      <!-- holds the product image -->
 
       <div class="product-holder-image">
           <%= product_image(@product, itemprop: "image") %>
@@ -96,8 +92,8 @@
 
     <div class="col-md-6">
 
-      <div class="row no-gutters">
-        <div class="col-xs-12">
+      <!-- <div class="row no-gutters"> -->
+        <div class="col-xs-12 flex-column">
           <div class="product-name">
             <p>
               <%= @product.name %>
@@ -123,15 +119,15 @@
         </div>
 
         <div class="col-xs-12">
-          <div class="button-contain">
+          <div class="button-contain flex-column">
             <%= render partial: 'cart_form' %>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
 
     </div>
 
-  </div>
+  <!-- </div> -->
 
 </div>
 

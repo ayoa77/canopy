@@ -25,6 +25,22 @@
 
     </div>
 
+    <div class="col-xs-12 photo-gallery">
+
+      <div class="photo-crop">
+        <%= image_tag @custom.photo1.url if @custom.photo1.url %>
+      </div>
+
+      <div class="photo-crop">
+        <%= image_tag @custom.photo2.url if @custom.photo1.url %>
+      </div>
+
+      <div class="photo-crop">
+        <%= image_tag @custom.photo3.url if @custom.photo1.url %>
+      </div>
+
+    </div>
+
     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
 
       <p class="about-us">
@@ -33,31 +49,21 @@
 
     </div>
 
-    <div class="col-xs-12 centering">
-
-      <div class = "col-xs-4 centering">
-
-        <div id = "about-picture-1">
-          <%= image_tag @custom.photo1.url if @custom.photo1.url %>
-        </div>
-
-      </div>
-
-      <div class = "col-xs-4 centering">
+      <!-- <div class = "col-xs-4">
 
         <div id = "about-picture-2">
-          <%= image_tag @custom.photo2.url if @custom.photo2.url %>
+          <%#= image_tag @custom.photo2.url if @custom.photo2.url %>
         </div>
 
       </div>
 
-      <div class = "col-xs-4 centering">
+      <div class = "col-xs-4">
 
         <div id = "about-picture-3">
-          <%= image_tag @custom.photo3.url if @custom.photo3.url %>
+          <%#= image_tag @custom.photo3.url if @custom.photo3.url %>
         </div>
 
-      </div>
+      </div> -->
 
     </div>
 
