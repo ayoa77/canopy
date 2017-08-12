@@ -31,7 +31,7 @@ module Spree
   def update
     @custom = Spree::Custom.first
     if @custom.update(custom_params)
-      redirect_to @custom
+      redirect_back fallback_location: root_path
     else
       render 'edit'
     end
@@ -45,7 +45,7 @@ module Spree
   private
 
   def custom_params
-    params.require(:custom).permit(:about1, :about2, :about3, :about4, :photo1, :photo2, :photo3, :photo5, :photo6, :photo7, :photo8)
+    params.require(:custom).permit(:about1, :about2, :about3, :about4, :photo1, :photo2, :photo3, :photo4, :photo5, :photo6, :photo7, :photo8)
   end
 
 

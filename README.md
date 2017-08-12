@@ -21,7 +21,6 @@ Things you may want to cover:
 
 <%= image_tag @custom.photo4.url if @custom.photo4.url %>
 
-
  rake spree_auth:admin:create
 
 * Database creation
@@ -35,3 +34,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+to set up custom for the first time go to /admin/customnew

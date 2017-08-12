@@ -53,16 +53,19 @@ and how to turn it off.  :D -->
             </div>
 
             <div class="col-xs-3 label-line-items-text">
-              <%= display_price(item.variant) %>
+              <%= display_price(item.variant).to_s[0..-4] %>
             </div>
 
 
           </div>
           <% end %>
 
+
           <p class="checkout-shipping"><%= Spree.t(:shipping_method) %></p>
+<% if current_order.ship_address.address1 == "宜蘭市女中路三段117號" %>
+
           <ul class="list-group shipping-methods">
-            <% ship_form.object.shipping_rates.each do |rate| %>
+            <% ship_form.object.shipping_rates.where(cost: 0).each do |rate| %>
               <li class="list-group-item shipping-method">
                 <label>
                   <%= ship_form.radio_button :selected_shipping_rate_id, rate.id, data: { behavior: 'shipping-method-selector', cost: rate.display_cost } %>
@@ -72,6 +75,20 @@ and how to turn it off.  :D -->
               </li>
             <% end %>
           </ul>
+<% else %>
+          <ul class="list-group shipping-methods">
+            <% ship_form.object.shipping_rates.where.not(cost: 0).each do |rate| %>
+              <li class="list-group-item shipping-method">
+                <label>
+                  <%= ship_form.radio_button :selected_shipping_rate_id, rate.id, data: { behavior: 'shipping-method-selector', cost: rate.display_cost } %>
+                  <span class="rate-name"><%= rate.name %></span>
+                  <span class="badge rate-cost"><%= rate.display_cost %></span>
+                </label>
+              </li>
+            <% end %>
+          </ul>
+          <% end %>
+
         </div>
       <% end %>
 
