@@ -48,6 +48,19 @@
       </p>
 
     </div>
+    <% if @juices.first %>
+    <% @juices.each do |j| %>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+        <!-- This takes care of each menu item and it's ingredients -->
+          <p class="menu-item">
+            <%= j.name %>
+          </p>
+          <p class="menu-item-ingredients">
+            <%= j.description %>
+          </p>
+        </div>
+        <% end %>
+      <% else %>
 
     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
     <!-- This takes care of each menu item and it's ingredients -->
@@ -58,6 +71,8 @@
         Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
       </p>
     </div>
+      <% end %>
+
 
   </div>
 </div>
@@ -72,6 +87,19 @@
       </p>
 
     </div>
+    <% if @smoothies.first %>
+    <% @smoothies.each do |s| %>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+        <!-- This takes care of each menu item and it's ingredients -->
+          <p class="menu-item">
+            <%= s.name %>
+          </p>
+          <p class="menu-item-ingredients">
+            <%= s.description %>
+          </p>
+        </div>
+        <% end %>
+      <% else %>
 
     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
     <!-- This takes care of each menu item and it's ingredients -->
@@ -82,7 +110,7 @@
         Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
       </p>
     </div>
-
+        <% end %>
   </div>
 </div>
 
@@ -97,6 +125,20 @@
 
     </div>
 
+    <% if @teas.first %>
+    <% @teas.each do |t| %>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+        <!-- This takes care of each menu item and it's ingredients -->
+          <p class="menu-item">
+            <%= t.name %>
+          </p>
+          <p class="menu-item-ingredients">
+            <%= t.description %>
+          </p>
+        </div>
+        <% end %>
+      <% else %>
+
     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
     <!-- This takes care of each menu item and it's ingredients -->
       <p class="menu-item">
@@ -106,6 +148,7 @@
         Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
       </p>
     </div>
+        <% end %>
 
   </div>
 </div>
@@ -121,6 +164,20 @@
 
     </div>
 
+    <% if @food.first %>
+    <% @food.each do |f| %>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+        <!-- This takes care of each menu item and it's ingredients -->
+          <p class="menu-item">
+            <%= f.name %>
+          </p>
+          <p class="menu-item-ingredients">
+            <%= f.description %>
+          </p>
+        </div>
+        <% end %>
+      <% else %>
+
     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
     <!-- This takes care of each menu item and it's ingredients -->
       <p class="menu-item">
@@ -130,6 +187,7 @@
         Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
       </p>
     </div>
+        <% end %>
 
   </div>
 </div>
@@ -145,6 +203,20 @@
 
     </div>
 
+    <% if @desserts.first %>
+    <% @desserts.each do |d| %>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+        <!-- This takes care of each menu item and it's ingredients -->
+          <p class="menu-item">
+            <%= d.name %>
+          </p>
+          <p class="menu-item-ingredients">
+            <%= d.description %>
+          </p>
+        </div>
+        <% end %>
+      <% else %>
+
     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
     <!-- This takes care of each menu item and it's ingredients -->
       <p class="menu-item">
@@ -154,6 +226,7 @@
         Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
       </p>
     </div>
+        <% end %>
 
   </div>
 </div>

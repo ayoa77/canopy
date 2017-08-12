@@ -26,6 +26,13 @@ end
 # = button_to "smth", some_path, method: :get, params: { start_point: 3.month.ago }
     end
 
+      def instore
+        @taxonomies = Spree::Taxonomy.includes(root: :children)
+        @searcher = build_searcher(params.merge(include_images: true))
+        @products = @searcher.retrieve_products
+        @products = @products.includes(:possible_promotions) if @products.respond_to?(:includes)
+     end
+
     def show
       @variants = @product.variants_including_master.
                            spree_base_scopes.
