@@ -24,7 +24,7 @@
 
           <div class = 'col-xs-4 col-sm-3 col-md-4 pull-right flex-nav nav-element'>
 
-            <div id="nav-icon1" class="open-burger">
+            <div id="nav-icon1" class="open-burger closed">
               <span></span>
               <span></span>
             </div>
@@ -82,10 +82,15 @@
             <a href="/about" class="col-sm-3 aboutlink">our story
 
             </a>
+            <% if spree_current_user %>
+            <a href="/user/spree_user/logout" class="col-sm-3 loginlink">logout
+
+            </a>
+            <% else %>
             <a href="/account" class="col-sm-3 loginlink">login
 
             </a>
-
+            <% end %>
           </div>
         </div>
 

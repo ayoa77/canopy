@@ -12,7 +12,7 @@ module Spree
     include Spree::Order::StoreCredit
     include Spree::Core::NumberGenerator.new(prefix: 'R')
     include Spree::Core::TokenGenerator
-    
+
     include NumberAsParam
 
     extend Spree::DisplayMoney
@@ -535,6 +535,9 @@ module Spree
 
     def shipping_eq_billing_address?
       (bill_address.empty? && ship_address.empty?) || bill_address.same_as?(ship_address)
+    end
+
+    def instore_address
     end
 
     def set_shipments_cost

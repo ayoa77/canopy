@@ -17,7 +17,7 @@ module Spree
     end
 
     def display_price
-      price = display_base_price.to_s
+      price = display_base_price.to_s[0..-4]
 
       return price if tax_rate.nil? || tax_amount == 0
 

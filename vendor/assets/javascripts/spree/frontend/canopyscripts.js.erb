@@ -1,13 +1,84 @@
 $(document).on('ready', function() {
-  $('#nav-icon1').click(function() {
-      $(this).toggleClass('open');
-      $('.menuBar').toggleClass('downMenu');
-      $('.menuText .col-sm-3').toggleClass('menuDown');
-      $('#navigation').toggleClass('menuDown');
-      $('body').toggleClass('menuDown');
-      // $('html').toggleClass('menuDown');
 
-      $('#header').toggleClass('menuUp');
+  $('#nav-icon1').click(function() {
+
+    var clicks = $(this).data('clicks');
+    if (clicks) {
+    console.log($(window).scrollTop());
+    window.wins  = $(window).scrollTop();
+    $(this).toggleClass('open');
+    $(this).toggleClass('closed');
+    $('.menuBar').toggleClass('downMenu');
+    $('.menuText .col-sm-3').toggleClass('menuDown');
+    $('#navigation').toggleClass('menuDown');
+    $('body').toggleClass('menuDown');
+    // $('html').toggleClass('menuDown');
+    $('#header').toggleClass('menuUp');
+  } else {
+    $("html, body").animate({ scrollTop: window.wins }, 0);
+    $(this).toggleClass('open');
+    $(this).toggleClass('closed');
+    $('.menuBar').toggleClass('downMenu');
+    $('.menuText .col-sm-3').toggleClass('menuDown');
+    $('#navigation').toggleClass('menuDown');
+    $('body').toggleClass('menuDown');
+    $('html').toggleClass('menuDown');
+    $('#header').toggleClass('menuUp');
+    console.log($(window).scrollTop());
+
+  }
+  $(this).data("clicks", !clicks);
+  });
+
+
+  $('#order_instore').click(function() {
+    $('#order_use_billing').attr('checked', false);
+  });
+
+  $('#order_instore').click(function() {
+  if  ($('.inner_address_form').not(':first').is(':visible'));{
+    $('.inner_address_form').not(':first').fadeOut(0);
+  }
+
+
+  });
+
+
+  $('#order_use_billing').click(function() {
+    $('#order_instore').attr('checked', false);
+    $('#order_ship_address_attributes_firstname').val('');
+    $('#order_ship_address_attributes_lastname').val('');
+    $('#order_ship_address_attributes_address1').val('');
+    $('#order_ship_address_attributes_city').val('');
+    $('#order_ship_address_attributes_zip_code').val('');
+    $('#order_ship_address_attributes_phone').val('');
+
+  });
+
+
+    $('#address_submit').click(function (evt) {
+      var phone = $('#order_bill_address_attributes_phone').val();
+      if ($('#order_instore').is(':checked')) {
+    $('#order_ship_address_attributes_firstname').attr('disabled',false);
+    $('#order_ship_address_attributes_lastname').attr('disabled',false);
+    $('#order_ship_address_attributes_address1').attr('disabled',false);
+    $('#order_ship_address_attributes_address2').attr('disabled',false);
+    $('#order_ship_address_attributes_city').attr('disabled',false);
+    $('#order_ship_address_attributes_zip_code').attr('disabled',false);
+    $('#order_ship_address_attributes_phone').attr('disabled',false);
+
+    $('#order_ship_address_attributes_firstname').val('Canopy');
+    $('#order_ship_address_attributes_lastname').val('Juice');
+    $('#order_ship_address_attributes_address1').val('宜蘭市女中路三段117號');
+    $('#order_ship_address_attributes_city').val('Yilan City');
+    $('#order_ship_address_attributes_zip_code').val('220');
+    $('#order_ship_address_attributes_phone').val(phone);
+   $(this).submit();
+}
+else {
+  $(this).submit();
+}
+
   });
 
 // Slick
@@ -64,7 +135,6 @@ $(document).on('ready', function() {
         height: 50,
         opacity: 0.1
       }, 1000, function () {
-        console.log(flyStartLeft);
         flyingImg.remove();
       });
 
@@ -89,6 +159,7 @@ $(document).on('ready', function() {
 //   y.submit();
 // });
 
+
 if (($('form#update-cart')).is('*')) {
   return ($('form#update-cart a.destroy')).show().one('click', function() {
     ($(this)).parents('#line-item').first().find('input.line_item_quantity').val(0);
@@ -100,5 +171,7 @@ if (($('form#update-cart')).is('*')) {
 $('form#update-cart a.submit').click(function() {
   $('form#update-cart').submit();
   });// this. get id and then use that to call on the form id and submit it.
+
+
 
 });

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # the default of "spree".
   mount Spree::Core::Engine, at: '/'
 
+  get '/instore' => 'spree/products#instore'
   get '/shop' => 'spree/products#index'
   get '/about' => 'spree/custom#about', as: :about
   get '/instore-menu' => 'spree/custom#instoreMenu', as: :menu

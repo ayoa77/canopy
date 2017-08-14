@@ -23,7 +23,7 @@
       <div class="address-pad">
 
         <p class="field checkbox" data-hook="use_billing">
-          <%= label_tag :order_use_billing, id: 'use_billing' do %>
+          <%= label_tag :in_store, id: 'use_billing' do %>
           <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address? %>
           <%= Spree.t(:use_billing_address) %>
           <% end %>
@@ -32,9 +32,9 @@
         <!-- aj help : We need this checkbox to have the pick-up at store option.
             it should create a date and time for pick-up -->
         <p class="field checkbox" data-hook="use_billing">
-          <%= label_tag :order_use_billing, id: 'use_billing' do %>
-          <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address? %>
-          <%= Spree.t(:use_billing_address) %>
+          <%= label_tag :in_store, id: 'instore' do %>
+          <%= check_box_tag 'order[instore]' %>
+          <%= Spree.t(:in_store) %>
           <% end %>
         </p>
 
@@ -47,7 +47,7 @@
 <div class="row">
 
   <div class="col-xs-12 col-md-4 col-md-offset-8 save-and-continue-button" data-hook="buttons">
-    <%= submit_tag Spree.t(:save_and_continue), class: 'ghost-button-orange' %>
+    <%= submit_tag Spree.t(:save_and_continue), class: 'ghost-button-orange', id: 'address_submit' %>
   </div>
 
   <div class="col-xs-12 col-md-4 col-md-offset-8" data-hook="buttons">

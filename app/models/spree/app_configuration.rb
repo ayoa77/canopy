@@ -20,7 +20,7 @@ require "spree/core/search/base"
 module Spree
   class AppConfiguration < Preferences::Configuration
     # Alphabetized to more easily lookup particular preferences
-    preference :address_requires_state, :boolean, default: true # should state/state_name be required
+    preference :address_requires_state, :boolean, default: false # should state/state_name be required
     preference :admin_interface_logo, :string, default: 'logo/logo.png'
     preference :admin_path, :string, default: '/admin'
     preference :admin_products_per_page, :integer, default: Kaminari.config.default_per_page
@@ -42,7 +42,7 @@ module Spree
     preference :checkout_zone, :string, default: nil # replace with the name of a zone if you would like to limit the countries
     preference :company, :boolean, default: false # Request company field for billing and shipping addr
     preference :currency, :string, default: "TWD"
-    preference :default_country_id, :integer
+    preference :default_country_id, :integer, default: "197"
     preference :expedited_exchanges, :boolean, default: false # NOTE this requires payment profiles to be supported on your gateway of choice as well as a delayed job handler to be configured with activejob. kicks off an exchange shipment upon return authorization save. charge customer if they do not return items within timely manner.
     preference :expedited_exchanges_days_window, :integer, default: 14 # the amount of days the customer has to return their item after the expedited exchange is shipped in order to avoid being charged
     preference :layout, :string, default: 'spree/layouts/spree_application'
@@ -58,8 +58,8 @@ module Spree
     preference :show_variant_full_price, :boolean, default: false #Displays variant full price or difference with product price. Default false to be compatible with older behavior
     preference :show_products_without_price, :boolean, default: false
     preference :show_raw_product_description, :boolean, default: false
-    preference :tax_using_ship_address, :boolean, default: true
-    preference :track_inventory_levels, :boolean, default: true # Determines whether to track on_hand values for variants / products.
+    preference :tax_using_ship_address, :boolean, default: false
+    preference :track_inventory_levels, :boolean, default: false # Determines whether to track on_hand values for variants / products.
 
     # Store credits configurations
     preference :non_expiring_credit_types, :array, default: []

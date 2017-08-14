@@ -27,58 +27,48 @@
               Calories
             </div>
             <div class="col-xs-3">
-              240
+            <%=  @product.calories ? @product.calories : "150" %>
             </div>
 
             <div class="col-xs-9">
-              Total Fat
+              Protein
             </div>
             <div class="col-xs-3">
-              0g
+              <%=  @product.protein ? @product.protein : "150" %>
             </div>
 
             <div class="col-xs-9">
-              Cholesterol
+              Fat
             </div>
             <div class="col-xs-3">
-              0g
+              <%=  @product.fat ? @product.fat : "150" %>
+            </div>
+
+            <div class="col-xs-9">
+              Carbs
+            </div>
+            <div class="col-xs-3">
+              <%=  @product.carbs ? @product.carbs : "150" %>
+            </div>
+
+            <div class="col-xs-9">
+               Sugar
+            </div>
+            <div class="col-xs-3">
+              <%=  @product.sugar ? @product.sugar : "150" %>
+            </div>
+            <div class="col-xs-9">
+              Fiber
+            </div>
+            <div class="col-xs-3">
+              <%=  @product.fiber ? @product.fiber : "150" %>
             </div>
 
             <div class="col-xs-9">
               Sodium
             </div>
             <div class="col-xs-3">
-              20mg
-            </div>
-
-            <div class="col-xs-12">
-              Vitamins
-            </div>
-
-            <div class="col-xs-3">
-              A
-            </div>
-            <div class="col-xs-3">
-              20%
-            </div>
-            <div class="col-xs-3">
-              C
-            </div>
-            <div class="col-xs-3">
-              20%
-            </div>
-
-            <div class="col-xs-3">
-              B-6
-            </div>
-            <div class="col-xs-3">
-              20%
-            </div>
-            <div class="col-xs-3">
-              B-12
-            </div>
-            <div class="col-xs-3">
-              20%
+              <%=  @product.sodium ? @product.sodium : "150" %>
             </div>
 
           </div>
@@ -102,18 +92,17 @@
         </div>
 
         <div class="col-xs-12">
-          <div class="productdesc">
+          <div class="productmakeup">
             <p>
-              <%= product_description(@product) %>
+              <%= @product.description1 %>
             </p>
           </div>
         </div>
 
         <div class="col-xs-12">
-          <div class="productmakeup">
+          <div class="productdesc">
             <p>
-              Generic Text for Product Ingredients, Apples, Boom boom, and Guava.
-              <#%= @product.ingredients %>
+              <%= product_description(@product) %>
             </p>
           </div>
         </div>

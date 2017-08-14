@@ -8,6 +8,11 @@ end
 
 def instoreMenu
   @custom = Spree::Custom.first
+  @smoothies =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Smoothies"})
+  @juices =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Juice"})
+  @teas =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Tea"})
+  @food =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Food"})
+  @desserts =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Dessert"})
 end
 
 def nutrition

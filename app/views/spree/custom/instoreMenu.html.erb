@@ -20,22 +20,19 @@
 
   <div class="menu-picture">
     <div class="menu-picture-centering">
-    <!-- pictures, don't forget to change the source -->
-      <img src="https://scontent-tpe1-1.cdninstagram.com/t51.2885-15/e35/20635297_117807862205013_2172518771850215424_n.jpg" />
+      <%= image_tag @custom.photo5.url if @custom.photo5.url %>
     </div>
   </div>
 
   <div class="menu-picture">
     <div class="menu-picture-centering">
-    <!-- pictures, don't forget to change the source -->
-      <img src="http://imgs.abduzeedo.com/files/articles/fantastic-illustrations-lukas-brezak/164722_10963042_ll.jpg" />
+      <%= image_tag @custom.photo6.url if @custom.photo6.url %>
     </div>
   </div>
 
   <div class="menu-picture">
     <div class="menu-picture-centering">
-    <!-- pictures, don't forget to change the source -->
-      <img src="http://imgs.abduzeedo.com/files/articles/fantastic-illustrations-lukas-brezak/197019_1481898_ll.jpg" />
+      <%= image_tag @custom.photo7.url if @custom.photo7.url %>
     </div>
   </div>
 
@@ -51,6 +48,19 @@
       </p>
 
     </div>
+    <% if @juices.first %>
+    <% @juices.each do |j| %>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+        <!-- This takes care of each menu item and it's ingredients -->
+          <p class="menu-item">
+            <%= j.name %>
+          </p>
+          <p class="menu-item-ingredients">
+            <%= j.description %>
+          </p>
+        </div>
+        <% end %>
+      <% else %>
 
     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
     <!-- This takes care of each menu item and it's ingredients -->
@@ -61,6 +71,162 @@
         Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
       </p>
     </div>
+      <% end %>
+
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+    <!-- This Takes care of category selectors -->
+      <p class="category-for-menu">
+        - Smoothies -
+      </p>
+
+    </div>
+    <% if @smoothies.first %>
+    <% @smoothies.each do |s| %>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+        <!-- This takes care of each menu item and it's ingredients -->
+          <p class="menu-item">
+            <%= s.name %>
+          </p>
+          <p class="menu-item-ingredients">
+            <%= s.description %>
+          </p>
+        </div>
+        <% end %>
+      <% else %>
+
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+    <!-- This takes care of each menu item and it's ingredients -->
+      <p class="menu-item">
+        Menu Item 1
+      </p>
+      <p class="menu-item-ingredients">
+        Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
+      </p>
+    </div>
+        <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+    <!-- This Takes care of category selectors -->
+      <p class="category-for-menu">
+        - Teas -
+      </p>
+
+    </div>
+
+    <% if @teas.first %>
+    <% @teas.each do |t| %>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+        <!-- This takes care of each menu item and it's ingredients -->
+          <p class="menu-item">
+            <%= t.name %>
+          </p>
+          <p class="menu-item-ingredients">
+            <%= t.description %>
+          </p>
+        </div>
+        <% end %>
+      <% else %>
+
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+    <!-- This takes care of each menu item and it's ingredients -->
+      <p class="menu-item">
+        Menu Item 1
+      </p>
+      <p class="menu-item-ingredients">
+        Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
+      </p>
+    </div>
+        <% end %>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+    <!-- This Takes care of category selectors -->
+      <p class="category-for-menu">
+        - Food -
+      </p>
+
+    </div>
+
+    <% if @food.first %>
+    <% @food.each do |f| %>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+        <!-- This takes care of each menu item and it's ingredients -->
+          <p class="menu-item">
+            <%= f.name %>
+          </p>
+          <p class="menu-item-ingredients">
+            <%= f.description %>
+          </p>
+        </div>
+        <% end %>
+      <% else %>
+
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+    <!-- This takes care of each menu item and it's ingredients -->
+      <p class="menu-item">
+        Menu Item 1
+      </p>
+      <p class="menu-item-ingredients">
+        Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
+      </p>
+    </div>
+        <% end %>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+    <!-- This Takes care of category selectors -->
+      <p class="category-for-menu">
+        - Dessert -
+      </p>
+
+    </div>
+
+    <% if @desserts.first %>
+    <% @desserts.each do |d| %>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+        <!-- This takes care of each menu item and it's ingredients -->
+          <p class="menu-item">
+            <%= d.name %>
+          </p>
+          <p class="menu-item-ingredients">
+            <%= d.description %>
+          </p>
+        </div>
+        <% end %>
+      <% else %>
+
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+    <!-- This takes care of each menu item and it's ingredients -->
+      <p class="menu-item">
+        Menu Item 1
+      </p>
+      <p class="menu-item-ingredients">
+        Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
+      </p>
+    </div>
+        <% end %>
 
   </div>
 </div>
