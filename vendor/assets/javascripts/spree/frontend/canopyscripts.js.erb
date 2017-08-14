@@ -1,6 +1,6 @@
 $(document).on('ready', function() {
-
   $('#nav-icon1').click(function() {
+
 
     var clicks = $(this).data('clicks');
     if (clicks) {
@@ -22,14 +22,20 @@ $(document).on('ready', function() {
     $('.menuText .col-sm-3').toggleClass('menuDown');
     $('#navigation').toggleClass('menuDown');
     $('body').toggleClass('menuDown');
-    $('html').toggleClass('menuDown');
+    //$('html').toggleClass('menuDown');
     $('#header').toggleClass('menuUp');
     console.log($(window).scrollTop());
 
-  }
-  $(this).data("clicks", !clicks);
-  });
 
+      $(this).toggleClass('open');
+      $('.menuBar').toggleClass('downMenu');
+      $('.menuText .col-sm-3').toggleClass('menuDown');
+      $('#navigation').toggleClass('menuDown');
+      // $('body').toggleClass('menuDown');
+      $('html').toggleClass('menuDown');
+
+      $('#header').toggleClass('menuUp');
+  });
 
   $('#order_instore').click(function() {
     $('#order_use_billing').attr('checked', false);
@@ -71,7 +77,7 @@ $(document).on('ready', function() {
     $('#order_ship_address_attributes_lastname').val('Juice');
     $('#order_ship_address_attributes_address1').val('宜蘭市女中路三段117號');
     $('#order_ship_address_attributes_city').val('Yilan City');
-    $('#order_ship_address_attributes_zip_code').val('220');
+    $('#order_ship_address_attributes_zipcode').val('220');
     $('#order_ship_address_attributes_phone').val(phone);
    $(this).submit();
 }
