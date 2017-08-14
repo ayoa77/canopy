@@ -1,6 +1,32 @@
 $(document).on('ready', function() {
   $('#nav-icon1').click(function() {
 
+
+    var clicks = $(this).data('clicks');
+    if (clicks) {
+    console.log($(window).scrollTop());
+    window.wins  = $(window).scrollTop();
+    $(this).toggleClass('open');
+    $(this).toggleClass('closed');
+    $('.menuBar').toggleClass('downMenu');
+    $('.menuText .col-sm-3').toggleClass('menuDown');
+    $('#navigation').toggleClass('menuDown');
+    $('body').toggleClass('menuDown');
+    // $('html').toggleClass('menuDown');
+    $('#header').toggleClass('menuUp');
+  } else {
+    $("html, body").animate({ scrollTop: window.wins }, 0);
+    $(this).toggleClass('open');
+    $(this).toggleClass('closed');
+    $('.menuBar').toggleClass('downMenu');
+    $('.menuText .col-sm-3').toggleClass('menuDown');
+    $('#navigation').toggleClass('menuDown');
+    $('body').toggleClass('menuDown');
+    //$('html').toggleClass('menuDown');
+    $('#header').toggleClass('menuUp');
+    console.log($(window).scrollTop());
+
+
       $(this).toggleClass('open');
       $('.menuBar').toggleClass('downMenu');
       $('.menuText .col-sm-3').toggleClass('menuDown');
