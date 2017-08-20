@@ -10,7 +10,7 @@
 
         <span class="shop-slider-text">
           <p>
-            Shopping Cart
+            <%=Spree.t(:shopping_cart) %>
           </p>
         </span>
 
@@ -31,13 +31,13 @@
 
     <div id="no-items-in-cart">
       <p>
-        There are no items in your cart.
+      <%= Spree.t(:your_cart_is_empty) %>
       </p>
     </div>
     <a href="/products">
       <div class="ghost-button-orange button-center">
         <p>
-          CONTINUE SHOPPING
+          <%= Spree.t(:continue_shopping) %>
         </p>
       </div>
     </a>
@@ -71,14 +71,14 @@
 
           <%= button_tag class: 'ghost-button-orange', id: 'checkout-link', name: 'checkout' do %>
           <p>
-            PROCEED TO CHECKOUT
+          <%= Spree.t(:PROCEED_TO_CHECKOUT) %>
           </p>
 
         </div>
 
         <!-- <div class='col-xs-12 col-md-pull-6 col-md-6 left' data-hook='coupon_code'>
           <label>
-            <%#= order_form.text_field :coupon_code, placeholder: 'Coupon Code', size: '30', class: 'form-control' %>
+            <%#= order_form.text_field :coupon_code, placeholder: Spree.t(:coupon_code), size: '30', class: 'form-control' %>
           </label>
 
           <%#= button_tag Spree.t(:coupon_code_apply), class: 'btn btn-default special-btn' %>

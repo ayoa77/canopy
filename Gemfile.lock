@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/imgarylai/active_merchant_allpay.git
+  revision: 21b04a110b371368f1cc0e350768f68ed71b289c
+  specs:
+    active_merchant_allpay (0.1.4)
+      activemerchant
+      offsite_payments
+
+GIT
   remote: https://github.com/spree-contrib/spree_i18n.git
   revision: 014df50090e5734a3a98682fd17c736d0f4b8c8e
   specs:
@@ -43,6 +51,9 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_utils (3.3.8)
+      activesupport (>= 3.2, < 5.2.0)
+      i18n
     activejob (5.1.2)
       activesupport (= 5.1.2)
       globalid (>= 0.3.6)
@@ -176,6 +187,14 @@ GEM
       mini_portile2 (~> 2.2.0)
     nokogiri (1.8.0-x86-mingw32)
       mini_portile2 (~> 2.2.0)
+    offsite_payments (2.5.0)
+      actionpack (>= 3.2.20, < 6.x)
+      active_utils (~> 3.3.0)
+      activesupport (>= 3.2.14, < 6.x)
+      builder (>= 2.1.2, < 4.0.0)
+      i18n (~> 0.5)
+      money (< 7.0.0)
+      nokogiri (~> 1.6)
     orm_adapter (0.5.0)
     paperclip (5.1.0)
       activemodel (>= 4.2.0)
@@ -397,6 +416,7 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  active_merchant_allpay!
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)

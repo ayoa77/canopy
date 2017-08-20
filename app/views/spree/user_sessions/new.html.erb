@@ -9,7 +9,7 @@
     <div class="col-xs-12">
       <div class="top-of-page-text">
         <p>
-          Login or Create an Account
+          <%= Spree.t(:login_or_create_an_account) %>
         </p>
       </div>
     </div>
@@ -21,10 +21,10 @@
 
     <div class="col-md-8 col-md-push-4">
       <p class="title-text">
-        Already Registered?
+          <%= Spree.t(:already_registered?) %>
       </p>
       <p class="italic-subtitle">
-        Please Login
+          <%= Spree.t(:please_login) %>
       </p>
       <%= render :partial => 'spree/shared/login' %>
 
@@ -32,7 +32,7 @@
 
     <div class="col-md-4 col-md-pull-8">
       <p class="title-text">
-        New Here?
+          <%= Spree.t(:new_here?) %>
       </p>
       <p class="italic-subtitle">
         Register Now for Benefits!
@@ -46,7 +46,7 @@
       <a href="/signup">
         <div class="ghost-button-green">
           <p>
-            REGISTER NOW
+              <%= Spree.t(:register_now) %>
           </p>
         </div>
       </a>

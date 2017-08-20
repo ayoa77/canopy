@@ -33,7 +33,7 @@
 
         <!-- Circular Buttons for Categories -->
         <%=link_to products_path(categories: "Juice"), method: :get do%>
-            <div class="col-xs-3 visible-md visible-lg">
+            <div class="col-xs-2 visible-md visible-lg">
               <div class="sorting-hat juice-picture">
                 <p class="sorting-text">
                   <%= Spree.t(:juice) %>
@@ -43,7 +43,7 @@
           <%end%>
 
           <%=link_to products_path(categories: "Smoothies"), method: :get  do%>
-            <div class="col-xs-3 visible-md visible-lg">
+            <div class="col-xs-2 visible-md visible-lg">
               <div class="sorting-hat smoothie-picture">
                 <p class="sorting-text">
                   <%= Spree.t(:smoothie) %>
@@ -51,8 +51,9 @@
               </div>
             </div>
           <%end%>
+
           <%=link_to products_path(categories: "Tea"), method: :get  do%>
-            <div class="col-md-3 visible-md visible-lg">
+            <div class="col-xs-2 visible-md visible-lg">
               <div class="sorting-hat tea-picture">
                 <p class="sorting-text">
                   <%= Spree.t(:tea) %>
@@ -61,15 +62,35 @@
             </div>
           <%end%>
 
-            <%=link_to products_path, method: :get do%>
-              <div class="col-md-3 visible-md visible-lg">
-                <div class="sorting-hat-all">
-                  <p class="sorting-text-all">
-                    <%= Spree.t(:all) %>
-                  </p>
-                </div>
+          <%=link_to products_path(categories: "Food"), method: :get  do%>
+            <div class="col-xs-2 visible-md visible-lg">
+              <div class="sorting-hat food-picture">
+                <p class="sorting-text">
+                  <%= Spree.t(:food) %>
+                </p>
               </div>
+            </div>
           <%end%>
+
+          <%=link_to products_path(categories: "Dessert"), method: :get  do%>
+            <div class="col-xs-2 visible-md visible-lg">
+              <div class="sorting-hat dessert-picture">
+                <p class="sorting-text">
+                  <%= Spree.t(:dessert) %>
+                </p>
+              </div>
+            </div>
+          <%end%>
+
+          <%=link_to products_path, method: :get do%>
+            <div class="col-xs-2 visible-md visible-lg">
+              <div class="sorting-hat-all">
+                <p class="sorting-text-all">
+                  <%= Spree.t(:all) %>
+                </p>
+              </div>
+            </div>
+        <%end%>
 
       </div>
 
@@ -82,13 +103,21 @@
         <span style="font-size: smaller"><%= Spree.t(:juice) %></span></a>
 
         <a data-method="get" href="/products?categories=Smoothies" type="button" class="btn btn-primary">
-        <span style="font-size: smaller"><%= Spree.t(:smoothie) %></span></a>
+        <span style="font-size: smaller"><%= Spree.t(:smoothies) %></span></a>
 
         <a data-method="get" href="/products?categories=Tea" type="button" class="btn btn-primary">
         <span style="font-size: smaller"><%= Spree.t(:tea) %></span></a>
 
+        <a data-method="get" href="/products?categories=food" type="button" class="btn btn-primary">
+        <span style="font-size: smaller"><%= Spree.t(:food) %></span></a>
+
+        <a data-method="get" href="/products?categories=dessert" type="button" class="btn btn-primary">
+        <span style="font-size: smaller"><%= Spree.t(:dessert) %></span></a>
+
         <a data-method="get" href="/products" type="button" class="btn btn-primary">
-        <span style="font-size: smaller"><%= Spree.t(:all) %></span></a>
+          <span style="font-size: smaller"><%= Spree.t(:all) %></span></a>
+
+
             </div>
       </div>
     </div>
