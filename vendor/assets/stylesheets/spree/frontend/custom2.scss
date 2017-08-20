@@ -222,11 +222,17 @@
   height: 100vh;
 }
 
-.menuText .col-sm-3.menuDown {
+.menuText .col-sm-3.menuDown,
+.menuText .col-sm-4.menuDown {
   display: block;
 }
 
-.menuText .col-sm-3 {
+.col-sm-4.menuDown {
+    padding-top: 70px;
+  }
+
+.menuText .col-sm-3,
+.menuText .col-sm-4 {
   display: none;
   font-weight: 500;
   margin: 0 auto;
@@ -236,7 +242,8 @@
   transition: color 0.4s;
 }
 
-.menuText .col-sm-3:hover {
+.menuText .col-sm-3:hover,
+.menuText .col-sm-4:hover {
   color: #595857;
   transition: color 0.4s;
 }
@@ -317,7 +324,7 @@ html.menuDown {
   width: 200px;
   height: 200px;
   top: inherit;
-  z-index: 5;
+  z-index: 1005;
   animation:fly 1s 1;
   -webkit-animation:fly 1s 1;
   -webkit-backface-visibility: hidden;
@@ -354,16 +361,32 @@ html.menuDown {
 }
 @media screen and (min-width: 359px) {}
 @media screen and (min-width: 374px) {}
-@media screen and (min-width: 411px) {}
+@media screen and (min-width: 411px) {
+    .menuText .col-sm-3, .menuText .col-sm-4 {
+      font-size: 40px;
+
+    }
+}
 @media screen and (max-width: 767px) {
+
+  .col-sm-4.menuDown {
+      padding-top: 0px;
+    }
+
   .menuText {
     margin: calc(25vh - 110px) auto 0 auto;
   }
 
-  .menuText .col-sm-3 {
-    font-size: 50px;
+  .menuText .col-sm-3, .menuText .col-sm-4 {
     text-align: left;
   }
+}
+@media screen and (min-width: 413px) {
+  .menuText .col-sm-3, .menuText .col-sm-4 {
+    font-size: 50px;
+
+  }
+
 }
 @media screen and (max-width: 900px) {}
 @media screen and (min-width: 992px) {}

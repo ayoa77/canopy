@@ -1,39 +1,12 @@
 $(document).on('ready', function() {
   $('#nav-icon1').click(function() {
 
-
-    var clicks = $(this).data('clicks');
-    if (clicks) {
-    console.log($(window).scrollTop());
-    window.wins  = $(window).scrollTop();
-    $(this).toggleClass('open');
-    $(this).toggleClass('closed');
-    $('.menuBar').toggleClass('downMenu');
-    $('.menuText .col-sm-3').toggleClass('menuDown');
-    $('#navigation').toggleClass('menuDown');
-    $('body').toggleClass('menuDown');
-    // $('html').toggleClass('menuDown');
-    $('#header').toggleClass('menuUp');
-  } else {
-    $("html, body").animate({ scrollTop: window.wins }, 0);
-    $(this).toggleClass('open');
-    $(this).toggleClass('closed');
-    $('.menuBar').toggleClass('downMenu');
-    $('.menuText .col-sm-3').toggleClass('menuDown');
-    $('#navigation').toggleClass('menuDown');
-    $('body').toggleClass('menuDown');
-    //$('html').toggleClass('menuDown');
-    $('#header').toggleClass('menuUp');
-    console.log($(window).scrollTop());
-
-
       $(this).toggleClass('open');
       $('.menuBar').toggleClass('downMenu');
       $('.menuText .col-sm-3').toggleClass('menuDown');
+      $('.menuText .col-sm-4').toggleClass('menuDown');
       $('#navigation').toggleClass('menuDown');
-      // $('body').toggleClass('menuDown');
       $('html').toggleClass('menuDown');
-
       $('#header').toggleClass('menuUp');
   });
 
@@ -42,11 +15,12 @@ $(document).on('ready', function() {
   });
 
   $('#order_instore').click(function() {
-  if  ($('.inner_address_form').not(':first').is(':visible'));{
+    console.log();
+  if  ($('.inner_address_form').not(':first').is(':visible')){
     $('.inner_address_form').not(':first').fadeOut(0);
-  }
-
-
+  } else if ($('.inner_address_form').not(':first').is(':hidden') && !$(this).is(':checked')) {
+      $('.inner_address_form').not(':first').fadeIn(0);
+    }
   });
 
 
@@ -77,7 +51,7 @@ $(document).on('ready', function() {
     $('#order_ship_address_attributes_lastname').val('Juice');
     $('#order_ship_address_attributes_address1').val('宜蘭市女中路三段117號');
     $('#order_ship_address_attributes_city').val('Yilan City');
-    $('#order_ship_address_attributes_zipcode').val('220');
+    $('#order_ship_address_attributes_zip_code').val('220');
     $('#order_ship_address_attributes_phone').val(phone);
    $(this).submit();
 }

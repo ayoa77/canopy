@@ -10,6 +10,10 @@ module Canopy
   class Application < Rails::Application
     config.time_zone = 'Taipei'
     config.active_record.default_timezone = :local
+    # config.i18n.default_locale = :en
+    config.i18n.default_locale = :"zh-TW"
+
+    config.i18n.available_locales = [:"zh-TW", :en]
 
     config.to_prepare do
       # Load application's model / class decorators
