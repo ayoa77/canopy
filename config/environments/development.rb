@@ -49,7 +49,7 @@ Rails.application.configure do
   # config.I18n.default_local = zh-TW
   # Requried for allpay
   config.after_initialize do
-  ActiveMerchant::Billing::Base.mode = :development
+    ActiveMerchant::Billing::Base.mode = :development
   end
 
 

@@ -56,6 +56,11 @@ module Spree
       end
 
       def load_data
+
+        # OffsitePayments::Integrations::Allpay::PAYMENT_CVS.name = "OffsitePayments::Integrations::Allpay::PAYMENT_CVS"
+        # OffsitePayments::Integrations::Allpay::PAYMENT_CREDIT_CARD.name = "OffsitePayments::Integrations::Allpay::PAYMENT_CREDIT_CARD"
+        # OffsitePayments::Integrations::Allpay::PAYMENT_ATM.name = "OffsitePayments::Integrations::Allpay::PAYMENT_ATM"
+
         @providers = Gateway.providers.sort{|p1, p2| p1.name <=> p2.name }
       end
 

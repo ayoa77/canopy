@@ -1,3 +1,8 @@
+# require "offsite_payments/action_view_helper"
+# ActionView::Base.send(:include, OffsitePayments::ActionViewHelper)
+
+# initializers/allpay.rb
+# ActiveMerchant::Billing::Integrations::Allpay
 OffsitePayments::Integrations::Allpay.setup do |allpay|
   if Rails.env.development?
     # default setting for stage test

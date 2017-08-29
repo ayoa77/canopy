@@ -83,7 +83,7 @@ Rails.application.configure do
 
   # Requried for allpay
   config.after_initialize do
-  ActiveMerchant::Billing::Base.mode = :production
+    ActiveMerchant::Billing::Base.mode = :production
   end
 
 
