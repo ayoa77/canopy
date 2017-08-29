@@ -15,7 +15,15 @@ Spree.config do |config|
   config.default_country_id = country.id if country.present?
   # Example:
   # Uncomment to stop tracking inventory levels in the application
+
+
   config.track_inventory_levels = false
 end
+
+Rails.application.config.spree.payment_methods  << Spree::Gateway::Allpay
+
+# Rails.application.config.spree.payment_methods << OffsitePayments::Integrations::Allpay::PAYMENT_CREDIT_CARD
+# Rails.application.config.spree.payment_methods << OffsitePayments::Integrations::Allpay::PAYMENT_ATM
+# Rails.application.config.spree.payment_methods << OffsitePayments::Integrations::Allpay::PAYMENT_CVS
 
 Spree.user_class = "Spree::User"
