@@ -46,7 +46,7 @@ module Spree
       options  = params[:options] || {}
 
       # 2,147,483,647 is crazy. See issue #2695.
-      if quantity.between?(1, 2_147_483_647)
+      if quantity.between?(1, 1_000)
         begin
           order.contents.add(variant, quantity, options)
         rescue ActiveRecord::RecordInvalid => e

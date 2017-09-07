@@ -136,7 +136,7 @@
       </div>
 
       <div data-hook="admin_orders_index_search_buttons" class="form-actions">
-        <%= button Spree.t(:filter_results), 'search' %>
+        <%= button Spree.t(:filter), 'search' %>
       </div>
 
     <% end %>
@@ -157,7 +157,7 @@
           <th><%= sort_link @search, :created_at,     I18n.t(:created_at, scope: 'activerecord.attributes.spree/order') %></th>
         <% end %>
         <th><%= sort_link @search, :number,           I18n.t(:number, scope: 'activerecord.attributes.spree/order') %></th>
-        <th><%= sort_link @search, :considered_risky, I18n.t(:considered_risky, scope: 'activerecord.attributes.spree/order') %></th>
+        <th><%= sort_link @search, :considered_risky, Spree.t(:considered_risky) %></th>
         <th><%= sort_link @search, :state,            I18n.t(:state, scope: 'activerecord.attributes.spree/order') %></th>
         <th><%= sort_link @search, :payment_state,    I18n.t(:payment_state, scope: 'activerecord.attributes.spree/order') %></th>
          <% if Spree::Order.checkout_step_names.include?(:delivery) %>
@@ -208,7 +208,7 @@
             <span class="icon icon-filter filterable js-add-filter" data-ransack-field="q_email_cont" data-ransack-value="<%= order.email %>"></span>
           <% end %>
         </td>
-        <td><%= order.display_total.to_html %></td>
+        <td><%= order.display_total.to_html[0..-4] %></td>
         <td class='actions actions-1' data-hook="admin_orders_index_row_actions">
           <%= link_to_edit_url edit_admin_order_path(order), title: "admin_edit_#{dom_id(order)}", no_text: true if can?(:edit, order) %>
         </td>

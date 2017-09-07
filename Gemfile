@@ -45,6 +45,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'active_merchant_allpay', github: 'imgarylai/active_merchant_allpay'
 # gem 'activemerchant'
 # gem 'active_merchant_allpay'
+# gem 'allpay_payment-2.0.8', github: 'allPay/allPayAIO_Ruby'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

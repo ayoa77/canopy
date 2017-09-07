@@ -6,7 +6,7 @@
 
 <% if can?(:admin, Spree::ReturnAuthorization) || can?(:admin, Spree::CustomerReturn) %>
   <ul class="nav nav-sidebar">
-    <%= main_menu_tree Spree.t(:returns), icon: "transfer", sub_menu: "returns", url: "#sidebar-returns" %>
+    <%= main_menu_tree Spree.t(:return), icon: "transfer", sub_menu: "returns", url: "#sidebar-returns" %>
   </ul>
 <% end %>
 
