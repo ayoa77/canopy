@@ -2,6 +2,9 @@
   <% if can?(:create, Spree::Product) %>
     <%= button_link_to Spree.t(:new_product), new_object_url, { class: "btn-success", icon: 'add', id: 'admin_new_product' } %>
   <% end %>
+  <% if @product.has_variants? && @product.variable_prices? %>
+  <%= button_to Spree.t(:set_varied_prices_for_addons), "/admin/products/#{@product.id}/variants", method: :patch, class: "btn-info", icon: "hash", id: 'admin_populate_prices'  %>
+<% end %>
 <% end %>
 
 <%= render partial: 'spree/admin/shared/product_tabs', locals: {current: :details} %>

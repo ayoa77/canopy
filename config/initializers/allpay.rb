@@ -15,18 +15,4 @@ OffsitePayments::Integrations::Allpay.setup do |allpay|
     allpay.hash_key    = 'adfas123412343j'
     allpay.hash_iv     = '123ddewqerasdfas'
   end
-
-  def notify
-  notification = OffsitePayments::Integrations::Allpay::Notification.new(request.raw_post)
-
-  order = Order.find_by_number(notification.merchant_trade_no)
-
-  if notification.status && notification.checksum_ok?
-    # payment is compeleted
-  else
-    # payment is failed
-  end
-
-  render text: '1|OK', status: 200
-  end
 end

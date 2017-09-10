@@ -32,6 +32,9 @@ Rails.application.routes.draw do
         get "/event-delete/:id" => 'spree/admin/events#destroy'
         delete "/event-delete/:id" => 'spree/admin/events#destroy', as: :delete_event
 
+        patch "/products/:id/variants" => 'spree/admin/products#vary_prices', as: :set_varied_prices_for_addons
+
+
 
 
     end

@@ -36,22 +36,6 @@
       <%= text_field_tag "#{param_prefix}[verification_value]", '', options_hash.merge(id: 'card_code', class: 'form-control required cardCode', size: 5) %>
       <%= link_to "(#{Spree.t(:what_is_this)})", spree.content_path('cvv'), target: '_blank', "data-hook" => "cvv_link", id: "cvv_link" %>
     </div>
-    <% byebug %>
   </div>
-  <% payment_service_for  @order,
-                          @order.user.email,
-                          :service => :allpay,
-                          :html    => { :id => 'allpay-atm-form', :method => :post } do |service| %>
-    <% service.merchant_trade_no  @order.available_payment_methods.second.preferences[:merchant_id] %>
-    <% service.merchant_trade_date @order.created_at %>
-    <% service.total_amount @order.total.to_i %>
-    <% service.description @order.id %>
-    <% service.item_name @order.id %>
-    <% service.choose_payment OffsitePayments::Integrations::Allpay::PAYMENT_CREDIT_CARD %>
-    <% service.return_url root_path %>
-    <% service.notify_url root_path %>
-    <% service.encrypted_data %>
-    <%= submit_tag 'Buy!' %>
-  <% end %>
   <%= hidden_field_tag "#{param_prefix}[cc_type]", '', id: "cc_type", class: 'ccType' %>
 </div>
