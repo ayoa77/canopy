@@ -91,7 +91,7 @@ module Spree
     after_save :save_master
     after_save :run_touch_callbacks, if: :anything_changed?
     after_save :reset_nested_changes
-    after_touch :populate_prices
+    # after_touch :populate_prices
     after_touch :touch_taxons
 
     before_validation :normalize_slug, on: :update
@@ -231,18 +231,19 @@ module Spree
       end
     end
 
+      # use when prices do not need to be dynamicaly created
     def populate_prices
-        if variable_prices?
-      pv = self.variants
-      master_price = self.master.price
-      unless pv.empty? && pv.map(&:price).all? {|p| p != master_price}
-        pv.each do |eachpv|
-          eachpv.price = master_price
-          eachpv.option_values.each {|ov| eachpv.price += 20.to_d if ov.name != 'nil' }
-          eachpv.save
-          end
-        end
-      end
+      #   if variable_prices?
+      # pv = self.variants
+      # master_price = self.master.price
+      # unless pv.empty? && pv.map(&:price).all? {|p| p != master_price}
+      #   pv.each do |eachpv|
+      #     eachpv.price = master_price
+      #     eachpv.option_values.each {|ov| eachpv.price += 20.to_d if ov.name != 'nil' }
+      #     eachpv.save
+      #     end
+      #   end
+      # end
     end
 
     def total_on_hand
