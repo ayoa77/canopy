@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/hefan/spree_dynamic_variants.git
+  revision: 70e848131567f74229442ea8ae136b616ba7ae8d
+  branch: master
+  specs:
+    spree_dynamic_variants (3.2.0)
+      spree_core (> 3.1)
+
+GIT
   remote: https://github.com/imgarylai/active_merchant_allpay.git
   revision: 21b04a110b371368f1cc0e350768f68ed71b289c
   specs:
@@ -187,10 +195,10 @@ GEM
       mini_portile2 (~> 2.2.0)
     nokogiri (1.8.0-x86-mingw32)
       mini_portile2 (~> 2.2.0)
-    offsite_payments (2.5.0)
-      actionpack (>= 3.2.20, < 6.x)
+    offsite_payments (2.6.1)
+      actionpack (>= 3.2.20, < 5.2)
       active_utils (~> 3.3.0)
-      activesupport (>= 3.2.14, < 6.x)
+      activesupport (>= 3.2.14, < 5.2)
       builder (>= 2.1.2, < 4.0.0)
       i18n (~> 0.5)
       money (< 7.0.0)
@@ -430,6 +438,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   spree (~> 3.3.0.rc1)
   spree_auth_devise (~> 3.3.0.rc1)
+  spree_dynamic_variants!
   spree_gateway (~> 3.3.0.rc1)
   spree_i18n!
   spree_mail_settings!

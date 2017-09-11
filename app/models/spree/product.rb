@@ -91,6 +91,7 @@ module Spree
     after_save :save_master
     after_save :run_touch_callbacks, if: :anything_changed?
     after_save :reset_nested_changes
+    # after_touch :populate_prices
     after_touch :touch_taxons
 
     before_validation :normalize_slug, on: :update
@@ -202,6 +203,14 @@ module Spree
       end
     end
 
+    def variable_prices?
+      if self.taxons.map(&:name).include?('Smoothies')  || self.taxons.map(&:name).include?('Juices')
+        return true
+      else
+        return false
+      end
+    end
+
     def empty_option_values?
       options.empty? || options.any? do |opt|
         opt.option_type.option_values.empty?
@@ -220,6 +229,21 @@ module Spree
         product_property.value = property_value
         product_property.save!
       end
+    end
+
+      # use when prices do not need to be dynamicaly created
+    def populate_prices
+      #   if variable_prices?
+      # pv = self.variants
+      # master_price = self.master.price
+      # unless pv.empty? && pv.map(&:price).all? {|p| p != master_price}
+      #   pv.each do |eachpv|
+      #     eachpv.price = master_price
+      #     eachpv.option_values.each {|ov| eachpv.price += 20.to_d if ov.name != 'nil' }
+      #     eachpv.save
+      #     end
+      #   end
+      # end
     end
 
     def total_on_hand
@@ -244,6 +268,8 @@ module Spree
     def category
       taxons.joins(:taxonomy).find_by(spree_taxonomies: { name: Spree.t(:taxonomy_categories_name) })
     end
+
+
 
     private
 
@@ -389,5 +415,4 @@ module Spree
     end
   end
 end
-
 require_dependency 'spree/product/scopes'

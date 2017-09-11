@@ -9,6 +9,7 @@ gem 'test-unit'
 gem 'minitest'
 gem 'rubocop'
 # spree gems
+gem 'spree_dynamic_variants', github: 'hefan/spree_dynamic_variants', branch: 'master'
 gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings'
 gem 'spree', '~> 3.3.0.rc1'
 gem 'spree_auth_devise', '~> 3.3.0.rc1'
@@ -45,6 +46,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'active_merchant_allpay', github: 'imgarylai/active_merchant_allpay'
 # gem 'activemerchant'
 # gem 'active_merchant_allpay'
+# gem 'allpay_payment-2.0.8', github: 'allPay/allPayAIO_Ruby'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

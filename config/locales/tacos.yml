@@ -1862,7 +1862,7 @@ spree:
     cart: "購物車"
     complete: "完成"
     confirm: "確認"
-    considered_risky:
+    considered_risky: "較不安全"
     delivery: "寄送方式"
     payment: "付款"
     resumed: "重新開始"
@@ -2143,7 +2143,7 @@ spree:
   show_active: "顯示使用中的資料"
   show_deleted: "顯示被刪除的資料"
   show_only_complete_orders: "顯示已完成的訂單"
-  show_only_considered_risky:
+  show_only_considered_risky:  "顯示較不安全"
   show_rate_in_label:
   sku: "商品編號"
   skus:

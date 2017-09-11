@@ -211,6 +211,19 @@ zh-TW:
       not_locked: "未鎖定"
       not_saved: "在儲存%{resource}時遭遇%{count} 個錯誤"
   spree:
+    closed: "休息"
+    our_store: "我們的店"
+    help: "幫助"
+    please_login: "請先登入"
+    new_here?: "沒有帳戶嗎？"
+    save_my_address: "儲存地址"
+    protein: "蛋白質"
+    calories: "卡路里"
+    fat: "脂肪"
+    sodium: "鈉"
+    fiber: "纖維"
+    carbs: "碳水化合物"
+    sugar: "糖"
     abbreviation: "縮寫"
     account: "帳戶"
     account_updated: "帳戶已更新"
@@ -473,7 +486,7 @@ zh-TW:
     errors_prohibited_this_record_from_being_saved:
       one: "有 1 個錯誤發生使得這筆資料無法被儲存"
       other: "有 %{count} 個錯誤發生使得這筆資料無法被儲存"
-    event: "觸發事件"
+    event: "活動"
     events:
       spree:
         cart:
@@ -489,7 +502,7 @@ zh-TW:
           signup: User signup
     exceptions:
       count_on_hand_setter: "無法手動設置 count_on_hand, 將會在 recalculate_count_on_hand 中被自動設定. 請使用 `update_column(:count_on_hand, value)`"
-    expiration: "過期"
+    expiration: "有效期限"
     extension: "擴展"
     filename: "檔案名稱"
     fill_in_customer_info: "請填寫消費者資訊"
@@ -497,7 +510,7 @@ zh-TW:
     finalize: "完成"
     first_item: "第一項商品價格"
     first_name: "名"
-    first_name_begins_with: First Name Begins With
+    first_name_begins_with: "名字開始"
     flat_percent: "固定比例"
     flat_rate_per_item: "固定金額(每商品)"
     flat_rate_per_order: "固定金額(單一訂單)"
@@ -697,7 +710,7 @@ zh-TW:
     order_number: "訂單編號"
     order_populator:
       out_of_stock: "%{item} 已無存貨"
-      please_enter_reasonable_quantity: "請輸入合理的數量."
+    please_enter_reasonable_quantity: "請輸入合理的數量."
     order_processed_successfully: "您的訂單已被接收"
     order_state:
       address: "地址"
@@ -1482,6 +1495,7 @@ spree:
   confirm: "確認"
   confirm_delete: "確認刪除"
   confirm_password: "確認密碼"
+  considered_risky: "較不安全"
   continue: "繼續"
   continue_shopping: "繼續購物"
   cost_currency: "成本貨幣"
@@ -1603,7 +1617,7 @@ spree:
   errors_prohibited_this_record_from_being_saved:
     one: "有 1 個錯誤發生使得這筆資料無法被儲存"
     other: "有 %{count} 個錯誤發生使得這筆資料無法被儲存"
-  event: "觸發事件"
+  event: "活動"
   events:
     spree:
       cart:
@@ -1862,7 +1876,7 @@ spree:
     cart: "購物車"
     complete: "完成"
     confirm: "確認"
-    considered_risky:
+    considered_risky: "較不安全"
     delivery: "寄送方式"
     payment: "付款"
     resumed: "重新開始"
@@ -2005,7 +2019,7 @@ spree:
   quantity: "數量"
   quantity_returned: "退貨數量"
   quantity_shipped: "出貨數量"
-  quick_search:
+  quick_search: "搜尋"
   rate: "費率"
   reason: "理由"
   receive: "收到"
@@ -2323,8 +2337,11 @@ spree:
   save_my_address: "儲存地址"
   protein: "蛋白質"
   calories: "卡路里"
-  fat: "熱量"
+  fat: "脂肪"
   sodium: "鈉"
   fiber: "纖維"
   carbs: "碳水化合物"
   sugar: "糖"
+  cash: ""
+  sorry_you_must_order_multiples_of_six_to_to_have_them_shipped: ""
+  set_varied_prices_for_addons: ""

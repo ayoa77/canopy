@@ -33,8 +33,8 @@
       <div class = "events current">
 
         <div class = "event-time current-bkgnd">
-          <p class="p-event">
-      <%= eve.date.year.to_s[-2..-1]%>.<%= eve.date.month %>.<%= eve.date.day %> <span class="rwd-break">@<%=eve.time.strftime("%l:%M %P")%></span>
+          <p class="p-event"> <%#= eve.date.year.to_s[-2..-1]%>
+      <%= Spree.t(eve.date.strftime("%A").to_sym)%> </br><%= eve.date.month %>/<%= eve.date.day %> <span class="rwd-break">@<%=eve.time.strftime("%l:%M %P")%></span>
           </p>
         </div>
 

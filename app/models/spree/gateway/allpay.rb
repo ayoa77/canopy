@@ -4,7 +4,7 @@ module Spree
     preference :password, :string
 
     def provider_class
-        OffsitePayments::Integrations::Allpay
+        OffsitePayments::Integrations::Allpay::Helper
     end
   end
 end

@@ -89,6 +89,13 @@ module Spree
         end
       end
 
+      def vary_prices
+        @product = Product.friendly.find(params[:id])
+        @product.populate_prices
+        redirect_to admin_product_variants_path(@product)
+      end
+
+
       protected
 
       def find_resource
