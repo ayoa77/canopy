@@ -10,28 +10,33 @@ module Spree
 
     def index
       @taxonomies = Spree::Taxonomy.includes(root: :children)
-      if params[:categories] == "Smoothies"
-        @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Smoothies"})
-      elsif params[:categories] == "Juice"
-        @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Juice"})
-      elsif params[:categories] == "Tea"
-        @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Tea"})
-        else
-        @searcher = build_searcher(params.merge(include_images: true))
-        @products = @searcher.retrieve_products
-        @products = @products.includes(:possible_promotions) if @products.respond_to?(:includes)
+      # if params[:categories] == "Smoothies"
+      #   @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Smoothies"})
+      # elsif params[:categories] == "Juices"
+      #   @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Juices"})
+      # elsif params[:categories] == "Tea"
+      #   @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Tea"})
+      #   else
+        @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Delivery"})
+        # @searcher = build_searcher(params.merge(include_images: true))
+        # @products = @searcher.retrieve_products
+        # @products = @products.includes(:possible_promotions) if @products.respond_to?(:includes)
 end
-
-
-# = button_to "smth", some_path, method: :get, params: { start_point: 3.month.ago }
-    end
 
       def instore
         @taxonomies = Spree::Taxonomy.includes(root: :children)
+        if params[:categories] == "Smoothies"
+          @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Smoothies"})
+        elsif params[:categories] == "Juice"
+          @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Juices"})
+        elsif params[:categories] == "Tea"
+          @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Tea"})
+          else
         @searcher = build_searcher(params.merge(include_images: true))
         @products = @searcher.retrieve_products
         @products = @products.includes(:possible_promotions) if @products.respond_to?(:includes)
      end
+   end
 
     def show
       @variants = @product.variants_including_master.
