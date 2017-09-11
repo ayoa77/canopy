@@ -1,17 +1,19 @@
+
+<!-- ajhelp : need to edit this to include editable fields for shipping address and phone number -->
 <div class="col-md-6 col-md-offset-3">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title"><%= Spree.t(:editing_user) %></h3>
+  <div class="change-me">
+    <div class="change-me-2">
+      <p class="change-me-3"><%= Spree.t(:editing_user) %></p>
     </div>
-    <div class="panel-body">
+    <div class="change-me-4">
       <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
 
       <%= form_for Spree::User.new, :as => @user, :url => spree.user_path(@user), :method => :put do |f| %>
         <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
         <p>
-          <%= f.submit Spree.t(:update), :class => 'btn btn-primary' %>
+          <%= f.submit Spree.t(:update), :class => 'ghost-button-green' %>
         </p>
-      <% end %>
+        <% end %>
     </div>
   </div>
 </div>
