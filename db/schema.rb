@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170910122324) do
+ActiveRecord::Schema.define(version: 20170911085214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -484,7 +484,7 @@ ActiveRecord::Schema.define(version: 20170910122324) do
     t.string "fiber"
     t.string "sodium"
     t.string "carbs"
-    t.boolean "dynamic_variants", default: false
+    t.boolean "dynamic_variants", default: true
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
