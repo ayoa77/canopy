@@ -215,11 +215,14 @@
 }
 
 .menuText {
-  margin: calc(45vh - 110px) auto 0;
+  // margin: calc(45vh - 110px) auto 0;
 }
 
 .menuBar.downMenu {
-  height: 100vh;
+  height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menuText .col-sm-3.menuDown,
@@ -359,6 +362,7 @@ html.menuDown {
 #spree-header #header {
   padding: 0;
 }
+
 @media screen and (min-width: 359px) {}
 @media screen and (min-width: 374px) {}
 @media screen and (min-width: 411px) {
@@ -367,6 +371,7 @@ html.menuDown {
 
     }
 }
+
 @media screen and (max-width: 767px) {
 
   .col-sm-4.menuDown {
@@ -374,20 +379,21 @@ html.menuDown {
     }
 
   .menuText {
-    margin: calc(25vh - 110px) auto 0 auto;
+    // margin: calc(25vh - 110px) auto 0 auto;
   }
 
   .menuText .col-sm-3, .menuText .col-sm-4 {
     text-align: left;
   }
 }
+
 @media screen and (min-width: 413px) {
   .menuText .col-sm-3, .menuText .col-sm-4 {
-    font-size: 50px;
-
+    font-size: 40px;
   }
 
 }
+
 @media screen and (max-width: 900px) {}
 @media screen and (min-width: 992px) {}
 @media screen and (min-width: 1200px) {}

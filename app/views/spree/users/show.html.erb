@@ -11,10 +11,10 @@
   </div>
 
   <div data-hook="account_summary" class="account-summary well">
-    <dl id="user-info">
+    <div id="user-info">
       <dt><%= Spree.t(:email) %></dt>
       <dd><%= @user.email %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
-    </dl>
+    </div>
   </div>
 
   <div data-hook="account_my_orders" class="account-my-orders">
