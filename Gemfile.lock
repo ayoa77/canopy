@@ -87,6 +87,8 @@ GEM
       activerecord (>= 3.0)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    allpay-web-service (1.1.1)
+      nori (~> 2.6)
     arel (8.0.0)
     ast (2.3.0)
     autoprefixer-rails (7.1.2.2)
@@ -195,6 +197,7 @@ GEM
       mini_portile2 (~> 2.2.0)
     nokogiri (1.8.0-x86-mingw32)
       mini_portile2 (~> 2.2.0)
+    nori (2.6.0)
     offsite_payments (2.6.1)
       actionpack (>= 3.2.20, < 5.2)
       active_utils (~> 3.3.0)
@@ -425,6 +428,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_merchant_allpay!
+  allpay-web-service
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
