@@ -2,7 +2,7 @@
                         @order.user.email,
                         :service => :allpay,
                         :html    => { :id => 'allpay-atm-form', :method => :post } do |service| %>
-  <% service.merchant_trade_no  @order.id %>
+  <% service.merchant_trade_no SecureRandom.hex(10) %>
   <% service.merchant_trade_date @order.created_at %>
   <% service.total_amount @order.total.to_i %>
   <% service.description @order.id %>

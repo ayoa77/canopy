@@ -107,9 +107,13 @@
           </div>
         </div>
 
-        <div id="cart-form" data-hook="cart_form" class="col-xs-12">
+        <div id="cart-form" class="col-xs-12">
           <div class="button-contain flex-column">
-            <%= render partial: 'cart_form' %>
+            <% if @product.dynamic_variants? %>
+             <%= render :partial => "dynamic_variant_cart_form" %>
+           <% else %>
+             <%= render :partial => "cart_form" %>
+           <% end %>
           </div>
         </div>
       <!-- </div> -->

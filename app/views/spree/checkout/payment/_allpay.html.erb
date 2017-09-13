@@ -2,15 +2,16 @@
                         @order.user.email,
                         :service => :allpay,
                         :html    => { :id => 'allpay-atm-form', :method => :post } do |service| %>
-  <% service.merchant_trade_no  @order.id %>
+  <% service.merchant_trade_no  @order.number  %>
   <% service.merchant_trade_date @order.created_at %>
   <% service.total_amount @order.total.to_i %>
   <% service.description @order.id %>
-  <% service.item_name @order.id %>
+  <% service.item_name @order.products.pluck(:name).join(' # ') %>
   <% service.choose_payment OffsitePayments::Integrations::Allpay::PAYMENT_CREDIT_CARD %>
-  <% service.return_url "#{root_url}/checkout/update/payment" %>
-  <% service.notify_url "#{root_url}/checkout/update/payment" %>
+  <% service.notify_url "http://www.allpay.com.tw/receive.php" %>
+  <% service.return_url "http://www.allpay.com.tw/Shopping/Detail" %>
   <% service.encrypted_data %>
+  <%byebug%>
   <div class="col-xs-12 col-md-4 col-md-offset-8 save-and-continue-button" data-hook="buttons">
     <%= submit_tag Spree.t(:save_and_continue), class: 'ghost-button-orange' %>
   </div>

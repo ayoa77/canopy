@@ -30,6 +30,13 @@ module Spree
       end
     end
 
+    def notify
+        order = Order.find(params[:id])
+        order.paid! if params[:RtnCode] == "1"
+
+        render text: '1|OK', status: 200
+    end
+
     # Shows the current incomplete order from the session
     def edit
       @order = current_order || Order.incomplete.

@@ -106,6 +106,8 @@ module Spree
       validates :price, if: proc { Spree::Config[:require_master_price] }
     end
 
+    validates_length_of :description1, :maximum => 34
+
     validates :slug, presence: true, uniqueness: { allow_blank: true }
     validate :discontinue_on_must_be_later_than_available_on, if: -> { available_on && discontinue_on }
 
