@@ -1019,9 +1019,67 @@ margin-bottom: 30px;
   border-radius: 0px;
 }
 
-.check_these_boxes {
-  
+.dynamic-variants {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+input[type="checkbox"] {
+	visibility: hidden;
+}
+
+.check-these-boxes {
+  width: 40px;
+  height: 40px;
+  margin: 20px 0px 10px 0;
+
+  border-radius: 100%;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-these-boxes label {
+	display: block;
+	width: 40px;
+	height: 40px;
+	border-radius: 100px;
+
+	transition: all .3s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+
+	background: #888;
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+}
+
+.dynamic-variants span {
+  width: 100px;
+  height: 40px;
+  color: #333;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin: 15px 0 0 20px;
+}
+
+.check-these-boxes input[type="checkbox"]:checked + label {
+	background: #b2d67c;
+}
+
 
 // nutrition.html.erb (Bootstrap Table Stylings)
 #nutrition-category-markers {
@@ -1422,6 +1480,11 @@ margin-bottom: 30px;
     width: 260px;
   }
 
+  .dynamic-variants span {
+    width: 75px;
+    margin: 20px 0 0 17px;
+  }
+
 }
 @media screen and (max-width: 375px) {}
 @media screen and (max-width: 425px) {
@@ -1474,12 +1537,6 @@ margin-bottom: 30px;
     overflow: hidden;
   }
 
-    // from custom2.scss
-
-  .menuText {
-    margin-top: -120px;
-  }
-
 }
 @media screen and (max-width: 767px) {
 
@@ -1529,6 +1586,8 @@ margin-bottom: 30px;
     align-items: center;
     justify-content: center;
   }
+
+
 
 }
 

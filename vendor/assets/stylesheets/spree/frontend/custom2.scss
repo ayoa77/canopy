@@ -210,12 +210,12 @@
 .menuBar {
   height: 0;
   width: 100%;
-  transition: all 0.4s;
+  transition: all 0.3s;
   position: relative;
 }
 
-.menuText {
-  // margin: calc(45vh - 110px) auto 0;
+.menuText.row {
+  transition: all 0.3s;
 }
 
 .menuBar.downMenu {
@@ -223,6 +223,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  transition: all 0.3s;
 }
 
 .menuText .col-sm-3.menuDown,
@@ -231,7 +233,7 @@
 }
 
 .col-sm-4.menuDown {
-    padding-top: 70px;
+    padding-top: 50px;
   }
 
 .menuText .col-sm-3,
@@ -241,7 +243,7 @@
   margin: 0 auto;
   text-align: center;
   color: white;
-  font-size: 40px;
+  font-size: 32px;
   transition: color 0.4s;
 }
 
@@ -367,7 +369,7 @@ html.menuDown {
 @media screen and (min-width: 374px) {}
 @media screen and (min-width: 411px) {
     .menuText .col-sm-3, .menuText .col-sm-4 {
-      font-size: 40px;
+      font-size: 32px;
 
     }
 }
@@ -389,7 +391,7 @@ html.menuDown {
 
 @media screen and (min-width: 413px) {
   .menuText .col-sm-3, .menuText .col-sm-4 {
-    font-size: 40px;
+    font-size: 32px;
   }
 
 }

@@ -3,11 +3,21 @@
 
     <div class = "dynamic-variants">
 
-      <% @product.option_types.each do |ot| %>
+      <% @product.option_types.each_with_index do |ot, index| %>
 
-      <%= check_box_tag("options[]", ot.option_values.first.id , false,  class: "nathan beautify check_these_boxes") %>
-      <%= ot.presentation  %>
-      <!-- <td><%#= select("options", ot.id, ot.option_values.collect {|ov| [ ov.presentation, ov.id ] }) %></td> -->
+        <div class="check-these-boxes">
+
+          <%= check_box_tag("options[]", ot.option_values.first.id, false, type:"checkbox", id: ot.presentation) %>
+
+          <label for="<%= ot.presentation %>">+</label>
+
+        </div>
+        <span><%= ot.presentation %></span>
+
+        <% if ((index + 1) % 2) == 0 && ot != @product.option_types.last %>
+          </div>
+          <div class = "dynamic-variants">
+        <% end  %>
 
       <% end %>
 
@@ -30,19 +40,23 @@
       <div class="add-to-cart">
         <div class="row">
 
+
           <div class="col-xs-12 col-sm-8 col-sm-offset-2">
             <div class="quantity-cart">
 
-              <%= number_field_tag :quantity, 1, :class => 'title form-control col-xs-6', :min => 1 %>
+              <%= number_field_tag :quantity, 1, class: 'title form-control col-xs-6', min: 1 %>
+
             </div>
           </div>
-          <div class="button-contain flex-column">
-            <div class="add-to-cart">
-              <%= button_tag :class => 'ghost-button-green', :id => 'add-to-cart-button', :type => :submit do %>
-              <%= Spree.t(:add_to_cart) %>
-              <% end %>
-            </div>
+
+          <div class="col-xs-12">
+
+            <%= button_tag class: 'ghost-button-green', id: 'add-to-cart-button', type: :submit do %>
+            <%= Spree.t(:add_to_cart) %>
+            <% end %>
+
           </div>
+
         </div>
       </div>
     </div>
