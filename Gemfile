@@ -44,6 +44,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use this gem to connect with AllPAy
 gem 'active_merchant_allpay', github: 'imgarylai/active_merchant_allpay'
+gem 'allpay-web-service'
 # gem 'activemerchant'
 # gem 'active_merchant_allpay'
 # gem 'allpay_payment-2.0.8', github: 'allPay/allPayAIO_Ruby'

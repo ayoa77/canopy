@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get '/instore-menu' => 'spree/custom#instoreMenu', as: :menu
   get '/nutrition' => 'spree/custom#nutrition', as: :nutrition
   get '/events' =>  'spree/events#index', as: :events
+  get '/allpay_payment' => 'spree/allpay#AioTestAll'
+  get '/allpay_return' => 'spree/allpay#notify'
 
     scope "/admin" do
 

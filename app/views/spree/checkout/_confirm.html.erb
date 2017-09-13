@@ -8,20 +8,6 @@
 </div>
 
 <div class="well text-right form-buttons" data-hook="buttons">
-  <% payment_service_for  @order,
-                          @order.user.email,
-                          :service => :allpay,
-                          :html    => { :id => 'allpay-atm-form', :method => :post } do |service| %>
-    <% service.merchant_trade_no  @order.available_payment_methods.second.preferences[:merchant_id] %>
-    <% service.merchant_trade_date @order.created_at %>
-    <% service.total_amount @order.total.to_i %>
-    <% service.description @order.id %>
-    <% service.item_name @order.id %>
-    <% service.choose_payment OffsitePayments::Integrations::Allpay::PAYMENT_CREDIT_CARD %>
-    <% service.return_url root_path %>
-    <% service.notify_url root_path %>
-    <% service.encrypted_data %>
   <%= submit_tag Spree.t(:place_order), class: 'btn btn-lg btn-success' %>
-  <% end %>
   <script>Spree.disableSaveOnClick();</script>
 </div>

@@ -107,6 +107,17 @@
           </div>
         </div>
 
+
+        <div id="cart-form" class="col-xs-12">
+          <div class="button-contain flex-column">
+            <% if @product.dynamic_variants? %>
+             <%= render :partial => "dynamic_variant_cart_form" %>
+           <% else %>
+             <%= render :partial => "cart_form" %>
+           <% end %>
+          </div>
+        </div>
+
         <%= form_for :order, url: populate_orders_path do |f| %>
 
           <div class = "col-xs-12">
@@ -150,6 +161,7 @@
             </div>
 
         <% end %>
+
       <!-- </div> -->
 
     </div>
