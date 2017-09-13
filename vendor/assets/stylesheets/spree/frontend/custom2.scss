@@ -196,7 +196,7 @@
 
 #navigation.menuDown {
   transition: height 400;
-  height: 100%;
+  height: calc(100% - 120px);
   background: -webkit-linear-gradient(#EAF7D6, #B3D57C);
   /* Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#EAF7D6, #B3D57C);

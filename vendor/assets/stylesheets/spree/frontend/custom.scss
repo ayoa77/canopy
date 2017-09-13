@@ -211,7 +211,7 @@ a:hover{
   background-position: top left;
   height: 500px;
   width: 100%;
-  background-color: #00B7Ff;
+  background-color: #d8dfe7;
   margin-bottom: 40px;
   .slider-text {
     width: 100%;
@@ -546,6 +546,7 @@ a:hover{
     text-align: left;
     color: #fff;
     font-size: 40px;
+    text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
   }
 }
 
@@ -682,17 +683,35 @@ a:hover{
   border-width: 2px;
   border-radius: 0px;
   img {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 }
 
-.panel-body{
+.panel-body {
   height: 244px;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
   .info{
     font-size: 16px;
   }
   .ingredients{
+    margin: 0 10px;
+    padding: 0;
+    height: 32px;
+    overflow: hidden;
+    line-height: 16px;
+    font-size: 14px;
     color: #bbb;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   }
 }
 
@@ -820,6 +839,8 @@ a:hover{
 }
 
 #empty-cart {
+margin-bottom: 30px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -996,6 +1017,10 @@ a:hover{
   color: #B3D57C;
   border: 1px solid #B3D57C;
   border-radius: 0px;
+}
+
+.check_these_boxes {
+  
 }
 
 // nutrition.html.erb (Bootstrap Table Stylings)
@@ -1449,6 +1474,12 @@ a:hover{
     overflow: hidden;
   }
 
+    // from custom2.scss
+
+  .menuText {
+    margin-top: -120px;
+  }
+
 }
 @media screen and (max-width: 767px) {
 
@@ -1518,7 +1549,6 @@ a:hover{
   .menu-picture-centering img {
       height: 20vw;
   }
-
 
 }
 

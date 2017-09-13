@@ -13,7 +13,7 @@
       <div class="col-xs-6">
         <div class="shop-slider-text">
           <p>
-            <%= Spree.t(:shop) %> ;)
+            <%= Spree.t(:shop) %>
           </p>
         </div>
       </div>
@@ -25,77 +25,77 @@
 
 <!-- Sorting Menu for Products -->
 
-<div id="sortin-it-out">
+<!-- <div id="sortin-it-out">
   <div class="container">
-    <div class="row">
+    <div class="row"> -->
 
-      <div class="col-xs-10 col-xs-offset-1">
+      <!-- Circular Buttons for Categories -->
 
-        <!-- Circular Buttons for Categories -->
-        <%=link_to products_path(categories: "Juice"), method: :get do%>
+      <!-- <div class="col-xs-10 col-xs-offset-1">
+        <%#= link_to products_path(categories: "Juice"), method: :get do%>
             <div class="col-xs-3 visible-md visible-lg">
               <div class="sorting-hat juice-picture">
                 <p class="sorting-text">
-                  <%= Spree.t(:juice) %>
+                  <%#= #Spree.t(:juice) %>
                 </p>
               </div>
             </div>
-          <%end%>
+          <%#end%>
 
-          <%=link_to products_path(categories: "Smoothies"), method: :get  do%>
+          <%#=link_to products_path(categories: "Smoothies"), method: :get  do%>
             <div class="col-xs-3 visible-md visible-lg">
               <div class="sorting-hat smoothie-picture">
                 <p class="sorting-text">
-                  <%= Spree.t(:smoothie) %>
+                  <%#= Spree.t(:smoothie) %>
                 </p>
               </div>
             </div>
-          <%end%>
-          <%=link_to products_path(categories: "Tea"), method: :get  do%>
+          <%#end%>
+          <%#=link_to products_path(categories: "Tea"), method: :get  do%>
             <div class="col-md-3 visible-md visible-lg">
               <div class="sorting-hat tea-picture">
                 <p class="sorting-text">
-                  <%= Spree.t(:tea) %>
+                  <%#= Spree.t(:tea) %>
                 </p>
               </div>
             </div>
-          <%end%>
+          <%#end%>
 
-            <%=link_to products_path, method: :get do%>
+            <%#=link_to products_path, method: :get do%>
               <div class="col-md-3 visible-md visible-lg">
                 <div class="sorting-hat-all">
                   <p class="sorting-text-all">
-                    <%= Spree.t(:all) %>
+                    <%#= Spree.t(:all) %>
                   </p>
                 </div>
               </div>
-          <%end%>
+          <%#end%>
 
-      </div>
+      </div> -->
 
       <!-- Small buttons for categories (Mobile) -->
-    <div class="col-xs-12 visible-xs visible-sm">
+    <!-- <div class="col-xs-12 visible-xs visible-sm">
       <div id="sortin-it-out">
         <div class="btn-group btn-block" style="margin:5px 0 10px 0;">
 
         <a data-method="get" href="/products?categories=Juice" type="button" class="btn btn-primary">
-        <span style="font-size: smaller"><%= Spree.t(:juice) %></span></a>
+        <span style="font-size: smaller"><%#= Spree.t(:juice) %></span></a>
 
         <a data-method="get" href="/products?categories=Smoothies" type="button" class="btn btn-primary">
-        <span style="font-size: smaller"><%= Spree.t(:smoothie) %></span></a>
+        <span style="font-size: smaller"><%#= Spree.t(:smoothie) %></span></a>
 
         <a data-method="get" href="/products?categories=Tea" type="button" class="btn btn-primary">
-        <span style="font-size: smaller"><%= Spree.t(:tea) %></span></a>
+        <span style="font-size: smaller"><%#= Spree.t(:tea) %></span></a>
 
         <a data-method="get" href="/products" type="button" class="btn btn-primary">
-        <span style="font-size: smaller"><%= Spree.t(:all) %></span></a>
+        <span style="font-size: smaller"><%#= Spree.t(:all) %></span></a>
             </div>
       </div>
-    </div>
-
+    </div> -->
+<!--
     </div>
   </div>
-</div>
+</div> -->
 
 
 <!-- spree loads the products -->
@@ -123,20 +123,21 @@
       <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
       <!-- this <a> tag needs to link to teh variable url -->
       <a href="<%=url%>">
+
         <div class="panel-body text-center product-body">
 
           <%= link_to url, itemprop: "url" do %>
             <%= small_image(product, itemprop: "image", class:"item__img") %><br/>
             <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
           <% end %>
-        </br>
-          <span class="ingredients"><p>
-
-          <%=  product.description %>
-          </p>
+          
+          <span class="ingredients">
+            <%=  product.description %>
           </span>
+
           <span class="price selling lead" itemprop="price"><%= display_price(product)[0..-4] %></span>
         </div>
+
         <%= form_for :order, id: "add-to-cart-from-product-index", remote: true, url: populate_orders_path, method: 'post' do |f| %>
         <%= hidden_field_tag "variant_id", product.master.id %>
         <%= hidden_field_tag "quantity", 1 %>
