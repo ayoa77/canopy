@@ -4,20 +4,20 @@ module Spree
 
 class AllpayController < Spree::OrdersController
 
-  def AioTestAll
+  def AioTestAll(order)
     ## 參數值為[PLEASE MODIFY]者，請在每次測試時給予獨特值
     ## 若要測試非必帶參數請將base_param內註解的參數依需求取消註解 ##
     base_param = {
-      'MerchantTradeNo' => "#{SecureRandom.hex(10)}",  #請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
-      'MerchantTradeDate' => "2017/02/13 15:45:30", # ex: 2017/02/13 15:45:30
-      'TotalAmount' => '100',
-      'TradeDesc' => '測試交易描述',
-      'ItemName' => '測試商品等',
-      'ReturnURL' => 'http://192.168.0.1'
+      'MerchantTradeNo' => order.created_at.strftime("%Y-%m-%d") + order.number,  #請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
+      'MerchantTradeDate' => order.created_at, # ex: 2017/02/13 15:45:30
+      'TotalAmount' => order.total.to_i,
+      'TradeDesc' => 'Canopy Juice',,
+      'ItemName' => order.products.pluck(:name).join(' # '),
+      'ReturnURL' => '/allpay_return',
       #'ChooseSubPayment' => '',
       #'OrderResultURL' => 'http://192.168.0.1/payment_result',
       #'NeedExtraPaidInfo' => '1',
-      #'ClientBackURL' => 'https://www.google.com',
+       'ClientBackURL' => '/allpay_return'
       #'ItemURL' => 'http://item.test.tw',
       #'Remark' => '交易備註',
       #'HoldTradeAMT' => '1',

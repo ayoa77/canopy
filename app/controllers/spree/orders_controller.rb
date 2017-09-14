@@ -17,6 +17,7 @@ module Spree
       if @order.contents.update_cart(order_params)
         respond_with(@order) do |format|
           format.html do
+            byebug
             if params.has_key?(:checkout)
               @order.next if @order.cart?
               redirect_to checkout_state_path(@order.checkout_steps.first)
