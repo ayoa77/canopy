@@ -7,16 +7,23 @@ Rails.application.routes.draw do
   #
   # We ask that you don't use the :as option here, as Spree relies on it being
   # the default of "spree".
+  Rails.application.routes.draw do
+   RoutingFilter.active = false
+ end
+
   mount Spree::Core::Engine, at: '/'
 
+
+
+  post '/en/allpay_return' => 'spree/checkout#notify'
+  post '/zh-TW/allpay_return' => 'spree/checkout#notify'
+  post '/allpay_return' => 'spree/checkout#notify'
   get '/instore' => 'spree/products#instore'
   get '/shop' => 'spree/products#index'
   get '/about' => 'spree/custom#about', as: :about
   get '/instore-menu' => 'spree/custom#instoreMenu', as: :menu
   get '/nutrition' => 'spree/custom#nutrition', as: :nutrition
   get '/events' =>  'spree/events#index', as: :events
-  get '/allpay_payment' => 'spree/allpay#AioTestAll'
-  get '/allpay_return' => 'spree/allpay#notify'
 
     scope "/admin" do
 

@@ -130,6 +130,16 @@ and how to turn it off.  :D -->
       <p id="minstrs" data-hook>
         <h4><%= Spree.t(:shipping_instructions) %></h4>
         <%= form.text_area :special_instructions, cols: 40, rows: 4, class: "form-control" %>
+        <%= form.date_field :delivery_date, value: datepicker_field_value(@order.delivery_date), class: 'datepicker form-control' %>
+        <div class="form-group">
+   <%= form.label Spree.t(:time_of_day) %> <br />
+   <%= form.label Spree.t(:morning), Spree.t(:morning) %>
+   <%= form.radio_button :time_of_day, Spree.t(:morning), :checked => true %>
+   <%= form.label Spree.t(:afternoon), Spree.t(:afternoon) %>
+   <%= form.radio_button :time_of_day, Spree.t(:afternoon)%>
+   <%= form.label Spree.t(:evening), Spree.t(:evening) %>
+   <%= form.radio_button :time_of_day, Spree.t(:evening) %><br />
+</div>
       </p>
     <% end %>
   </div>

@@ -55,7 +55,7 @@
       <% end %>
       <% if @order.state == 'payment' %>
         <div id="checkout-summary" data-hook="checkout_summary_box" class="col-md-3">
-          <%= render partial: 'spree/checkout/payment/allpay', locals: { order: @order } %>
+          <!-- <%#= render partial: 'spree/checkout/payment/allpay', locals: { order: @order } %> -->
         </div>
       <% end %>
     </div>
