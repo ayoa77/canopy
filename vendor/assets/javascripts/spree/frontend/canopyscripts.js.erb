@@ -90,10 +90,10 @@ else {
 
     /////////// product to cart animation ///////////
 
-    var cart = $('.navCartCount'),
-        addToCart = $('.add-to-cart');
+    // addToCart = $('.add-to-cart');
 
-    addToCart.on('click', function (evt) {
+    $('.add-to-cart').on('click', function (evt) {
+      var cart = $('.navCartCount');
       // evt.preventDefault();
       // evt.stopPropagation();
 
@@ -125,21 +125,6 @@ else {
     });
 
 
-    //   el.parents('.panel.panel-default').first().find('img.item__img').prepend(flyingImg);
-    //   count =  parseInt($('#shopcount .navCartCount').text()),
-    //   count +=1;
-    //   $('#shopcount .navCartCount').html(count);
-    // });
-
-
-
-// $('.linedelete').click(function() {
-//   var lineid = $(this).attr('id');
-//   var deleteformid = '' + lineid
-//   y.submit();
-// });
-
-
 if (($('form#update-cart')).is('*')) {
   return ($('form#update-cart a.destroy')).show().one('click', function() {
     ($(this)).parents('#line-item').first().find('input.line_item_quantity').val(0);
@@ -152,6 +137,15 @@ $('form#update-cart a.submit').click(function() {
   $('form#update-cart').submit();
   });// this. get id and then use that to call on the form id and submit it.
 
+  $('#add-to-cart-button').on('click', function (evt) {
+    amoutToAdd = parseInt($('#quantity').val()),
+    // evt.preventDefault();
+    // evt.stopPropagation();
+
+    shoWcount =  parseInt($('#shopcount .navCartCount').text()),
+    shoWcount += amoutToAdd;
+    $('#shopcount .navCartCount').html(shoWcount);
+  });
 
 
 });
