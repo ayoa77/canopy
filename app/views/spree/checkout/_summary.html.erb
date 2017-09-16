@@ -21,7 +21,6 @@
     <tbody data-hook="order_details_tax_adjustments">
       <% order.all_adjustments.nonzero.tax.eligible.group_by(&:label).each do |label, adjustments| %>
         <tr class="total">
-          byebug
           <td><%= label %></td>
           <td><%= Spree::Money.new(adjustments.sum(&:amount), currency: order.currency).nonzero.to_html[0..-4] %></td>
         </tr>

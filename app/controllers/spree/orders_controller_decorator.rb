@@ -25,6 +25,7 @@ Spree::OrdersController.class_eval do
     else
       respond_with(order) do |format|
         format.html { redirect_to cart_path }
+        format.js
       end
     end
   end
