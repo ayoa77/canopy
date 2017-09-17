@@ -9,7 +9,39 @@
       <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
 
       <%= form_for Spree::User.new, :as => @user, :url => spree.user_path(@user), :method => :put do |f| %>
-        <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
+      <fieldset id="password-credentials">
+        <div class="form-group">
+          <%= f.email_field :email, :class => 'form-control', :placeholder => Spree.t(:email) %>
+        </div>
+        <hr />
+        <%= f.fields_for :ship_address do |address_fields| %>
+        <div class="form-group">
+          <%= address_fields.telephone_field :phone, :class => 'form-control'%>
+        </div>
+        <div class="form-group">
+          <%= address_fields.text_field :firstname, :class => 'form-control'%>
+          <%= address_fields.text_field :lastname, :class => 'form-control'%>
+        </div>
+        <div class="form-group">
+          <%= address_fields.text_field :address1, :class => 'form-control'%>
+          <%= address_fields.text_field :address2, :class => 'form-control', placeholder: Spree.t(:address2)%>
+        </div>
+        <div class="form-group">
+          <%= address_fields.text_field :city, :class => 'form-control'%>
+          <%= address_fields.text_field :zipcode, :class => 'form-control'%>
+        </div>
+          <%end%>
+        <div class="form-group">
+          <%= f.password_field :password, :class => 'form-control', :placeholder => Spree.t(:password) %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => Spree.t(:confirm_password) %>
+        </div>
+      </fieldset>
+      <div data-hook="signup_below_password_fields"></div>
+
+        <hr />
+
         <p>
           <%= f.submit Spree.t(:update), :class => 'ghost-button-green' %>
         </p>

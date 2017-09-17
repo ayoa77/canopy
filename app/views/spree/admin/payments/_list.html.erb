@@ -6,6 +6,7 @@
       <th class="text-center"><%= Spree.t(:amount) %></th>
       <th class="text-center"><%= Spree.t(:payment_method) %></th>
       <th class="text-center"><%= Spree.t(:transaction_id) %></th>
+      <th class="text-center"><%= Spree.t(:merchant_trade_number) %></th>
       <th class="text-center"><%= Spree.t(:payment_state) %></th>
       <th class="actions text-center"></th>
     </tr>
@@ -17,7 +18,8 @@
         <td><%= pretty_time(payment.created_at) %></td>
         <td class="amount text-center"><%= payment.display_amount %></td>
         <td class="text-center"><%= payment_method_name(payment) %></td>
-        <td class="text-center"><%= payment.transaction_id %></td>
+        <td class="text-center"><%= payment.order.trade_no %></td>
+        <td class="text-center"><%= payment.merchant_trade_no %></td>
         <td class="text-center">
           <span class="label label-<%= payment.state %>">
             <%= Spree.t(payment.state, scope: :payment_states, default: payment.state.capitalize) %>

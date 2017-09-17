@@ -15,8 +15,7 @@
     <%= form.text_field :lastname, class: 'form-control required', placeholder: Spree.t(:last_name_required) %>
   </p>
 
-<!-- aj help - This asks for company but I can't find a form input for company.
-    We should make sure this won't break anything if there is no input. -->
+<!-- aj help - It won't break anything. It will though allow us to input company if we'd like to ... later on that is -->
   <% if Spree::Config[:company] %>
     <p class="form-group" id=<%="#{address_id}company" %>>
       <%= form.label :company, Spree.t(:company) %>

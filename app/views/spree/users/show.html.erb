@@ -5,15 +5,29 @@
   <div class="row">
       <div class="top-of-page-text">
         <p>
-          Hello, <%= @user.bill_address != nil ? @user.bill_address.full_name : @user.email %>
+          <%=Spree.t(:hello)%>,<%= @user.bill_address != nil ? @user.bill_address.full_name : @user.email %>
         </p>
       </div>
   </div>
 
-  <div data-hook="account_summary" class="account-summary well">
-    <div id="user-info">
+  <div id = "user-info" data-hook="account_summary" class="account-summary well row">
+    <div  class = "col-sm-4">
       <dt><%= Spree.t(:email) %></dt>
       <dd><%= @user.email %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
+    </div>
+    <div  class = "col-sm-4">
+      <dt><%= Spree.t(:phone) %></dt>
+      <dd><%= @user.ship_address.phone %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
+    </div>
+    <div  class = "col-sm-4">
+      <dt><%= Spree.t(:address) %></dt>
+      <dd><%= @user.ship_address.address1 %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
+        <% if @user.ship_address.address2.present? %>
+      <dd><%= @user.ship_address.address2 %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
+        <% end %>
+      <dd><%= @user.ship_address.city %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
+      <dd><%= @user.ship_address.zipcode %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
+
     </div>
   </div>
 

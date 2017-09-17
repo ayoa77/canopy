@@ -79,16 +79,7 @@ and how to turn it off.  :D -->
               </li>
             <% end %>
           </ul>
-          <%= ship_form.date_field :delivery_date, class: 'datepicker form-control' %>
-          <div class="form-group">
-            <%= ship_form.label Spree.t(:time_of_day) %> <br />
-            <%= ship_form.label Spree.t(:morning), Spree.t(:morning) %>
-            <%= ship_form.radio_button :time_of_day, Spree.t(:morning), :checked => true %>
-            <%= ship_form.label Spree.t(:afternoon), Spree.t(:afternoon) %>
-            <%= ship_form.radio_button :time_of_day, Spree.t(:afternoon)%>
-            <%= ship_form.label Spree.t(:evening), Spree.t(:evening) %>
-            <%= ship_form.radio_button :time_of_day, Spree.t(:evening) %><br />
-          </div>
+
 
 <% else %>
           <ul class="list-group shipping-methods">
@@ -102,17 +93,6 @@ and how to turn it off.  :D -->
               </li>
             <% end %>
           </ul>
-          <%#= ship_form.date_field :delivery_date, class: 'datepicker form-control' %>
-          <div class="form-group">
-            <%#= ship_form.label Spree.t(:time_of_day) %> <br />
-            <%#= ship_form.label Spree.t(:morning), Spree.t(:morning) %>
-            <%#= ship_form.radio_button :time_of_day, 'morning', :checked => true %>
-            <%#= ship_form.label Spree.t(:afternoon), Spree.t(:afternoon) %>
-            <%#= ship_form.radio_button :time_of_day, 'afternoon'%>
-            <%#= ship_form.label Spree.t(:evening), Spree.t(:evening) %>
-            <%#= ship_form.radio_button :time_of_day, 'evening' %><br />
-          </div>
-
           <% end %>
 
         </div>
@@ -165,7 +145,7 @@ and how to turn it off.  :D -->
           <%= form.label Spree.t(:evening), Spree.t(:evening) %>
           <%= form.radio_button :time_of_day, 'evening' %><br />
         </div>
-        <%= form.text_area :special_instructions, cols: 40, rows: 4, class: "form-control" %>
+        <%= form.text_area :special_instructions, placeholder: Spree.t(:special_instructions), cols: 40, rows: 4, class: "form-control" %>
       </p>
     <% end %>
   </div>

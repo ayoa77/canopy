@@ -28,8 +28,7 @@ module Spree
     # Updates the order and advances to the next state (when possible.)
     def update
       if params[:order][:payments_attributes].present? && Spree::PaymentMethod.find(params[:order][:payments_attributes].first[:payment_method_id]).name == "Credit Allpay"
-byebug
-           aioall(@order)
+           aioall(@order) and return
       elsif params[:order][:time_of_day].present? && params[:order][:delivery_date].present?
         @order.time_of_day = params[:order][:time_of_day]
         @order.delivery_date = params[:order][:delivery_date]
@@ -42,13 +41,11 @@ byebug
         end
 
         if @order.completed?
-          byebug
           @current_order = nil
           flash.notice = Spree.t(:order_processed_successfully)
           flash['order_completed'] = true
           redirect_to completion_route
         else
-          byebug
           redirect_to checkout_state_path(@order.state)
         end
       else
@@ -59,7 +56,6 @@ byebug
       order.merchant_trade_no << Time.now.to_i.to_s
       order.trade_description = order.created_at.strftime("%Y%m%d").to_s + order.number
       order.save
-      byebug
     ## 參數值為[PLEASE MODIFY]者，請在每次測試時給予獨特值
     ## 若要測試非必帶參數請將base_param內註解的參數依需求取消註解 ##
     base_param = {
@@ -126,12 +122,11 @@ byebug
     # @order = Spree::Order.find_by(trade_description: pay_params[:TradeDesc])
     @order.trade_no = pay_params[:TradeNo]
       if pay_params[:RtnCode] == '1'
-        Spree::Payment.create(amount: pay_params[:PayAmt], order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "completed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:trade_no], transaction_id: pay_params[:trade_no])
-        # ActiveMerchant::Billing::Response.new(true, "", {}, {})
+        Spree::Payment.create(amount: pay_params[:PayAmt], order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "completed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
         @order.payment_total = pay_params[:PayAmt]
         @order.state = "payment"
       else
-      Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:trade_no], transaction_id: pay_params[:trade_no])
+      Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
     end
     @order.save
   end
@@ -143,15 +138,13 @@ byebug
         break
       end
     end
-    # @order = Spree::Order.find_by(trade_description: pay_params[:TradeDesc])
     @order.trade_no = pay_params[:TradeNo]
       if pay_params[:RtnCode] == '1'
-        # Spree::Payment.create(amount: pay_params[:PayAmt], order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "checkout", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:trade_no])
-        # ActiveMerchant::Billing::Response.new(true, "", {}, {})
+        Spree::Payment.create(amount: pay_params[:PayAmt], order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "completed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
         @order.payment_total = pay_params[:PayAmt]
         @order.state = "payment"
       else
-      Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:trade_no], transaction_id: pay_params[:trade_no])
+      Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
     end
     @order.save
     unless @order.next
@@ -159,7 +152,6 @@ byebug
       redirect_to(checkout_state_path(@order.state)) && return
     end
     if @order.completed?
-      @order.payments.last.state = "completed"
       @current_order = nil
       flash.notice = Spree.t(:order_processed_successfully)
       flash['order_completed'] = true

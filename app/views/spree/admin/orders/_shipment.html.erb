@@ -83,13 +83,24 @@
           </td>
         </tr>
 
+        <% if order.delivery_date.present? && order.time_of_day.present? %>
+        <tr class='special_instructions'>
+          <td colspan="6">
+            <strong><%= Spree.t(:delivery_date) %>:&nbsp;</strong><%= order.delivery_date.strftime("%y/%m/%d") %>
+            <strong><%= Spree.t(:time_of_day) %>:&nbsp;</strong><%= order.time_of_day %>
+          </td>
+        </tr>
+        <% end %>
         <% if order.special_instructions.present? %>
           <tr class='special_instructions'>
-            <td colspan="5">
+            <td colspan="6">
               <strong><%= Spree.t(:special_instructions) %>:&nbsp;</strong><%= order.special_instructions %>
             </td>
           </tr>
         <% end %>
+
+
+
 
         <tr class="show-tracking total">
           <td colspan="5" class="tracking-value">
