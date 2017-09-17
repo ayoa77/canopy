@@ -45,7 +45,11 @@ and how to turn it off.  :D -->
             </div>
 
             <div class="col-xs-5 label-line-items-text">
-              <%= item.variant.name %>
+            <%= item.variant.name %>
+            <%  if item.variant.options_text.length > 1 %>
+            + <%= item.variant.options_text %>
+              <%end%>
+
             </div>
 
             <div class="col-xs-2 label-line-items-text">
@@ -75,6 +79,8 @@ and how to turn it off.  :D -->
               </li>
             <% end %>
           </ul>
+
+
 <% else %>
           <ul class="list-group shipping-methods">
             <% ship_form.object.shipping_rates.where.not(cost: 0).each do |rate| %>
@@ -129,17 +135,17 @@ and how to turn it off.  :D -->
     <% if Spree::Config[:shipping_instructions] %>
       <p id="minstrs" data-hook>
         <h4><%= Spree.t(:shipping_instructions) %></h4>
-        <%= form.text_area :special_instructions, cols: 40, rows: 4, class: "form-control" %>
-        <%= form.date_field :delivery_date, value: datepicker_field_value(@order.delivery_date), class: 'datepicker form-control' %>
+        <%= form.date_field :delivery_date, class:  'form-control' %>
         <div class="form-group">
-   <%= form.label Spree.t(:time_of_day) %> <br />
-   <%= form.label Spree.t(:morning), Spree.t(:morning) %>
-   <%= form.radio_button :time_of_day, Spree.t(:morning), :checked => true %>
-   <%= form.label Spree.t(:afternoon), Spree.t(:afternoon) %>
-   <%= form.radio_button :time_of_day, Spree.t(:afternoon)%>
-   <%= form.label Spree.t(:evening), Spree.t(:evening) %>
-   <%= form.radio_button :time_of_day, Spree.t(:evening) %><br />
-</div>
+          <%= form.label Spree.t(:time_of_day) %> <br />
+          <%= form.label Spree.t(:morning), Spree.t(:morning) %>
+          <%= form.radio_button :time_of_day, 'morning', :checked => true %>
+          <%= form.label Spree.t(:afternoon), Spree.t(:afternoon) %>
+          <%= form.radio_button :time_of_day, 'afternoon'%>
+          <%= form.label Spree.t(:evening), Spree.t(:evening) %>
+          <%= form.radio_button :time_of_day, 'evening' %><br />
+        </div>
+        <%= form.text_area :special_instructions, placeholder: Spree.t(:special_instructions), cols: 40, rows: 4, class: "form-control" %>
       </p>
     <% end %>
   </div>

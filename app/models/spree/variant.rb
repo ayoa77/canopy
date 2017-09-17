@@ -111,15 +111,18 @@ module Spree
     end
 
     def options_text
+
       values = self.option_values.sort do |a, b|
         a.option_type.position <=> b.option_type.position
       end
 
       values.to_a.map! do |ov|
-        "#{ov.option_type.presentation}: #{ov.presentation}"
+        # change this for different presentation with different types of option_type(s)
+         "#{ov.presentation}"
+        # "#{ov.option_type.presentation}: #{ov.presentation}"
       end
-
-      values.to_sentence({ words_connector: ", ", two_words_connector: ", " })
+        values.join(" + ")
+      # values.to_sentence({ words_connector: ", ", two_words_connector: ", " })
     end
 
     # Default to master name
