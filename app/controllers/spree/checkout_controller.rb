@@ -5,7 +5,7 @@ module Spree
   # checkout which has nothing to do with updating an order that this approach
   # is waranted.
   class CheckoutController < Spree::StoreController
-    skip_before_action :verify_authenticity_token, :only => :notify
+    skip_before_action :verify_authenticity_token, :only => [:return, :result]
     before_action :load_order_with_lock
     before_action :ensure_valid_state_lock_version, only: [:update]
     before_action :set_state_if_present
@@ -28,8 +28,12 @@ module Spree
     # Updates the order and advances to the next state (when possible.)
     def update
       if params[:order][:payments_attributes].present? && Spree::PaymentMethod.find(params[:order][:payments_attributes].first[:payment_method_id]).name == "Credit Allpay"
+byebug
            aioall(@order)
-      else
+      elsif params[:order][:time_of_day].present? && params[:order][:delivery_date].present?
+        @order.time_of_day = params[:order][:time_of_day]
+        @order.delivery_date = params[:order][:delivery_date]
+      end
       if @order.update_from_params(params, permitted_checkout_attributes, request.headers.env)
         @order.temporary_address = !params[:save_user_address]
         unless @order.next
@@ -44,14 +48,13 @@ module Spree
           flash['order_completed'] = true
           redirect_to completion_route
         else
+          byebug
           redirect_to checkout_state_path(@order.state)
         end
       else
         render :edit
       end
-    end
   end
-
   def aioall(order)
       order.merchant_trade_no << Time.now.to_i.to_s
       order.trade_description = order.created_at.strftime("%Y%m%d").to_s + order.number
@@ -63,13 +66,14 @@ module Spree
       'MerchantTradeNo' => order.merchant_trade_no.last,  #請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
       'MerchantTradeDate' => order.created_at.strftime("%Y/%m/%d %H:%M:%S"), # ex: 2017/02/13 15:45:30
       'TotalAmount' => order.total.to_i,
-      'TradeDesc' => order.trade_description,
-      'ItemName' => order.products.pluck(:name).join("#"),
-      'ReturnURL' => "#{root_url}allpay_return",
+      'TradeDesc' => 'Canopy Juice',
+      'ItemName' => items_display(order),
+      'ReturnURL' => "#{root_url}allpay_result",
       #'ChooseSubPayment' => '',
       'OrderResultURL' => "#{root_url}allpay_return",
+      'ClientRedirectURL' => "#{root_url}allpay_result"
       #'NeedExtraPaidInfo' => '1',
-      'ClientBackURL' => "#{root_url}"
+      # 'ClientBackURL' => "#{root_url}"
       #'ItemURL' => 'http://item.test.tw',
       #'Remark' => '交易備註',
       #'HoldTradeAMT' => '1',
@@ -79,30 +83,30 @@ module Spree
 
     ## 若要測試開立電子發票，請將inv_params內的"所有"參數取消註解 ##
     inv_params = {
-=begin
-      'RelateNumber' => 'PLEASE MODIFY',  #請帶30碼uid ex: SJDFJGH24FJIL97G73653XM0VOMS4K
-      'CustomerID' => 'MEM_0000001',  #會員編號
-      'CustomerIdentifier' => '',   #統一編號
-      'CustomerName' => '測試買家',
-      'CustomerAddr' => '測試用地址',
-      'CustomerPhone' => '0123456789',
-      'CustomerEmail' => 'johndoe@test.com',
-      'ClearanceMark' => '2',
-      'TaxType' => '1',
-      'CarruerType' => '',
-      'CarruerNum' => '',
-      'Donation' => '2',
-      'LoveCode' => '',
-      'Print' => '1',
-      'InvoiceItemName' => '測試商品1|測試商品2',
-      'InvoiceItemCount' => '2|3',
-      'InvoiceItemWord' => '個|包',
-      'InvoiceItemPrice' => '35|10',
-      'InvoiceItemTaxType' => '1|1',
-      'InvoiceRemark' => '測試商品1的說明|測試商品2的說明',
-      'DelayDay' => '0',
-      'InvType' => '07'
-=end
+  # =begin
+  #     'RelateNumber' => 'PLEASE MODIFY',  #請帶30碼uid ex: SJDFJGH24FJIL97G73653XM0VOMS4K
+  #     'CustomerID' => 'MEM_0000001',  #會員編號
+  #     'CustomerIdentifier' => '',   #統一編號
+  #     'CustomerName' => '測試買家',
+  #     'CustomerAddr' => '測試用地址',
+  #     'CustomerPhone' => '0123456789',
+  #     'CustomerEmail' => 'johndoe@test.com',
+  #     'ClearanceMark' => '2',
+  #     'TaxType' => '1',
+  #     'CarruerType' => '',
+  #     'CarruerNum' => '',
+  #     'Donation' => '2',
+  #     'LoveCode' => '',
+  #     'Print' => '1',
+  #     'InvoiceItemName' => '測試商品1|測試商品2',
+  #     'InvoiceItemCount' => '2|3',
+  #     'InvoiceItemWord' => '個|包',
+  #     'InvoiceItemPrice' => '35|10',
+  #     'InvoiceItemTaxType' => '1|1',
+  #     'InvoiceRemark' => '測試商品1的說明|測試商品2的說明',
+  #     'DelayDay' => '0',
+  #     'InvType' => '07'
+  # =end
     }
 
     create = AllpayPayment::PaymentClient.new
@@ -112,7 +116,7 @@ module Spree
     render html: htm.html_safe
   end
 
-  def notify
+  def result
     Spree::Order.where(state: "payment").each do |o|
       if o.merchant_trade_no.include?(pay_params[:MerchantTradeNo])
         @order = o
@@ -122,12 +126,32 @@ module Spree
     # @order = Spree::Order.find_by(trade_description: pay_params[:TradeDesc])
     @order.trade_no = pay_params[:TradeNo]
       if pay_params[:RtnCode] == '1'
-        Spree::Payment.create(amount: pay_params[:PayAmt], order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "checkout")
+        Spree::Payment.create(amount: pay_params[:PayAmt], order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "completed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:trade_no], transaction_id: pay_params[:trade_no])
         # ActiveMerchant::Billing::Response.new(true, "", {}, {})
         @order.payment_total = pay_params[:PayAmt]
         @order.state = "payment"
       else
-      Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "failed")
+      Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:trade_no], transaction_id: pay_params[:trade_no])
+    end
+    @order.save
+  end
+
+  def return
+    Spree::Order.where(state: "payment").each do |o|
+      if o.merchant_trade_no.include?(pay_params[:MerchantTradeNo])
+        @order = o
+        break
+      end
+    end
+    # @order = Spree::Order.find_by(trade_description: pay_params[:TradeDesc])
+    @order.trade_no = pay_params[:TradeNo]
+      if pay_params[:RtnCode] == '1'
+        # Spree::Payment.create(amount: pay_params[:PayAmt], order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "checkout", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:trade_no])
+        # ActiveMerchant::Billing::Response.new(true, "", {}, {})
+        @order.payment_total = pay_params[:PayAmt]
+        @order.state = "payment"
+      else
+      Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:trade_no], transaction_id: pay_params[:trade_no])
     end
     @order.save
     unless @order.next
@@ -143,8 +167,7 @@ module Spree
     else
       redirect_to checkout_state_path(@order.state)
     end
-end
-    # ActiveMerchant::Billing::Response.new(true, 'success', {}, {})
+  end
   def pay_params
     params.permit(:MerchantID, :MerchantTradeNo, :PayAmt, :PaymentDate, :PaymentType, :PaymentTypeChargeFee, :RedeemAmt, :RtnCode, :RtnMsg, :SimulatePaid, :TradeAmt, :TradeDate, :TradeNo, :CheckMacValue)
 
