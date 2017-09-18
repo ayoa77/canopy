@@ -26,7 +26,30 @@ module Spree
     rescue_from Spree::Core::GatewayError, with: :rescue_from_spree_gateway_error
 
     # Updates the order and advances to the next state (when possible.)
+    # Also logic for canopy girls prices if instore or if not...!!!
     def update
+      if params[:state] == "address" && @order.quantity % 6 != 0 && @order.instore != true
+        flash[:info] = Spree.t(:sorry_you_must_order_multiples_of_six_to_to_have_them_shipped)
+        redirect_to products_path and return
+      elsif params[:state] == "delivery" && @order.instore == true
+          @order.line_items.each do |li|
+            if li.product.taxons.pluck(:name).include?("Delivery") && li.reduced != true
+              li.price -= 20
+              li.reduced = true
+              li.save
+            end
+            flash[:info] = Spree.t(:instore_pickup_receives_a_discount)
+          end
+      elsif params[:state] == "delivery" && @order.instore != true
+          @order.line_items.each do |li|
+            if li.product.taxons.pluck(:name).include?("Delivery") && li.reduced == true
+              li.price += 20
+              li.reduced = false
+              li.save
+            end
+          end
+        end
+
       if params[:order][:payments_attributes].present? && Spree::PaymentMethod.find(params[:order][:payments_attributes].first[:payment_method_id]).name == "Credit Allpay"
            aioall(@order) and return
       elsif params[:order][:time_of_day].present? && params[:order][:delivery_date].present?
@@ -53,8 +76,8 @@ module Spree
       end
   end
   def aioall(order)
-      order.merchant_trade_no << Time.now.to_i.to_s
-      order.trade_description = order.created_at.strftime("%Y%m%d").to_s + order.number
+      order.merchant_trade_no << order.number + Time.now.to_i.to_s
+      # order.trade_description = order.created_at.strftime("%Y%m%d").to_s + order.number
       order.save
     ## 參數值為[PLEASE MODIFY]者，請在每次測試時給予獨特值
     ## 若要測試非必帶參數請將base_param內註解的參數依需求取消註解 ##
@@ -164,6 +187,31 @@ module Spree
     params.permit(:MerchantID, :MerchantTradeNo, :PayAmt, :PaymentDate, :PaymentType, :PaymentTypeChargeFee, :RedeemAmt, :RtnCode, :RtnMsg, :SimulatePaid, :TradeAmt, :TradeDate, :TradeNo, :CheckMacValue)
 
   end
+
+  def Capture
+    Spree::Order.where(state: "payment").each do |o|
+      if o.merchant_trade_no.include?(pay_params[:MerchantTradeNo])
+        @order = o
+        break
+      end
+    end
+   ## 參數值為[PLEASE MODIFY]者，請在每次測試時給予獨特值
+   ## 若要測試非必帶參數請將base_param內註解的參數依需求取消註解 ##
+   base_param = {
+     'MerchantTradeNo' => order.merchant_trade_no.last, #請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
+     'CaptureAMT' => '70',
+     'UserRefundAMT' => '30'
+     #'UpdatePlatformChargeFee' => '',
+     #'PlatformChargeFee' => '',
+     #'Remark' => '撥退款備註'
+   }
+
+
+   create = AllpayPayment::PaymentClient.new
+   res = query.aio_capture(base_param)
+   byebug
+  render html: res.html_safe
+end
 
   # Parameters {"MerchantID"=>"2000132", "MerchantTradeNo"=>"aa59161286d23c52420b", "PayAmt"=>"100",
   # "PaymentDate"=>"2017/09/14 13:31:20", "PaymentType"=>"Credit_CreditCard", "PaymentTypeChargeFee"=>"2",
