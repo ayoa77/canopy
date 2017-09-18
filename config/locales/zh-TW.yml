@@ -2343,7 +2343,7 @@ spree:
   carbs: "碳水化合物"
   sugar: "糖"
   cash: ""
-  sorry_you_must_order_multiples_of_six_to_to_have_them_shipped: ""
+  sorry_you_must_order_multiples_of_six_to_to_have_them_shipped: "You must order multiples of six to qualify for delivery"
   set_varied_prices_for_addons: ""
   morning: ""
   afternoon: ""

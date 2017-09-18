@@ -1,5 +1,13 @@
 Spree::CheckoutController.class_eval do
 
+  def edit
+    if params[:state] == "address" && @order.quantity % 6 != 0
+      flash[:info] = Spree.t(:sorry_you_must_order_multiples_of_six_to_to_have_them_shipped)
+    else
+      render :edit
+    end
+  end
+
 def items_display(order)
   items_display = ""
   order.line_items.each do |li|

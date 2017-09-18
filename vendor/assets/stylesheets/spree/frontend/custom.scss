@@ -1029,6 +1029,14 @@ input[type="checkbox"] {
 	visibility: hidden;
 }
 
+#instore input[type="checkbox"]{
+  visibility: visible;
+}
+
+input[type="checkbox"].showing_check_boxes {
+  visibility: visible;
+}
+
 .check-these-boxes {
   width: 40px;
   height: 40px;
