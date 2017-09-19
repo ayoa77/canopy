@@ -1,11 +1,38 @@
 Spree::CheckoutController.class_eval do
 
   def edit
-    if params[:state] == "address" && @order.quantity % 6 != 0
+    if params[:state] == "address" && @order.quantity % 6 != 0 && @order.shipments.last.address1 != "宜蘭市女中路三段117號"
       flash[:info] = Spree.t(:sorry_you_must_order_multiples_of_six_to_to_have_them_shipped)
-    else
-      render :edit
+    elsif params[:state] == "address" && @order.shipments.last.present? && @order.shipments.last.address.address1 == "宜蘭市女中路三段117號"
+      byebug
+      @order.instore = true
+      @order.save
+    elsif params[:state] == "address" && @order.shipments.last.present? && @order.shipments.last.address.address1 != "宜蘭市女中路三段117號"
+      byebug
+      @order.instore = nil
+      @order.save
     end
+          if params[:state] == "address" && @order.instore == true
+        byebug
+          @order.line_items.each do |li|
+            if li.product.taxons.pluck(:name).include?("Delivery") && li.reduced != true
+              li.adjustment_total -= 25
+              li.reduced = true
+              li.save
+            end
+            flash[:info] = Spree.t(:instore_pickup_receives_a_discount)
+          end
+      elsif params[:state] == "address" && @order.instore != true
+        byebug
+          @order.line_items.each do |li|
+            if li.product.taxons.pluck(:name).include?("Delivery") && li.reduced == true
+              li.adjustment_total += 25
+              li.reduced = false
+              li.save
+            end
+          end
+        end
+
   end
 
 def items_display(order)

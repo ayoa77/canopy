@@ -33,7 +33,7 @@
             it should create a date and time for pick-up -->
         <p class="field checkbox" data-hook="use_billing">
           <%= label_tag :in_store, id: 'instore' do %>
-          <%= check_box_tag 'order[instore]'%>
+          <%= ship_form.check_box  :instore, id: "order_instore" %>
           <%= Spree.t(:In_Store_Pickup) %>
           <% end %>
         </p>
