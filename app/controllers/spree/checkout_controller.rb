@@ -28,22 +28,26 @@ module Spree
     # Updates the order and advances to the next state (when possible.)
     # Also logic for canopy girls prices if instore or if not...!!!
     def update
+      byebug
       if params[:state] == "address" && @order.quantity % 6 != 0 && @order.instore != true
         flash[:info] = Spree.t(:sorry_you_must_order_multiples_of_six_to_to_have_them_shipped)
         redirect_to products_path and return
-      elsif params[:state] == "delivery" && @order.instore == true
+      end
+      if params[:state] == "address" && @order.instore == true
+        byebug
           @order.line_items.each do |li|
             if li.product.taxons.pluck(:name).include?("Delivery") && li.reduced != true
-              li.price -= 20
+              li.adjustment_total -= 25
               li.reduced = true
               li.save
             end
             flash[:info] = Spree.t(:instore_pickup_receives_a_discount)
           end
-      elsif params[:state] == "delivery" && @order.instore != true
+      elsif params[:state] == "address" && @order.instore != true
+        byebug
           @order.line_items.each do |li|
             if li.product.taxons.pluck(:name).include?("Delivery") && li.reduced == true
-              li.price += 20
+              li.adjustment_total += 25
               li.reduced = false
               li.save
             end
