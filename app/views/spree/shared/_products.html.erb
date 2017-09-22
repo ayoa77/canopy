@@ -23,6 +23,139 @@
   </div>
 </div>
 
+<!-- 3 Box Choices -->
+
+
+
+<div class = "container"> 
+  <div class = "row">
+    <div class = "col-md-4 visible-md visible-lg">
+      <div class="vert-box red-box">
+        <div class="box-pattern">
+
+          <div class="box-picture">
+            <img src="/assets/red-box.png" />
+          </div>
+
+          <div class="box-information">
+
+            <div class="box-name">
+              <p style="color: #F66">红色框</p>
+            </div>
+
+            <div class = "box-description">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Aenean suscipit convallis libero quis dictum. Proin accumsan sit 
+                amet tellus pulvinar egestas. Ut quis bibendum nisi, ut venenatis mi. 
+                Cras auctor finibus commodo. Curabitur ullamcorper sapien in 
+                dignissim congue.
+              </p>
+            </div>
+
+            <a href="#">
+              <div class="ghost-button-alternate gba-red">
+                <p>HEY LISTEN</p>
+              </div>
+           </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class = "col-md-4 visible-md visible-lg">
+
+      <div class="vert-box yellow-box">
+        <div class="box-pattern">
+
+          <div class="box-picture">
+            <img src="/assets/yellow-box.png" />
+          </div>
+
+          <div class="box-information">
+
+            <div class="box-name">
+              <p style="color: #FEFF3A">黄色盒子</p>
+            </div>
+
+            <div class = "box-description">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Aenean suscipit convallis libero quis dictum. Proin accumsan sit 
+                amet tellus pulvinar egestas. Ut quis bibendum nisi, ut venenatis mi. 
+                Cras auctor finibus commodo. Curabitur ullamcorper sapien in 
+                dignissim congue.
+              </p>
+            </div>
+
+            <a href="#">
+              <div class="ghost-button-alternate gba-yellow">
+                <p>HEY LISTEN</p>
+              </div>
+           </a>
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class = "col-md-4 visible-md visible-lg">
+      <div class="vert-box green-box">
+        <div class="box-pattern">
+
+          <div class="box-picture">
+            <img src="/assets/green-box.png" />
+          </div>
+
+          <div class="box-information">
+
+            <div class="box-name">
+              <p style="color: #39B54A">绿色盒子</p>
+            </div>
+
+            <div class = "box-description">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Aenean suscipit convallis libero quis dictum. Proin accumsan sit 
+                amet tellus pulvinar egestas. Ut quis bibendum nisi, ut venenatis mi. 
+                Cras auctor finibus commodo. Curabitur ullamcorper sapien in 
+                dignissim congue.
+              </p>
+            </div>
+
+            <a href="#">
+              <div class="ghost-button-alternate gba-green">
+                <p>HEY LISTEN</p>
+              </div>
+           </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  <div class = "row">
+    <div class = "col-xs-12 visible-xs visible-sm horz-box red-box">
+
+    </div>
+
+    <div class = "col-xs-12 visible-xs visible-sm horz-box yellow-box">
+    
+    </div>
+
+    <div class = "col-xs-12 visible-xs visible-sm horz-box green-box">
+    
+    </div>
+  </div>
+</div>
+
+
+
 <!-- Sorting Menu for Products -->
 
 <!-- <div id="sortin-it-out">
@@ -99,7 +232,7 @@
 
 
 <!-- spree loads the products -->
-
+<!--
 <div class="container">
   <div data-hook="products_search_results_heading">
     <% if products.empty? %>
@@ -121,7 +254,6 @@
   <div id="product_<%= product.id %>" class="col-md-4 col-sm-6 col-xs-12 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
     <div class="panel panel-default">
       <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
-      <!-- this <a> tag needs to link to teh variable url -->
       <a href="<%=url%>">
 
         <div class="panel-body text-center product-body">
@@ -141,16 +273,20 @@
         <%= form_for :order, id: "add-to-cart-from-product-index", remote: true, url: populate_orders_path, method: 'post' do |f| %>
         <%= hidden_field_tag "variant_id", product.master.id %>
         <%= hidden_field_tag "quantity", 1 %>
-      </a>
+      </a> --> 
+
+      <!--
 
               <%= f.submit Spree.t(:add_to_cart), class: 'add-to-cart ghost-button-blue-alt' do %>
-                  <!-- <div class="panel-footer text-center"> -->
-                    <!-- <span itemprop="offers" itemscope itemtype="https://schema.org/Offer"> -->
+                  <div class="panel-footer text-center"> 
+                    <span itemprop="offers" itemscope itemtype="https://schema.org/Offer"> 
                       <p><big>
-                        <!-- <%= Spree.t(:add_to_cart) %> -->
+                        <%= Spree.t(:add_to_cart) %> 
                       </big></p>
-                    <!-- </span> -->
-                  <!-- </div> -->
+                     </span> 
+                  </div> -->
+
+                  <!--
                   <% end %>
                   <% end %>
               <% end %>
@@ -166,3 +302,4 @@
     <%= paginate products, theme: 'twitter-bootstrap-3' %>
   <% end %>
 </div>
+-->
