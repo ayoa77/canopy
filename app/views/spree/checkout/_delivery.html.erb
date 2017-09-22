@@ -90,10 +90,10 @@ and how to turn it off.  :D -->
                   <span class="rate-name"><%= rate.name %></span>
                   <!-- more shipping logic for canopy girls -->
                   <!-- <#% if @order.quantity >= 12 %> -->
-                  <span class="badge rate-cost"><%= rate.display_cost #+ " x #{(@order.quantity/6).to_s}"  %></span>
-                  <#% else %>
+                  <span class="badge rate-cost"><%= rate.display_cost%></span>
+                  <%# else %>
                   <!-- <span class="badge rate-cost"><%#= rate.display_cost %> -->
-                    <#% end %>
+                    <%# end %>
                 </label>
               </li>
             <% end %>
