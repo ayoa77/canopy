@@ -4,7 +4,6 @@
     <div class = "dynamic-variants">
 
       <% @product.option_types.each_with_index do |ot, index| %>
-      <% byebug %>
         <div class="check-these-boxes">
 
           <%= check_box_tag("options[]", ot.option_values.first.id, false, type:"checkbox", id: ot.presentation) %>

@@ -1,5 +1,6 @@
 module Spree
   class LineItem < Spree::Base
+    # Spree::PermittedAttributes.line_item_attributes << :preference
     before_validation :ensure_valid_quantity
 
     with_options inverse_of: :line_items do

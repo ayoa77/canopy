@@ -64,14 +64,12 @@ module Spree
   end
 
   def notify
-    byebug
     @order = Spree::Order.find_by(merchant_trade_no: pay_params[:MerchantTradeNo])
     @order.trade_no = pay_params[:TradeNo]
     if pay_params[:RtnCode] == '1'
       @order.payment_total = pay_params[:PayAmt]
     end
     @order.save
-    byebug
     redirect_to update_checkout_path(@order.state)
     # ActiveMerchant::Billing::Response.new(true, 'success', {}, {})
   end

@@ -26,36 +26,15 @@ module Spree
     rescue_from Spree::Core::GatewayError, with: :rescue_from_spree_gateway_error
 
     # Updates the order and advances to the next state (when possible.)
-    # Also logic for canopy girls prices if instore or if not...!!!
+    # commented out logic for canopy girls prices if instore or if not...!!!
     def update
-      byebug
-      if params[:state] == "address" && @order.quantity % 6 != 0 && @order.instore != true
-        flash[:info] = Spree.t(:sorry_you_must_order_multiples_of_six_to_to_have_them_shipped)
-        redirect_to products_path and return
-      end
-      if params[:state] == "address" && @order.instore == true
-        byebug
-          @order.line_items.each do |li|
-            if li.product.taxons.pluck(:name).include?("Delivery") && li.reduced != true
-              li.adjustment_total -= 25
-              li.reduced = true
-              li.save
-            end
-            flash[:info] = Spree.t(:instore_pickup_receives_a_discount)
-          end
-      elsif params[:state] == "address" && @order.instore != true
-        byebug
-          @order.line_items.each do |li|
-            if li.product.taxons.pluck(:name).include?("Delivery") && li.reduced == true
-              li.adjustment_total += 25
-              li.reduced = false
-              li.save
-            end
-          end
-        end
+      # if params[:state] == "address" && @order.quantity % 6 != 0 && @order.instore != true
+      #   flash[:info] = Spree.t(:sorry_you_must_order_multiples_of_six_to_to_have_them_shipped)
+      #   redirect_to products_path and return
+      # end
 
       if params[:order][:payments_attributes].present? && Spree::PaymentMethod.find(params[:order][:payments_attributes].first[:payment_method_id]).name == "Credit Allpay"
-           aioall(@order) and return
+        aioall(@order) and return
       elsif params[:order][:time_of_day].present? && params[:order][:delivery_date].present?
         @order.time_of_day = params[:order][:time_of_day]
         @order.delivery_date = params[:order][:delivery_date]
@@ -146,12 +125,10 @@ module Spree
         break
       end
     end
-    # @order = Spree::Order.find_by(trade_description: pay_params[:TradeDesc])
     @order.trade_no = pay_params[:TradeNo]
       if pay_params[:RtnCode] == '1'
         Spree::Payment.create(amount: pay_params[:PayAmt], order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "completed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
         @order.payment_total = pay_params[:PayAmt]
-        @order.state = "payment"
       else
       Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
     end
@@ -169,7 +146,6 @@ module Spree
       if pay_params[:RtnCode] == '1'
         Spree::Payment.create(amount: pay_params[:PayAmt], order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "completed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
         @order.payment_total = pay_params[:PayAmt]
-        @order.state = "payment"
       else
       Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
     end
@@ -213,7 +189,6 @@ module Spree
 
    create = AllpayPayment::PaymentClient.new
    res = query.aio_capture(base_param)
-   byebug
   render html: res.html_safe
 end
 

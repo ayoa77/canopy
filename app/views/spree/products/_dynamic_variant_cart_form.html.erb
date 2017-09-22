@@ -49,6 +49,14 @@
             </div>
           </div>
 
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                  <div class="quantity-cart nathan beautify  ">
+
+                    <%= text_field_tag :preference, "",class: 'title form-control col-xs-6', placeholder: Spree.t(:add_any_allergies_or_special_request_for_this_box) %>
+
+                  </div>
+                </div>
+
           <div class="col-xs-12">
 
             <%= button_tag class: 'ghost-button-green', id: 'add-to-cart-button', type: :submit do %>
