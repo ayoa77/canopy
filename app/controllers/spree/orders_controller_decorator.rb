@@ -12,6 +12,8 @@ Spree::OrdersController.class_eval do
     if quantity.between?(1, 1_000)
       begin
         order.contents.add(variant, quantity)
+        order.line_items.last.preference << quantity.to_s + " @ " + params[:preference]
+        order.line_items.last.save
       rescue ActiveRecord::RecordInvalid => e
         error = e.record.errors.full_messages.join(", ")
       end

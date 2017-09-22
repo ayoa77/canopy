@@ -57,7 +57,6 @@ and how to turn it off.  :D -->
             </div>
 
             <div class="col-xs-3 label-line-items-text">
-              <% byebug %>
               <%= display_price(item.variant).to_s[0..-4] %>
             </div>
 
@@ -90,11 +89,11 @@ and how to turn it off.  :D -->
                   <%= ship_form.radio_button :selected_shipping_rate_id, rate.id, data: { behavior: 'shipping-method-selector', cost: rate.display_cost }, checked: "checked" %>
                   <span class="rate-name"><%= rate.name %></span>
                   <!-- more shipping logic for canopy girls -->
-                  <% if @order.quantity >= 12 %>
-                  <span class="badge rate-cost"><%= rate.display_cost + " x #{(@order.quantity/6).to_s}"  %></span>
-                  <% else %>
-                  <span class="badge rate-cost"><%= rate.display_cost %>
-                    <% end %>
+                  <!-- <#% if @order.quantity >= 12 %> -->
+                  <span class="badge rate-cost"><%= rate.display_cost #+ " x #{(@order.quantity/6).to_s}"  %></span>
+                  <#% else %>
+                  <!-- <span class="badge rate-cost"><%#= rate.display_cost %> -->
+                    <#% end %>
                 </label>
               </li>
             <% end %>
@@ -104,7 +103,7 @@ and how to turn it off.  :D -->
         </div>
       <% end %>
 
-      <!-- aj help : We should leave it for items later on, but for this we don't need it at all :) -->
+      <!-- aj help : We should leave it for items later on, but for this we don't need it right now :) -->
 
       <% if @differentiator.try(:missing?) %>
         <div class="shipment unshippable">

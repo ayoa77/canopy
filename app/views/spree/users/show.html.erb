@@ -17,16 +17,16 @@
     </div>
     <div  class = "col-sm-4">
       <dt><%= Spree.t(:phone) %></dt>
-      <dd><%= @user.ship_address.phone %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
+      <dd><%= @user.ship_address.try(:phone) %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
     </div>
     <div  class = "col-sm-4">
       <dt><%= Spree.t(:address) %></dt>
-      <dd><%= @user.ship_address.address1 %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
-        <% if @user.ship_address.address2.present? %>
-      <dd><%= @user.ship_address.address2 %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
+      <dd><%= @user.ship_address.try(:address1)%></dd>
+        <% if @user.ship_address.try(:address2).present? %>
+      <dd><%= @user.ship_address.address2 %></dd>
         <% end %>
-      <dd><%= @user.ship_address.city %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
-      <dd><%= @user.ship_address.zipcode %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
+      <dd><%= @user.ship_address.try(:city) %></dd>
+      <dd><%= @user.ship_address.try(:zipcode) %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
 
     </div>
   </div>

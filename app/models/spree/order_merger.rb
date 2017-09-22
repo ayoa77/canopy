@@ -41,6 +41,7 @@ module Spree
 
     # The idea is the end developer can choose to override the merge
     # to their own choosing. Default is merge with errors.
+    # change this for actual use of individual items/juices here if implemented later
     def handle_merge(current_line_item, other_order_line_item)
       if current_line_item
         current_line_item.quantity += other_order_line_item.quantity

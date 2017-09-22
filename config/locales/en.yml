@@ -23,3 +23,5 @@ en:
   hello: "Hello world"
   spree:
     surcharge: "surcharge"
+    add_any_allergies_or_special_request_for_this_box: "add any allergies or special requests for this box here"
+    thank_you_for_your_order_email: "If you do not receive an email, please print a copy of this page for your records"
