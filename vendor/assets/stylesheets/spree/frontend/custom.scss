@@ -362,7 +362,8 @@ a:hover{
   display: block;
   background-color: #fff;
   height: 50px;
-  min-width: 250px;
+  width: 80%;
+  max-width: 250px;
   margin: 0 auto;
   text-align: center;
   p {
@@ -402,6 +403,9 @@ a:hover{
   transition: background-color .3s;
 }
 
+.slider-btn-container {
+  width: 100%;
+}
 
 .button-center {
   display: block;
@@ -1639,6 +1643,19 @@ margin-bottom: 30px;
     margin: 20px 0 0 17px;
   }
 
+  .vert-box {
+    height: 350px;
+  }
+
+  .box-picture{ 
+    display:none;
+  }
+
+  .box-information {
+    height: 100%;
+    justify-content: space-around;
+  }
+
 }
 @media screen and (max-width: 375px) {}
 @media screen and (max-width: 425px) {
@@ -1740,8 +1757,6 @@ margin-bottom: 30px;
     align-items: center;
     justify-content: center;
   }
-
-
 
 }
 
