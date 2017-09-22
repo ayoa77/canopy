@@ -140,15 +140,20 @@ and how to turn it off.  :D -->
     <% if Spree::Config[:shipping_instructions] %>
       <p id="minstrs" data-hook>
         <h4><%= Spree.t(:shipping_instructions) %></h4>
-        <%= form.date_field :delivery_date, class:  'form-control' %>
+
+          <p> <%=Spree.t(:delivery_days)%> </p> 
+          <p> <%=Spree.t(:delivery_notice)%> </p>
+          <p> <%=Spree.t(:delivery_time)%> </p>
+
+        <%= form.date_field :delivery_date, class:  'form-control', min: Date.today + 3.days %>
         <div class="form-group">
-          <%= form.label Spree.t(:time_of_day) %> <br />
-          <%= form.label Spree.t(:morning), Spree.t(:morning) %>
-          <%= form.radio_button :time_of_day, 'morning', :checked => true %>
-          <%= form.label Spree.t(:afternoon), Spree.t(:afternoon) %>
-          <%= form.radio_button :time_of_day, 'afternoon'%>
-          <%= form.label Spree.t(:evening), Spree.t(:evening) %>
-          <%= form.radio_button :time_of_day, 'evening' %><br />
+          <%= form.label Spree.t(:select_a_preferred_time_of_day) %> <br />
+          <%= form.label Spree.t(:before_1pm), Spree.t(:before_1pm) %>
+          <%= form.radio_button :time_of_day, 'before 1 pm', :checked => true %>
+          <%= form.label Spree.t(:from_two_to_four_pm), Spree.t(:from_two_to_four_pm) %>
+          <%= form.radio_button :time_of_day, '2pm to 4pm'%>
+          <%= form.label Spree.t(:anytime), Spree.t(:anytime) %>
+          <%= form.radio_button :time_of_day, 'anytime' %><br />
         </div>
         <%= form.text_area :special_instructions, placeholder: Spree.t(:special_instructions), cols: 40, rows: 4, class: "form-control" %>
       </p>
