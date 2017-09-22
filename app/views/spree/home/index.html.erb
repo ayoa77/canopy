@@ -39,34 +39,142 @@
 </div>
 
 <!-- Slick Mobile Featurette -->
-<% if @products.count >= 4 %>
-<div class='featurette-mobile col-xs-12 visible-xs'>
+<div class='featurette-mobile col-xs-12 visible-xs visible-sm'>
   <div class='center'>
-    <div>
+
+     <div>
+        <div class="vert-box red-box">
+          <div class="box-pattern">
+
+            <div class="box-picture">
+              <img src="/assets/red-box.png" />
+            </div>
+
+            <div class="box-information">
+
+              <div class="box-name">
+                <p style="color: #F66">红色框</p>
+              </div>
+
+              <div class = "box-description">
+                <p>
+                    影輕驗看作單低留類理懷排的作神市死候個力歷合現長太！
+                    建但亞消人英本的沒北，該千土商做準比而。
+                    等血開修再線古團市一失道來成風備一切朋南遊代出化康的活辦較在式也男不？
+                </p>
+              </div>
+
+              <div class="slider-btn-container">
+                <a href="#">
+                  <div class="ghost-button-alternate gba-red">
+                    <p>HEY LISTEN</p>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div>
+        <div class="vert-box yellow-box">
+          <div class="box-pattern">
+
+            <div class="box-picture">
+              <img src="/assets/yellow-box.png" />
+            </div>
+
+            <div class="box-information">
+
+              <div class="box-name">
+                <p style="color: #FEFF3A">黄色盒子</p>
+              </div>
+
+              <div class = "box-description">
+                <p>
+                    影輕驗看作單低留類理懷排的作神市死候個力歷合現長太！
+                    建但亞消人英本的沒北，該千土商做準比而。
+                    等血開修再線古團市一失道來成風備一切朋南遊代出化康的活辦較在式也男不？
+                </p>
+              </div>
+
+              <div class="slider-btn-container">
+                <a href="#">
+                  <div class="ghost-button-alternate gba-yellow">
+                    <p>&times;HEY LISTEN</p>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div>
+        <div class="vert-box green-box">
+          <div class="box-pattern">
+
+            <div class="box-picture">
+              <img src="/assets/green-box.png" />
+            </div>
+
+            <div class="box-information">
+
+              <div class="box-name">
+                <p style="color: #39B54A">绿色盒子</p>
+              </div>
+
+              <div class = "box-description">
+                <p>
+                    影輕驗看作單低留類理懷排的作神市死候個力歷合現長太！
+                    建但亞消人英本的沒北，該千土商做準比而。
+                    等血開修再線古團市一失道來成風備一切朋南遊代出化康的活辦較在式也男不？
+                </p>
+              </div>
+
+              <div class="slider-btn-container">
+                <a href="#">
+                  <div class="ghost-button-alternate gba-green">
+                    <p>HEY LISTEN</p>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!--
 
       <div class="juice-box">
 
-      <%= link_to spree.product_path(@featured_one) do %>
+      <%#= link_to spree.product_path(@featured_one) do %>
         <img src="/assets/bottle.png" />
-        <% end %>
+        <#% end %>
 
         <div class="juice">
 
-          <%= link_to spree.product_path(@featured_one) do %>
+          <%#= link_to spree.product_path(@featured_one) do %>
           <p class="productName">
-            <!-- erb to grab featured product name -->
-            <%=@featured_one.name %>
+
+            <%#=@featured_one.name %>
           </p>
-          <% end %>
+          <#% end %>
 
           <p class="ingredients">
-              <!-- erb to grab featured product ingredients -->
-              <%=@featured_one.description%>
+
+              <%#=@featured_one.description%>
           </p>
 
           <p class="productPrice">
-              $<%=@featured_one.price.to_i%>
-              <!-- erb to grab featured product price -->
+              $<%#=@featured_one.price.to_i%>
+
           </p>
 
         </div>
@@ -74,103 +182,142 @@
     </div>
 
 
-    </div>
+    </div> -->
 
-    <div>
-      <div class="juice-box">
-        <%= link_to spree.product_path(@featured_two) do %>
-        <img src="/assets/cup.png" />
-        <% end %>
-        <div class="smoothie">
-          <%= link_to spree.product_path(@featured_two) do %>
-          <p class="productName">
-            <!-- erb to grab featured product name -->
-            <%=@featured_two.name %>
-          </p>
-          <% end %>
-
-          <p class="ingredients">
-              <!-- erb to grab featured product ingredients -->
-              <%=@featured_two.description%>
-          </p>
-
-          <p class="productPrice">
-              $<%=@featured_two.price.to_i%>
-              <!-- erb to grab featured product price -->
-          </p>
-
-        </div>
-
-      </div>
-    </div>
-
-    <div>
-      <div class="juice-box">
-        <%= link_to spree.product_path(@featured_three) do %>
-        <img src="/assets/bottle.png" />
-        <% end %>
-        <div class="juice">
-          <%= link_to spree.product_path(@featured_three) do %>
-
-          <p class="productName">
-            <!-- erb to grab featured product name -->
-            <%=@featured_three.name %>
-          </p>
-          <% end %>
-          <p class="ingredients">
-              <!-- erb to grab featured product ingredients -->
-              <%=@featured_three.description%>
-          </p>
-
-          <p class="productPrice">
-              $<%=@featured_three.price.to_i%>
-              <!-- erb to grab featured product price -->
-          </p>
-
-        </div>
-
-      </div>
-    </div>
-    <div>
-      <div class="juice-box">
-        <%= link_to spree.product_path(@featured_four) do %>
-        <img src="/assets/glass.png" />
-        <% end %>
-        <div class="tea">
-
-          <%= link_to spree.product_path(@featured_four) do %>
-          <p class="productName">
-            <!-- erb to grab featured product name -->
-            <%=@featured_four.name %>
-          </p>
-          <% end %>
-
-          <p class="ingredients">
-              <!-- erb to grab featured product ingredients -->
-              <%=@featured_four.description%>
-          </p>
-
-          <p class="productPrice">
-              $<%=@featured_four.price.to_i%>
-              <!-- erb to grab featured product price -->
-          </p>
-
-        </div>
-
-      </div>
-    </div>
   </div>
 </div>
 
+
+
 <!-- We can add erb to grab each featured drink and place/style them to match
-the style on the first feature. -->
+the style on the first feature.  -->
 
 <div id="featurette">
   <div class="container">
     <div class="row">
 
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
-        <%= link_to spree.product_path(@featured_one) do %>
+      <div class = "col-md-4 visible-md visible-lg">
+        <div class="vert-box red-box">
+          <div class="box-pattern">
+
+            <div class="box-picture">
+              <img src="/assets/red-box.png" />
+            </div>
+
+            <div class="box-information">
+
+              <div class="box-name">
+                <p style="color: #F66">红色框</p>
+              </div>
+
+              <div class = "box-description">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  Aenean suscipit convallis libero quis dictum. Proin accumsan sit 
+                  amet tellus pulvinar egestas. Ut quis bibendum nisi, ut venenatis mi. 
+                  Cras auctor finibus commodo. Curabitur ullamcorper sapien in 
+                  dignissim congue.
+                </p>
+              </div>
+
+              <div class="slider-btn-container">
+                <a href="#">
+                  <div class="ghost-button-alternate gba-red">
+                    <p>HEY LISTEN</p>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class = "col-md-4 visible-md visible-lg">
+
+        <div class="vert-box yellow-box">
+          <div class="box-pattern">
+
+            <div class="box-picture">
+              <img src="/assets/yellow-box.png" />
+            </div>
+
+            <div class="box-information">
+
+              <div class="box-name">
+                <p style="color: #FEFF3A">黄色盒子</p>
+              </div>
+
+              <div class = "box-description">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  Aenean suscipit convallis libero quis dictum. Proin accumsan sit 
+                  amet tellus pulvinar egestas. Ut quis bibendum nisi, ut venenatis mi. 
+                  Cras auctor finibus commodo. Curabitur ullamcorper sapien in 
+                  dignissim congue.
+                </p>
+              </div>
+
+              <div class="slider-btn-container">
+                <a href="#">
+                  <div class="ghost-button-alternate gba-yellow">
+                    <p>HEY LISTEN</p>
+                  </div>
+                </a>
+              </div>
+              
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class = "col-md-4 visible-md visible-lg">
+        <div class="vert-box green-box">
+          <div class="box-pattern">
+
+            <div class="box-picture">
+              <img src="/assets/green-box.png" />
+            </div>
+
+            <div class="box-information">
+
+              <div class="box-name">
+                <p style="color: #39B54A">绿色盒子</p>
+              </div>
+
+              <div class = "box-description">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  Aenean suscipit convallis libero quis dictum. Proin accumsan sit 
+                  amet tellus pulvinar egestas. Ut quis bibendum nisi, ut venenatis mi. 
+                  Cras auctor finibus commodo. Curabitur ullamcorper sapien in 
+                  dignissim congue.
+                </p>
+              </div>
+
+              <div class="slider-btn-container">
+                <a href="#">
+                  <div class="ghost-button-alternate gba-green">
+                    <p>HEY LISTEN</p>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!--
+
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 visible-md visible-lg">
+        <%#= link_to spree.product_path(@featured_one) do %>
 
         <div class="juice-box">
 
@@ -179,18 +326,18 @@ the style on the first feature. -->
           <div class="juice">
 
             <p class="productName">
-              <!-- erb to grab featured product name -->
-              <%=@featured_one.name %>
+
+              <%#=@featured_one.name %>
             </p>
 
             <p class="ingredients">
-                <!-- erb to grab featured product ingredients -->
-                <%=@featured_one.description%>
+
+                <%#=@featured_one.description%>
             </p>
 
             <p class="productPrice">
-                $<%=@featured_one.price.to_i%>
-                <!-- erb to grab featured product price -->
+                $<%#=@featured_one.price.to_i%>
+
             </p>
 
           </div>
@@ -198,11 +345,11 @@ the style on the first feature. -->
         </div>
 
       </div>
-      <% end %>
+      <%# end %>
 
 
       <div class="col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
-        <%= link_to spree.product_path(@featured_two) do %>
+        <%#= link_to spree.product_path(@featured_two) do %>
         <div class="juice-box">
 
           <img src="/assets/cup.png" />
@@ -210,27 +357,27 @@ the style on the first feature. -->
           <div class="smoothie">
 
             <p class="productName">
-              <!-- erb to grab featured product name -->
-              <%=@featured_two.name %>
+
+              <%#=@featured_two.name %>
             </p>
 
             <p class="ingredients">
-                <!-- erb to grab featured product ingredients -->
-                <%=@featured_two.description%>
+
+                <%#=@featured_two.description%>
             </p>
 
             <p class="productPrice">
-                $<%=@featured_two.price.to_i%>
-                <!-- erb to grab featured product price -->
+                $<%#=@featured_two.price.to_i%>
+
             </p>
 
           </div>
         </div>
-        <%end%>
+        <%#end%>
       </div>
 
       <div class="col-md-4 col-lg-3 visible-md visible-lg">
-        <%= link_to spree.product_path(@featured_three) do %>
+        <%#= link_to spree.product_path(@featured_three) do %>
 
         <div class="juice-box">
 
@@ -239,27 +386,27 @@ the style on the first feature. -->
           <div class="tea">
 
             <p class="productName">
-              <!-- erb to grab featured product name -->
-              <%=@featured_three.name %>
+
+              <%#=@featured_three.name %>
             </p>
 
             <p class="ingredients">
-                <!-- erb to grab featured product ingredients -->
-                <%=@featured_three.description%>
+
+                <%#=@featured_three.description%>
             </p>
 
             <p class="productPrice">
-                $<%=@featured_three.price.to_i%>
-                <!-- erb to grab featured product price -->
+                $<%#=@featured_three.price.to_i%>
+
             </p>
 
           </div>
         </div>
-        <%end%>
+        <%#end%>
       </div>
 
       <div class="col-lg-3 visible-lg">
-        <%= link_to spree.product_path(@featured_four) do %>
+        <%#= link_to spree.product_path(@featured_four) do %>
 
         <div class="juice-box">
 
@@ -268,29 +415,29 @@ the style on the first feature. -->
           <div class="juice">
 
             <p class="productName">
-              <!-- erb to grab featured product name -->
+
               <%=@featured_four.name %>
             </p>
 
             <p class="ingredients">
-                <!-- erb to grab featured product ingredients -->
+
                 <%=@featured_four.description%>
             </p>
 
             <p class="productPrice">
                 $<%=@featured_four.price.to_i%>
-                <!-- erb to grab featured product price -->
+
             </p>
 
           </div>
         </div>
-        <%end%>
+        <%#end%>
 
       </div>
     </div>
   </div>
 </div>
-    <%else%>
+    <%#else%>
     <div class="row">
       <a style="display: block" href="/admin">
         <div class="ghost-button-blue">
@@ -301,9 +448,11 @@ the style on the first feature. -->
       </a>
 
     </div>
-    <%end%>
+    <%#end%>
   </div>
 </div>
+
+-->
 
 <div id="big-links">
     <div class="row no-gutters">
