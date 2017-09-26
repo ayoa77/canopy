@@ -1,7 +1,7 @@
 <!-- <%# @body_id = 'home-page' %>
 <%# content_for :sidebar do %>
   <div data-hook="homepage_sidebar_navigation">
-    <%= render partial: 'spree/shared/taxonomies' %>
+    <%#= render partial: 'spree/shared/taxonomies' %>
   </div>
 <%# end %>
 <div data-hook="homepage_products">
@@ -53,21 +53,20 @@
             <div class="box-information">
 
               <div class="box-name">
-                <p style="color: #F66">红色框</p>
+                <p style="color: #F66"><%=@red_box.name %></p>
               </div>
 
               <div class = "box-description">
                 <p>
-                    影輕驗看作單低留類理懷排的作神市死候個力歷合現長太！
-                    建但亞消人英本的沒北，該千土商做準比而。
-                    等血開修再線古團市一失道來成風備一切朋南遊代出化康的活辦較在式也男不？
+              <%=@red_box.description%>
                 </p>
               </div>
 
               <div class="slider-btn-container">
                 <a href="#">
                   <div class="ghost-button-alternate gba-red">
-                    <p>HEY LISTEN</p>
+                    <p> $
+                    <%=@red_box.price.to_i%></p>
                   </div>
                 </a>
               </div>
@@ -90,21 +89,19 @@
             <div class="box-information">
 
               <div class="box-name">
-                <p style="color: #FEFF3A">黄色盒子</p>
+                <p style="color: #FEFF3A"><%=@yellow_box.name%></p>
               </div>
 
               <div class = "box-description">
                 <p>
-                    影輕驗看作單低留類理懷排的作神市死候個力歷合現長太！
-                    建但亞消人英本的沒北，該千土商做準比而。
-                    等血開修再線古團市一失道來成風備一切朋南遊代出化康的活辦較在式也男不？
+                <%=@yellow_box.description%>
                 </p>
               </div>
 
               <div class="slider-btn-container">
                 <a href="#">
                   <div class="ghost-button-alternate gba-yellow">
-                    <p>&times;HEY LISTEN</p>
+                    <p>$<%=@yellow_box.price.to_i%></p>
                   </div>
                 </a>
               </div>
@@ -126,21 +123,20 @@
             <div class="box-information">
 
               <div class="box-name">
-                <p style="color: #39B54A">绿色盒子</p>
+                <p style="color: #39B54A"> $
+                <%=@green_box.name%></p>
               </div>
 
               <div class = "box-description">
                 <p>
-                    影輕驗看作單低留類理懷排的作神市死候個力歷合現長太！
-                    建但亞消人英本的沒北，該千土商做準比而。
-                    等血開修再線古團市一失道來成風備一切朋南遊代出化康的活辦較在式也男不？
-                </p>
+       $
+      <%= @green_box.description %>                </p>
               </div>
 
               <div class="slider-btn-container">
                 <a href="#">
                   <div class="ghost-button-alternate gba-green">
-                    <p>HEY LISTEN</p>
+                    <p>$<%=@green_box.price.to_i%></p>
                   </div>
                 </a>
               </div>
@@ -154,26 +150,26 @@
 
       <div class="juice-box">
 
-      <%#= link_to spree.product_path(@featured_one) do %>
+      <%#= link_to spree.product_path(@red_box) do %>
         <img src="/assets/bottle.png" />
         <#% end %>
 
         <div class="juice">
 
-          <%#= link_to spree.product_path(@featured_one) do %>
+          <%#= link_to spree.product_path(@red_box) do %>
           <p class="productName">
 
-            <%#=@featured_one.name %>
+            <%#=@red_box.name %>
           </p>
           <#% end %>
 
           <p class="ingredients">
 
-              <%#=@featured_one.description%>
+              <%#=@red_box.description%>
           </p>
 
           <p class="productPrice">
-              $<%#=@featured_one.price.to_i%>
+              $<%#=@red_box.price.to_i%>
 
           </p>
 
@@ -195,6 +191,7 @@ the style on the first feature.  -->
 <div id="featurette">
   <div class="container">
     <div class="row">
+        <%= link_to spree.product_path(@red_box) do %>
 
       <div class = "col-md-4 visible-md visible-lg">
         <div class="vert-box red-box">
@@ -207,23 +204,21 @@ the style on the first feature.  -->
             <div class="box-information">
 
               <div class="box-name">
-                <p style="color: #F66">红色框</p>
+                <p style="color: #F66"><%=@red_box.name%>
+                  </p>
               </div>
 
               <div class = "box-description">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Aenean suscipit convallis libero quis dictum. Proin accumsan sit 
-                  amet tellus pulvinar egestas. Ut quis bibendum nisi, ut venenatis mi. 
-                  Cras auctor finibus commodo. Curabitur ullamcorper sapien in 
-                  dignissim congue.
+              <%=@red_box.description%>
                 </p>
               </div>
+              <% end %>
 
               <div class="slider-btn-container">
                 <a href="#">
                   <div class="ghost-button-alternate gba-red">
-                    <p>HEY LISTEN</p>
+                    <p>$<%=@red_box.price %></p>
                   </div>
                 </a>
               </div>
@@ -246,23 +241,19 @@ the style on the first feature.  -->
             <div class="box-information">
 
               <div class="box-name">
-                <p style="color: #FEFF3A">黄色盒子</p>
+                <p style="color: #FEFF3A"><%=@yellow_box.name%></p>
               </div>
 
               <div class = "box-description">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Aenean suscipit convallis libero quis dictum. Proin accumsan sit 
-                  amet tellus pulvinar egestas. Ut quis bibendum nisi, ut venenatis mi. 
-                  Cras auctor finibus commodo. Curabitur ullamcorper sapien in 
-                  dignissim congue.
+                <%=@yellow_box.description%>
                 </p>
               </div>
 
               <div class="slider-btn-container">
                 <a href="#">
                   <div class="ghost-button-alternate gba-yellow">
-                    <p>HEY LISTEN</p>
+                    <p>$<%=@yellow_box.price.to_i%></p>
                   </div>
                 </a>
               </div>
@@ -284,23 +275,19 @@ the style on the first feature.  -->
             <div class="box-information">
 
               <div class="box-name">
-                <p style="color: #39B54A">绿色盒子</p>
+                <p style="color: #39B54A"><%=@green_box.name%></p>
               </div>
 
               <div class = "box-description">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Aenean suscipit convallis libero quis dictum. Proin accumsan sit 
-                  amet tellus pulvinar egestas. Ut quis bibendum nisi, ut venenatis mi. 
-                  Cras auctor finibus commodo. Curabitur ullamcorper sapien in 
-                  dignissim congue.
+                  <%=@green_box.description%>
                 </p>
               </div>
 
               <div class="slider-btn-container">
                 <a href="#">
                   <div class="ghost-button-alternate gba-green">
-                    <p>HEY LISTEN</p>
+                    <p>$<%=@green_box.price.to_i%></p>
                   </div>
                 </a>
               </div>
@@ -317,7 +304,7 @@ the style on the first feature.  -->
     <!--
 
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 visible-md visible-lg">
-        <%#= link_to spree.product_path(@featured_one) do %>
+        <%#= link_to spree.product_path(@red_box) do %>
 
         <div class="juice-box">
 
@@ -327,16 +314,16 @@ the style on the first feature.  -->
 
             <p class="productName">
 
-              <%#=@featured_one.name %>
+              <%#=@red_box.name %>
             </p>
 
             <p class="ingredients">
 
-                <%#=@featured_one.description%>
+                <%#=@red_box.description%>
             </p>
 
             <p class="productPrice">
-                $<%#=@featured_one.price.to_i%>
+                $<%#=@red_box.price.to_i%>
 
             </p>
 
@@ -349,7 +336,7 @@ the style on the first feature.  -->
 
 
       <div class="col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
-        <%#= link_to spree.product_path(@featured_two) do %>
+        <%#= link_to spree.product_path(@yellow_box) do %>
         <div class="juice-box">
 
           <img src="/assets/cup.png" />
@@ -358,16 +345,16 @@ the style on the first feature.  -->
 
             <p class="productName">
 
-              <%#=@featured_two.name %>
+              <%#=@yellow_box.name %>
             </p>
 
             <p class="ingredients">
 
-                <%#=@featured_two.description%>
+                <%#=@yellow_box.description%>
             </p>
 
             <p class="productPrice">
-                $<%#=@featured_two.price.to_i%>
+                $<%#=@yellow_box.price.to_i%>
 
             </p>
 
@@ -377,7 +364,7 @@ the style on the first feature.  -->
       </div>
 
       <div class="col-md-4 col-lg-3 visible-md visible-lg">
-        <%#= link_to spree.product_path(@featured_three) do %>
+        <%#= link_to spree.product_path(@green_box) do %>
 
         <div class="juice-box">
 
@@ -387,16 +374,16 @@ the style on the first feature.  -->
 
             <p class="productName">
 
-              <%#=@featured_three.name %>
+              <%#=@green_box.name %>
             </p>
 
             <p class="ingredients">
 
-                <%#=@featured_three.description%>
+                <%#=@green_box.description%>
             </p>
 
             <p class="productPrice">
-                $<%#=@featured_three.price.to_i%>
+                $<$%#=@green_box.price.to_i%>
 
             </p>
 
@@ -416,16 +403,16 @@ the style on the first feature.  -->
 
             <p class="productName">
 
-              <%=@featured_four.name %>
+              <%#=@featured_four%>
             </p>
 
             <p class="ingredients">
 
-                <%=@featured_four.description%>
+                <%#=@featured_four.description%>
             </p>
 
             <p class="productPrice">
-                $<%=@featured_four.price.to_i%>
+                $<%#=@featured_four.price.to_i%>
 
             </p>
 

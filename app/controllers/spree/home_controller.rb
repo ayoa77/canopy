@@ -10,35 +10,38 @@ module Spree
       # @products = @products.includes(:possible_promotions) if @products.respond_to?(:includes)
       ##### these queries will work when there are more than four products ideall with featured taxons/taxonomies #####
 
-      @products = Spree::Product.all
-      @taxonomies = Spree::Taxonomy.includes(root: :children)
-      @featured =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Featured"})
-      random_products = @products.shuffle
+      # @products = Spree::Product.all
+      # @taxonomies = Spree::Taxonomy.includes(root: :children)
+      # @featured =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Featured"})
+      # random_products = @products.shuffle
 
-      if @featured.first.nil?
-        @featured_one = random_products.first
-      else
-        @featured_one = @featured.first
-      end
+      # if @featured.first.nil?
+      #   @featured_one = random_products.first
+      # else
+      #   @featured_one = @featured.first
+      # end
 
-      if @featured.second.nil?
-        @featured_two = random_products.second
-      else
-        @featured_two = @featured.second
-      end
+      # if @featured.second.nil?
+      #   @featured_two = random_products.second
+      # else
+      #   @featured_two = @featured.second
+      # end
 
-      if @featured.third.nil?
-        @featured_three = random_products.third
-      else
-        @featured_three  = @featured.third
-      end
+      # if @featured.third.nil?
+      #   @featured_three = random_products.third
+      # else
+      #   @featured_three  = @featured.third
+      # end
 
-      if @featured.fourth.nil?
-        @featured_four = random_products.fourth
-      else
-        @featured_four = @featured.fourth
-      end
+      # if @featured.fourth.nil?
+      #   @featured_four = random_products.fourth
+      # else
+      #   @featured_four = @featured.fourth
+      # end
 
+      @red_box =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Red Box"}).first
+      @green_box =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Green Box"}).first
+      @yellow_box =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Yellow Box"}).first
     end
   end
 end
