@@ -40,26 +40,49 @@
       <div class="add-to-carts">
         <div class="row">
 
+        <div class = "col-xs-12 col-sm-8 col-sm-offset-2">
+          <div class = "col-xs-6 mini-gutter-right">
+
+            <div class="quantity-cart" style="margin: 20px auto 0;">
+
+              <div class="dropdown">
+                <button class="form-control dropdown-toggle" type="button" data-toggle="dropdown"><%= @product.name %>
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="/products/red-box">Red Box</a></li>
+                  <li><a href="/products/yellow-box">Yellow Box</a></li>
+                  <li><a href="/products/green-box">Green Box</a></li>
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class = "col-xs-6 mini-gutter-left">
+            <div class="quantity-cart">
+          
+              <%= number_field_tag :quantity, 1, class: 'title form-control col-xs-6', min: 1 %>
+          
+            </div>
+          </div>
+        </div>
+
+
+          <!-- <div class="col-xs-12 col-sm-8 col-sm-offset-2"></div> -->
 
           <div class="col-xs-12 col-sm-8 col-sm-offset-2">
             <div class="quantity-cart">
 
-              <%= number_field_tag :quantity, 1, class: 'title form-control col-xs-6', min: 1 %>
+              <%= text_area_tag :preference, "",class: 'title extra-information col-xs-6', placeholder: Spree.t(:add_any_allergies_or_special_request_for_this_box) %>
 
             </div>
           </div>
 
-                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-                  <div class="quantity-cart nathan beautify  ">
-
-                    <%= text_field_tag :preference, "",class: 'title form-control col-xs-6', placeholder: Spree.t(:add_any_allergies_or_special_request_for_this_box) %>
-
-                  </div>
-                </div>
-
           <div class="col-xs-12">
 
-            <%= button_tag class: 'ghost-button-green', id: 'add-to-cart-button', type: :submit do %>
+            <%= button_tag class: 'add-to-cart-orange click-me-animation', id: 'add-to-cart-button', type: :submit do %>
             <%= Spree.t(:add_to_cart) %>
             <% end %>
 

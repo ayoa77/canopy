@@ -50,8 +50,9 @@
   // position: relative;
   // top: 70%;
   transition: all 0.4s;
-  text-align:center;
-  line-height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navCartCount:hover{
@@ -61,6 +62,10 @@
   border: 2px solid #FFF;
   color: #fff;
   // text-align: center;
+}
+
+.navCartCount p {
+  margin: 0;
 }
 
 #logo {

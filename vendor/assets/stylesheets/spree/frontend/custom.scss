@@ -44,6 +44,16 @@ a:hover{
   padding-left: 0;
 }
 
+.mini-gutter-right {
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+.mini-gutter-left {
+  padding-right: 0;
+  padding-left: 10px;
+}
+
 // Covers _header.html.erb partial
 
 #spree-header {
@@ -433,6 +443,34 @@ a:hover{
 .btn-white:hover {
   background-color: #eee;
 }
+
+.add-to-cart-orange{
+  height: 50px;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  color: #fff;
+  background-color: #F8776A;
+  border: 0;
+
+  transition: all 0.3s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 20px;
+    padding-top: 8px;
+  }
+
+}
+
+.add-to-cart-orange:hover {
+  background-color: #FA9786;
+}
+
+
 
 .featurette-mobile {
   margin: 0 auto;
@@ -1155,11 +1193,23 @@ margin-bottom: 30px;
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
+}
 
+.dropdown-menu {
+  min-width: 100%;
 }
 
 .form-control {
   height: 50px;
+  color: #B3D57C;
+  border: 1px solid #B3D57C;
+  border-radius: 0px;
+  text-align: center;
+}
+
+.extra-information {
+  height: 120px;
+  width: 100%;
   color: #B3D57C;
   border: 1px solid #B3D57C;
   border-radius: 0px;

@@ -15,65 +15,7 @@
           <%= product_image(@product, itemprop: "image") %>
 
           <!-- additional-information is the Nutrition information Hover state -->
-          <div class="additional-information">
 
-            <div class="row">
-
-            <div class="col-xs-12">
-              <strong>Nutrition Information</strong>
-            </div>
-
-            <div class="col-xs-9">
-              <%= Spree.t(:calories) %>
-            </div>
-            <div class="col-xs-3">
-            <%=  @product.calories ? @product.calories : "150" %>
-            </div>
-
-            <div class="col-xs-9">
-              <%= Spree.t(:protein) %>
-            </div>
-            <div class="col-xs-3">
-              <%=  @product.protein ? @product.protein : "150" %>
-            </div>
-
-            <div class="col-xs-9">
-              <%= Spree.t(:fat) %>
-            </div>
-            <div class="col-xs-3">
-              <%=  @product.fat ? @product.fat : "150" %>
-            </div>
-
-            <div class="col-xs-9">
-              <%= Spree.t(:carbs) %>
-            </div>
-            <div class="col-xs-3">
-              <%=  @product.carbs ? @product.carbs : "150" %>
-            </div>
-
-            <div class="col-xs-9">
-              <%= Spree.t(:sugar) %>
-            </div>
-            <div class="col-xs-3">
-              <%=  @product.sugar ? @product.sugar : "150" %>
-            </div>
-            <div class="col-xs-9">
-              <%= Spree.t(:fiber) %>
-            </div>
-            <div class="col-xs-3">
-              <%=  @product.fiber ? @product.fiber : "150" %>
-            </div>
-
-            <div class="col-xs-9">
-              <%= Spree.t(:sodium) %>
-            </div>
-            <div class="col-xs-3">
-              <%=  @product.sodium ? @product.sodium : "150" %>
-            </div>
-
-          </div>
-
-        </div>
       </div>
 
     </div>
@@ -92,14 +34,6 @@
         </div>
 
         <div class="col-xs-12">
-          <div class="productmakeup">
-            <p>
-              <%= @product.description1 %>
-            </p>
-          </div>
-        </div>
-
-        <div class="col-xs-12">
           <div class="productdesc">
             <p>
               <%= product_description(@product) %>
@@ -109,15 +43,6 @@
 
         <div id="cart-form" data-hook="cart_form" class="col-xs-12">
           <div class="button-contain flex-column">
-<!-- <<<<<<< HEAD
-            <% if @product.dynamic_variants? %>
-              <%= render :partial => "dynamic_variant_cart_form" %>
-            <% else %>
-              <%= render :partial => "cart_form" %>
-            <% end %>
-          </div>
-        </div>
-======= -->
              <%= render :partial => "dynamic_variant_cart_form" %>
           </div>
         </div>

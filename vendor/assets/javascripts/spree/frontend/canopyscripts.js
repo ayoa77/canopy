@@ -39,27 +39,35 @@ $(document).on('ready', function() {
     $('#address_submit').click(function (evt) {
       var phone = $('#order_bill_address_attributes_phone').val();
       if ($('#order_instore').is(':checked')) {
-    $('#order_ship_address_attributes_firstname').attr('disabled',false);
-    $('#order_ship_address_attributes_lastname').attr('disabled',false);
-    $('#order_ship_address_attributes_address1').attr('disabled',false);
-    $('#order_ship_address_attributes_address2').attr('disabled',false);
-    $('#order_ship_address_attributes_city').attr('disabled',false);
-    $('#order_ship_address_attributes_zipcode').attr('disabled',false);
-    $('#order_ship_address_attributes_phone').attr('disabled',false);
+        $('#order_ship_address_attributes_firstname').attr('disabled',false);
+        $('#order_ship_address_attributes_lastname').attr('disabled',false);
+        $('#order_ship_address_attributes_address1').attr('disabled',false);
+        $('#order_ship_address_attributes_address2').attr('disabled',false);
+        $('#order_ship_address_attributes_city').attr('disabled',false);
+        $('#order_ship_address_attributes_zipcode').attr('disabled',false);
+        $('#order_ship_address_attributes_phone').attr('disabled',false);
 
-    $('#order_ship_address_attributes_firstname').val('Canopy');
-    $('#order_ship_address_attributes_lastname').val('Juice');
-    $('#order_ship_address_attributes_address1').val('宜蘭市女中路三段117號');
-    $('#order_ship_address_attributes_city').val('Yilan City');
-    $('#order_ship_address_attributes_zipcode').val('220');
-    $('#order_ship_address_attributes_phone').val(phone);
-   $(this).submit();
-}
-else {
-  $(this).submit();
-}
+        $('#order_ship_address_attributes_firstname').val('Canopy');
+        $('#order_ship_address_attributes_lastname').val('Juice');
+        $('#order_ship_address_attributes_address1').val('宜蘭市女中路三段117號');
+        $('#order_ship_address_attributes_city').val('Yilan City');
+        $('#order_ship_address_attributes_zipcode').val('220');
+        $('#order_ship_address_attributes_phone').val(phone);
+        $(this).submit();
+      } else {
+        $(this).submit();
+      }
 
-  });
+});
+
+    $( '.click-me-animation' ).click(function () {
+        $( '.navCartCount' ).css({"box-shadow": "0px 0px 40px 8px"});
+        $( '.navCartCount p' ).animate({"font-size": "18px"}, 150);
+      setTimeout(function() {
+        $( '.navCartCount' ).css({"box-shadow": "0px 0px 0px"});
+      }, 200);
+        $( '.navCartCount p' ).animate({"font-size": "14px"}, 150);
+    });
 
 // Slick
 
@@ -146,7 +154,7 @@ $('form#update-cart a.submit').click(function() {
 
     shoWcount =  parseInt($('#shopcount .navCartCount').text()),
     shoWcount += amoutToAdd;
-    $('#shopcount .navCartCount').html(shoWcount);
+    $('#shopcount .navCartCount p').html(shoWcount);
   });
 
 
