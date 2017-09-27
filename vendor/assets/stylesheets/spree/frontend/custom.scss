@@ -930,7 +930,7 @@ a:hover{
 .flex-line-item {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 #line-item {
@@ -1037,8 +1037,27 @@ margin-bottom: 30px;
 }
 
 .gimme-some-space-top {
-  margin-top: 30px;
+  margin-top: 0px;
 }
+
+.ghost-button-green-coupon {
+  display: block;
+  background-color: #fff;
+  height: 50px;
+  margin: 20px 0;
+  color: #B3D57C;
+  text-align: center;
+  border: 1px solid #B3D57C;
+  text-transform: uppercase;
+
+  transition: all .3s;
+}
+
+.ghost-button-green-coupon:hover {
+  background-color: #B3D57C;
+  color: #fff;
+}
+
 
 .to-the-right {
   float: right;
@@ -1350,6 +1369,15 @@ margin-bottom: 30px;
   }
 }
 
+.checkout-top-spacer {
+  margin-top: 20px;
+}
+
+.checkout-body-type {
+  font-size: 16px;
+  color: #bbb;
+}
+
 .address-pad {
   padding-left: 30px;
 }
@@ -1423,6 +1451,30 @@ margin-bottom: 30px;
 
 .rate-name {
   font-size: 16px;
+}
+
+.nice-looking-radios input[type="radio"] {
+  display:none;
+}
+
+.nice-looking-radios input[type="radio"] + label {
+  color:#f2f2f2;
+  font-family:Arial, sans-serif;
+}
+
+.nice-looking-radios input[type="radio"] + label {
+  display:inline-block;
+  background-color: #E1F8B7;
+  width:150px;
+  height:50px;
+  margin:-2px 10px 0 0;
+  vertical-align:middle;
+  cursor: pointer;
+  text-align: center;
+}
+
+.nice-looking-radios input[type="radio"]:checked + label {
+  background-color: #B3D57C;
 }
 
 // events - events.html.erb
