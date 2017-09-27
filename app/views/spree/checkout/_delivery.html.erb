@@ -149,12 +149,12 @@ and how to turn it off.  :D -->
             <label for = "order_time_of_day_before_1_pm"><span><p>Before 1pm</p></span></label>
             <%#= form.label Spree.t(:before_1pm), Spree.t(:before_1pm) %>
 
-            <%= form.radio_button :time_of_day, '2pm to 4pm'%>
-            <label for = "order_time_of_day_2pm_to_4pm"><span><p>2pm to 4pm</p></span></label>
+            <%= form.radio_button :time_of_day, '2pm to 4pm', :checked => false %>
+            <label for = "order_time_of_day_2pm_to_4pm"><span><p>2pm - 4pm</p></span></label>
             <%#= form.label Spree.t(:from_two_to_four_pm), Spree.t(:from_two_to_four_pm) %>
 
-            <%= form.radio_button :time_of_day, 'anytime' %>
-            <label for = "order_time_of_day_anytime"><span><p>anytime</p></span></label>
+            <%= form.radio_button :time_of_day, 'anytime', :checked => false %>
+            <label for = "order_time_of_day_anytime"><span><p>Anytime</p></span></label>
             <%#= form.label Spree.t(:anytime), Spree.t(:anytime) %>
           </div>
         </div>
@@ -167,8 +167,6 @@ and how to turn it off.  :D -->
 
         <p class="checkout-shipping"><%= Spree.t(:shipping_instructions) %></p>
         <%= form.text_area :special_instructions, placeholder: Spree.t(:special_instructions), cols: 40, rows: 4, class: "form-control", style: "text-align: left; margin: 10px 0 20px;" %>
-
-        
 
         <p class="checkout-body-type"> <%=Spree.t(:delivery_days)%> </p> 
         <p class="checkout-body-type"> <%=Spree.t(:delivery_notice)%> </p>
