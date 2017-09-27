@@ -23,7 +23,7 @@
           <h4><%= link_to line_item.name, product_path(variant.product) %></h4>
         <!-- <p class="beautiful-text-hierarchy nathan beautify"> <%#= variant.option_values.pluck(:presentation).join(" + ") %></p> -->
           <% line_item.preference.each do |p|%>
-        <p class="beautiful-text-hierarchy nathan beautify"> <%= p%></p>
+        <p class="beautiful-text-hierarchy nathan beautify"> <%= p%> </p>
           <% end %>   
         <% if line_item.insufficient_stock? %>
             <span class="out-of-stock">
