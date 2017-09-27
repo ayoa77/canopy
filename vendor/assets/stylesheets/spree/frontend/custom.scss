@@ -1453,28 +1453,53 @@ margin-bottom: 30px;
   font-size: 16px;
 }
 
+.nice-looking-radios {
+  display: flex;
+  justify-content: space-between;
+}
+
 .nice-looking-radios input[type="radio"] {
   display:none;
+}
+
+.nice-looking-radios span {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
 }
 
 .nice-looking-radios input[type="radio"] + label {
   color:#f2f2f2;
   font-family:Arial, sans-serif;
-}
-
-.nice-looking-radios input[type="radio"] + label {
   display:inline-block;
-  background-color: #E1F8B7;
-  width:150px;
+  background-color: #ccc;
+  width: 100%;
   height:50px;
-  margin:-2px 10px 0 0;
+  margin:-2px 10px 10px 0;
   vertical-align:middle;
   cursor: pointer;
   text-align: center;
+  transition: all .3s;
 }
 
 .nice-looking-radios input[type="radio"]:checked + label {
   background-color: #B3D57C;
+}
+
+.nice-looking-radios input[type="radio"]:hover + label {
+  background-color: #86A059;
+  transition: all .3s;
+}
+
+.nice-looking-radios input[type="radio"] + label:last-child {
+  margin-right: 0;
 }
 
 // events - events.html.erb
