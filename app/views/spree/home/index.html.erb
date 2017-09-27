@@ -43,6 +43,7 @@
   <div class='center'>
 
      <div>
+         <%= link_to spree.product_path(@red_box) do %>
         <div class="vert-box red-box">
           <div class="box-pattern">
 
@@ -63,22 +64,25 @@
               </div>
 
               <div class="slider-btn-container">
-                <a href="#">
+                <!-- <a href="#"> -->
                   <div class="ghost-button-alternate gba-red">
                     <p> $
                     <%=@red_box.price.to_i%></p>
                   </div>
-                </a>
+                <!-- </a> -->
               </div>
 
             </div>
           </div>
 
         </div>
+        <%end%>
       </div>
 
 
       <div>
+          <%= link_to spree.product_path(@yellow_box) do %>
+
         <div class="vert-box yellow-box">
           <div class="box-pattern">
 
@@ -110,9 +114,12 @@
           </div>
 
         </div>
+        <%end%>
       </div>
 
       <div>
+                <%= link_to spree.product_path(@green_box) do %>
+
         <div class="vert-box green-box">
           <div class="box-pattern">
 
@@ -145,6 +152,7 @@
           </div>
 
         </div>
+        <%end%>
       </div>
       <!--
 
@@ -191,9 +199,9 @@ the style on the first feature.  -->
 <div id="featurette">
   <div class="container">
     <div class="row">
-        <%= link_to spree.product_path(@red_box) do %>
-
+      
       <div class = "col-md-4 visible-md visible-lg">
+          <%= link_to spree.product_path(@red_box) do %>
         <div class="vert-box red-box">
           <div class="box-pattern">
 
@@ -213,8 +221,7 @@ the style on the first feature.  -->
               <%=@red_box.description%>
                 </p>
               </div>
-              <% end %>
-
+              
               <div class="slider-btn-container">
                 <a href="#">
                   <div class="ghost-button-alternate gba-red">
@@ -222,15 +229,18 @@ the style on the first feature.  -->
                   </div>
                 </a>
               </div>
-
+              
             </div>
           </div>
-
+          
         </div>
+        <% end %>
       </div>
-
+      
+      
       <div class = "col-md-4 visible-md visible-lg">
-
+        
+        <%= link_to spree.product_path(@yellow_box) do %>
         <div class="vert-box yellow-box">
           <div class="box-pattern">
 
@@ -260,11 +270,14 @@ the style on the first feature.  -->
               
             </div>
           </div>
-
+          
         </div>
+        <% end %>
       </div>
-
+      
+      
       <div class = "col-md-4 visible-md visible-lg">
+          <%= link_to spree.product_path(@green_box) do %>
         <div class="vert-box green-box">
           <div class="box-pattern">
 
@@ -296,6 +309,7 @@ the style on the first feature.  -->
           </div>
 
         </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -9,7 +9,8 @@ module Spree
     respond_to :html
 
     def index
-      @taxonomies = Spree::Taxonomy.includes(root: :children)
+      redirect_to root_url
+      # @taxonomies = Spree::Taxonomy.includes(root: :children)
       # if params[:categories] == "Smoothies"
       #   @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Smoothies"})
       # elsif params[:categories] == "Juices"
@@ -17,7 +18,7 @@ module Spree
       # elsif params[:categories] == "Tea"
       #   @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Tea"})
       #   else
-        @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Delivery"})
+        # @products =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Delivery"})
         # @searcher = build_searcher(params.merge(include_images: true))
         # @products = @searcher.retrieve_products
         # @products = @products.includes(:possible_promotions) if @products.respond_to?(:includes)
