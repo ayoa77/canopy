@@ -25,6 +25,7 @@ module Spree
     end
 
     def amount=(amount)
+      byebug
       self[:amount] = Spree::LocalizedNumber.parse(amount)
     end
 
