@@ -4,11 +4,11 @@
   </ul>
 <% end %>
 
-<% if can?(:admin, Spree::ReturnAuthorization) || can?(:admin, Spree::CustomerReturn) %>
+<!-- <% if can?(:admin, Spree::ReturnAuthorization) || can?(:admin, Spree::CustomerReturn) %>
   <ul class="nav nav-sidebar">
     <%= main_menu_tree Spree.t(:return), icon: "transfer", sub_menu: "returns", url: "#sidebar-returns" %>
   </ul>
-<% end %>
+<% end %> -->
 
 <% if can? :admin, Spree::Product %>
   <ul class="nav nav-sidebar">
