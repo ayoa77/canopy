@@ -2354,7 +2354,7 @@ spree:
   no_preference: "preference not necessary"
   delivery_notice: "We will try to accomodate your shipping preferences. Call us prior to ordering if you want to confirm your delivery date and time."
   delivery_days: "We can ship to you within three to five business days."
-  delivery_time: "Make sure that someone is there to receive your order and has access to a refridgerator. We want you to have the freshest juice possilbe!"
+  delivery_time: "Make sure that someone is there to receive your order and has access to a refridgerator. We want you to have the freshest juice possible!"
   before_1pm: "before 1pm"
   from_two_to_four_pm: "from 2pm to 4pm"
   anytime: "anytime"
