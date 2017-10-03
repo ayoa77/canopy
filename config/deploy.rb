@@ -54,44 +54,57 @@ append :linked_dirs, "tmp/pids", "tmp/cache", "public/system", "public/javascrip
 # Default value for keep_releases is 5
 set :keep_releases, 10
 
-namespace :bundle do
-    desc "Bundling gems"
-    task :install do
-     `echo "bundle install"`
-    end
-end
-after "bundler:install", "bundle:install"
+# namespace :bundle do
+#     desc "Bundling gems"
+#     task :install do
+#       on roles(:app) do
+#         execute "bundle install"
+#       end
+#     end
+# end
+# after "bundler:install", "bundle:install"
 
 task :symlink_database_yml do
-  run "rm #{release_path}/config/database.yml"
-  run "ln -sfn #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    on roles(:app) do
+        execute "rm #{release_path}/config/database.yml"
+        execute "ln -sfn #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+        end
 end
- after "bundle:install", "symlink_database_yml"
+#  after "bundler:install", "symlink_database_yml"
 
-namespace :unicorn do
-  desc "Zero-downtime restart of Unicorn"
-  task :restart do
-    run "kill -s USR2 `cat /tmp/unicorn.canopy.pid`"
-  end
+# namespace :unicorn do
+#   desc "Zero-downtime restart of Unicorn"
+#   task :restart do
+#       on roles(:app) do
+#         execute "kill -s USR2 `cat /tmp/unicorn.canopy.pid`"
+#         end
+#   end
 
-  desc "Start unicorn"
-  task :start do
-    run "cd #{current_path} ; bundle exec unicorn_rails -c config/unicorn.rb -D"
-  end
+#   desc "Start unicorn"
+#   task :start do
+#       on roles(:app) do
+#         execute "cd #{current_path} ; bundle exec unicorn_rails -c config/unicorn.rb -D"
+#         end
+#   end
 
-  desc "Stop unicorn"
-  task :stop do
-    run "kill -s QUIT `cat /tmp/unicorn.canopy.pid`"
-  end
-end
-after "symlink_database_yml", "unicorn"
+#   desc "Stop unicorn"
+#   task :stop do
+#       on roles(:app) do
+#         execute "kill -s QUIT `cat /tmp/unicorn.canopy.pid`"
+#         end
+#   end
+# end
+# after "symlink_database_yml", "unicorn:start"
 
 
 namespace :images do
   task :symlink do
-    run "rm -rf #{release_path}/public/canopy"
-    run "ln -nfs #{shared_path}/canopy #{release_path}/public/canopy"
+      on roles(:app) do
+        execute "rm -rf #{release_path}/public/canopy"
+        execute "ln -nfs #{shared_path}/canopy #{release_path}/public/canopy"
+        end
   end
 end
-after "bundle:install", "images:symlink"
+#  after "bundler:install", "symlink_database_yml"
+#  after "bundler:install", "images:symlink"
 

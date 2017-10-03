@@ -34,6 +34,7 @@ require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
 require "capistrano/deploy"
 require "capistrano/scm/git"
+# require "capistrano/unicorn"
 install_plugin Capistrano::SCM::Git
 # require "capistrano/passenger"
 
