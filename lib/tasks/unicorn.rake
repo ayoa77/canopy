@@ -2,7 +2,7 @@ task :symlink_database_yml do
   run "rm #{release_path}/config/database.yml"
   run "ln -sfn #{shared_path}/config/database.yml #{release_path}/config/database.yml"
 end
-#  after "deploy:bundle", "symlink_database_yml"
+ after "bundler:install", "symlink_database_yml"
 
 namespace :unicorn do
   desc "Zero-downtime restart of Unicorn"
@@ -28,4 +28,4 @@ namespace :images do
     run "ln -nfs #{shared_path}/canopy #{release_path}/public/canopy"
   end
 end
-# after "deploy:bundle", "images:symlink"
+after "bundler:install", "images:symlink"
