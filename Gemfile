@@ -50,11 +50,12 @@ gem 'allpay-web-service'
 # gem 'allpay_payment-2.0.8', github: 'allPay/allPayAIO_Ruby'
 # Use Capistrano for deployment
 group :development do
-  gem 'capistrano-rails', :require => false
-  gem 'capistrano-bundler', :require => false
-  gem 'capistrano', :require => false
-  gem 'capistrano-unicorn-nginx', '~> 4.1.0', :require => false
-  gem 'capistrano-rvm', :require => false
+  gem 'capistrano-passenger'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano'
+  gem 'capistrano-unicorn-nginx', '~> 4.1.0'
+  gem 'capistrano-rvm'
 end
 
 
