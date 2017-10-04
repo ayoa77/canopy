@@ -48,8 +48,7 @@ append :linked_dirs, "tmp/pids", "tmp/cache", "public/system", "public/javascrip
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" } rsync -zvh database.yml aj@172.104.83.111.com:~/var/www/html/canopy/shared/config/
 
-/home/aj/.rvm/gems/ruby-2.4.1@canopy/gems/passenger-5.1.8
-set :passenger_environment_variables, { :path => '/home/aj/.rvm/gems/ruby-2.4.1@canopy/gems/passenger-5.1.8
+set :passenger_environment_variables, { :path => '/home/aj/.rvm/gems/ruby-2.4.1@canopy/gems/passenger-5.1.8/
 bin:$PATH' }
 set :passenger_restart_command, '/home/aj/.rvm/gems/ruby-2.4.1@canopy/gems/passenger-5.1.8
 bin/passenger-config restart-app'

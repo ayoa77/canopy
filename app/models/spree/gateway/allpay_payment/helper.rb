@@ -6,8 +6,8 @@ require 'nokogiri'
 require 'date'
 
 class APIHelper
-    # conf = File.join(File.dirname(__FILE__), '..', '..', 'conf', 'payment_conf.xml')
-    conf = File.join(File.dirname(__FILE__), 'conf', 'payment_conf.xml')
+    conf = File.join(File.dirname(__FILE__), '..', '..', 'conf', 'payment_conf.xml')
+    # conf = File.join(File.dirname(__FILE__), 'conf', 'payment_conf.xml')
     @@conf_xml = Nokogiri::XML(File.open(conf))
 
     def initialize
