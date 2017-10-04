@@ -6,9 +6,10 @@ lock "3.9.1"
 
 set :application, 'canopy'
 set :repo_url, 'https://ayoa77:S6SMTfsmuF9vFRNeSy84@bitbucket.org/ayoa77/canopy.git'
-set :branch, "master"
+set :branch, "mailer"
 
 set :user, "aj"
+set :use_sudo, true
 set :pty, true
 set :rails_env, "production"
 set :deploy_via, :remote_cache
