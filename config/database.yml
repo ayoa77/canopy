@@ -74,6 +74,7 @@ test:
 #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 #
 # You can use this database configuration with:
+#  rsync -zvh database.yml aj@172.104.83.111.com:~/var/www/html/canopy/shared/config/
 #
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>

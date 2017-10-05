@@ -54,10 +54,10 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano'
-  gem 'capistrano-unicorn-nginx', '~> 4.1.0'
   gem 'capistrano-rvm'
 end
 
+  gem 'passenger'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
