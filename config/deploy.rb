@@ -16,7 +16,7 @@ set :deploy_via, :remote_cache
 set :keep_releases, 10
 server '172.104.83.111', user: 'aj', roles: %w{web app db live}
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/aj/var/www/html/canopy/'
+set :deploy_to, '/var/www/canopy/'
 
 role :app, %w{172.104.83.111}
 role :web, %w{172.104.83.111}
@@ -49,10 +49,10 @@ append :linked_dirs, "tmp/pids", "tmp/cache", "public/system", "public/javascrip
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" } rsync -zvh database.yml aj@172.104.83.111.com:~/var/www/html/canopy/shared/config/
 
-set :passenger_environment_variables, { :path => '/home/aj/.rvm/gems/ruby-2.4.1@canopy/gems/passenger-5.1.8/
-bin:$PATH' }
-set :passenger_restart_command, '/home/aj/.rvm/gems/ruby-2.4.1@canopy/gems/passenger-5.1.8
-bin/passenger-config restart-app'
+# set :passenger_environment_variables, { :path => '/home/aj/.rvm/gems/ruby-2.4.1@canopy/gems/passenger-5.1.8/
+# bin:$PATH' }
+# set :passenger_restart_command, '/home/aj/.rvm/gems/ruby-2.4.1@canopy/gems/passenger-5.1.8
+# bin/passenger-config restart-app'
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
 

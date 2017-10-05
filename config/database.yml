@@ -74,7 +74,7 @@ test:
 #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 #
 # You can use this database configuration with:
-#  rsync -zvh database.yml aj@172.104.83.111.com:~/var/www/html/canopy/shared/config/
+#  rsync -zvh database.yml aj@172.104.83.111:~/var/www/html/canopy/shared/config
 #
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
@@ -83,4 +83,4 @@ production:
   <<: *default
   database: canopy_production
   username: aj
-  password: <%= ENV['CANOPY_DATABASE_PASSWORD'] %>
+  password: canopyjuice
