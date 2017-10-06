@@ -33,7 +33,7 @@ module Spree
       #   redirect_to products_path and return
       # end
 
-      if params[:order][:payments_attributes].present? && Spree::PaymentMethod.find(params[:order][:payments_attributes].first[:payment_method_id]).name == "Credit Allpay"
+      if params[:order][:payments_attributes].present? && Spree::PaymentMethod.find(params[:order][:payments_attributes].first[:payment_method_id]).name == "信用卡"
         aioall(@order) and return
       elsif params[:order][:time_of_day].present? && params[:order][:delivery_date].present?
         @order.time_of_day = params[:order][:time_of_day]
