@@ -75,7 +75,7 @@ module Spree
       'OrderResultURL' => "#{root_url}allpay_return",
       'ClientRedirectURL' => "#{root_url}allpay_result"
       #'NeedExtraPaidInfo' => '1',
-      # 'ClientBackURL' => "#{root_url}"
+      #'ClientBackURL' => "#{root_url}"
       #'ItemURL' => 'http://item.test.tw',
       #'Remark' => '交易備註',
       #'HoldTradeAMT' => '1',

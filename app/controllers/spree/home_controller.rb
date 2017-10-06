@@ -39,9 +39,9 @@ module Spree
       #   @featured_four = @featured.fourth
       # end
 
-      @red_box =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Red Box"}).first
-      @green_box =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Green Box"}).first
-      @yellow_box =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Yellow Box"}).first
+      @red_box =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "first"}).first
+      @green_box =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "second"}).first
+      @yellow_box =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "third"}).first
     end
   end
 end
