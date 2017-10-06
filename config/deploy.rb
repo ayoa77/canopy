@@ -112,4 +112,84 @@ namespace :images do
 end
 #  after "bundler:install", "symlink_database_yml"
 #  after "bundler:install", "images:symlink"
+# namespace :deploy do
+#   namespace :assets do
+#    desc "Precompile assets locally and then rsync to deploy server"
+#     task :precompile, :only => { :primary => true } do
+#       run_locally "bundle exec rake assets:precompile"
+#       servers = find_servers :roles => [:app], :except => { :no_release => true }
+#       servers.each do |server|
+#         run_locally "rsync -av ./public/#{assets_prefix}/ #{user}@#{server}:#{current_path}/public/#{assets_prefix}/"
+#       end
+#       run_locally "rm -rf public/#{assets_prefix}"
+#     end
+#   end
+# end
+
+# namespace :deploy do
+#   after :updated, "assets:precompile"
+# end
+
+# namespace :assets do
+#   desc "Precompile assets locally and then rsync to web servers"
+#   task :precompile do
+#     on roles(:web) do
+#       rsync_host = host.to_s # this needs to be done outside run_locally in order for host to exist
+#       run_locally do
+#         with rails_env: fetch(:stage) do
+#           execute :bundle, "exec rake assets:precompile"
+#         end
+#         execute "rsync -av --delete ./public/assets/ #{fetch(:user)}@#{rsync_host}:#{shared_path}/public/assets/"
+#         execute "rm -rf public/assets"
+#         # execute "rm -rf tmp/cache/assets" # in case you are not seeing changes
+#       end
+#     end
+#   end
+# end
+# after "deploy:cleanup", "deploy:assets:precompile"
+# set the locations that we will look for changed assets to determine whether to precompile
+set :assets_dependencies, %w(app/assets lib/assets vendor/assets Gemfile.lock config/routes.rb)
+
+# clear the previous precompile task
+Rake::Task["deploy:assets:precompile"].clear_actions
+class PrecompileRequired < StandardError; end
+
+namespace :deploy do
+  namespace :assets do
+    desc "Precompile assets"
+    task :precompile do
+      on roles(fetch(:assets_roles)) do
+        within release_path do
+          with rails_env: fetch(:rails_env) do
+            begin
+              # find the most recent release
+              latest_release = capture(:ls, '-xr', releases_path).split[1]
+
+              # precompile if this is the first deploy
+              raise PrecompileRequired unless latest_release
+
+              latest_release_path = releases_path.join(latest_release)
+
+              # precompile if the previous deploy failed to finish precompiling
+              execute(:ls, latest_release_path.join('assets_manifest_backup')) rescue raise(PrecompileRequired)
+
+              fetch(:assets_dependencies).each do |dep|
+                # execute raises if there is a diff
+                execute(:diff, '-Naur', release_path.join(dep), latest_release_path.join(dep)) rescue raise(PrecompileRequired)
+              end
+
+              info("Skipping asset precompile, no asset diff found")
+
+              # copy over all of the assets from the last release
+              execute(:cp, '-r', latest_release_path.join('public', fetch(:assets_prefix)), release_path.join('public', fetch(:assets_prefix)))
+            rescue PrecompileRequired
+              execute(:rake, "assets:precompile") 
+            end
+          end
+        end
+      end
+    end
+  end
+end
+
 
