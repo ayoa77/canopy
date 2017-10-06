@@ -41,17 +41,19 @@
     <%= form.text_field :city, placeholder: Spree.t(:city), class: 'form-control required' %>
   </p>
 
+<!--  
   <div class="row">
     <div class="col-md-6">
-      <p class="form-group" id=<%="#{address_id}country" %>>
-        <%= form.label :country_id do %>
+      <p class="form-group" id=<%#="{address_id}country" %>>
+        <%#= form.label :country_id do %>
           <abbr class="required" title="required"></abbr>
-        <% end %>
-        <span id=<%="#{address_id}country-selection" %>>
-          <%= form.collection_select :country_id, available_countries, :id, :name, {}, {class: 'form-control required'}%>
+        <#% end %>
+        <span id=<%#="#{address_id}country-selection" %>>
+          <%#= form.collection_select :country_id, available_countries, :id, :name, {}, {class: 'form-control required'}%>
         </span>
       </p>
     </div>
+-->
 
     <!-- aj help : I need the first <option> tag created here to look like this:
           <option value="" disabled selected>-Select A City-</option>-->
@@ -81,15 +83,15 @@
       <% end %>
     <!-- </div> -->
 
-    <div class="col-md-6">
+<!--    <div class="col-md-12">  -->
       <p class="form-group" id=<%="#{address_id}zipcode" %>>
         <%= form.label :zipcode do %>
           <% if address.require_zipcode? %><abbr class="required" title="required"></abbr><% end %>
         <% end %>
         <%= form.text_field :zipcode, placeholder: Spree.t(:zip_code), class: "form-control #{'required' if address.require_zipcode?}" %>
       </p>
-    </div>
-  </div>
+   <!-- </div> -->
+<!--  </div>  -->
 
     <p class="form-group" id=<%="#{address_id}phone" %>>
       <%= form.label :phone do %>

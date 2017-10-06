@@ -74,22 +74,18 @@
 
           <div class="menuText row">
 
-            <a href="/" class="col-sm-3 homelink"><%=Spree.t("home") %></a>
+            <a href="/" class="col-md-2 col-md-offset-1 homelink"><%=Spree.t("home") %></a>
 
-            <a href="/shop" class="col-sm-3 shoplink"><%=Spree.t("shop") %></a>
+            <a href="/about" class="col-md-2 aboutlink"><%=Spree.t(:our_story)%></a>
 
-            <a href="/about" class="col-sm-3 aboutlink"><%=Spree.t(:our_story)%></a>
+            <a href="/events" class="col-md-2 aboutlink"><%= Spree.t(:event) %></a>
 
-            <a href="/events" class="col-sm-3 aboutlink"><%= Spree.t(:event) %></a>
-
-            <a href="/nutrition" class="col-sm-4 homelink"><%= Spree.t(:nutrition) %></a>
-
-            <a href="/instore-menu" class="col-sm-4 shoplink"><%= Spree.t(:instore_menu) %></a>
+            <a href="/nutrition" class="col-md-2 homelink"><%= Spree.t(:nutrition) %></a>
 
             <% if current_spree_user %>
-              <a href="/user/spree_user/logout" class="col-sm-4 loginlink"><%= Spree.t(:logout) %></a>
+              <a href="/user/spree_user/logout" class="col-md-2 loginlink"><%= Spree.t(:logout) %></a>
             <% else %>
-              <a href="/account" class="col-sm-4 loginlink"><%= Spree.t(:login) %></a>
+              <a href="/account" class="col-md-2 loginlink"><%= Spree.t(:login) %></a>
             <% end %>
 
           </div>

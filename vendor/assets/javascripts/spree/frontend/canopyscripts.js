@@ -3,8 +3,7 @@ $(document).on('ready', function() {
 
       $(this).toggleClass('open');
       $('.menuBar').toggleClass('downMenu');
-      $('.menuText .col-sm-3').toggleClass('menuDown');
-      $('.menuText .col-sm-4').toggleClass('menuDown');
+      $('.menuText .col-md-2').toggleClass('menuDown');
       $('#navigation').toggleClass('menuDown');
       $('html').toggleClass('menuDown');
       $('#header').toggleClass('menuUp');
