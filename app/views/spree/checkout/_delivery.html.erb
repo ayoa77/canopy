@@ -142,19 +142,19 @@ and how to turn it off.  :D -->
       <div id="minstrs" data-hook>
 
         <div class="form-group">
-          <p class="checkout-shipping"><%= form.label Spree.t(:select_a_preferred_time_of_day) %><p>
+          <p class="checkout-shipping"><%= form.label Spree.t(:time_of_day) %><p>
           <%= form.date_field :delivery_date, class:  'form-control', min: Date.today + 3.days %>
           <div class = 'nice-looking-radios'>
             <%= form.radio_button :time_of_day, 'before 1 pm', :checked => true %>
-            <label for = "order_time_of_day_before_1_pm"><span><p>Before 1pm</p></span></label>
+            <label for = "order_time_of_day_before_1_pm"><span><p><%=Spree.t(:before_1pm)%></p></span></label>
             <%#= form.label Spree.t(:before_1pm), Spree.t(:before_1pm) %>
 
             <%= form.radio_button :time_of_day, '2pm to 4pm', :checked => false %>
-            <label for = "order_time_of_day_2pm_to_4pm"><span><p>2pm - 4pm</p></span></label>
+            <label for = "order_time_of_day_2pm_to_4pm"><span><p><%=Spree.t(:from_two_to_four_pm)%></p></span></label>
             <%#= form.label Spree.t(:from_two_to_four_pm), Spree.t(:from_two_to_four_pm) %>
 
             <%= form.radio_button :time_of_day, 'anytime', :checked => false %>
-            <label for = "order_time_of_day_anytime"><span><p>Anytime</p></span></label>
+            <label for = "order_time_of_day_anytime"><span><p><%=Spree.t(:anytime)%></p></span></label>
             <%#= form.label Spree.t(:anytime), Spree.t(:anytime) %>
           </div>
         </div>
