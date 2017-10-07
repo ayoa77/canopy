@@ -7,6 +7,7 @@ Rails.application.configure do
   config.cache_classes = false
   config.sass.inline_source_maps = true
   # Do not eager load code on boot.
+  config.web_console.whitelisted_ips = '114.36.132.115'
   config.eager_load = false
 
   # Show full error reports.
