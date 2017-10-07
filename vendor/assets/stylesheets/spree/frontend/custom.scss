@@ -107,28 +107,28 @@ a:hover{
 #user-test {
   height: 40px;
   width: 40px;
-  background-image: url("/images/icons/user.png");
+  background-image: image-url("/images/icons/user.png");
   background-size: 40px 40px;
   background-position: center center;
   transition: all 0.4s;
 }
 
 #user-test:hover {
-  background-image: url("/images/icons/user_hover.png");
+  background-image: image-url("/images/icons/user_hover.png");
   transition: all 0.4s;
 }
 
 #cart-test {
   height: 40px;
   width: 40px;
-  background-image: url("/images/icons/cart.png");
+  background-image: image-url("/images/icons/cart.png");
   background-size: 40px 40px;
   background-position: center center;
   transition: all 0.3s;
 }
 
 #cart-test:hover {
-  background-image: url("/images/icons/cart_hover.png");
+  background-image: image-url("/images/icons/cart_hover.png");
   transition: all 0.3s;
 }
 
@@ -213,7 +213,7 @@ a:hover{
 
 #splash-picture{
   position: relative;
-  background-image: url("/assets/big-juice.jpg");
+  background-image: image-url("/assets/big-juice.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-origin: inherit;
@@ -616,7 +616,7 @@ a:hover{
     }
   }
   .big-picture-dog{
-    background-image: url("/images/dog-and-juice.jpg");
+    background-image: image-url("/images/dog-and-juice.jpg");
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -627,7 +627,7 @@ a:hover{
 
   }
   .big-picture-nutrition{
-    background-image: url('/images/nutrition.jpg');
+    background-image: image-url('/images/nutrition.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -642,7 +642,7 @@ a:hover{
 
 #shop-picture{
   position: relative;
-  background-image: url("/assets/grapesforshopping.jpg");
+  background-image: image-url("/assets/grapesforshopping.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: 100% 0px;
@@ -694,21 +694,21 @@ a:hover{
 }
 
 .juice-picture {
-  background-image: url("/assets/bottle_search.png");
+  background-image: image-url("/assets/bottle_search.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 50px auto;
 }
 
 .smoothie-picture {
-  background-image: url("/assets/cup_search.png");
+  background-image: image-url("/assets/cup_search.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 70px auto;
 }
 
 .tea-picture {
-  background-image: url("/assets/glass_search.png");
+  background-image: image-url("/assets/glass_search.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 60px auto;
@@ -1098,7 +1098,7 @@ margin-bottom: 30px;
   width: 50%;
   position: absolute;
   z-index: -200;
-  background-image: url("/images/splat.png");
+  background-image: image-url("/images/splat.png");
   background-repeat: no-repeat;
   background-position: center right;
 }
