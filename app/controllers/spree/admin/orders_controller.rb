@@ -125,6 +125,13 @@ module Spree
       end
 
       private
+        
+        def pay_params
+          params.permit(:MerchantID, :MerchantTradeNo, :PayAmt, :PaymentDate, :PaymentType, :PaymentTypeChargeFee, :RedeemAmt, :RtnCode, :RtnMsg, :SimulatePaid, :TradeAmt, :TradeDate, :TradeNo, :CheckMacValue)
+
+        end
+
+
         def order_params
           params[:created_by_id] = try_spree_current_user.try(:id)
           params.permit(:created_by_id, :user_id, :instore)
