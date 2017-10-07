@@ -33,4 +33,21 @@ Spree::OrdersController.class_eval do
     end
   end
 
+    def result
+    Spree::Order.where(state: "payment").each do |o|
+      if o.merchant_trade_no.include?(pay_params[:MerchantTradeNo])
+        @order = o
+        break
+      end
+    end
+    @order.trade_no = pay_params[:TradeNo]
+      if pay_params[:RtnCode] == '1'
+        Spree::Payment.create(amount: pay_params[:PayAmt], order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "completed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
+        @order.payment_total = pay_params[:PayAmt]
+      else
+      Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
+    end
+    @order.save
+  end
+
 end

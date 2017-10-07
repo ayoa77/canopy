@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post '/en/allpay_return' => 'spree/checkout#return'
   post '/zh-TW/allpay_return' => 'spree/checkout#return'
   post '/allpay_return' => 'spree/checkout#return'
-  post '/allpay_result' => 'spree/checkout#result'
+  post '/allpay_result' => 'spree/orders#result'
   get '/instore' => 'spree/products#instore'
   get '/shop' => 'spree/products#index'
   get '/about' => 'spree/custom#about', as: :about
