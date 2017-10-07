@@ -12,7 +12,7 @@ set :user, "aj"
 set :use_sudo, true
 set :pty, true
 set :rails_env, "production"
-set :deploy_via, :remote_cache
+set :deploy_via, :copy
 set :keep_releases, 10
 server '172.104.83.111', user: 'aj', roles: %w{web app db live}
 # Default deploy_to directory is /var/www/my_app
