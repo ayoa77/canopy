@@ -1,6 +1,7 @@
 module Spree
   module Admin
     class OrdersController < Spree::Admin::BaseController
+      skip_before_action :verify_authenticity_token, :only => [:return, :result]
       before_action :initialize_order_events
       before_action :load_order, only: [:edit, :update, :cancel, :resume, :approve, :resend, :open_adjustments, :close_adjustments, :cart]
 
