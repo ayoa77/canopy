@@ -6,13 +6,13 @@ lock "3.9.1"
 
 set :application, 'canopy'
 set :repo_url, 'https://ayoa77:S6SMTfsmuF9vFRNeSy84@bitbucket.org/ayoa77/canopy.git'
-set :branch, "mailer"
+set :branch, "master"
 
 set :user, "aj"
 set :use_sudo, true
 set :pty, true
 set :rails_env, "production"
-set :deploy_via, :copy
+set :deploy_via, :checkout
 set :keep_releases, 10
 server '172.104.83.111', user: 'aj', roles: %w{web app db live}
 # Default deploy_to directory is /var/www/my_app
@@ -49,10 +49,8 @@ append :linked_dirs, "tmp/pids", "tmp/cache", "public/system", "public/javascrip
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" } rsync -zvh database.yml aj@172.104.83.111.com:~/var/www/html/canopy/shared/config/
 
-# set :passenger_environment_variables, { :path => '/home/aj/.rvm/gems/ruby-2.4.1@canopy/gems/passenger-5.1.8/
-# bin:$PATH' }
-# set :passenger_restart_command, '/home/aj/.rvm/gems/ruby-2.4.1@canopy/gems/passenger-5.1.8
-# bin/passenger-config restart-app'
+# set :passenger_environment_variables, { :path => '/var/www/canopy/current' }
+ set :passenger_restart_command, 'passenger-config restart-app --ignore-passenger-not-running'
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
 
