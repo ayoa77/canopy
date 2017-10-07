@@ -7,7 +7,7 @@ module Spree
     respond_to :html
 
     before_action :assign_order_with_lock, only: :update
-    skip_before_action :verify_authenticity_token, only: [:populate]
+    skip_before_action :verify_authenticity_token, only: [:populate, :result]
 
     def show
       @order = Order.includes(line_items: [variant: [:option_values, :images, :product]], bill_address: :state, ship_address: :state).find_by_number!(params[:id])
@@ -114,6 +114,11 @@ module Spree
           {}
         end
       end
+             
+      def pay_params
+          params.permit(:MerchantID, :MerchantTradeNo, :PayAmt, :PaymentDate, :PaymentType, :PaymentTypeChargeFee, :RedeemAmt, :RtnCode, :RtnMsg, :SimulatePaid, :TradeAmt, :TradeDate, :TradeNo, :CheckMacValue)
+      end
+
 
       def assign_order_with_lock
         @order = current_order(lock: true)

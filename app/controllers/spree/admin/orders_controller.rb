@@ -1,28 +1,10 @@
 module Spree
   module Admin
     class OrdersController < Spree::Admin::BaseController
-      skip_before_action :verify_authenticity_token, :only => [:return, :result]
       before_action :initialize_order_events
       before_action :load_order, only: [:edit, :update, :cancel, :resume, :approve, :resend, :open_adjustments, :close_adjustments, :cart]
 
       respond_to :html
-      
-     def result
-       Spree::Order.where(state: "payment").each do |o|
-      if o.merchant_trade_no.include?(pay_params[:MerchantTradeNo])
-        @order = o
-        break
-        end
-      end
-    @order.trade_no = pay_params[:TradeNo]
-      if pay_params[:RtnCode] == '1'
-        Spree::Payment.create(amount: pay_params[:PayAmt], order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "completed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
-        @order.payment_total = pay_params[:PayAmt]
-      else
-      Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
-     end
-    @order.save
-    end
 
       def index
         params[:q] ||= {}
@@ -142,11 +124,6 @@ module Spree
       end
 
       private
-        
-        def pay_params
-          params.permit(:MerchantID, :MerchantTradeNo, :PayAmt, :PaymentDate, :PaymentType, :PaymentTypeChargeFee, :RedeemAmt, :RtnCode, :RtnMsg, :SimulatePaid, :TradeAmt, :TradeDate, :TradeNo, :CheckMacValue)
-        end
-
         def order_params
           params[:created_by_id] = try_spree_current_user.try(:id)
           params.permit(:created_by_id, :user_id, :instore)
