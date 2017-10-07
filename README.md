@@ -48,3 +48,6 @@ to set up custom for the first time go to /admin/customnew
 ---duplicating database entries---
 old_type = Spree::Option.find(task_id)
 new_task = Task.new(old_task.attributes.merge({:scheduled_on => some_new_date}))
+
+### manually restart passenger
+ passenger-config restart-app /var/www/canopy/

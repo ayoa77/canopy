@@ -72,8 +72,8 @@ module Spree
       'ItemName' => items_display(order),
       'ReturnURL' => "#{root_url}allpay_result",
       #'ChooseSubPayment' => '',
-      'OrderResultURL' => "#{root_url}allpay_return",
-      'ClientRedirectURL' => "#{root_url}allpay_result"
+      # 'OrderResultURL' => "#{root_url}allpay_return",
+      'ClientRedirectURL' => "#{root_url}allpay_return"
       #'NeedExtraPaidInfo' => '1',
       #'ClientBackURL' => "#{root_url}"
       #'ItemURL' => 'http://item.test.tw',
