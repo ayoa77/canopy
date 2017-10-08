@@ -36,14 +36,27 @@
     <% end %>
 
     <%= render partial: 'spree/checkout/payment/storecredit' %>
+    <!-- comment this if else statement when building a new site-->
+    <%# if @order.instore == true %>
+    <%# methods = @order.available_payment_methods.where(description: "cash") %>
+    <%# else %>
+    <%# methods = @order.available_payment_methods.where.not(description: "cash") %>
+    <%# end %>
+        <% if @order.instore == true %>
+          <% methods = Spree::PaymentMethod.where(description: "cash") %>
+          <% else %>
+          <% methods = Spree::PaymentMethod.where.not(description: "cash") %>
+        <% end %>
 
-    <!-- aj help : We're only taking CC payments, we should eliminate check as an option. -->
 
     <ul class="list-group" id="payment-method-fields" data-hook>
-      <% @order.available_payment_methods.each do |method| %>
+      <%# @order.available_payment_methods.each do |method| %>
+      <% methods.each do |method| %>
         <li class="list-group-item">
           <label>
-            <%= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == @order.available_payment_methods.first %>
+            <%#= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == @order.available_payment_methods.first %>
+            <%= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == methods.first%>
+
             <%= Spree.t(method.name, scope: :payment_methods, default: method.name) %>
           </label>
         </li>
@@ -52,7 +65,8 @@
 
     <ul class="nav" id="payment-methods" data-hook>
       <% @order.available_payment_methods.each do |method| %>
-        <li id="payment_method_<%= method.id %>" class="<%= 'last' if method == @order.available_payment_methods.last %>" data-hook>
+        <!-- <li id="payment_method_<%#= method.id %>" class="<%#= 'last' if method == @order.available_payment_methods.last %>" data-hook> -->
+        <li id="payment_method_<%= method.id %>" class="<%= 'last' if method == methods.last %>" data-hook>
           <fieldset>
             <%= render partial: "spree/checkout/payment/#{method.method_type}", locals: { payment_method: method } %>
           </fieldset>
@@ -68,6 +82,10 @@
 </div>
 
 <div class="col-xs-12 col-md-4 col-md-offset-8 save-and-continue-button" data-hook="buttons">
+  <% if @order.instore == false %>
   <%= submit_tag Spree.t(:save_and_continue), class: 'ghost-button-orange', data: { confirm: Spree.t(:allpay_alert) } %>
+  <% else %>
+    <%= submit_tag Spree.t(:save_and_continue), class: 'ghost-button-orange' %>
+<%end %>
   <script>Spree.disableSaveOnClick();</script>
 </div>

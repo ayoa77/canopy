@@ -66,10 +66,10 @@ and how to turn it off.  :D -->
 
 
           <p class="checkout-shipping"><%= Spree.t(:shipping_method) %></p>
-<% if current_order.ship_address.address1 == "宜蘭市女中路三段117號" %>
-
+          <% id = ship_form.object.shipping_methods.where(name: "In Store - 宜蘭市女中路三段117號 Yilan City").last.id %>
+        <% if current_order.instore == true %>
           <ul class="list-group shipping-methods">
-            <% ship_form.object.shipping_rates.where(cost: 0).each do |rate| %>
+            <% ship_form.object.shipping_rates.where(shipping_method_id: id).each do |rate| %>
               <li class="list-group-item shipping-method">
                 <label>
                   <%= ship_form.radio_button :selected_shipping_rate_id, rate.id, data: { behavior: 'shipping-method-selector', cost: rate.display_cost } %>
@@ -83,7 +83,7 @@ and how to turn it off.  :D -->
 
 <% else %>
           <ul class="list-group shipping-methods">
-            <% ship_form.object.shipping_rates.where.not(cost: 0).each do |rate| %>
+            <% ship_form.object.shipping_rates.where.not(shipping_method_id: id).each do |rate| %>
               <li class="list-group-item shipping-method">
                 <label>
                   <%= ship_form.radio_button :selected_shipping_rate_id, rate.id, data: { behavior: 'shipping-method-selector', cost: rate.display_cost }, checked: "checked" %>

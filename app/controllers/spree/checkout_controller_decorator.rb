@@ -33,6 +33,15 @@ Spree::CheckoutController.class_eval do
       #       end
       #     end
       #   end
+    if params[:state] == "delivery" && @order.shipments.last.present? && @order.shipments.last.address.address1 == "宜蘭市女中路三段117號"
+      @order.instore = true
+      @order.save
+    elsif params[:state] == "delivery" && @order.shipments.last.present? && @order.shipments.last.address.address1 != "宜蘭市女中路三段117號"
+
+      @order.instore = nil
+      @order.save
+    end
+
 
   end
 
