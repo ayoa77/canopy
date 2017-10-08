@@ -147,4 +147,16 @@ end
 # after "deploy:cleanup", "deploy:assets:precompile"
 
 
+namespace :deploy do
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      # Restarts Phusion Passenger
+      execute :touch, release_path.join('tmp/restart.txt')
+    end
+  end
+
+end
+after "deploy:cleanup", "deploy:restart"
 
