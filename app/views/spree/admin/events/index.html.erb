@@ -7,7 +7,7 @@
 <div class="container">
 
   <% @events.each do |e|%>
-  <div class="row">
+  <div class="row <%= cycle('even', 'odd') %>">
 <div class="col-xs-3">
   <p>Event Name: <%=e.name%></p>
   <p>Location: <%=e.location%></p>
