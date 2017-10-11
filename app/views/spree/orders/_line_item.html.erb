@@ -10,11 +10,11 @@
 
       <div class="col-xs-3 col-sm-1">
         <div class="cart-item-image" data-hook="cart_item_image">
-          <% if variant.images.length == 0 %>
-            <%= link_to small_image(variant.product), variant.product %>
-          <% else %>
+          <!-- <#% if variant.images.length == 0 %> -->
+            <!-- <%= link_to small_image(variant.product), variant.product %>
+          <#% else %> -->
             <%= link_to image_tag(variant.images.first.attachment.url(:small)), variant.product %>
-          <% end %>
+          <!-- <#% end %> -->
         </div>
       </div>
 
