@@ -49,6 +49,7 @@ $(document).on('ready', function() {
         $('#order_ship_address_attributes_firstname').val('Canopy');
         $('#order_ship_address_attributes_lastname').val('Juice');
         $('#order_ship_address_attributes_address1').val('宜蘭市女中路三段117號');
+        $('#order_ship_address_attributes_address2').val('');
         $('#order_ship_address_attributes_city').val('Yilan City');
         $('#order_ship_address_attributes_zipcode').val('220');
         $('#order_ship_address_attributes_phone').val(phone);

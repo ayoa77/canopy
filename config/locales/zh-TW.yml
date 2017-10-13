@@ -154,7 +154,7 @@ zh-TW:
       spree/role: "角色"
       spree/shipment: "貨運"
       spree/shipping_category: "貨運類別"
-      spree/shipping_method: "貨運方法"
+      spree/shipping_method: "配送備註"
       spree/state: "州/省"
       spree/stock_location: "庫存位置"
       spree/stock_transfer: "庫存轉移"
@@ -461,7 +461,7 @@ zh-TW:
     default_tax: Default Tax
     default_tax_zone: Default Tax Zone
     delete: "刪除"
-    delivery: "抵達"
+    delivery: "配送資訊"
     depth: "深"
     description: "描述"
     destination: "目的地"
@@ -949,7 +949,7 @@ zh-TW:
     shipping_flat_rate_per_item: "每包裝項目單一價格"
     shipping_flat_rate_per_order: "單一價格"
     shipping_flexible_rate: "每包裝項目自選價格"
-    shipping_instructions: "配送嚮導"
+    shipping_instructions: "配送備註"
     shipping_method: "出貨方式"
     shipping_methods: "出貨方式"
     shipping_price_sack:
@@ -2163,7 +2163,7 @@ spree:
   shipping_flat_rate_per_item: "以單項計固定費率"
   shipping_flat_rate_per_order: "固定費率"
   shipping_flexible_rate: "以每項計彈性價格"
-  shipping_instructions: "配送嚮導"
+  shipping_instructions: "配送備註"
   shipping_method: "出貨方式"
   shipping_methods: "出貨方式"
   shipping_price_sack:
