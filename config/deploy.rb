@@ -44,7 +44,7 @@ append :linked_files, "config/database.yml", "config/secrets.yml"
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
-append :linked_dirs, "tmp/pids", "tmp/cache", "public/system", "public/javascripts"
+append :linked_dirs, "public/spree", "tmp/pids", "tmp/cache", "public/system", "public/javascripts" 
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" } rsync -zvh database.yml aj@172.104.83.111.com:~/var/www/html/canopy/shared/config/
