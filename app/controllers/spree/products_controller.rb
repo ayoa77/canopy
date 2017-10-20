@@ -40,6 +40,15 @@ end
    end
 
     def show
+      if @product == Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Build"}).first
+        
+        # @smoothies =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Smoothies"})
+        @juices =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Juices"})
+        # @teas =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Tea"})
+        @extras = Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Extras"})
+      
+      else
+      
       @variants = @product.variants_including_master.
                            spree_base_scopes.
                            active(current_currency).
@@ -47,6 +56,7 @@ end
       @product_properties = @product.product_properties.includes(:property)
       @taxon = params[:taxon_id].present? ? Spree::Taxon.find(params[:taxon_id]) : @product.taxons.first
       redirect_if_legacy_path
+      end
     end
 
     private

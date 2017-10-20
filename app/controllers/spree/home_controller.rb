@@ -42,6 +42,7 @@ module Spree
       @red_box =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "first"}).first
       @yellow_box =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "second"}).first
       @green_box =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "third"}).first
+      @build_your_own_box = Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Build"}).first
     end
   end
 end

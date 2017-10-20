@@ -46,6 +46,12 @@ and how to turn it off.  :D -->
 
             <div class="col-xs-5 label-line-items-text">
             <%= item.variant.name %>
+            <% item.line_item.preference.each do |p|%>
+              <p class="beautiful-text-hierarchy nathan beautify">
+                <%= p%>
+              </p>
+              <% end %>
+
             <%  if item.variant.options_text.length > 1 %>
             + <%= item.variant.options_text %>
               <%end%>
