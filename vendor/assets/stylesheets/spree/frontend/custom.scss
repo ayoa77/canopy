@@ -126,6 +126,9 @@ a:hover{
   background-position: center center;
   transition: all 0.3s;
 }
+.b-cart__count {
+  z-index: 999;
+}
 
 #cart-test:hover {
   background-image: image-url("/images/icons/cart_hover.png");
