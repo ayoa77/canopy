@@ -1448,6 +1448,11 @@ margin-bottom: 30px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+    .label-line-items-text-with-preferences {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 }
 
 .checkout-shipping {

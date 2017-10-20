@@ -44,17 +44,16 @@ and how to turn it off.  :D -->
               <%= mini_image(item.variant) %>
             </div>
 
+            <!--Nathan help please! I can't figure out what's going on with the line items here -->
             <div class="col-xs-5 label-line-items-text">
-            <%= item.variant.name %>
+            <%= item.variant.name %> + 
             <% item.line_item.preference.each do |p|%>
-              <p class="beautiful-text-hierarchy nathan beautify">
-                <%= p%>
-              </p>
+          <%= p%>
               <% end %>
 
-            <%  if item.variant.options_text.length > 1 %>
-            + <%= item.variant.options_text %>
-              <%end%>
+            <%#  if item.variant.options_text.length > 1 %>
+            <!-- + <%#= item.variant.options_text %> -->
+              <%#end%>
 
             </div>
 
