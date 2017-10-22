@@ -40,6 +40,23 @@
               <%= j.description %>
             </p>
           </div>
+                    <% end %>
+
+                    <p class="category-for-menu">
+                      -
+                      <%= Spree.t(:extras) %> -
+                    </p>
+                    <% @extras.each do |e| %>
+                      <div class=" menu-spacer">
+                        <!-- This takes care of each menu item and it's ingredients -->
+                        <p class="menu-item">
+                          <%= e.name %>
+                        </p>
+                        <p class="menu-item-ingredients">
+                          <%= e.description %>
+                        </p>
+                      </div>
+
           <% end %>
                     </div>
 
