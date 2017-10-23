@@ -10,93 +10,126 @@
   <!-- <div class="row no-gutters"> -->
 
       <!-- <div class="product-holder-image"> -->
+
+
         <% if @juices.nil? %>
-        
+
         <div class="col-md-6">
           <div class="product-holder-image">
           <!-- This takes care of each menu item and< it's ingredients -->
           <%#= product_image(@product, itemprop: "image") %>
+          
           <%= image_tag(@product.images.last.attachment_file_name) if @product.images.last.present?  %>                 
        </div>
+      </div>
+
+      <div class="col-md-6 flex-column">
+        
+        <!-- <div class="row no-gutters"> -->
+        <div class="col-xs-12">
+          <div class="product-name">
+            <p>
+              <%= @product.name %>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="productdesc">
+            <p>
+              <%= product_description(@product) %>
+            </p>
+          </div>
+        </div>
+
+        <div id="cart-form" data-hook="cart_form" class="col-xs-12">
+          <div class="button-contain flex-column">
+            <%= render :partial => "dynamic_variant_cart_form" %>
+          </div>
+        </div>
+
+
       </div>
 
       <!-- <div class="container"> -->
         <!-- <div class="row"> -->
           
           <% else %>
-                  <div class="col-md-6">
 
-          <p class="category-for-menu">
-            -
-            <%= Spree.t(:juice) %> -
+      <div class="col-md-6 col-lg-4 col-lg-offset-1">
+
+        <p class="category-for-menu">
+          <%= Spree.t(:juice) %>
+        </p>
+        
+        <% @juices.each do |j| %>
+
+        <div class="col-sm-6 custom-box-container">
+          <div class="custom-box-juice">
+            <%= j.name %>
+          </div>
+          <div class="custom-box-juice-desc">
+            <%= j.description %>
+          </div>
+        </div>
+
+      
+        <% end %>
+
+        <p class="category-for-menu">
+          <%= Spree.t(:extras) %>
+        </p>
+        
+        <% @extras.each do |e| %>
+
+        <div class="col-sm-6">
+          <div class="custom-box-juice">
+            <%= e.name %>
+          </div>
+          <div class="custom-box-juice-desc">
+            <%= e.description %>
+          </div>
+        </div>
+
+      
+        <% end %>
+      </div>
+
+      <div class="col-md-6 flex-column">
+      
+      <!-- <div class="row no-gutters"> -->
+      <div class="col-xs-12">
+        <div class="product-name">
+          <p>
+            <%= @product.name %>
           </p>
-          <% @juices.each do |j| %>
-          <div class=" menu-spacer">
-            <!-- This takes care of each menu item and it's ingredients -->
-            <p class="menu-item">
-              <%= j.name %>
-            </p>
-            <p class="menu-item-ingredients">
-              <%= j.description %>
-            </p>
-          </div>
-                    <% end %>
+        </div>
+      </div>
 
-                    <p class="category-for-menu">
-                      -
-                      <%= Spree.t(:extras) %> -
-                    </p>
-                    <% @extras.each do |e| %>
-                      <div class=" menu-spacer">
-                        <!-- This takes care of each menu item and it's ingredients -->
-                        <p class="menu-item">
-                          <%= e.name %>
-                        </p>
-                        <p class="menu-item-ingredients">
-                          <%= e.description %>
-                        </p>
-                      </div>
+      <div class="col-xs-12">
+        <div class="productdesc">
+          <p>
+            <%= product_description(@product) %>
+          </p>
+        </div>
+      </div>
 
-          <% end %>
-                    </div>
+      <div id="cart-form" data-hook="cart_form" class="col-xs-12">
+        <div class="button-contain flex-column">
+          <%= render :partial => "dynamic_variant_cart_form" %>
+        </div>
+      </div>
 
 
-          <% end %>
+    </div>
+
+    <% end %>
+
+
           
-          <div class="col-md-6">
-
-            <!-- <div class="row no-gutters"> -->
-            <div class="col-xs-12 flex-column">
-              <div class="product-name">
-                <p>
-                  <%= @product.name %>
-                </p>
-              </div>
-            </div>
-
-            <div class="col-xs-12">
-              <div class="productdesc">
-                <p>
-                  <%= product_description(@product) %>
-                </p>
-              </div>
-            </div>
-
-            <div id="cart-form" data-hook="cart_form" class="col-xs-12">
-              <div class="button-contain flex-column">
-                <%= render :partial => "dynamic_variant_cart_form" %>
-              </div>
-            </div>
-
-            <!-- </div> -->
-          </div>
-
-          </div>
 
 
-
-
-          <!-- </div> -->
+      </div>
 
         
 

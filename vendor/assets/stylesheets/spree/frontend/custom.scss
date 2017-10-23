@@ -1121,6 +1121,22 @@ margin-bottom: 30px;
   }
 }
 
+.custom-box-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.custom-box-juice {
+  flex: 1;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+.custom-box-juice-desc {
+  flex: 2;
+  padding: 0 10px;
+}
+
 .product-holder-image:hover > .additional-information {
   visibility: visible;
   background-color: #fff;
