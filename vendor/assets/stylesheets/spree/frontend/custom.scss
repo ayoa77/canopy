@@ -1376,6 +1376,16 @@ margin-bottom: 30px;
   }
 }
 
+.beautiful-text-hierarchy {
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.cart-item-description:first-child p {
+  margin-top: 10px;
+
+}
+
 .checkout-top-spacer {
   margin-top: 20px;
 }
@@ -1440,15 +1450,15 @@ margin-bottom: 30px;
 
 .label-line-items {
   font-size: 16px;
-  margin-top: 20px;
-  height: 50px;
-  line-height: 50px;
+  margin: 20px 0;
   .label-line-items-text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 }
+
+
 
 .checkout-shipping {
   margin-top: 30px;

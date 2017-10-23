@@ -46,11 +46,14 @@ and how to turn it off.  :D -->
 
             <!--Nathan help please! I can't figure out what's going on with the line items here -->
             <div class="col-xs-5 label-line-items-text">
-            <%= item.variant.name %> + 
-            <% item.line_item.preference.each do |p|%>
-          <%= p%>
-              <% end %>
-
+              <div class="cart-item-description">
+                <h4><%= item.variant.name %> + <br /></h4>
+                <% item.line_item.preference.each do |p|%>
+                  <p class="beautiful-text-hierarchy nathan beautify">
+                    <%= p%>
+                  </p>
+                <% end %>
+              </div>
             <%#  if item.variant.options_text.length > 1 %>
             <!-- + <%#= item.variant.options_text %> -->
               <%#end%>
@@ -71,7 +74,7 @@ and how to turn it off.  :D -->
 
 
           <p class="checkout-shipping"><%= Spree.t(:shipping_method) %></p>
-          <% id = ship_form.object.shipping_methods.where(name: "In Store - 宜蘭市女中路三段117號 Yilan City").last.id %>
+          <% id = ship_form.object.shipping_methods.where(admin_name: "instore").last.id %>
         <% if current_order.instore == true %>
           <ul class="list-group shipping-methods">
             <% ship_form.object.shipping_rates.where(shipping_method_id: id).each do |rate| %>
