@@ -1885,7 +1885,7 @@ spree:
   order_not_found: "找不到您的訂單. 請再試一次."
   order_number: "訂單編號 %{number}"
   order_processed_successfully: "您的訂單已被接收"
-  order_resumed:
+  order_resumed: "訂單已恢復"
   order_state:
     address: "地址"
     awaiting_return: "等待寄回"

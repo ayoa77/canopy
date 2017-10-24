@@ -27,11 +27,11 @@
   <%= f.check_box :recurring_weekly_event, id: "weekly_check" %><label for="recurring_weekly_event">weekly</label>
   <%= f.check_box :recurring_monthly_event, id: "monthly_check" %><label for="recurring_monthly_event">monthly</label>
 
-  <div data-hook="file" class="form-group">
+  <!-- <div data-hook="file" class="form-group">
     <%= f.label :event_photo, Spree.t(:event_photo) %>
     <%= f.file_field :event_photo %>
     <%= image_tag @event.event_photo.url(:small) if @event.event_photo.url(:small) %>
-  </div>
+  </div> -->
   <% end %>
   <div data-hook="file" class="form-group pull-left">
 <%= link_to 'Back', "/admin/events" %>

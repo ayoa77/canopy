@@ -27,7 +27,7 @@
 <%end%>
 </div>
 <div class="col-xs-3">
-  <%=image_tag(e.event_photo.url(:small)) if e.event_photo.url(:small)%>
+  <%#=image_tag(e.event_photo.url(:small)) if e.event_photo.url(:small)%>
   <%= link_to'edit',  "/admin/event-edit/#{e.id}", controller: 'spree/admin/events', action: 'edit' %>
   <%= link_to 'delete', "/admin/event-delete/#{e.id}",  data: {confirm: 'Are you sure?'} %>
 
