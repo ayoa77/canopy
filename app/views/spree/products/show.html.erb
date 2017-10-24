@@ -14,14 +14,16 @@
 
         <% if @juices.nil? %>
 
-        <div class="col-md-6">
+        <div class="col-md-6 flex-column">
           <div class="product-holder-image">
           <!-- This takes care of each menu item and< it's ingredients -->
           <%#= product_image(@product, itemprop: "image") %>
-          
-          <%= image_tag(@product.images.last.attachment_file_name) if @product.images.last.present?  %>                 
+          <%= image_tag(@product.images.last.attachment_file_name) if @product.images.last.present?  %>
+                         
        </div>
       </div>
+
+      
 
       <div class="col-md-6 flex-column">
         
@@ -58,7 +60,7 @@
 
       <div class="col-md-6 col-lg-4 col-lg-offset-1">
 
-        <p class="category-for-menu">
+        <p class="category-for-menu" style="padding-top: 50px;">
           <%= Spree.t(:juice) %>
         </p>
         
@@ -95,11 +97,11 @@
         <% end %>
       </div>
 
-      <div class="col-md-6 flex-column">
+      <div class="col-md-6 col-lg-offset-1 flex-column">
       
       <!-- <div class="row no-gutters"> -->
       <div class="col-xs-12">
-        <div class="product-name">
+        <div class="product-name" style="padding-top: 30px;">
           <p>
             <%= @product.name %>
           </p>

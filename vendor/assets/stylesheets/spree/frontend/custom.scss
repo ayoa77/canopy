@@ -263,6 +263,7 @@ a:hover{
 }
 
 .ghost-button-white:hover {
+  cursor: pointer;
   color: #00B7FF;
   background-color: #fff;
   transition: background-color .3s;
@@ -285,6 +286,7 @@ a:hover{
 }
 
 .ghost-button-blue:hover {
+  cursor: pointer;
   color: #fff;
   background-color: #00B7FF;
   transition: background-color .3s;
@@ -304,6 +306,7 @@ a:hover{
 }
 
 .ghost-button-blue-alt:hover {
+  cursor: pointer;
   color: #fff;
   background-color: #00B7FF;
   transition: background-color .3s;
@@ -324,6 +327,7 @@ a:hover{
 }
 
 .ghost-button-pink:hover {
+  cursor: pointer;
   color: #fff;
   background-color: #DC83B8;
   transition: background-color .3s;
@@ -345,6 +349,7 @@ a:hover{
 }
 
 .ghost-button-orange:hover {
+  cursor: pointer;
   color: #fff;
   background-color: #F8776A;
   transition: background-color .3s;
@@ -366,6 +371,7 @@ a:hover{
 }
 
 .ghost-button-green:hover {
+  cursor: pointer;
   color: #fff;
   background-color: #B3D57C;
   transition: background-color .3s;
@@ -399,18 +405,21 @@ a:hover{
 }
 
 .gba-red:hover {
+  cursor: pointer;
   color: #fff;
   background-color: #F66;
   transition: background-color .3s;
 }
 
 .gba-yellow:hover {
+  cursor: pointer;
   color: #fff;
   background-color: #D8D807;
   transition: background-color .3s;
 }
 
 .gba-green:hover {
+  cursor: pointer;
   color: #fff;
   background-color: #39B54A;
   transition: background-color .3s;
@@ -444,6 +453,7 @@ a:hover{
 }
 
 .btn-white:hover {
+  cursor: pointer;
   background-color: #eee;
 }
 
@@ -470,6 +480,7 @@ a:hover{
 }
 
 .add-to-cart-orange:hover {
+  cursor: pointer;
   background-color: #FA9786;
 }
 
@@ -1061,6 +1072,7 @@ margin-bottom: 30px;
 }
 
 .ghost-button-green-coupon:hover {
+  cursor: pointer;
   background-color: #B3D57C;
   color: #fff;
 }
@@ -1112,9 +1124,10 @@ margin-bottom: 30px;
 
 .product-holder-image {
   //change width to product image width
-  width: 290px;
+  width: 80%;
+  max-width: 550px;
+  height: auto;
   display: block;
-  margin: 50px auto;
   img {
     width: 100%;
     height: auto;
@@ -1527,6 +1540,7 @@ margin-bottom: 30px;
 }
 
 .nice-looking-radios input[type="radio"]:hover + label {
+  cursor: pointer;
   box-shadow: inset 0px 0px 40px rgba(50, 50, 50, .2);
   transition: all .3s;
 }
@@ -1936,6 +1950,10 @@ margin-bottom: 30px;
 
   .menu-picture-centering img {
       height: 20vw;
+  }
+
+  .product-holder-image {
+    max-width: 300px;
   }
 
 }
