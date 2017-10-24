@@ -71,7 +71,7 @@ and how to turn it off.  :D -->
 
 
           <p class="checkout-shipping"><%= Spree.t(:shipping_method) %></p>
-          <% id = ship_form.object.shipping_methods.where(name: "In Store - 宜蘭市女中路三段117號 Yilan City").last.id %>
+          <% id = ship_form.object.shipping_methods.where(admin_name: "instore").last.id %>
         <% if current_order.instore == true %>
           <ul class="list-group shipping-methods">
             <% ship_form.object.shipping_rates.where(shipping_method_id: id).each do |rate| %>
