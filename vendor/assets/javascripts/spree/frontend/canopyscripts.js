@@ -157,5 +157,10 @@ $('form#update-cart a.submit').click(function() {
     $('#shopcount .navCartCount p').html(shoWcount);
   });
 
-
 });
+
+function animateScroll() {
+  $('html, body').animate({
+    scrollTop: 490
+  }, 500);
+}
