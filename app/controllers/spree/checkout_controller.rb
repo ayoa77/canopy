@@ -64,7 +64,6 @@ module Spree
       order.save
     ## 參數值為[PLEASE MODIFY]者，請在每次測試時給予獨特值
     ## 若要測試非必帶參數請將base_param內註解的參數依需求取消註解 ##
-    byebug
     base_param = {
       'MerchantTradeNo' => order.merchant_trade_no.last,  #請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
       'MerchantTradeDate' => order.created_at.strftime("%Y/%m/%d %H:%M:%S"), # ex: 2017/02/13 15:45:30
@@ -151,7 +150,6 @@ module Spree
     #   Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
     # end
     # @order.save
-    byebug
     unless @order.next
       flash[:error] = @order.errors.full_messages.join("\n")
       redirect_to(checkout_state_path(@order.state)) && return
