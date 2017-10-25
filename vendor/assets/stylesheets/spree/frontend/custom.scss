@@ -969,8 +969,8 @@ a:hover{
 }
 
 .cart-item-image img {
-  height: 50px;
-  width: auto;
+  height: auto;
+  width: 120%;
 }
 
 .cart-item-description h4 {
@@ -1376,7 +1376,7 @@ margin-bottom: 30px;
 }
 
 .panel-body.height-adjustment {
-  height: 150px;
+  height: 240px;
 }
 
 .add-bottom-border {
@@ -1785,7 +1785,13 @@ margin-bottom: 30px;
 
 // -=-=-=-=-=- Responsive No Man's Land -=-=-=-=-=-
 
-
+#order_summary strong {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 30px;
+  display: block;
+  color: #ff6666;
+}
 
 
 // Responsive (<1200px width)
