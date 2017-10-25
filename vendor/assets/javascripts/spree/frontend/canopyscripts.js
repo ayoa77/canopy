@@ -36,25 +36,48 @@ $(document).on('ready', function() {
 
 
     $('#address_submit').click(function (evt) {
-      var phone = $('#order_bill_address_attributes_phone').val();
-      if ($('#order_instore').is(':checked')) {
-        // $('#order_ship_address_attributes_firstname').attr('disabled',false);
-        // $('#order_ship_address_attributes_lastname').attr('disabled',false);
-        // $('#order_ship_address_attributes_address1').attr('disabled',false);
-        // $('#order_ship_address_attributes_address2').attr('disabled',false);
-        // $('#order_ship_address_attributes_city').attr('disabled',false);
-        // $('#order_ship_address_attributes_zipcode').attr('disabled',false);
-        // $('#order_ship_address_attributes_phone').attr('disabled',false);
+      var phone = $('#order_ship_address_attributes_phone').val();
+      var firstname = $('#order_ship_address_attributes_firstname').val();
+      var lastname = $('#order_ship_address_attributes_lastname').val();
+      var address1 = $('#order_ship_address_attributes_address1').val();
+      var address2 = $('#order_ship_address_attributes_address2').val();
+      var city = $('#order_ship_address_attributes_city').val();
+      var zipcode = $('#order_ship_address_attributes_zipcode').val();
 
+      if ($('#order_instore').is(':checked')) {
+        
         // $('#order_ship_address_attributes_firstname').val('Canopy');
         // $('#order_ship_address_attributes_lastname').val('Juice');
         $('#order_ship_address_attributes_address1').val('宜蘭市女中路三段117號');
         $('#order_ship_address_attributes_address2').val('');
         $('#order_ship_address_attributes_city').val('Yilan City');
         $('#order_ship_address_attributes_zipcode').val('220');
-        // $('#order_ship_address_attributes_phone').val(phone);
+        
+        var address1 = $('#order_ship_address_attributes_address1').val();
+        var address2 = $('#order_ship_address_attributes_address2').val();
+        var city = $('#order_ship_address_attributes_city').val();
+        var zipcode = $('#order_ship_address_attributes_zipcode').val();
+        
+        $('#order_bill_address_attributes_firstname').val(firstname);
+        $('#order_bill_address_attributes_lastname').val(lastname);
+        $('#order_bill_address_attributes_address1').val(address1);
+        $('#order_bill_address_attributes_address2').val(address2);
+        $('#order_bill_address_attributes_city').val(city);
+        $('#order_bill_address_attributes_zipcode').val(zipcode);
+        $('#order_bill_address_attributes_phone').val(phone);
+        $('#save_user_address').attr('checked', false);
         $(this).submit();
       } else {
+
+
+        $('#order_bill_address_attributes_firstname').val(firstname);
+        $('#order_bill_address_attributes_lastname').val(lastname);
+        $('#order_bill_address_attributes_address1').val(address1);
+        $('#order_bill_address_attributes_address2').val(address2);
+        $('#order_bill_address_attributes_city').val(city);
+        $('#order_bill_address_attributes_zipcode').val(zipcode);
+        $('#order_bill_address_attributes_phone').val(phone);
+
         $(this).submit();
       }
 
