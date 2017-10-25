@@ -43,10 +43,10 @@ Spree::OrdersController.class_eval do
     end
     @order.trade_no = pay_params[:TradeNo]
       if pay_params[:RtnCode] == '1'
-        Spree::Payment.create(amount: pay_params[:PayAmt], order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "信用卡").id, state: "completed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
+        Spree::Payment.create(amount: pay_params[:PayAmt], order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(description: "credit_card").id, state: "completed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
         @order.payment_total = pay_params[:PayAmt]
       else
-      Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "信用卡").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
+      Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(description: "credit card").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
     end
     @order.save
   end

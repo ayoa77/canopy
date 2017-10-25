@@ -95,7 +95,7 @@ and how to turn it off.  :D -->
               <li class="list-group-item shipping-method">
                 <label>
                   <%= ship_form.radio_button :selected_shipping_rate_id, rate.id, data: { behavior: 'shipping-method-selector', cost: rate.display_cost }, checked: "checked" %>
-                  <span class="rate-name"><%= rate.name %></span>
+                  <span class="rate-name"><%= rate.name %> </span>
                   <!-- more shipping logic for canopy girls -->
                   <!-- <#% if @order.quantity >= 12 %> -->
                   <span class="badge rate-cost"><%= rate.display_cost%></span>

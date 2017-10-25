@@ -33,7 +33,7 @@ module Spree
       #   redirect_to products_path and return
       # end
 
-      if params[:order][:payments_attributes].present? && Spree::PaymentMethod.find(params[:order][:payments_attributes].first[:payment_method_id]).name == "信用卡"
+      if params[:order][:payments_attributes].present? && Spree::PaymentMethod.find(params[:order][:payments_attributes].first[:payment_method_id]).description == "credit card"
         aioall(@order) and return
       elsif params[:order][:time_of_day].present? && params[:order][:delivery_date].present?
         @order.time_of_day = params[:order][:time_of_day]
@@ -64,6 +64,7 @@ module Spree
       order.save
     ## 參數值為[PLEASE MODIFY]者，請在每次測試時給予獨特值
     ## 若要測試非必帶參數請將base_param內註解的參數依需求取消註解 ##
+    byebug
     base_param = {
       'MerchantTradeNo' => order.merchant_trade_no.last,  #請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
       'MerchantTradeDate' => order.created_at.strftime("%Y/%m/%d %H:%M:%S"), # ex: 2017/02/13 15:45:30
@@ -86,13 +87,13 @@ module Spree
     ## 若要測試開立電子發票，請將inv_params內的"所有"參數取消註解 ##
     inv_params = {
   # =begin
-  #     'RelateNumber' => 'PLEASE MODIFY',  #請帶30碼uid ex: SJDFJGH24FJIL97G73653XM0VOMS4K
+      # 'RelateNumber' => order.merchant_trade_no.last,
   #     'CustomerID' => 'MEM_0000001',  #會員編號
   #     'CustomerIdentifier' => '',   #統一編號
-  #     'CustomerName' => '測試買家',
-  #     'CustomerAddr' => '測試用地址',
-  #     'CustomerPhone' => '0123456789',
-  #     'CustomerEmail' => 'johndoe@test.com',
+      #  'CustomerName' => order.user.bill_address.full_name,
+      #  'CustomerAddr' => order.user.bill_address.city +''+ order.user.bill_address.address1 +''+ order.user.bill_address.address2,
+      #  'CustomerPhone' => order.user.bill_address.phone,
+      #  'CustomerEmail' => order.user.email,
   #     'ClearanceMark' => '2',
   #     'TaxType' => '1',
   #     'CarruerType' => '',
@@ -150,6 +151,7 @@ module Spree
     #   Spree::Payment.create(amount: 0, order_id: @order.id, payment_method_id: Spree::PaymentMethod.all.find_by(name: "Credit Allpay").id, state: "failed", merchant_trade_no: pay_params[:MerchantTradeNo] , trade_no: pay_params[:TradeNo])
     # end
     # @order.save
+    byebug
     unless @order.next
       flash[:error] = @order.errors.full_messages.join("\n")
       redirect_to(checkout_state_path(@order.state)) && return

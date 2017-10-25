@@ -3,14 +3,14 @@
 <div class="row">
   <div class="col-sm-12" data-hook="billing_fieldset_wrapper">
     <div class="change-me" id="billing" data-hook>
-      <%= form.fields_for :bill_address do |bill_form| %>
+      <%#= form.fields_for :bill_address do |bill_form| %>
       <div class="change-me-2">
-        <p class="checkout-head-type"><%= Spree.t(:billing_address) %></p>
+        <p class="checkout-head-type"><%#= Spree.t(:billing_address) %></p>
       </div>
       <div class="address-pad">
-        <%= render partial: 'spree/address/form', locals: { form: bill_form, address_type: 'billing', address: @order.bill_address } %>
+        <%#= render partial: 'spree/address/form', locals: { form: bill_form, address_type: 'billing', address: @order.bill_address } %>
       </div>
-      <% end %>
+      <%# end %>
     </div>
   </div>
 
@@ -22,12 +22,12 @@
       </div>
       <div class="address-pad">
 
-        <p class="field checkbox" data-hook="use_billing">
+        <!-- <p class="field checkbox" data-hook="use_billing">
           <%= label_tag :in_store, id: 'use_billing' do %>
           <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address?, class: "showing_check_boxes" %>
           <%= Spree.t(:use_billing_address) %>
           <% end %>
-        </p>
+        </p> -->
 
         <!-- aj help : We need this checkbox to have the pick-up at store option.
             it should create a date and time for pick-up -->

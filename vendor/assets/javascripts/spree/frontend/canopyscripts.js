@@ -9,50 +9,50 @@ $(document).on('ready', function() {
       $('#header').toggleClass('menuUp');
   });
 
-  $('#order_instore').click(function() {
-    $('#order_use_billing').attr('checked', false);
-  });
+  // $('#order_instore').click(function() {
+  //   $('#order_use_billing').attr('checked', false);
+  // });
 
   $('#order_instore').click(function() {
-    console.log();
-  if  ($('.inner_address_form').not(':first').is(':visible')){
-    $('.inner_address_form').not(':first').fadeOut(0);
-  } else if ($('.inner_address_form').not(':first').is(':hidden') && !$(this).is(':checked')) {
-      $('.inner_address_form').not(':first').fadeIn(0);
-    }
+
+    $('#order_ship_address_attributes_address1').fadeToggle(0);
+    $('#order_ship_address_attributes_address2').fadeToggle(0);
+    $('#order_ship_address_attributes_city').fadeToggle(0);
+    $('#order_ship_address_attributes_zipcode').fadeToggle(0);
+ 
   });
 
 
-  $('#order_use_billing').click(function() {
-    $('#order_instore').attr('checked', false);
-    $('#order_ship_address_attributes_firstname').val('');
-    $('#order_ship_address_attributes_lastname').val('');
-    $('#order_ship_address_attributes_address1').val('');
-    $('#order_ship_address_attributes_city').val('');
-    $('#order_ship_address_attributes_zipcode').val('');
-    $('#order_ship_address_attributes_phone').val('');
+  // $('#order_use_billing').click(function() {
+  //   $('#order_instore').attr('checked', false);
+  //   $('#order_ship_address_attributes_firstname').val('');
+  //   $('#order_ship_address_attributes_lastname').val('');
+  //   $('#order_ship_address_attributes_address1').val('');
+  //   $('#order_ship_address_attributes_city').val('');
+  //   $('#order_ship_address_attributes_zipcode').val('');
+  //   $('#order_ship_address_attributes_phone').val('');
 
-  });
+  // });
 
 
     $('#address_submit').click(function (evt) {
       var phone = $('#order_bill_address_attributes_phone').val();
       if ($('#order_instore').is(':checked')) {
-        $('#order_ship_address_attributes_firstname').attr('disabled',false);
-        $('#order_ship_address_attributes_lastname').attr('disabled',false);
-        $('#order_ship_address_attributes_address1').attr('disabled',false);
-        $('#order_ship_address_attributes_address2').attr('disabled',false);
-        $('#order_ship_address_attributes_city').attr('disabled',false);
-        $('#order_ship_address_attributes_zipcode').attr('disabled',false);
-        $('#order_ship_address_attributes_phone').attr('disabled',false);
+        // $('#order_ship_address_attributes_firstname').attr('disabled',false);
+        // $('#order_ship_address_attributes_lastname').attr('disabled',false);
+        // $('#order_ship_address_attributes_address1').attr('disabled',false);
+        // $('#order_ship_address_attributes_address2').attr('disabled',false);
+        // $('#order_ship_address_attributes_city').attr('disabled',false);
+        // $('#order_ship_address_attributes_zipcode').attr('disabled',false);
+        // $('#order_ship_address_attributes_phone').attr('disabled',false);
 
-        $('#order_ship_address_attributes_firstname').val('Canopy');
-        $('#order_ship_address_attributes_lastname').val('Juice');
+        // $('#order_ship_address_attributes_firstname').val('Canopy');
+        // $('#order_ship_address_attributes_lastname').val('Juice');
         $('#order_ship_address_attributes_address1').val('宜蘭市女中路三段117號');
         $('#order_ship_address_attributes_address2').val('');
         $('#order_ship_address_attributes_city').val('Yilan City');
         $('#order_ship_address_attributes_zipcode').val('220');
-        $('#order_ship_address_attributes_phone').val(phone);
+        // $('#order_ship_address_attributes_phone').val(phone);
         $(this).submit();
       } else {
         $(this).submit();
@@ -61,8 +61,8 @@ $(document).on('ready', function() {
 });
 
     $( '.click-me-animation' ).click(function () {
-        $( '.navCartCount' ).css({"box-shadow": "0px 0px 40px 8px"});
-        $( '.navCartCount p' ).animate({"font-size": "18px"}, 150);
+        $( '.navCartCount' ).css({"box-shadow": "0px 0px 65px 23px"});
+        $( '.navCartCount p' ).animate({"font-size": "23px"}, 150);
       setTimeout(function() {
         $( '.navCartCount' ).css({"box-shadow": "0px 0px 0px"});
       }, 200);
@@ -161,6 +161,6 @@ $('form#update-cart a.submit').click(function() {
 
 function animateScroll() {
   $('html, body').animate({
-    scrollTop: 490
+    scrollTop: 520
   }, 500);
 }
