@@ -151,7 +151,7 @@ and how to turn it off.  :D -->
 
         <div class="form-group">
           <p class="checkout-shipping"><%= form.label Spree.t(:time_of_day) %><p>
-          <%= form.date_field :delivery_date, class:  'form-control', min: Date.today + 3.days %>
+          <%= form.date_field :delivery_date, class:  'form-control required', min: Date.today + 3.days %>
           <div class = 'nice-looking-radios'>
             <%= form.radio_button :time_of_day, 'before 1 pm', :checked => true %>
             <label for = "order_time_of_day_before_1_pm"><span><p><%=Spree.t(:before_1pm)%></p></span></label>
