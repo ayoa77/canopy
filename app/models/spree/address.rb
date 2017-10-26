@@ -18,12 +18,12 @@ module Spree
     before_validation :clear_invalid_state_entities, if: -> { country.present? }, on: :update
 
     with_options presence: true do
-      validates :firstname, :lastname, :address1, :city, :country
-      validates :zipcode, if: :require_zipcode?
-      validates :phone, if: :require_phone?
+      # validates :firstname, :lastname, :address1, :city, :country
+      # validates :zipcode, if: :require_zipcode?
+      # validates :phone, if: :require_phone?
     end
 
-    validate :state_validate, :postal_code_validate
+    # validate :state_validate, :postal_code_validate
 
     alias_attribute :first_name, :firstname
     alias_attribute :last_name, :lastname
