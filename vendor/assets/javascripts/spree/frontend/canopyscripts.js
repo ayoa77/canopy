@@ -180,6 +180,73 @@ $('form#update-cart a.submit').click(function() {
     $('#shopcount .navCartCount p').html(shoWcount);
   });
 
+
+
+
+  $('.add-juice').click(function() {
+
+    let juiceBox = document.querySelectorAll('.juice-box-quantity');
+    let count = 1;
+    for (i=0; i<juiceBox.length; i++) {
+      count += parseInt(juiceBox[i].innerHTML[0]);
+    }
+
+    if (count < 7) {
+      let quantity = $(this).siblings('.juice-box-quantity')[0].innerHTML;
+      let newQuantity = parseInt(quantity[0]) + 1;
+      $(this).siblings('.juice-box-quantity')[0].innerHTML = newQuantity.toString() + " x ";
+    } 
+    
+    if (count == 6) {
+      let preferences = document.querySelector('.extra-information').value;
+      let orderInput = "";
+
+      if (preferences == "") {
+        orderInput = document.querySelector('.extra-information').value;
+      } else {
+        orderInput = document.querySelector('.extra-information').value + "\n \n";
+      };
+
+      for (i=0; i<juiceBox.length; i++) {
+        document.querySelectorAll('.add-juice')[i].classList.remove('hover-effect');
+        if (parseInt(juiceBox[i].innerHTML[0]) > 0) {
+          let quantity = juiceBox[i].innerHTML[0];
+          let name = document.querySelectorAll('.custom-box-juice')[i].innerHTML;
+          orderInput += `${quantity}x ${name} \n`;
+        }
+      }
+
+      document.querySelector('.extra-information').value = orderInput;
+
+    }
+  });
+
+  $('.subtract-juice').click(function() {
+
+    // count up how many juices there are
+    let juiceBox = document.querySelectorAll('.juice-box-quantity');
+
+    // figure out how many juices there are to subtract
+    let quantity = $(this).siblings('.juice-box-quantity')[0].innerHTML;
+
+    // if it's zero do nothing, if it has juices selected do stuff
+    if (parseInt(quantity[0]) > 0) {
+
+      // reset the preferences
+      let orderInput = "";
+      document.querySelector('.extra-information').value = orderInput;
+
+      // minus 1 and display it
+      let newQuantity = parseInt(quantity[0]) - 1;
+      $(this).siblings('.juice-box-quantity')[0].innerHTML = newQuantity.toString() + " x ";
+      
+      // turn the add to selection buttons back on
+      for (i=0; i<juiceBox.length; i++) {
+        document.querySelectorAll('.add-juice')[i].classList.add('hover-effect');
+      }
+    }
+  });
+
 });
 
 function animateScroll() {

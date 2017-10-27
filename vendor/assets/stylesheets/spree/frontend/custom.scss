@@ -1136,13 +1136,50 @@ margin-bottom: 30px;
 
 .custom-box-container {
   display: flex;
+  align-items: center;
   margin-bottom: 20px;
+}
+
+.add-juice, .subtract-juice {
+  height: 40px;
+  width: 40px;
+  margin: 0 10px 0 0;
+  
+  background-color: #bbb;
+  color: white;
+  text-align: center;
+
+  border-radius: 40px;
+
+  transition: background-color .3s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subtract-juice {
+  background-color: #00B8ff;
+}
+
+.hover-effect {
+  background-color: #00B7FF;
+}
+
+.hover-effect:hover, .subtract-juice:hover {
+  cursor: pointer;
+  background-color: #0063aa;
+  transition: background-color .3s;
 }
 
 .custom-box-juice {
   flex: 1;
   font-weight: 500;
   padding: 0 10px;
+}
+
+.juice-box-quantity {
+
 }
 
 .custom-box-juice-desc {
@@ -1737,6 +1774,10 @@ margin-bottom: 30px;
   text-align: left;
   font-weight: 700;
   padding-bottom: 10px;
+}
+
+.category-for-menu span {
+  font-size: 12px;
 }
 
 .menu-item {
