@@ -20,8 +20,11 @@
           <%#= product_image(@product, itemprop: "image") %>
           <%= image_tag(@product.images.last.attachment_file_name) if @product.images.last.present?  %>
                          
-       </div>
-      </div>
+          </div>
+
+          <!-- Add-Ons -->
+
+        </div>
 
       
 
@@ -58,9 +61,49 @@
           
           <% else %>
 
-      <div class="col-md-6 col-lg-4 col-lg-offset-1">
+      <div class="col-md-6 col-lg-5 col-lg-offset-1">
+
+        <!-- Add-Ons -->
 
         <p class="category-for-menu" style="padding-top: 50px;">
+          Select Juices <span>(Select 6)</span>
+        </p>
+
+        <% @juices.each do |j| %>
+
+          <div class="col-xs-12 col-sm-6 custom-box-container">
+            <div class="add-juice hover-effect">
+              +
+            </div>
+
+            <div class="subtract-juice">
+              -
+            </div>
+
+            <div class="juice-box-quantity">0 x</div>
+
+            <div class="custom-box-juice"><%= j.name %></div>
+
+          </div>
+
+        <% end %>
+
+        <% @extras.each do |e| %>
+
+        <div class="col-sm-6">
+          <div class="custom-box-juice">
+            <%= e.name %>
+          </div>
+          <div class="custom-box-juice-desc">
+            <%= e.description %>
+          </div>
+        </div>
+
+      
+        <% end %>
+
+        <!-- This is How we get Juices and Extras
+         <p class="category-for-menu" style="padding-top: 50px;">
           <%= Spree.t(:juice) %>
         </p>
         
@@ -94,10 +137,10 @@
         </div>
 
       
-        <% end %>
-      </div>
+        <% end %> -->
+      </div>  
 
-      <div class="col-md-6 col-lg-offset-1 flex-column">
+      <div class="col-md-6 flex-column">
       
       <!-- <div class="row no-gutters"> -->
       <div class="col-xs-12">
@@ -127,25 +170,8 @@
 
     <% end %>
 
-
-          
-
-
       </div>
 
-        
-
-          <!-- additional-information is the Nutrition information Hover state -->
-
-
-  <!-- handles product text -->
-
-
-
-  <!-- </div> -->
-
 </div>
-
-
 
 <% end %>
