@@ -34,11 +34,16 @@ and how to turn it off.  :D -->
             </div>
 
           </div>
-
-          <% ship_form.object.manifest.each do |item| %>
-
+              <!-- we'll need to change this for someone that wants to track inventory -->
+          <%# ship_form.object.manifest.each do |item| %>
+        
+          <% current_order.line_items.each do |item| %>
+          
+          
+          
           <!-- aj help : can we make odd numbered label-line-items have a color? -->
           <div class="row label-line-items">
+              <% unless item.hidden == true %>
 
             <div class="col-xs-2">
               <%= mini_image(item.variant) %>
@@ -49,7 +54,7 @@ and how to turn it off.  :D -->
               <div class="cart-item-description">
                 <h4><%= item.variant.name %> <br /></h4>
                   <p class="beautiful-text-hierarchy nathan beautify">
-                    <%= item.line_item.preference %>
+                    <%= item.preference %>
                   </p>
               </div>
             <%#  if item.variant.options_text.length > 1 %>
@@ -65,7 +70,7 @@ and how to turn it off.  :D -->
             <div class="col-xs-3 label-line-items-text">
               <%= display_price(item.variant).to_s[0..-4] %>
             </div>
-
+            <% end %>
 
           </div>
           <% end %>

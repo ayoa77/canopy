@@ -58,19 +58,20 @@
 
   <tbody data-hook>
     <% order.line_items.each do |item| %>
+    <% unless item.hidden == true %>
       <tr data-hook="order_details_line_item_row">
         <td data-hook="order_item_image">
-          <!-- <#% if item.variant.images.length == 0 %>
-            <#%= link_to small_image(item.variant.product), item.variant.product %>
-          <#% else %> -->
+          <% if item.variant.images.length == 0 %>
+            <%= link_to small_image(item.variant.product), item.variant.product %>
+          <% else %>
             <%= link_to image_tag(item.variant.images.first.attachment.url(:small)), item.variant.product %>
-          <!-- <#% end %> -->
+          <% end %>
         </td>
         <td data-hook="order_item_description">
           <h4><%= item.name %></h4>
           <%= truncate(item.description, length: 100) %>
               <p class="beautiful-text-hierarchy nathan beautify">
-                <%= truncate(<%= item.line_item.preference, length: 150) %>
+                <%= truncate(item.preference, length: 150) %>
               </p>
           <%= "(" + item.variant.options_text + ")" unless item.variant.option_values.empty? %>
         </td>
@@ -78,6 +79,7 @@
         <td data-hook="order_item_qty" class="order-qty"><%= item.quantity %></td>
         <td data-hook="order_item_total" class="lead text-primary total"><span><%= item.display_amount.to_html[0..-4] %></span></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
   <tfoot id="order-total" data-hook="order_details_total">
@@ -106,6 +108,7 @@
      </tfoot>
     <% end %>
   <% end %>
+  
 
   <tfoot id='shipment-total'>
     <% order.shipments.group_by { |s| s.selected_shipping_rate.name }.each do |name, shipments| %>

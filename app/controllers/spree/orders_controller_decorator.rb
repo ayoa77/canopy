@@ -2,6 +2,7 @@ Spree::OrdersController.class_eval do
 
 
   def variant_populate
+    addon_variant = Spree::Product.find_by(description2: "addon").master
     order = current_order(create_order_if_necessary: true)
     product = Spree::Product.find(params[:product_id])
     option_values_ids = params[:options].present? ? params[:options] : []
@@ -15,17 +16,16 @@ Spree::OrdersController.class_eval do
 
     # 2,147,483,647 is crazy. See issue #2695.
     if quantity.between?(1, 1_000)
-      byebug
       begin
-        li = Spree::LineItem.create(variant_id: variant.id, quantity: quantity, order_id: order.id, preference: preference, addon_quantity: addon_quantity, addon_names: addon_names, juice_names: juice_names)
+        li = order.line_items.create(variant_id: variant.id, quantity: quantity, preference: preference, addon_quantity: addon_quantity, addon_names: addon_names, juice_names: juice_names, hidden: false)
+        order.item_count += quantity
+        order.save
         if li.addon_quantity > 0 
-          byebug
-          # Spree::LineItem.create(variant_id: Spree::Variant.find_by(:variant_id )
-  
+          quantity.times do
+            order.line_items.create(variant_id: addon_variant.id, quantity: addon_quantity, hidden: true)
+          end 
+          order.update_totals         
         end
-
-        # order.contents.add(variant, quantity)
-        # byebug
         # order.line_items.last.preference << preference
         # order.line_items.last.save
        

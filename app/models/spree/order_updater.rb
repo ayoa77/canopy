@@ -91,7 +91,14 @@ module Spree
     end
 
     def update_item_count
-      order.item_count = quantity
+      addons = 0
+        order.line_items.each do |li|
+            if li.hidden == true
+          addons += li.quantity
+            end
+          end
+        regular_items = quantity - addons
+      order.item_count = regular_items
     end
 
     def update_item_total

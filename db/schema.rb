@@ -261,6 +261,7 @@ ActiveRecord::Schema.define(version: 20171027095840) do
     t.integer "addon_quantity", default: 0, null: false
     t.string "addon_names"
     t.string "juice_names"
+    t.boolean "hidden", default: false, null: false
     t.index ["order_id"], name: "index_spree_line_items_on_order_id"
     t.index ["tax_category_id"], name: "index_spree_line_items_on_tax_category_id"
     t.index ["variant_id"], name: "index_spree_line_items_on_variant_id"
