@@ -27,6 +27,7 @@ module Spree
     # Make sure you allow any extensions to chime in on whether or
     # not the extension-specific parts of the line item match
     def find_matching_line_item(other_order_line_item)
+      byebug
       order.line_items.detect do |my_li|
         my_li.variant == other_order_line_item.variant &&
           order.line_item_comparison_hooks.all? do |hook|

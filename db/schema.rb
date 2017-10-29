@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170921070853) do
+ActiveRecord::Schema.define(version: 20171027095840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -257,7 +257,10 @@ ActiveRecord::Schema.define(version: 20170921070853) do
     t.decimal "taxable_adjustment_total", precision: 10, scale: 2, default: "0.0", null: false
     t.decimal "non_taxable_adjustment_total", precision: 10, scale: 2, default: "0.0", null: false
     t.boolean "reduced", default: false
-    t.text "preference", default: [], array: true
+    t.text "preference"
+    t.integer "addon_quantity", default: 0, null: false
+    t.string "addon_names"
+    t.string "juice_names"
     t.index ["order_id"], name: "index_spree_line_items_on_order_id"
     t.index ["tax_category_id"], name: "index_spree_line_items_on_tax_category_id"
     t.index ["variant_id"], name: "index_spree_line_items_on_variant_id"

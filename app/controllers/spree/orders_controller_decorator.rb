@@ -8,14 +8,28 @@ Spree::OrdersController.class_eval do
     option_values = Spree::OptionValue.where(id: option_values_ids)
     variant = product.try_variant option_values
     quantity = params[:quantity].to_i
-    preference = quantity.to_s + '× ' + (params[:preference].length > 1 ? params[:preference] : Spree.t(:no_preference))
+    preference = (params[:preference].length > 1 ? params[:preference] : Spree.t(:no_preference))
+    addon_quantity = params[:addon_quantity]
+    addon_names = params[:addon_names]
+    juice_names = params[:juice_names]
 
     # 2,147,483,647 is crazy. See issue #2695.
     if quantity.between?(1, 1_000)
+      byebug
       begin
-        order.contents.add(variant, quantity)
-        order.line_items.last.preference << preference
-        order.line_items.last.save
+        li = Spree::LineItem.create(variant_id: variant.id, quantity: quantity, order_id: order.id, preference: preference, addon_quantity: addon_quantity, addon_names: addon_names, juice_names: juice_names)
+        if li.addon_quantity > 0 
+          byebug
+          # Spree::LineItem.create(variant_id: Spree::Variant.find_by(:variant_id )
+  
+        end
+
+        # order.contents.add(variant, quantity)
+        # byebug
+        # order.line_items.last.preference << preference
+        # order.line_items.last.save
+       
+     
       rescue ActiveRecord::RecordInvalid => e
         error = e.record.errors.full_messages.join(", ")
       end

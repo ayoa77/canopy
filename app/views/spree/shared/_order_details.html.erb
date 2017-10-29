@@ -69,11 +69,9 @@
         <td data-hook="order_item_description">
           <h4><%= item.name %></h4>
           <%= truncate(item.description, length: 100) %>
-            <% item.preference.each do |p|%>
               <p class="beautiful-text-hierarchy nathan beautify">
-                <%= truncate(p, length: 150) %>
+                <%= truncate(<%= item.line_item.preference, length: 150) %>
               </p>
-              <% end %>
           <%= "(" + item.variant.options_text + ")" unless item.variant.option_values.empty? %>
         </td>
         <td data-hook="order_item_price" class="lead text-primary price"><span><%= item.single_money.to_html[0..-4] %></span></td>

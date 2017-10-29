@@ -48,11 +48,9 @@ and how to turn it off.  :D -->
             <div class="col-xs-5 label-line-items-text">
               <div class="cart-item-description">
                 <h4><%= item.variant.name %> <br /></h4>
-                <% item.line_item.preference.each do |p|%>
                   <p class="beautiful-text-hierarchy nathan beautify">
-                    <%= p%>
+                    <%= item.line_item.preference %>
                   </p>
-                <% end %>
               </div>
             <%#  if item.variant.options_text.length > 1 %>
             <!-- + <%#= item.variant.options_text %> -->
