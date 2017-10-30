@@ -14,12 +14,12 @@ h1, h2, h3, h4, h5, h6, a, p, textarea, input, button {
 }
 
 a {
-  color: #00B7FF;
+  color: #333;
 }
 
 a:hover{
   text-decoration: none;
-  color: #0099D5;
+  color: #00B7FF;
 }
 
 .Site {
@@ -145,21 +145,31 @@ a:hover{
     font-size: 14px;
     margin: 0;
   }
+  .small-line {
+    width: 40%;
+    max-width: 400px;
+    height: 1px;
+    margin: 30px auto 0;
+    border-top: 1px solid #bbb;
+
+  }
 }
 
 #footer-top {
   height: 50px;
-  background-color: #FEE3BA;
+  margin-top: 25px;
+  background-color: #fff;
 }
 
 #footer-middle {
   height: 150px;
-  background-color: #FDF2E2;
+  background-color: #fff;
 }
 
 #footer-bottom {
   height: 50px;
-  background-color: #FEE3BA;
+  
+  background-color: #fff;
 
 }
 
@@ -168,6 +178,10 @@ a:hover{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#footer .copyright-info {
+  font-size: 10px;
 }
 
 .footer-icons-center {
@@ -1048,6 +1062,14 @@ margin-bottom: 30px;
   align-items: center;
 }
 
+.continue {
+  color: #00B7FF;
+}
+
+.continue:hover {
+  color: #009ae0;
+}
+
 .centering {
   display: flex;
   justify-content: center;
@@ -1293,7 +1315,7 @@ margin-bottom: 30px;
 
 .form-control {
   height: 50px;
-  color: #B3D57C;
+  color: #595857;
   border: 1px solid #B3D57C;
   border-radius: 0px;
   text-align: center;
