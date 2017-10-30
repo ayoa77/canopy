@@ -273,7 +273,6 @@ $('form#update-cart a.submit').click(function() {
             extraArray.push(extraName)
           }
         }
-        console.log(extraArray);
 
         // Add the Extras Array to the input
         document.querySelector('#addon-name').value = extraArray.join(", ");
@@ -302,7 +301,7 @@ $('form#update-cart a.submit').click(function() {
             extraArray.push(extraName)
           }
         }
-        console.log(extraArray);
+
         document.querySelector('#addon-name').value = extraArray.join(", ");
         document.querySelector('.addon-price').innerHTML = ` + $${parseInt(document.querySelector('#addon-quantity').value) * 20}`;
   
