@@ -1,4 +1,5 @@
 $(document).on('ready', function() {
+
   $('#nav-icon1').click(function() {
 
       $(this).toggleClass('open');
@@ -180,8 +181,7 @@ $('form#update-cart a.submit').click(function() {
     $('#shopcount .navCartCount p').html(shoWcount);
   });
 
-
-
+  // Add Juices
 
   $('.add-juice').click(function() {
 
@@ -198,30 +198,30 @@ $('form#update-cart a.submit').click(function() {
     } 
     
     if (count == 6) {
-      let preferences = document.querySelector('.extra-information').value;
-      let orderInput = "";
-
-      if (preferences == "") {
-        orderInput = document.querySelector('.extra-information').value;
-      } else {
-        orderInput = document.querySelector('.extra-information').value + "\n \n";
-      };
+      let orderInput = document.querySelector('#juice-name').value;
 
       for (i=0; i<juiceBox.length; i++) {
         document.querySelectorAll('.add-juice')[i].classList.remove('hover-effect');
         if (parseInt(juiceBox[i].innerHTML[0]) > 0) {
           let quantity = juiceBox[i].innerHTML[0];
           let name = document.querySelectorAll('.custom-box-juice')[i].innerHTML;
-          orderInput += `${quantity}x ${name} \n`;
+          
+          orderInput += `${quantity}x ${name}, `;
         }
       }
 
-      document.querySelector('.extra-information').value = orderInput;
+      document.querySelector('#juice-name').value = orderInput.slice(0, -2);
+      $('#add-to-cart-button')[0].classList.remove('add-to-cart-disabled');
+      $('#add-to-cart-button')[0].disabled = false;
 
+      // $('.add-to-cart-disabled').classList.add('add-to-cart-orange click-me-animation');
     }
   });
 
   $('.subtract-juice').click(function() {
+
+    $('#add-to-cart-button')[0].classList.add('add-to-cart-disabled');
+    $('#add-to-cart-button')[0].disabled = true;
 
     // count up how many juices there are
     let juiceBox = document.querySelectorAll('.juice-box-quantity');
@@ -234,7 +234,7 @@ $('form#update-cart a.submit').click(function() {
 
       // reset the preferences
       let orderInput = "";
-      document.querySelector('.extra-information').value = orderInput;
+      document.querySelector('#juice-name').value = orderInput;
 
       // minus 1 and display it
       let newQuantity = parseInt(quantity[0]) - 1;
@@ -246,6 +246,67 @@ $('form#update-cart a.submit').click(function() {
       }
     }
   });
+
+  // Add Extras
+
+  $('.add-extra').click(function() {
+
+        // Change the quantity in the DOM
+        let extra = document.querySelectorAll('.extra-quantity');
+
+        let quantity = parseInt($(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML);
+        quantity += 1;
+
+        $(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML = quantity.toString();
+
+        // Delete the input
+        document.querySelector('#addon-name').value = "";
+
+        // Loop through the Extras and build an array and add the quantity of extras to the total input
+        let extraArray = [];
+        document.querySelector('#addon-quantity').value = 0;
+        for (i=0; i<document.querySelectorAll('.custom-extra').length; i++) {
+          let quantity = $('.extra-quantity')[i].firstElementChild.innerHTML;
+          document.querySelector('#addon-quantity').value = parseInt(document.querySelector('#addon-quantity').value) + parseInt(quantity);
+          let extraName = $('.custom-extra')[i].innerHTML;
+          if (quantity != 0) {
+            extraArray.push(extraName)
+          }
+        }
+        console.log(extraArray);
+
+        // Add the Extras Array to the input
+        document.querySelector('#addon-name').value = extraArray.join(", ");
+        document.querySelector('.addon-price').innerHTML = ` + $${parseInt(document.querySelector('#addon-quantity').value) * 20}`;
+      });
+    
+      $('.subtract-extra').click(function() {
+        // subtract the number from the DOM
+        let extra = document.querySelectorAll('.extra-quantity');
+        
+        let quantity = parseInt($(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML);
+        if (quantity != 0) {
+          quantity -= 1;
+          $(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML = quantity.toString();
+        }
+
+        document.querySelector('#addon-name').value = "";
+
+        let extraArray = [];
+        document.querySelector('#addon-quantity').value = 0;
+        for (i=0; i<document.querySelectorAll('.custom-extra').length; i++) {
+          let quantity = $('.extra-quantity')[i].firstElementChild.innerHTML;
+          document.querySelector('#addon-quantity').value = parseInt(document.querySelector('#addon-quantity').value) + parseInt(quantity);
+          let extraName = $('.custom-extra')[i].innerHTML;
+          if (quantity != 0) {
+            extraArray.push(extraName)
+          }
+        }
+        console.log(extraArray);
+        document.querySelector('#addon-name').value = extraArray.join(", ");
+        document.querySelector('.addon-price').innerHTML = ` + $${parseInt(document.querySelector('#addon-quantity').value) * 20}`;
+  
+      });
 
 });
 

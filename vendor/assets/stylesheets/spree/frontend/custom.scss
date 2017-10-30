@@ -158,18 +158,14 @@ a:hover{
 #footer-top {
   height: 50px;
   margin-top: 25px;
-  background-color: #fff;
 }
 
 #footer-middle {
   height: 150px;
-  background-color: #fff;
 }
 
 #footer-bottom {
   height: 50px;
-  
-  background-color: #fff;
 
 }
 
@@ -490,12 +486,19 @@ a:hover{
     font-size: 20px;
     padding-top: 8px;
   }
-
 }
 
 .add-to-cart-orange:hover {
   cursor: pointer;
   background-color: #FA9786;
+}
+
+.add-to-cart-disabled {
+  background-color: #999;
+}
+
+.add-to-cart-disabled:hover {
+  background-color: #999;
 }
 
 
@@ -1184,11 +1187,33 @@ margin-bottom: 30px;
   background-color: #00B8ff;
 }
 
+.add-extra, .subtract-extra {
+  height: 40px;
+  width: 40px;
+  margin: 0 10px 0 0;
+  
+  background-color: #bbb;
+  color: white;
+  text-align: center;
+
+  border-radius: 40px;
+
+  transition: background-color .3s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subtract-extra {
+  background-color: #00B8ff;
+}
+
 .hover-effect {
   background-color: #00B7FF;
 }
 
-.hover-effect:hover, .subtract-juice:hover {
+.hover-effect:hover, .subtract-juice:hover, .subtract-extra:hover {
   cursor: pointer;
   background-color: #0063aa;
   transition: background-color .3s;
@@ -1200,7 +1225,17 @@ margin-bottom: 30px;
   padding: 0 10px;
 }
 
+.custom-extra {
+  flex: 1;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
 .juice-box-quantity {
+
+}
+
+.extra-quantity {
 
 }
 

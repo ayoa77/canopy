@@ -32,7 +32,7 @@
         <h6 class="product-section-title"><%= Spree.t(:price) %></h6>
         <div>
           <span class="price selling" itemprop="price">
-            <%= display_price(@product)[0..-4] %>
+            <%= display_price(@product)[0..-4] %><span class = "addon-price"></span>
           </span>
           <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
         </div>
@@ -87,9 +87,15 @@
           </div>
 
           <div class="col-xs-12">
-
-            <%= button_tag class: 'add-to-cart-orange click-me-animation', id: 'add-to-cart-button', type: :submit do %>
-            <%= Spree.t(:add_to_cart) %>
+            <% if @juices.nil? %>
+              <%= button_tag class: 'add-to-cart-orange click-me-animation', id: 'add-to-cart-button', type: :submit do %>
+              <%= Spree.t(:add_to_cart) %>
+              <% end %>
+            <% else %>
+            <!-- class: 'add-to-cart-orange click-me-animation', id: 'add-to-cart-button' -->
+              <%= button_tag class: 'add-to-cart-orange add-to-cart-disabled click-me-animation', id: 'add-to-cart-button', disabled: true, type: :submit do %>
+              <%= Spree.t(:add_to_cart) %>
+              <% end %>
             <% end %>
 
           </div>
