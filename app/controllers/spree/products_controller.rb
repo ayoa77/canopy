@@ -40,12 +40,12 @@ end
    end
 
     def show
+      @extras = Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Extras"})
       if @product == Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Build"}).first
         
         # @smoothies =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Smoothies"})
         @juices =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Juices"})
         # @teas =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Tea"})
-        @extras = Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Extras"})
       
       else
       
