@@ -1504,6 +1504,15 @@ margin-bottom: 30px;
   word-wrap: break-word;
 }
 
+.line-item-juice-names, .line-item-addon-names {
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.line-item-addon-names {
+  margin-bottom: 20px;
+}
+
 .cart-item-description:first-child p {
   margin-top: 10px;
 
@@ -1573,7 +1582,7 @@ margin-bottom: 30px;
 
 .label-line-items {
   font-size: 16px;
-  margin: 20px 0;
+  margin: 20px 0 0;
   .label-line-items-text {
     white-space: nowrap;
     overflow: hidden;
