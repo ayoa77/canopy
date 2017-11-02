@@ -17,15 +17,17 @@ Spree::OrdersController.class_eval do
     # 2,147,483,647 is crazy. See issue #2695.
     if quantity.between?(1, 1_000)
       begin
-        li = order.line_items.create(variant_id: variant.id, quantity: quantity, preference: preference, addon_quantity: addon_quantity, addon_names: addon_names, juice_names: juice_names, hidden: false)
+        li = order.line_items.create(variant_id: variant.id, quantity: quantity, old_quantity: quantity, preference: preference, addon_quantity: addon_quantity, addon_names: addon_names, juice_names: juice_names, hidden: false)
         order.item_count += quantity
         order.save
         if li.addon_quantity > 0 
           quantity.times do
             order.line_items.create(variant_id: addon_variant.id, quantity: addon_quantity, hidden: true)
           end 
-          order.update_totals         
         end
+        order.update_totals         
+        order.persist_totals
+
         # order.line_items.last.preference << preference
         # order.line_items.last.save
        

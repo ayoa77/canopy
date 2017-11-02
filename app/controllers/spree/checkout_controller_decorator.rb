@@ -46,7 +46,7 @@ Spree::CheckoutController.class_eval do
 
 def items_display(order)
   items_display = ""
-  addon_price = order.line_items.
+  addon_price = $addon_price
   order.line_items.each do |li|
     unless li.hidden == true
     items_display << li.name
@@ -66,7 +66,7 @@ def items_display(order)
       unless li.hidden == true
       items_display << li.name
       items_display << ' x ' + li.quantity.to_s
-      items_display << ' @ $' + li.price.to_s[0..-3] + '#'
+      items_display << ' @ $' + (li.price + $addon_price * li.addon_quantity).to_s[0..-3]  + '#'
       end
     end
       if items_display.length <= 200

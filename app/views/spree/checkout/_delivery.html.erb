@@ -38,12 +38,12 @@ and how to turn it off.  :D -->
           <%# ship_form.object.manifest.each do |item| %>
         
           <% current_order.line_items.each do |item| %>
+          <% unless item.hidden == true %>
           
           
           
           <!-- aj help : can we make odd numbered label-line-items have a color? -->
           <div class="row label-line-items">
-              <% unless item.hidden == true %>
 
             <div class="col-xs-2">
               <%= mini_image(item.variant) %>
@@ -68,11 +68,12 @@ and how to turn it off.  :D -->
             </div>
 
             <div class="col-xs-3 label-line-items-text">
-              <%= display_price(item.variant).to_s[0..-4] %>
+              $<%= (item.price+ $addon_price*item.addon_quantity).to_s[0..-3] %>
+              <%#= display_price(item.variant).to_s[0..-4] %>
             </div>
-            <% end %>
-
+            
           </div>
+          ƒ  <% end %>
           <% end %>
 
 
@@ -154,7 +155,7 @@ and how to turn it off.  :D -->
 
         <div class="form-group">
           <p class="checkout-shipping"><%= form.label Spree.t(:time_of_day) %><p>
-          <%= form.date_field :delivery_date, class:  'form-control required', min: Date.today + 3.days %>
+          <%= form.date_select :delivery_date, class:  'form-control required', order: [:month, :day], min: Date.today + 3.days,  %>
           <div class = 'nice-looking-radios'>
             <%= form.radio_button :time_of_day, 'before 1 pm', :checked => true %>
             <label for = "order_time_of_day_before_1_pm"><span><p><%=Spree.t(:before_1pm)%></p></span></label>

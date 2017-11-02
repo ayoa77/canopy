@@ -43,31 +43,31 @@
   <div class='center'>
 
      <div>
-         <%= link_to spree.product_path(@red_box) do %>
+         <%= link_to spree.product_path(@first) do %>
         <div class="vert-box red-box">
           <div class="box-pattern">
 
             <div class="box-picture">
-          <%= image_tag(@red_box.images.last.attachment_file_name) if @red_box.images.last.present?  %>
+          <%= image_tag(@first.images.last.attachment_file_name) if @first.images.last.present?  %>
 
             </div>
 
             <div class="box-information">
 
               <div class="box-name">
-                <p style="color: #F66"><%=@red_box.name %></p>
+                <p style="color: #F66"><%=@first.name %></p>
               </div>
 
               <div class = "box-description">
                 <p>
-                  <%=@red_box.description%>
+                  <%=@first.description%>
                 </p>
               </div>
 
               <div class="slider-btn-container">
                 <!-- <a href="#"> -->
                   <div class="ghost-button-alternate gba-red">
-                    <p> <!-- $<%#=@red_box.price.to_i%> --> 學到更多</p>
+                    <p> <!-- $<%#=@first.price.to_i%> --> 學到更多</p>
                   </div>
                 <!-- </a> -->
               </div>
@@ -81,32 +81,32 @@
 
 
       <div>
-          <%= link_to spree.product_path(@yellow_box) do %>
+          <%= link_to spree.product_path(@second) do %>
 
         <div class="vert-box yellow-box">
           <div class="box-pattern">
 
             <div class="box-picture">
-          <%= image_tag(@yellow_box.images.last.attachment_file_name) if @yellow_box.images.last.present?  %>
+          <%= image_tag(@second.images.last.attachment_file_name) if @second.images.last.present?  %>
 
             </div>
 
             <div class="box-information">
 
               <div class="box-name">
-                <p style="color: #FEFF3A"><%=@yellow_box.name%></p>
+                <p style="color: #FEFF3A"><%=@second.name%></p>
               </div>
 
               <div class = "box-description">
                 <p>
-                <%=@yellow_box.description%>
+                <%=@second.description%>
                 </p>
               </div>
 
               <div class="slider-btn-container">
                 <!--- <a href="#"> -->
                   <div class="ghost-button-alternate gba-yellow">
-                    <p> <!-- $<%#=@red_box.price.to_i%> --> 學到更多</p>
+                    <p> <!-- $<%#=@first.price.to_i%> --> 學到更多</p>
                   </div>
               <!--  </a> -->
               </div>
@@ -119,13 +119,13 @@
       </div>
 
       <div>
-                <%= link_to spree.product_path(@green_box) do %>
+                <%= link_to spree.product_path(@third) do %>
 
         <div class="vert-box green-box">
           <div class="box-pattern">
 
             <div class="box-picture">
-\          <%= image_tag(@green_box.images.last.attachment_file_name) if @green_box.images.last.present?  %>
+\          <%= image_tag(@third.images.last.attachment_file_name) if @third.images.last.present?  %>
 
             </div>
 
@@ -133,20 +133,20 @@
 
               <div class="box-name">
                 <p style="color: #39B54A"> 
-                <%=@green_box.name%></p>
+                <%=@third.name%></p>
               </div>
 
               <div class = "box-description">
                 <p>
        
-      <%= @green_box.description %>                </p>
+      <%= @third.description %>                </p>
               </div>
 
               <div class="slider-btn-container">
 
                 <!-- <a href="#"> -->
                   <div class="ghost-button-alternate gba-green">
-                    <p> <!-- $<%#=@red_box.price.to_i%> --> 學到更多</p>
+                    <p> <!-- $<%#=@first.price.to_i%> --> 學到更多</p>
                   </div>
                <!-- </a> -->
               </div>
@@ -161,26 +161,26 @@
 
       <div class="juice-box">
 
-      <%#= link_to spree.product_path(@red_box) do %>
+      <%#= link_to spree.product_path(@first) do %>
         <%= image_tag("bottle.png")%>
         <#% end %>
 
         <div class="juice">
 
-          <%#= link_to spree.product_path(@red_box) do %>
+          <%#= link_to spree.product_path(@first) do %>
           <p class="productName">
 
-            <%#=@red_box.name %>
+            <%#=@first.name %>
           </p>
           <#% end %>
 
           <p class="ingredients">
 
-              <%#=@red_box.description%>
+              <%#=@first.description%>
           </p>
 
           <p class="productPrice">
-              $<%#=@red_box.price.to_i%>
+              $<%#=@first.price.to_i%>
 
           </p>
 
@@ -204,32 +204,32 @@ the style on the first feature.  -->
     <div class="row">
       
       <div class = "col-md-4 visible-md visible-lg">
-          <%= link_to spree.product_path(@red_box) do %>
+          <%= link_to spree.product_path(@first) do %>
         <div class="vert-box red-box">
           <div class="box-pattern">
 
             <div class="box-picture">
-              <%= image_tag(@red_box.images.last.attachment_file_name) if @red_box.images.last.present?  %>
+              <%= image_tag(@first.images.last.attachment_file_name) if @first.images.last.present?  %>
 
             </div>
 
             <div class="box-information">
 
               <div class="box-name">
-                <p style="color: #F66"><%=@red_box.name%>
+                <p style="color: #F66"><%=@first.name%>
                   </p>
               </div>
 
               <div class = "box-description">
                 <p>
-              <%=@red_box.description%>
+              <%=@first.description%>
                 </p>
               </div>
               
               <div class="slider-btn-container">
                 <!-- <a href="#"> -->
                   <div class="ghost-button-alternate gba-red">
-                    <p> <!-- $<%#=@red_box.price.to_i%> --> 學到更多</p>
+                    <p> <!-- $<%#=@first.price.to_i%> --> 學到更多</p>
                   </div>
                 <!-- </a> -->
               </div>
@@ -244,31 +244,31 @@ the style on the first feature.  -->
       
       <div class = "col-md-4 visible-md visible-lg">
         
-        <%= link_to spree.product_path(@yellow_box) do %>
+        <%= link_to spree.product_path(@second) do %>
         <div class="vert-box yellow-box">
           <div class="box-pattern">
 
             <div class="box-picture">
-          <%= image_tag(@yellow_box.images.last.attachment_file_name) if @yellow_box.images.last.present?  %>
+          <%= image_tag(@second.images.last.attachment_file_name) if @second.images.last.present?  %>
 
             </div>
 
             <div class="box-information">
 
               <div class="box-name">
-                <p style="color: #FEFF3A"><%=@yellow_box.name%></p>
+                <p style="color: #FEFF3A"><%=@second.name%></p>
               </div>
 
               <div class = "box-description">
                 <p>
-                <%=@yellow_box.description%>
+                <%=@second.description%>
                 </p>
               </div>
 
               <div class="slider-btn-container">
                 <!-- <a href="#"> -->
                   <div class="ghost-button-alternate gba-yellow">
-                    <p> <!-- $<%#=@red_box.price.to_i%> --> 學到更多</p>
+                    <p> <!-- $<%#=@first.price.to_i%> --> 學到更多</p>
                   </div>
                 <!-- </a> -->
               </div>
@@ -282,30 +282,30 @@ the style on the first feature.  -->
       
       
       <div class = "col-md-4 visible-md visible-lg">
-          <%= link_to spree.product_path(@green_box) do %>
+          <%= link_to spree.product_path(@third) do %>
         <div class="vert-box green-box">
           <div class="box-pattern">
 
             <div class="box-picture">
-          <%= image_tag(@green_box.images.last.attachment_file_name) if @green_box.images.last.present?  %>
+          <%= image_tag(@third.images.last.attachment_file_name) if @third.images.last.present?  %>
             </div>
 
             <div class="box-information">
 
               <div class="box-name">
-                <p style="color: #39B54A"><%=@green_box.name%></p>
+                <p style="color: #39B54A"><%=@third.name%></p>
               </div>
 
               <div class = "box-description">
                 <p>
-                  <%=@green_box.description%>
+                  <%=@third.description%>
                 </p>
               </div>
 
               <div class="slider-btn-container">
                 <!-- <a href="#"> -->
                   <div class="ghost-button-alternate gba-green">
-                    <p> <!-- $<%#=@red_box.price.to_i%> --> 學到更多</p>
+                    <p> <!-- $<%#=@first.price.to_i%> --> 學到更多</p>
                   </div>
                 <!-- </a> -->
               </div>
@@ -337,7 +337,7 @@ the style on the first feature.  -->
     <!--
 
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 visible-md visible-lg">
-        <%#= link_to spree.product_path(@red_box) do %>
+        <%#= link_to spree.product_path(@first) do %>
 
         <div class="juice-box">
 
@@ -347,16 +347,16 @@ the style on the first feature.  -->
 
             <p class="productName">
 
-              <%#=@red_box.name %>
+              <%#=@first.name %>
             </p>
 
             <p class="ingredients">
 
-                <%#=@red_box.description%>
+                <%#=@first.description%>
             </p>
 
             <p class="productPrice">
-                $<%#=@red_box.price.to_i%>
+                $<%#=@first.price.to_i%>
 
             </p>
 
@@ -369,7 +369,7 @@ the style on the first feature.  -->
 
 
       <div class="col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
-        <%#= link_to spree.product_path(@yellow_box) do %>
+        <%#= link_to spree.product_path(@second) do %>
         <div class="juice-box">
 
           <%= image_tag("cup.png")%>
@@ -378,16 +378,16 @@ the style on the first feature.  -->
 
             <p class="productName">
 
-              <%#=@yellow_box.name %>
+              <%#=@second.name %>
             </p>
 
             <p class="ingredients">
 
-                <%#=@yellow_box.description%>
+                <%#=@second.description%>
             </p>
 
             <p class="productPrice">
-                $<%#=@yellow_box.price.to_i%>
+                $<%#=@second.price.to_i%>
 
             </p>
 
@@ -397,7 +397,7 @@ the style on the first feature.  -->
       </div>
 
       <div class="col-md-4 col-lg-3 visible-md visible-lg">
-        <%#= link_to spree.product_path(@green_box) do %>
+        <%#= link_to spree.product_path(@third) do %>
 
         <div class="juice-box">
 
@@ -407,16 +407,16 @@ the style on the first feature.  -->
 
             <p class="productName">
 
-              <%#=@green_box.name %>
+              <%#=@third.name %>
             </p>
 
             <p class="ingredients">
 
-                <%#=@green_box.description%>
+                <%#=@third.description%>
             </p>
 
             <p class="productPrice">
-                $<$%#=@green_box.price.to_i%>
+                $<$%#=@third.price.to_i%>
 
             </p>
 

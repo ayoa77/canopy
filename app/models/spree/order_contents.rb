@@ -24,8 +24,31 @@ module Spree
     end
 
     def update_cart(params)
+      addon_variant = Spree::Product.find_by(description2: "addon").master
       if order.update_attributes(filter_order_items(params))
+          order.line_items.each do |li| 
+          difference = li.quantity - li.old_quantity 
+          if difference < 0 
+            order.line_items.where(hidden: true && quantity: li.addon_quantity).delete(difference*-1)
+          elsif difference > 0
+            difference.times do
+              order.line_items.create(variant_id: addon_variant.id, quantity: li.addon_quantity, hidden: true)
+            end
+          end
+        end
+
+        # order.update_totals pg_upgrade \
+  #  -d /usr/local/var/postgres \
+  #  -D /usr/local/var/postgres10 \
+  #  -b /usr/local/Cellar/postgresql/9.6.3/bin/ \
+  #  -B /usr/local/Cellar/postgresql/10.0/bin/ \
+  #  -v
+  #  sudo chown -R `ayoamadi` /usr/local/var/postgres
+        # order.persist_totals
+
+
         order.line_items = order.line_items.select { |li| li.quantity > 0 }
+
         # Update totals, then check if the order is eligible for any cart promotions.
         # If we do not update first, then the item total will be wrong and ItemTotal
         # promotion rules would not be triggered.
@@ -63,7 +86,10 @@ module Spree
       line_item
     end
 
-    def filter_order_items(params)
+    def 
+      
+      
+      (params)
       return params if params[:line_items_attributes].nil? || params[:line_items_attributes][:id]
 
       line_item_ids = order.line_items.pluck(:id)
@@ -110,6 +136,7 @@ module Spree
       line_item = grab_line_item_by_variant(variant, true, options)
       line_item.quantity -= quantity
       line_item.target_shipment= options[:shipment]
+      byebug
 
       if line_item.quantity.zero?
         order.line_items.destroy(line_item)
