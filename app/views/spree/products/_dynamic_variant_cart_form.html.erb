@@ -78,9 +78,9 @@
 
               <!-- change these first three to hidden_field_tag to hide them  -->
 
-              <%= number_field_tag :addon_quantity, 0, id:"addon-quantity", class: 'title form-control col-xs-6', min: 0 %>
-              <%= text_field_tag :addon_names, "", id:"addon-name", class: 'title form-control col-xs-6', placeholder: "addon_names" %>
-              <%= text_field_tag :juice_names, "", id:"juice-name", class: 'title form-control col-xs-6', placeholder: "juice_names" %>
+              <%= hidden_field_tag :addon_quantity, 0, id:"addon-quantity", class: 'title form-control col-xs-6', min: 0 %>
+              <%= hidden_field_tag :addon_names, "", id:"addon-name", class: 'title form-control col-xs-6', placeholder: "addon_names" %>
+              <%= hidden_field_tag :juice_names, "", id:"juice-name", class: 'title form-control col-xs-6', placeholder: "juice_names" %>
               <%= text_area_tag :preference, "", id:"preference", class: 'title extra-information col-xs-6', placeholder: Spree.t(:add_any_allergies_or_special_request_for_this_box) %>
 
             </div>

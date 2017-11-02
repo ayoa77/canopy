@@ -38,10 +38,14 @@ and how to turn it off.  :D -->
           <%# ship_form.object.manifest.each do |item| %>
         
           <% current_order.line_items.each do |item| %>
+<<<<<<< HEAD
           <% unless item.hidden == true %>
           
           
           
+=======
+            <% unless item.hidden == true %>
+>>>>>>> 947e788d505f5dbee2f2895ec0b181ecfaae364e
           <!-- aj help : can we make odd numbered label-line-items have a color? -->
           <div class="row label-line-items">
 
@@ -52,15 +56,13 @@ and how to turn it off.  :D -->
             <!--Nathan help please! I can't figure out what's going on with the line items here -->
             <div class="col-xs-5 label-line-items-text">
               <div class="cart-item-description">
+
                 <h4><%= item.variant.name %> <br /></h4>
                   <p class="beautiful-text-hierarchy nathan beautify">
                     <%= item.preference %>
                   </p>
-              </div>
-            <%#  if item.variant.options_text.length > 1 %>
-            <!-- + <%#= item.variant.options_text %> -->
-              <%#end%>
 
+              </div>
             </div>
 
             <div class="col-xs-2 label-line-items-text">
@@ -73,7 +75,24 @@ and how to turn it off.  :D -->
             </div>
             
           </div>
-          ƒ  <% end %>
+          
+          <div class='row'>
+
+            <div class="col-xs-10 col-xs-offset-2">
+
+              <p class="line-item-juice-names">
+                <%= item.juice_names %>
+              </p>
+              <p class="line-item-addon-names">
+                <%= item.addon_names %>
+              </p>
+
+            </div>
+
+          </div>
+
+         
+            <% end %>
           <% end %>
 
 

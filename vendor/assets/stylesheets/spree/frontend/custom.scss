@@ -662,7 +662,7 @@ a:hover{
 
   }
   .big-picture-nutrition{
-    background-image: image-url('/images/nutrition.jpg');
+    background-image: image-url("/images/desserts.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1359,7 +1359,7 @@ margin-bottom: 30px;
 .extra-information {
   height: 120px;
   width: 100%;
-  color: #B3D57C;
+  color: #595857;
   border: 1px solid #B3D57C;
   border-radius: 0px;
 }
@@ -1504,6 +1504,15 @@ margin-bottom: 30px;
   word-wrap: break-word;
 }
 
+.line-item-juice-names, .line-item-addon-names {
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.line-item-addon-names {
+  margin-bottom: 20px;
+}
+
 .cart-item-description:first-child p {
   margin-top: 10px;
 
@@ -1573,7 +1582,7 @@ margin-bottom: 30px;
 
 .label-line-items {
   font-size: 16px;
-  margin: 20px 0;
+  margin: 20px 0 0;
   .label-line-items-text {
     white-space: nowrap;
     overflow: hidden;
