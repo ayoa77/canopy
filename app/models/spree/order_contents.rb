@@ -24,18 +24,44 @@ module Spree
     end
 
     def update_cart(params)
+      difference = 0
       addon_variant = Spree::Product.find_by(description2: "addon").master
       if order.update_attributes(filter_order_items(params))
-          order.line_items.each do |li| 
-          difference = li.quantity - li.old_quantity 
-          if difference < 0 
-            order.line_items.where(hidden: true && quantity: li.addon_quantity).delete(difference*-1)
-          elsif difference > 0
+        order.line_items.where(hidden: false).each do |quants|
+          if quants.quantity != quants.old_quantity
+            difference = quants.quantity - quants.old_quantity 
+            case 
+          when difference < 0
+             order.line_items.where(hidden: true, quantity: quants.addon_quantity).limit(difference.abs).update_all(quantity: 0)
+             quants.quantity = quants.old_quantity 
+             quants.save!
+          when difference > 0 
             difference.times do
-              order.line_items.create(variant_id: addon_variant.id, quantity: li.addon_quantity, hidden: true)
+              order.line_items.create(variant_id: addon_variant.id, quantity: quants.addon_quantity, hidden: true)
             end
+             quants.old_quantity = quants.quantity 
+             quants.save!
           end
+          order.save
         end
+      end
+
+
+         order.line_items = order.line_items.select { |li| li.quantity > 0 }
+      #     order.line_items.each do |li| 
+      #     difference = li.quantity - li.old_quantity if li.variant != addon_variant
+      #     if difference < 0 
+      #       order.line_items.where(hidden: true, quantity: li.addon_quantity).limit(difference.abs).destroy_all
+      #     elsif difference > 0
+      #       difference.times do
+      #         order.line_items.create(variant_id: addon_variant.id, quantity: li.addon_quantity, hidden: true)
+      #       end
+      #     end
+      #   if li.quantity.zero?
+      # order.line_items.destroy(li)
+      #   end
+
+      #   end
 
         # order.update_totals pg_upgrade \
   #  -d /usr/local/var/postgres \
@@ -47,12 +73,13 @@ module Spree
         # order.persist_totals
 
 
-        order.line_items = order.line_items.select { |li| li.quantity > 0 }
+        # order.line_items = order.line_items.select { |li| li.quantity > 0 }
 
         # Update totals, then check if the order is eligible for any cart promotions.
         # If we do not update first, then the item total will be wrong and ItemTotal
         # promotion rules would not be triggered.
         persist_totals
+        order.update_totals         
         PromotionHandler::Cart.new(order).activate
         order.ensure_updated_shipments
         order.payments.store_credits.checkout.destroy_all
@@ -60,8 +87,8 @@ module Spree
         true
       else
         false
-      end
     end
+  end
 
     private
 
@@ -86,10 +113,7 @@ module Spree
       line_item
     end
 
-    def 
-      
-      
-      (params)
+    def filter_order_items(params)
       return params if params[:line_items_attributes].nil? || params[:line_items_attributes][:id]
 
       line_item_ids = order.line_items.pluck(:id)
@@ -136,7 +160,6 @@ module Spree
       line_item = grab_line_item_by_variant(variant, true, options)
       line_item.quantity -= quantity
       line_item.target_shipment= options[:shipment]
-      byebug
 
       if line_item.quantity.zero?
         order.line_items.destroy(line_item)

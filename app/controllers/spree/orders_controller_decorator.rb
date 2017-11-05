@@ -22,7 +22,7 @@ Spree::OrdersController.class_eval do
         order.save
         if li.addon_quantity > 0 
           quantity.times do
-            order.line_items.create(variant_id: addon_variant.id, quantity: addon_quantity, hidden: true)
+            order.line_items.create(variant_id: addon_variant.id, quantity: addon_quantity, hidden: true, old_quantity: addon_quantity)
           end 
         end
         order.update_totals         

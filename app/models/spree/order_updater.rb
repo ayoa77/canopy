@@ -91,13 +91,15 @@ module Spree
     end
 
     def update_item_count
-      addons = 0
-        order.line_items.each do |li|
-            if li.hidden == true
-          addons += li.quantity
-            end
-          end
-        regular_items = quantity - addons
+      # addons = 0
+      #   order.line_items.where do |li|
+      #       if li.hidden == true
+      #     addons += li.quantity
+      #       end
+      #     end
+      #   regular_items = quantity - addons
+      regular_items = order.line_items.where(hidden: false).pluck(:quantity).reduce(0, :+)
+
       order.item_count = regular_items
     end
 

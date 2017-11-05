@@ -40,6 +40,7 @@ end
    end
 
     def show
+      @boxes = Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Boxes"})
       @extras = Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Extras"})
       if @product == Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Build"}).first
         
