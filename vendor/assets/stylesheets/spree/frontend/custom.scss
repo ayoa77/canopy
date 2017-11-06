@@ -1906,6 +1906,8 @@ margin-bottom: 30px;
   background: #fff;
   margin: 20px;
   position: relative;
+
+  border: 1px solid #00B7FF;
   
   overflow: hidden;
 }
@@ -1918,10 +1920,6 @@ margin-bottom: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  img {
-    
-  }
 }
 
 .card-right {
@@ -1940,7 +1938,6 @@ margin-bottom: 30px;
 
 .card-juice {
   height: 200px;
-  background: red;
   display: flex;
   padding: 0 10px;
   
@@ -1950,7 +1947,7 @@ margin-bottom: 30px;
 }
 
 .card-nutrition {
-  height: 200px;
+  height: 201px;
   width: 150px;
   background: lightblue;
   display: flex;
@@ -1962,9 +1959,46 @@ margin-bottom: 30px;
 
 .card-juice-name {
   display: block;
-  height: 75px;
-  font-size: 20px;
+  position: relative;
+  height: 65px;
+  font-size: 18px;
   border-bottom: 1px solid #ddd;
+  
+  span {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.card-juice-ingredients {
+  color: #999;
+}
+
+.card-nutrition-info {
+  width: 100%;
+  text-align: left;
+  p {
+    padding: 0;
+  }
+
+  span {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+.card-nutrition-info:first-child {
+  margin-top: 10px;
+}
+
+.card-align-left {
+  float: left;
+  margin: 0 0 0 10px;
+}
+
+.card-align-right {
+  float: right;
+  margin: 0 10px 0 0;
 }
 
 
