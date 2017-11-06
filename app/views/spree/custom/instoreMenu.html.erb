@@ -1,6 +1,6 @@
 <!-- /instoremenu -->
 
-<!-- aj help - read the tags for additional information -->
+<%# @juices.each do |j| %>
 
 <div class="container-fluid">
   <div class="row">
@@ -16,217 +16,30 @@
   </div>
 </div>
 
-<div class="col-xs-12 photo-gallery">
+<div class="juice-container">
 
-  <div class="menu-picture">
-    <div class="menu-picture-centering">
-      <%= image_tag @custom.photo5.url if @custom.photo5.url %>
+<% @juices.each do |j| %>
+
+  <div class="card">
+
+    <div class="card-left">
+      <%= image_tag(j.images.last.attachment_file_name) %>
     </div>
-  </div>
 
-  <div class="menu-picture">
-    <div class="menu-picture-centering">
-      <%= image_tag @custom.photo6.url if @custom.photo6.url %>
-    </div>
-  </div>
-
-  <div class="menu-picture">
-    <div class="menu-picture-centering">
-      <%= image_tag @custom.photo7.url if @custom.photo7.url %>
-    </div>
-  </div>
-
-</div>
-
-<div class="container">
-  <div class="row">
-
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
-    <!-- This Takes care of category selectors -->
-      <p class="category-for-menu">
-        - <%= Spree.t(:juice) %> -
-      </p>
-
-    </div>
-    <% if @juices.first %>
-    <% @juices.each do |j| %>
-        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 menu-spacer">
-        <!-- This takes care of each menu item and it's ingredients -->
-          <p class="menu-item">
-            <%= j.name %>
-          </p>
-          <p class="menu-item-ingredients">
-            <%= j.description %>
-          </p>
+      <div class="card-right">
+        <div class="card-juice">
+          <p class="card-juice-name"><%= j.name %></p>
+          <p>ingredi ingredi ingredi ingredi <%#= j.ingredients %></p>
+          <p class="card-juice-info" style="cursor: pointer; text-align: center;">營養成分</p>
         </div>
-        <% end %>
-      <% else %>
 
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 menu-spacer">
-    <!-- This takes care of each menu item and it's ingredients -->
-      <p class="menu-item">
-        Menu Item 1
-      </p>
-      <p class="menu-item-ingredients">
-        Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
-      </p>
-    </div>
-      <% end %>
-
-
-  </div>
-<!-- </div> -->
-
-<!-- <div class="container"> -->
-  <div class="row">
-
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
-    <!-- This Takes care of category selectors -->
-      <p class="category-for-menu">
-        - <%= Spree.t(:smoothie) %> -
-      </p>
-
-    </div>
-    <% if @smoothies.first %>
-    <% @smoothies.each do |s| %>
-        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 menu-spacer">
-        <!-- This takes care of each menu item and it's ingredients -->
-          <p class="menu-item">
-            <%= s.name %>
-          </p>
-          <p class="menu-item-ingredients">
-            <%= s.description %>
-          </p>
+        <div class="card-nutrition">
+          <p class="card-back" style="cursor: pointer;">back</p>
         </div>
-        <% end %>
-      <% else %>
 
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 menu-spacer">
-    <!-- This takes care of each menu item and it's ingredients -->
-      <p class="menu-item">
-        Menu Item 1
-      </p>
-      <p class="menu-item-ingredients">
-        Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
-      </p>
-    </div>
-        <% end %>
-  </div>
-<!-- </div> -->
-
-<!-- <div class="container"> -->
-  <div class="row">
-
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
-    <!-- This Takes care of category selectors -->
-      <p class="category-for-menu">
-        - <%= Spree.t(:tea) %> -
-      </p>
-
+      </div>
     </div>
 
-    <% if @teas.first %>
-    <% @teas.each do |t| %>
-        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 menu-spacer">
-        <!-- This takes care of each menu item and it's ingredients -->
-          <p class="menu-item">
-            <%= t.name %>
-          </p>
-          <p class="menu-item-ingredients">
-            <%= t.description %>
-          </p>
-        </div>
-        <% end %>
-      <% else %>
+<% end %>
 
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 menu-spacer">
-    <!-- This takes care of each menu item and it's ingredients -->
-      <p class="menu-item">
-        Menu Item 1
-      </p>
-      <p class="menu-item-ingredients">
-        Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
-      </p>
-    </div>
-        <% end %>
-
-  </div>
-<!-- </div> -->
-
-<!-- <div class="container"> -->
-  <div class="row">
-
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
-    <!-- This Takes care of category selectors -->
-      <p class="category-for-menu">
-        - <%= Spree.t(:food) %> -
-      </p>
-
-    </div>
-
-    <% if @food.first %>
-    <% @food.each do |f| %>
-        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 menu-spacer">
-        <!-- This takes care of each menu item and it's ingredients -->
-          <p class="menu-item">
-            <%= f.name %>
-          </p>
-          <p class="menu-item-ingredients">
-            <%= f.description %>
-          </p>
-        </div>
-        <% end %>
-      <% else %>
-
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 menu-spacer">
-    <!-- This takes care of each menu item and it's ingredients -->
-      <p class="menu-item">
-        Menu Item 1
-      </p>
-      <p class="menu-item-ingredients">
-        Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
-      </p>
-    </div>
-        <% end %>
-
-  </div>
-<!-- </div> -->
-
-<!-- <div class="container"> -->
-  <div class="row">
-
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
-    <!-- This Takes care of category selectors -->
-      <p class="category-for-menu">
-        - <%= Spree.t(:dessert) %> -
-      </p>
-
-    </div>
-
-    <% if @desserts.first %>
-    <% @desserts.each do |d| %>
-        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 menu-spacer">
-        <!-- This takes care of each menu item and it's ingredients -->
-          <p class="menu-item">
-            <%= d.name %>
-          </p>
-          <p class="menu-item-ingredients">
-            <%= d.description %>
-          </p>
-        </div>
-        <% end %>
-      <% else %>
-
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 menu-spacer">
-    <!-- This takes care of each menu item and it's ingredients -->
-      <p class="menu-item">
-        Menu Item 1
-      </p>
-      <p class="menu-item-ingredients">
-        Guava, Apples, Grapes, Child Tears, Watermelon, Delicious Foods
-      </p>
-    </div>
-        <% end %>
-
-  </div>
 </div>
