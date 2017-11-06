@@ -307,6 +307,14 @@ $('form#update-cart a.submit').click(function() {
   
       });
 
+      $('.card-juice-info').click(function() {
+        $(this).parents('.card-right').css('top', '-200px');
+      })
+
+      $('.card-back').click(function() {
+        $(this).parents('.card-right').css('top', '0px');
+      })
+
 });
 
 function animateScroll() {
