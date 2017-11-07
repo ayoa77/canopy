@@ -315,6 +315,15 @@ $('form#update-cart a.submit').click(function() {
         $(this).parents('.card-right').css('top', '0px');
       })
 
+  $('#datepicker').datepicker({
+    startDate: '+2d',
+    minDate: '+2d',
+    todayHighlight: false,
+    format: "yyyy-mm-dd",
+    maxViewMode: 3,
+    language: "zh-TW",
+    daysOfWeekDisabled: "0"
+    });
 });
 
 function animateScroll() {
