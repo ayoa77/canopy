@@ -59,7 +59,7 @@
               </div>
 
               <div class = "box-description">
-                <p>
+                <p style="font-size: 18px;">
                   <%=@first.description%>
                 </p>
               </div>
@@ -98,7 +98,7 @@
               </div>
 
               <div class = "box-description">
-                <p>
+                <p style="font-size: 18px;">
                 <%=@second.description%>
                 </p>
               </div>
@@ -137,9 +137,9 @@
               </div>
 
               <div class = "box-description">
-                <p>
-       
-      <%= @third.description %>                </p>
+                <p style="font-size: 18px;">
+                  <%= @third.description %>
+                </p>
               </div>
 
               <div class="slider-btn-container">
@@ -221,7 +221,7 @@ the style on the first feature.  -->
               </div>
 
               <div class = "box-description">
-                <p>
+                <p style="font-size: 18px;">
               <%=@first.description%>
                 </p>
               </div>
@@ -260,7 +260,7 @@ the style on the first feature.  -->
               </div>
 
               <div class = "box-description">
-                <p>
+                <p style="font-size: 18px;">
                 <%=@second.description%>
                 </p>
               </div>
@@ -297,7 +297,7 @@ the style on the first feature.  -->
               </div>
 
               <div class = "box-description">
-                <p>
+                <p style="font-size: 18px;">
                   <%=@third.description%>
                 </p>
               </div>
@@ -334,146 +334,6 @@ the style on the first feature.  -->
    </div>
 </div>
 
-    <!--
-
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 visible-md visible-lg">
-        <%#= link_to spree.product_path(@first) do %>
-
-        <div class="juice-box">
-
-          <%= image_tag("bottle.png")%>
-
-          <div class="juice">
-
-            <p class="productName">
-
-              <%#=@first.name %>
-            </p>
-
-            <p class="ingredients">
-
-                <%#=@first.description%>
-            </p>
-
-            <p class="productPrice">
-                $<%#=@first.price.to_i%>
-
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-      <%# end %>
-
-
-      <div class="col-sm-6 col-md-4 col-lg-3 visible-sm visible-md visible-lg">
-        <%#= link_to spree.product_path(@second) do %>
-        <div class="juice-box">
-
-          <%= image_tag("cup.png")%>
-
-          <div class="smoothie">
-
-            <p class="productName">
-
-              <%#=@second.name %>
-            </p>
-
-            <p class="ingredients">
-
-                <%#=@second.description%>
-            </p>
-
-            <p class="productPrice">
-                $<%#=@second.price.to_i%>
-
-            </p>
-
-          </div>
-        </div>
-        <%#end%>
-      </div>
-
-      <div class="col-md-4 col-lg-3 visible-md visible-lg">
-        <%#= link_to spree.product_path(@third) do %>
-
-        <div class="juice-box">
-
-          <%= image_tag("glass.png")%>
-
-          <div class="tea">
-
-            <p class="productName">
-
-              <%#=@third.name %>
-            </p>
-
-            <p class="ingredients">
-
-                <%#=@third.description%>
-            </p>
-
-            <p class="productPrice">
-                $<$%#=@third.price.to_i%>
-
-            </p>
-
-          </div>
-        </div>
-        <%#end%>
-      </div>
-
-      <div class="col-lg-3 visible-lg">
-        <%#= link_to spree.product_path(@featured_four) do %>
-
-        <div class="juice-box">
-
-          <%= image_tag("bottle.png")%>
-
-          <div class="juice">
-
-            <p class="productName">
-
-              <%#=@featured_four%>
-            </p>
-
-            <p class="ingredients">
-
-                <%#=@featured_four.description%>
-            </p>
-
-            <p class="productPrice">
-                $<%#=@featured_four.price.to_i%>
-
-            </p>
-
-          </div>
-        </div>
-        <%#end%>
-
-      </div>
-    </div>
-  </div>
-</div>
-    <%#else%>
-    <div class="row">
-      <a style="display: block" href="/admin">
-        <div class="ghost-button-blue">
-          <p>
-            Add four products or more here
-          </p>
-        </div>
-      </a>
-
-    </div>
-    <%#end%>
-  </div>
-</div>
-
--->
-
 <div id="big-links">
     <div class="row no-gutters">
 
@@ -504,10 +364,10 @@ the style on the first feature.  -->
         <div class="big-text-box">
           <span class="big-text">
             <p>
-              Nutrition
+              In-Store Menu / Nutrition
             </p>
           </span>
-          <a style="display: block" href="/nutrition">
+          <a style="display: block" href="/instore-menu">
             <div class="ghost-button-pink">
               <p>
                 <%= Spree.t(:nutrition)%>
