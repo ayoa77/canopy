@@ -6,10 +6,11 @@ def about
   @custom = Spree::Custom.first
 end
 
-def instoreMenu
+def menu
   @custom = Spree::Custom.first
   @smoothies =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Smoothies"})
-  @juices =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Juice"})
+  @juices =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Juices"})
+  @delivery =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Delivery"})
   @teas =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Tea"})
   @food =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Food"})
   @desserts =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Dessert"})

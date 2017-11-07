@@ -12,7 +12,7 @@
       <!-- <div class="product-holder-image"> -->
 
 
-        <% if @juices.nil? %>
+        <% if @delivery.nil? %>
 
         <div class="col-md-6 flex-column">
           <div class="product-holder-image">
@@ -23,6 +23,33 @@
           </div>
 
           <!-- Add-Ons -->
+                  <div class="col-xs-12">
+                    <p class="category-for-menu" style="padding-top: 50px;">
+                      <%= Spree.t(:select_extras)%>
+                    </p>
+                  </div>
+
+                  <% @extras.each do |e| %>
+
+                    <div class="col-xs-12 col-sm-6 custom-box-container">
+                      <div class="add-extra hover-effect">
+                        +
+                      </div>
+
+                      <div class="subtract-extra">
+                        -
+                      </div>
+
+                      <div class="extra-quantity"><span class="number">0</span> x</div>
+
+                      <div class="custom-extra">
+                        <%= e.name %>
+                      </div>
+
+                    </div>
+
+                    <% end %>
+
 
         </div>
 
@@ -66,10 +93,10 @@
         <!-- Add-Ons -->
 
         <p class="category-for-menu" style="padding-top: 50px;">
-          Select Juices <span>(Select 6)</span>
+          <%= Spree.t(:select_juices) %> <span><%=Spree.t(:select_six)%></span>
         </p>
 
-        <% @juices.each do |j| %>
+        <% @delivery.each do |d| %>
 
           <div class="col-xs-12 col-sm-6 custom-box-container">
             <div class="add-juice hover-effect">
@@ -82,14 +109,14 @@
 
             <div class="juice-box-quantity">0 x</div>
 
-            <div class="custom-box-juice"><%= j.name %></div>
+            <div class="custom-box-juice"><%= d.name %></div>
 
           </div>
 
         <% end %>
         <div class="col-xs-12">
           <p class="category-for-menu" style="padding-top: 50px;">
-            Select Extras
+            <%= Spree.t(:select_extras)%>
           </p>
         </div>
 

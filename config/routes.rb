@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/instore' => 'spree/products#instore'
   get '/shop' => 'spree/products#index'
   get '/about' => 'spree/custom#about', as: :about
-  get '/instore-menu' => 'spree/custom#instoreMenu', as: :menu
+  get '/menu' => 'spree/custom#menu', as: :menu
   get '/nutrition' => 'spree/custom#nutrition', as: :nutrition
   get '/events' =>  'spree/events#index', as: :events
 
