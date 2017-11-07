@@ -1907,7 +1907,7 @@ margin-bottom: 30px;
   margin: 20px;
   position: relative;
 
-  border: 1px solid #00B7FF;
+  // border: 1px solid #00B7FF;
   
   overflow: hidden;
 }
@@ -1916,10 +1916,16 @@ margin-bottom: 30px;
   height: 100%;
   width: 50%;
   position: absolute;
+  overflow: hidden;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
 }
 
 .card-right {
@@ -1946,10 +1952,13 @@ margin-bottom: 30px;
  
 }
 
+.card-juice-info, .card-back {
+  color: #ddd;
+}
+
 .card-nutrition {
   height: 201px;
   width: 150px;
-  background: lightblue;
   display: flex;
   
   flex-direction: column;
@@ -1977,6 +1986,7 @@ margin-bottom: 30px;
 .card-nutrition-info {
   width: 100%;
   text-align: left;
+  border-bottom: 1px solid #ddd;
   p {
     padding: 0;
   }
@@ -1999,6 +2009,18 @@ margin-bottom: 30px;
 .card-align-right {
   float: right;
   margin: 0 10px 0 0;
+}
+
+.card-back:hover, .card-juice-info:hover {
+  color: #00B7FF;
+}
+
+.card-nutrition-border {
+  width: 100%;
+  border-bottom: 1px solid;
+
+  position: absolute;
+  bottom: 20px;
 }
 
 
@@ -2103,6 +2125,10 @@ margin-bottom: 30px;
 
   .center-single-picture {
     height: 50vw;
+  }
+
+  .card {
+    margin: 20px auto;
   }
 
 }
@@ -2258,5 +2284,14 @@ margin-bottom: 30px;
 
 }
 
-@media screen and (min-width: 1200px) {}
+@media screen and (max-width: 1024px) {
+  .juice-container {
+    width: 100%;
+  }
+
+  .card {
+    margin: 20px auto;
+  }
+
+}
 @media screen and (min-width: 1700px) {}

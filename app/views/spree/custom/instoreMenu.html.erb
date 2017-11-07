@@ -35,48 +35,50 @@
 
         <div class="card-nutrition">
           <div class="card-nutrition-info"> 
-            <p class="card-align-left">Calories </p>
+            <p class="card-align-left"> <%= Spree.t(:calories) %> </p>
             <p class="card-align-right"><%= j.calories %></p>
             <div style="clear: both;"></div>
           </div>
 
           <div class="card-nutrition-info"> 
-            <p class="card-align-left">Protein </p>
+            <p class="card-align-left"> <%= Spree.t(:protein) %> </p>
             <p class="card-align-right"><%= j.protein %></p>
             <div style="clear: both;"></div>
           </div>
           
           <div class="card-nutrition-info"> 
-            <p class="card-align-left">Fat </p>
+            <p class="card-align-left"> <%= Spree.t(:fat) %> </p>
             <p class="card-align-right"><%= j.fat %></p>
             <div style="clear: both;"></div>
           </div>
 
           <div class="card-nutrition-info"> 
-            <p class="card-align-left">Sugar </p>
+            <p class="card-align-left"> <%= Spree.t(:sugar) %> </p>
             <p class="card-align-right"><%= j.sugar %></p>
             <div style="clear: both;"></div>
           </div>
 
           <div class="card-nutrition-info"> 
-            <p class="card-align-left">Fiber </p>
+            <p class="card-align-left"> <%= Spree.t(:fiber) %> </p>
             <p class="card-align-right"><%= j.fiber %></p>
             <div style="clear: both;"></div>
           </div>
 
           <div class="card-nutrition-info"> 
-            <p class="card-align-left">Sodium </p>
+            <p class="card-align-left"> <%= Spree.t(:sodium) %> </p>
             <p class="card-align-right"><%= j.sodium %></p>
             <div style="clear: both;"></div>
           </div>
 
-          <div class="card-nutrition-info"> 
-            <p class="card-align-left">Carbs </p>
+          <div class="card-nutrition-info" style="border-bottom: 0px;"> 
+            <p class="card-align-left"> <%= Spree.t(:carbs) %> </p>
             <p class="card-align-right"><%= j.carbs %></p>
             <div style="clear: both;"></div>
           </div>
 
-          <p class="card-back" style="cursor: pointer;">back</p>
+         <!--  <div class = "card-nutrition-border"></div> -->
+
+          <p class="card-back" style="cursor: pointer; color: #">back</p>
         </div>
 
       </div>
