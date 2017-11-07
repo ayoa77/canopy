@@ -1845,6 +1845,12 @@ margin-bottom: 30px;
   text-align: left;
   font-weight: 700;
   padding-bottom: 10px;
+
+  width: 90%;
+  max-width: 1360px;
+  margin: 0 auto;
+
+  display: flex;
 }
 
 .category-for-menu span {
@@ -1891,7 +1897,7 @@ margin-bottom: 30px;
 
 // -=-=-=-=-=- Fixes For In-Store Menu -=-=-=-=-=-
 
-.juice-container {
+.juice-container, .deliverable-container, .smoothie-container, .tea-container, .food-container {
   width: 90%;
   max-width: 1360px;
   margin: 0 auto;
