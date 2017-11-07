@@ -38,14 +38,7 @@ and how to turn it off.  :D -->
           <%# ship_form.object.manifest.each do |item| %>
         
           <% current_order.line_items.each do |item| %>
-<<<<<<< HEAD
-          <% unless item.hidden == true %>
-          
-          
-          
-=======
             <% unless item.hidden == true %>
->>>>>>> 947e788d505f5dbee2f2895ec0b181ecfaae364e
           <!-- aj help : can we make odd numbered label-line-items have a color? -->
           <div class="row label-line-items">
 
@@ -174,7 +167,7 @@ and how to turn it off.  :D -->
 
         <div class="form-group">
           <p class="checkout-shipping"><%= form.label Spree.t(:time_of_day) %><p>
-          <%= form.date_select :delivery_date, class:  'form-control required', order: [:month, :day], min: Date.today + 3.days,  %>
+          <%= form.date_select :delivery_date, class:  'form-control required', order: [:month, :day], min: Date.today + 3.days  %>
           <div class = 'nice-looking-radios'>
             <%= form.radio_button :time_of_day, 'before 1 pm', :checked => true %>
             <label for = "order_time_of_day_before_1_pm"><span><p><%=Spree.t(:before_1pm)%></p></span></label>
