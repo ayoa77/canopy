@@ -39,8 +39,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-# gem for bootstrap date picker
-gem 'bootstrap-datepicker-rails'
 
 # Use this gem to connect with AllPAy
 gem 'active_merchant_allpay', github: 'imgarylai/active_merchant_allpay'
