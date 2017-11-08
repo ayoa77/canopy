@@ -16,9 +16,9 @@
   </div>
 </div>
 
-<div class="category-for-menu instore">- <%= Spree.t(:Delivery) %> - </div>
+<div class="category-for-menu instore">- <%= Spree.t(:delivery) %> - </div>
 <div class="deliverable-container">
-  <%#= render partial: 'spree/custom/productBuilder', locals: { products: @delivery, taxon: @taxon } %>
+  <%= render partial: 'spree/custom/productBuilder', locals: { products: @delivery, taxon: @taxon } %>
 </div>
 
 <div class="category-for-menu instore">- <%= Spree.t(:juice) %> - </div>
