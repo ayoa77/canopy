@@ -271,7 +271,9 @@ module Spree
       taxons.joins(:taxonomy).find_by(spree_taxonomies: { name: Spree.t(:taxonomy_categories_name) })
     end
 
-
+    def addon_price
+      Spree::Product.find_by(description2: "addon").price || 20
+    end
 
     private
 

@@ -46,13 +46,13 @@ Spree::CheckoutController.class_eval do
 
 def items_display(order)
   items_display = ""
-  addon_price = $addon_price
+  addon_price = Spree::Product.find_by(description2: "addon").price || 20
   order.line_items.each do |li|
     unless li.hidden == true
     items_display << li.name
     items_display << ' ' + li.variant.options_text
     items_display << ' x ' + li.quantity.to_s
-    items_display << ' @ $' + (li.price + $addon_price * li.addon_quantity).to_s[0..-3] 
+    items_display << ' @ $' + (li.price + addon_price * li.addon_quantity).to_s[0..-3] 
     items_display << ', ' + li.juice_names + ' #' if li.juice_names.present?
     items_display << ', ' + li.addon_names + ' #' if li.juice_names.present?
     items_display << ', ' + li.preference + ' #'
@@ -66,7 +66,7 @@ def items_display(order)
       unless li.hidden == true
       items_display << li.name
       items_display << ' x ' + li.quantity.to_s
-      items_display << ' @ $' + (li.price + $addon_price * li.addon_quantity).to_s[0..-3]  + '#'
+      items_display << ' @ $' + (li.price + addon_price * li.addon_quantity).to_s[0..-3]  + '#'
       end
     end
       if items_display.length <= 200
@@ -82,7 +82,7 @@ def items_display(order)
         if items_display.length <= 200
           return items_display
         else
-          items_display = "#{order.quantity} #{Spree.t(:juice)}"
+          items_display = "#{order.quantity} #{Spree.t(:boxes)}"
             return items_display
           end
         end

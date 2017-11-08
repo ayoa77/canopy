@@ -36,7 +36,7 @@
 
       <div class="col-xs-7 col-sm-2">
         <div class="lead text-primary cart-item-price" data-hook="cart_item_price">
-          $<%= (line_item.price + $addon_price*line_item.addon_quantity).to_s[0..-3] %>
+          $<%= (line_item.price + line_item.product.addon_price*line_item.addon_quantity).to_s[0..-3] %>
         </div>
       </div>
 
@@ -58,7 +58,7 @@
 
       <div class="col-xs-6 col-sm-2">
         <div class="lead text-primary cart-item-total" data-hook="cart_item_total">
-          $<%= (line_item.price*line_item.quantity + $addon_price*line_item.addon_quantity*line_item.quantity).to_s[0..-3] %>
+          $<%= (line_item.price*line_item.quantity + line_item.product.addon_price*line_item.addon_quantity*line_item.quantity).to_s[0..-3] %>
           <%#= line_item.display_amount.to_html[0..-4] unless line_item.quantity.nil? %>
         </div>
       </div>
