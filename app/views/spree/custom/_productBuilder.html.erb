@@ -1,6 +1,6 @@
 <% products.each do |p| %>
-  
-  <div class="card">
+
+  <div class="card <%= p.taxons.first.name %>-border-color">
 
     <div class="card-left">
       <%= image_tag(p.images.last.attachment_file_name) %>

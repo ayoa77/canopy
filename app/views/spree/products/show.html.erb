@@ -12,7 +12,7 @@
       <!-- <div class="product-holder-image"> -->
 
 
-        <% if @delivery.nil? %>
+        <% if @delivery.nil? %> <!-- Regular Box Page -->
 
         <div class="col-md-6 flex-column">
           <div class="product-holder-image">
@@ -86,7 +86,7 @@
       <!-- <div class="container"> -->
         <!-- <div class="row"> -->
           
-          <% else %>
+          <% else %>  <!-- Custom Box Page -->
 
       <div class="col-md-6 col-lg-5 col-lg-offset-1">
 
@@ -114,11 +114,10 @@
           </div>
 
         <% end %>
-        <div class="col-xs-12">
-          <p class="category-for-menu" style="padding-top: 50px;">
+
+        <p class="category-for-menu" style="padding-top: 50px;">
             <%= Spree.t(:select_extras)%>
-          </p>
-        </div>
+        </p>
 
         <% @extras.each do |e| %>
 

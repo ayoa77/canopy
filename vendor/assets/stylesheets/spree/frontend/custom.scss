@@ -1839,7 +1839,7 @@ margin-bottom: 30px;
   }
 }
 
-.category-for-menu {
+.category-for-menu, .category-for-menu span, .category-for-menu span span {
   color: #00b7ff;
   font-size: 20px;
   text-align: left;
@@ -1855,7 +1855,7 @@ margin-bottom: 30px;
   display: flex;
 }
 
-.category-for-menu span {
+.category-for-menu span span {
   font-size: 12px;
 }
 
@@ -1918,6 +1918,14 @@ margin-bottom: 30px;
   // border: 1px solid #00B7FF;
   
   overflow: hidden;
+}
+
+.Delivery-border-color {
+  border: 2px 
+}
+
+.Juices-border-color {
+  border: 2px solid #00B7FF;
 }
 
 .card-left {
