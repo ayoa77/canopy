@@ -185,26 +185,26 @@ $('form#update-cart a.submit').click(function() {
 
   $('.add-juice').click(function() {
 
-    let juiceBox = document.querySelectorAll('.juice-box-quantity');
-    let count = 1;
+    var juiceBox = document.querySelectorAll('.juice-box-quantity');
+    var count = 1;
     for (i=0; i<juiceBox.length; i++) {
       count += parseInt(juiceBox[i].innerHTML[0]);
     }
 
     if (count < 7) {
-      let quantity = $(this).siblings('.juice-box-quantity')[0].innerHTML;
-      let newQuantity = parseInt(quantity[0]) + 1;
+      var quantity = $(this).siblings('.juice-box-quantity')[0].innerHTML;
+      var newQuantity = parseInt(quantity[0]) + 1;
       $(this).siblings('.juice-box-quantity')[0].innerHTML = newQuantity.toString() + " x ";
     } 
     
     if (count == 6) {
-      let orderInput = document.querySelector('#juice-name').value;
+      var orderInput = document.querySelector('#juice-name').value;
 
       for (i=0; i<juiceBox.length; i++) {
         document.querySelectorAll('.add-juice')[i].classList.remove('hover-effect');
         if (parseInt(juiceBox[i].innerHTML[0]) > 0) {
-          let quantity = juiceBox[i].innerHTML[0];
-          let name = document.querySelectorAll('.custom-box-juice')[i].innerHTML;
+          var quantity = juiceBox[i].innerHTML[0];
+          var name = document.querySelectorAll('.custom-box-juice')[i].innerHTML;
           
           orderInput += `${quantity}x ${name}, `;
         }
@@ -224,20 +224,20 @@ $('form#update-cart a.submit').click(function() {
     $('#add-to-cart-button')[0].disabled = true;
 
     // count up how many juices there are
-    let juiceBox = document.querySelectorAll('.juice-box-quantity');
+    var juiceBox = document.querySelectorAll('.juice-box-quantity');
 
     // figure out how many juices there are to subtract
-    let quantity = $(this).siblings('.juice-box-quantity')[0].innerHTML;
+    var quantity = $(this).siblings('.juice-box-quantity')[0].innerHTML;
 
     // if it's zero do nothing, if it has juices selected do stuff
     if (parseInt(quantity[0]) > 0) {
 
       // reset the preferences
-      let orderInput = "";
+      var orderInput = "";
       document.querySelector('#juice-name').value = orderInput;
 
       // minus 1 and display it
-      let newQuantity = parseInt(quantity[0]) - 1;
+      var newQuantity = parseInt(quantity[0]) - 1;
       $(this).siblings('.juice-box-quantity')[0].innerHTML = newQuantity.toString() + " x ";
       
       // turn the add to selection buttons back on
@@ -252,23 +252,23 @@ $('form#update-cart a.submit').click(function() {
   $('.add-extra').click(function() {
 
         // Change the quantity in the DOM
-        let extra = document.querySelectorAll('.extra-quantity');
+        var extra = document.querySelectorAll('.extra-quantity');
 
-        let quantity = parseInt($(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML);
+        var quantity = parseInt($(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML);
         quantity += 1;
 
         $(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML = quantity.toString();
 
-        // Delete the input
+        // Devare the input
         document.querySelector('#addon-name').value = "";
 
         // Loop through the Extras and build an array and add the quantity of extras to the total input
-        let extraArray = [];
+        var extraArray = [];
         document.querySelector('#addon-quantity').value = 0;
         for (i=0; i<document.querySelectorAll('.custom-extra').length; i++) {
-          let quantity = $('.extra-quantity')[i].firstElementChild.innerHTML;
+          var quantity = $('.extra-quantity')[i].firstElementChild.innerHTML;
           document.querySelector('#addon-quantity').value = parseInt(document.querySelector('#addon-quantity').value) + parseInt(quantity);
-          let extraName = $('.custom-extra')[i].innerHTML;
+          var extraName = $('.custom-extra')[i].innerHTML;
           if (quantity != 0) {
             extraArray.push(extraName)
           }
@@ -281,9 +281,9 @@ $('form#update-cart a.submit').click(function() {
     
       $('.subtract-extra').click(function() {
         // subtract the number from the DOM
-        let extra = document.querySelectorAll('.extra-quantity');
+        var extra = document.querySelectorAll('.extra-quantity');
         
-        let quantity = parseInt($(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML);
+        var quantity = parseInt($(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML);
         if (quantity != 0) {
           quantity -= 1;
           $(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML = quantity.toString();
@@ -291,12 +291,12 @@ $('form#update-cart a.submit').click(function() {
 
         document.querySelector('#addon-name').value = "";
 
-        let extraArray = [];
+        var extraArray = [];
         document.querySelector('#addon-quantity').value = 0;
         for (i=0; i<document.querySelectorAll('.custom-extra').length; i++) {
-          let quantity = $('.extra-quantity')[i].firstElementChild.innerHTML;
+          var quantity = $('.extra-quantity')[i].firstElementChild.innerHTML;
           document.querySelector('#addon-quantity').value = parseInt(document.querySelector('#addon-quantity').value) + parseInt(quantity);
-          let extraName = $('.custom-extra')[i].innerHTML;
+          var extraName = $('.custom-extra')[i].innerHTML;
           if (quantity != 0) {
             extraArray.push(extraName)
           }
