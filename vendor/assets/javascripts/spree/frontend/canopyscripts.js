@@ -206,7 +206,7 @@ $('form#update-cart a.submit').click(function() {
           var quantity = juiceBox[i].innerHTML[0];
           var name = document.querySelectorAll('.custom-box-juice')[i].innerHTML;
           
-          orderInput += `${quantity}x ${name}, `;
+          orderInput += '${quantity}x ${name}, ';
         }
       }
 
@@ -276,7 +276,7 @@ $('form#update-cart a.submit').click(function() {
 
         // Add the Extras Array to the input
         document.querySelector('#addon-name').value = extraArray.join(", ");
-        document.querySelector('.addon-price').innerHTML = ` + $${parseInt(document.querySelector('#addon-quantity').value) * 20}`;
+        document.querySelector('.addon-price').innerHTML = " + $${parseInt(document.querySelector('#addon-quantity').value) * 20}";
       });
     
       $('.subtract-extra').click(function() {
@@ -303,7 +303,7 @@ $('form#update-cart a.submit').click(function() {
         }
 
         document.querySelector('#addon-name').value = extraArray.join(", ");
-        document.querySelector('.addon-price').innerHTML = ` + $${parseInt(document.querySelector('#addon-quantity').value) * 20}`;
+        document.querySelector('.addon-price').innerHTML = " + $${parseInt(document.querySelector('#addon-quantity').value) * 20}";
   
       });
 
