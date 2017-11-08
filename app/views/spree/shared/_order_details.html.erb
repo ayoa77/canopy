@@ -72,7 +72,13 @@
           <%= truncate(item.description, length: 100) %>
               <p class="beautiful-text-hierarchy nathan beautify">
                 <%= truncate(item.preference, length: 150) %>
-              </p>
+              </p>    
+                      <p class="line-item-juice-names">
+                        <%= truncate(item.juice_names) if item.juice_names.exist? %>
+                      </p>
+                      <p class="line-item-addon-names">
+                        <%= truncate(item.addon_names) if item.addon_names.exist? %>
+                      </p>
           <%= "(" + item.variant.options_text + ")" unless item.variant.option_values.empty? %>
         </td>
         <td data-hook="order_item_price" class="lead text-primary price"><span><%= item.single_money.to_html[0..-4] %></span></td>

@@ -6,7 +6,9 @@
 
     <td class="item-name">
       <%= item.variant.product.name %><br><%= "(" + variant_options(item.variant) + ")" unless item.variant.option_values.empty? %>
-          <%= item.line_item.preference %> 
+          <%= item.line_item.preference %><br>
+          <%= item.line_item.addon_names  if item.line_item.addon_names %><br>
+          <%= item.line_item.juice_names if item.line_item.juice_names %>
       <% if item.variant.sku.present? %>
         <strong><%= Spree.t(:sku) %>:</strong> <%= item.variant.sku %>
       <% end %>

@@ -53,8 +53,8 @@ def items_display(order)
     items_display << ' ' + li.variant.options_text
     items_display << ' x ' + li.quantity.to_s
     items_display << ' @ $' + (li.price + $addon_price * li.addon_quantity).to_s[0..-3] 
-    items_display << ', ' + li.juice_names
-    items_display << ', ' + li.addon_names
+    items_display << ', ' + li.juice_names + ' #' if li.juice_names.present?
+    items_display << ', ' + li.addon_names + ' #' if li.juice_names.present?
     items_display << ', ' + li.preference + ' #'
     end
   end
