@@ -19,11 +19,11 @@ Rails.application.routes.draw do
   post '/zh-TW/allpay_return' => 'spree/checkout#return'
   post '/allpay_return' => 'spree/checkout#return'
   post '/allpay_result' => 'spree/orders#result'
-  get '/instore' => 'spree/products#instore'
-  get '/shop' => 'spree/products#index'
+  # get '/instore' => 'spree/products#instore'
+  # get '/shop' => 'spree/products#index'
   get '/about' => 'spree/custom#about', as: :about
   get '/menu' => 'spree/custom#menu', as: :menu
-  get '/nutrition' => 'spree/custom#nutrition', as: :nutrition
+  # get '/nutrition' => 'spree/custom#nutrition', as: :nutrition
   get '/events' =>  'spree/events#index', as: :events
 
     scope "/admin" do
@@ -42,7 +42,7 @@ Rails.application.routes.draw do
         get "/event-delete/:id" => 'spree/admin/events#destroy'
         delete "/event-delete/:id" => 'spree/admin/events#destroy', as: :delete_event
 
-        patch "/products/:id/variants" => 'spree/admin/products#vary_prices', as: :set_varied_prices_for_addons
+        # patch "/products/:id/variants" => 'spree/admin/products#vary_prices', as: :set_varied_prices_for_addons
 
 
 
