@@ -81,8 +81,8 @@
 
       <div data-hook="admin_product_form_description">
         <%= f.field_container :description2, class: ['form-group'] do %>
-          <%= f.label :description2, Used in the backend - Use console to change. %>
-          <%= f.text_field :description2, { rows: 3, class: 'form-control' }, disabled %>
+          <%= f.label :description2, 'Used in the backend - Use console to change.' %>
+          <%= f.text_field :description2, { rows: 3, class: 'form-control', disabled: true } %>
           <%= f.error_message_on :description2 %>
         <% end %>
       </div>
