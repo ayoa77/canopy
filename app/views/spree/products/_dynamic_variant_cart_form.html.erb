@@ -49,10 +49,11 @@
                 <button class="form-control dropdown-toggle" type="button" data-toggle="dropdown"><%= @product.name %>
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <li><a href="/products/red-box">Red Box</a></li>
-                  <li><a href="/products/yellow-box">Yellow Box</a></li>
-                  <li><a href="/products/green-box">Green Box</a></li>
-                  <li><a href="/products/build-your-own-box">Build Your Own Box</a></li>
+                  <% @boxes.each do |b|%>
+                  <li><%= link_to spree.product_path(b) do %>
+                     <%= b.name%></li>
+                  <% end %>
+                  <% end %>
                 </ul>
 
               </div>
