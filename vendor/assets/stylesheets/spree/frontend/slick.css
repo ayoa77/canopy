@@ -115,3 +115,18 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+.slick-dots {
+    bottom: 0;
+}
+
+.slick-dots li button:before {
+    font-size: 20px;
+    color: #B3D57C;
+    opacity: .5;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #B3D57C;
+    opacity: 1;
+}

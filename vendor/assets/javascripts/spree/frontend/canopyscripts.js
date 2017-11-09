@@ -1,3 +1,9 @@
+$(window).on('resize', function() {
+  if ($(window).width() > 1919) {
+    $('.featurette-mobile').classList.remove('.visible-lg');
+  };
+})
+
 $(document).on('ready', function() {
 
   $('#nav-icon1').click(function() {
@@ -100,8 +106,31 @@ $(document).on('ready', function() {
       slidesToShow: 1,
       responsive: [
         {
+          breakpoint: 1920,
+          settings: {
+            dots: true,
+            arrows: false,
+            centerMode: true,
+            centerPadding: '150px',
+            slidesToShow: 3,
+            speed: 100
+          }
+        },
+        {
+          breakpoint: 1440,
+          settings: {
+            dots: true,
+            arrows: false,
+            centerMode: true,
+            centerPadding: '50px',
+            slidesToShow: 3,
+            speed: 100
+          }
+        },
+        {
           breakpoint: 1024,
           settings: {
+            dots: true,
             arrows: false,
             centerMode: true,
             centerPadding: '200px',
@@ -112,6 +141,7 @@ $(document).on('ready', function() {
         {
           breakpoint: 480,
           settings: {
+            dots: true,
             arrows: false,
             centerMode: true,
             centerPadding: '20px',
