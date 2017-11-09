@@ -39,16 +39,16 @@
 </div>
 
 <!-- Slick Mobile Featurette -->
-<div class='featurette-mobile col-xs-12 visible-xs visible-sm'>
+<div class='featurette-mobile col-xs-12 visible-xs visible-sm visible-md visible-lg invisible-xl'>
   <div class='center'>
 
-     <div>
+     <div> <!-- First Slick Slider Div -->
          <%= link_to spree.product_path(@first) do %>
         <div class="vert-box red-box">
           <div class="box-pattern">
 
             <div class="box-picture">
-          <%= image_tag(@first.images.last.attachment_file_name) if @first.images.last.present?  %>
+              <%= image_tag(@first.images.last.attachment_file_name) if @first.images.last.present?  %>
 
             </div>
 
@@ -80,7 +80,7 @@
       </div>
 
 
-      <div>
+      <div>  <!-- Second Slick Slider Div -->
           <%= link_to spree.product_path(@second) do %>
 
         <div class="vert-box yellow-box">
@@ -118,14 +118,14 @@
         <%end%>
       </div>
 
-      <div>
+      <div>  <!-- Third Slick Slider Div -->
                 <%= link_to spree.product_path(@third) do %>
 
         <div class="vert-box green-box">
           <div class="box-pattern">
 
             <div class="box-picture">
-\          <%= image_tag(@third.images.last.attachment_file_name) if @third.images.last.present?  %>
+          <%= image_tag(@third.images.last.attachment_file_name) if @third.images.last.present?  %>
 
             </div>
 
@@ -157,39 +157,80 @@
         </div>
         <%end%>
       </div>
-      <!--
 
-      <div class="juice-box">
+      <div>  <!-- Fourth Slick Slider Div -->
+        <%= link_to spree.product_path(@fourth) do %>
+       <div class="vert-box red-box">
+         <div class="box-pattern">
 
-      <%#= link_to spree.product_path(@first) do %>
-        <%= image_tag("bottle.png")%>
-        <#% end %>
+           <div class="box-picture">
+         <%= image_tag(@fourth.images.last.attachment_file_name) if @fourth.images.last.present?  %>
 
-        <div class="juice">
+           </div>
 
-          <%#= link_to spree.product_path(@first) do %>
-          <p class="productName">
+           <div class="box-information">
 
-            <%#=@first.name %>
-          </p>
-          <#% end %>
+             <div class="box-name">
+               <p style="color: #F66"><%=@fourth.name %></p>
+             </div>
 
-          <p class="ingredients">
+             <div class = "box-description">
+               <p style="font-size: 18px;">
+                 <%=@fourth.description%>
+               </p>
+             </div>
 
-              <%#=@first.description%>
-          </p>
+             <div class="slider-btn-container">
+               <!-- <a href="#"> -->
+                 <div class="ghost-button-alternate gba-red">
+                   <p> <!-- $<%#=@fourth.price.to_i%> --> 學到更多</p>
+                 </div>
+               <!-- </a> -->
+             </div>
 
-          <p class="productPrice">
-              $<%#=@first.price.to_i%>
+           </div>
+         </div>
 
-          </p>
+       </div>
+       <%end%>
+     </div>
 
-        </div>
+     <div>  <!-- Fifth Slick Slider Div -->
+      <%= link_to spree.product_path(@fifth) do %>
+     <div class="vert-box red-box">
+       <div class="box-pattern">
 
-    </div>
+         <div class="box-picture">
+       <%= image_tag(@fifth.images.last.attachment_file_name) if @fifth.images.last.present?  %>
 
+         </div>
 
-    </div> -->
+         <div class="box-information">
+
+           <div class="box-name">
+             <p style="color: #F66"><%=@fifth.name %></p>
+           </div>
+
+           <div class = "box-description">
+             <p style="font-size: 18px;">
+               <%=@fifth.description%>
+             </p>
+           </div>
+
+           <div class="slider-btn-container">
+             <!-- <a href="#"> -->
+               <div class="ghost-button-alternate gba-red">
+                 <p> <!-- $<%#=@fifth.price.to_i%> --> 學到更多</p>
+               </div>
+             <!-- </a> -->
+           </div>
+
+         </div>
+       </div>
+
+     </div>
+     <%end%>
+   </div>
 
   </div>
 </div>
@@ -200,17 +241,16 @@
 the style on the first feature.  -->
 
 <div id="featurette">
-  <div class="container">
-    <div class="row">
+  <div class="container-fluid">
+    <div class="row flex-fix-featurette">
       
-      <div class = "col-md-4 visible-md visible-lg">
+      <div class = "index-products"> <!-- First Non-Slick Slider Proudct -->
           <%= link_to spree.product_path(@first) do %>
         <div class="vert-box red-box">
           <div class="box-pattern">
 
             <div class="box-picture">
               <%= image_tag(@first.images.last.attachment_file_name) if @first.images.last.present?  %>
-
             </div>
 
             <div class="box-information">
@@ -222,7 +262,7 @@ the style on the first feature.  -->
 
               <div class = "box-description">
                 <p style="font-size: 18px;">
-              <%=@first.description%>
+                  <%=@first.description%>
                 </p>
               </div>
               
@@ -242,15 +282,14 @@ the style on the first feature.  -->
       </div>
       
       
-      <div class = "col-md-4 visible-md visible-lg">
+      <div class = "index-products">  <!-- Second Non-Slick Slider Proudct -->
         
         <%= link_to spree.product_path(@second) do %>
         <div class="vert-box yellow-box">
           <div class="box-pattern">
 
             <div class="box-picture">
-          <%= image_tag(@second.images.last.attachment_file_name) if @second.images.last.present?  %>
-
+              <%= image_tag(@second.images.last.attachment_file_name) if @second.images.last.present?  %>
             </div>
 
             <div class="box-information">
@@ -261,7 +300,7 @@ the style on the first feature.  -->
 
               <div class = "box-description">
                 <p style="font-size: 18px;">
-                <%=@second.description%>
+                  <%=@second.description%>
                 </p>
               </div>
 
@@ -281,13 +320,13 @@ the style on the first feature.  -->
       </div>
       
       
-      <div class = "col-md-4 visible-md visible-lg">
+      <div class = "index-products">  <!-- Third Non-Slick Slider Proudct -->
           <%= link_to spree.product_path(@third) do %>
         <div class="vert-box green-box">
           <div class="box-pattern">
 
             <div class="box-picture">
-          <%= image_tag(@third.images.last.attachment_file_name) if @third.images.last.present?  %>
+              <%= image_tag(@third.images.last.attachment_file_name) if @third.images.last.present?  %>
             </div>
 
             <div class="box-information">
@@ -316,11 +355,85 @@ the style on the first feature.  -->
         </div>
         <% end %>
       </div>
+
+      <div class = "index-products">  <!-- Fourth Non-Slick Slider Proudct -->
+        <%= link_to spree.product_path(@fourth) do %>
+      <div class="vert-box green-box">
+        <div class="box-pattern">
+
+          <div class="box-picture">
+            <%= image_tag(@fourth.images.last.attachment_file_name) if @fourth.images.last.present?  %>
+          </div>
+
+          <div class="box-information">
+
+            <div class="box-name">
+              <p style="color: #39B54A"><%=@fourth.name%></p>
+            </div>
+
+            <div class = "box-description">
+              <p style="font-size: 18px;">
+                <%=@fourth.description%>
+              </p>
+            </div>
+
+            <div class="slider-btn-container">
+              <!-- <a href="#"> -->
+                <div class="ghost-button-alternate gba-green">
+                  <p> <!-- $<%#=@first.price.to_i%> --> 學到更多</p>
+                </div>
+              <!-- </a> -->
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <% end %>
+    </div>
+
+    <div class = "index-products"> <!-- Fifth Non-Slick Slider Proudct -->
+      <%= link_to spree.product_path(@fifth) do %>
+    <div class="vert-box green-box">
+      <div class="box-pattern">
+
+        <div class="box-picture">
+          <%= image_tag(@fifth.images.last.attachment_file_name) if @fifth.images.last.present?  %>
+        </div>
+
+        <div class="box-information">
+
+          <div class="box-name">
+            <p style="color: #39B54A"><%=@fifth.name%></p>
+          </div>
+
+          <div class = "box-description">
+            <p style="font-size: 18px;">
+              <%=@fifth.description%>
+            </p>
+          </div>
+
+          <div class="slider-btn-container">
+            <!-- <a href="#"> -->
+              <div class="ghost-button-alternate gba-green">
+                <p> <!-- $<%#=@first.price.to_i%> --> 學到更多</p>
+              </div>
+            <!-- </a> -->
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <% end %>
+  </div>
+
+  
     </div>
   </div>
 </div>
 
-<div>
+<!-- <div>
   <div class="col-sm-offset-3 col-sm-6 build-button">
 
     
@@ -331,10 +444,9 @@ the style on the first feature.  -->
          <% end %>
 
    </div>
-   </div>
-</div>
+</div> -->
 
-<div id="big-links">
+<div id="big-links" class="col-xs-12">
     <div class="row no-gutters">
 
       <div class="col-md-6">

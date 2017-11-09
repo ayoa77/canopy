@@ -518,6 +518,9 @@ a:hover{
   margin-bottom: 30px;
 }
 
+#featurette {
+  display: none;
+}
 
 #featurette, .featurette-mobile {
   margin-bottom: 0px;
@@ -867,9 +870,9 @@ a:hover{
 }
 
 .box-picture {
-  width: 100%;
+  width: 90%;
   height: 200px;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1908,6 +1911,7 @@ margin-bottom: 30px;
   margin: 0 auto;
 
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -1923,12 +1927,59 @@ margin-bottom: 30px;
   overflow: hidden;
 }
 
+.card-delivery-title, .card-juices-title, .card-smoothies-title, .card-tea-title, .card-food-title {
+  color: white;
+  font-size: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-delivery-title {
+  background: linear-gradient(#b2d67c, #39B54A);
+  background-size: 150%;
+}
+
+.card-juices-title {
+  background: linear-gradient(#00b7ff, #0063aa);
+  background-size: 150%;
+}
+
+.card-smoothies-title {
+  background: linear-gradient(#E1007D, #c1005d);
+  background-size: 150%;
+}
+
+.card-tea-title {
+  background: linear-gradient(#E4E409, #d4d406);
+  background-size: 150%;
+}
+
+.card-food-title {
+  background: linear-gradient(#F77669, #FF5555);
+  background-size: 150%;
+}
+
+
 .Delivery-border-color {
-  border: 2px 
+  border: 2px solid #b2d67c;
 }
 
 .Juices-border-color {
   border: 2px solid #00B7FF;
+}
+
+.Smoothies-border-color {
+  border: 2px solid #E1007D;
+}
+
+.Tea-border-color {
+  border: 2px solid #E4E409;
+}
+
+.Food-border-color {
+  border: 2px solid #F77669;
 }
 
 .card-left {
@@ -2313,4 +2364,21 @@ margin-bottom: 30px;
   }
 
 }
-@media screen and (min-width: 1700px) {}
+@media screen and (min-width: 1700px) {
+  .invisible-xl {
+    display: none !important;
+  }
+
+  #featurette {
+    display: block !important;
+  }
+
+  .flex-fix-featurette {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .index-products {
+      width: 340px;
+    }
+  }
+}
