@@ -3,7 +3,7 @@
   <div class="card <%= p.taxons.first.name %>-border-color">
 
     <div class="card-left">
-      <%= image_tag(p.images.last.attachment_file_name) if p.images.last %>
+      <%= image_tag(p.images.last.attachment.url) if p.images.last %>
     </div>
 
       <div class="card-right">

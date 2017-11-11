@@ -18,7 +18,7 @@
           <div class="product-holder-image">
           <!-- This takes care of each menu item and< it's ingredients -->
           <%#= product_image(@product, itemprop: "image") %>
-          <%= image_tag(@product.images.last.attachment_file_name) if @product.images.last.present?  %>
+          <%= image_tag(@product.images.last.attachment.url) if @product.images.last.present?  %>
                          
           </div>
 
