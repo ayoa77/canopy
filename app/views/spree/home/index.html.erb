@@ -48,7 +48,7 @@
           <div class="box-pattern">
 
             <div class="box-picture">
-              <%= image_tag(@first.images.last.attachment_file_name) if @first.images.last.present?  %>
+              <%= image_tag(@first.images.last.attachment.url) if @first.images.last.present?  %>
 
             </div>
 
@@ -87,7 +87,7 @@
           <div class="box-pattern">
 
             <div class="box-picture">
-          <%= image_tag(@second.images.last.attachment_file_name) if @second.images.last.present?  %>
+          <%= image_tag(@second.images.last.attachment.url) if @second.images.last.present?  %>
 
             </div>
 
@@ -125,7 +125,7 @@
           <div class="box-pattern">
 
             <div class="box-picture">
-          <%= image_tag(@third.images.last.attachment_file_name) if @third.images.last.present?  %>
+          <%= image_tag(@third.images.last.attachment.url) if @third.images.last.present?  %>
 
             </div>
 
@@ -164,7 +164,7 @@
          <div class="box-pattern">
 
            <div class="box-picture">
-         <%= image_tag(@fourth.images.last.attachment_file_name) if @fourth.images.last.present?  %>
+         <%= image_tag(@fourth.images.last.attachment.url) if @fourth.images.last.present?  %>
 
            </div>
 
@@ -201,7 +201,7 @@
        <div class="box-pattern">
 
          <div class="box-picture">
-       <%= image_tag(@fifth.images.last.attachment_file_name) if @fifth.images.last.present?  %>
+       <%= image_tag(@fifth.images.last.attachment.url) if @fifth.images.last.present?  %>
 
          </div>
 
@@ -250,7 +250,7 @@ the style on the first feature.  -->
           <div class="box-pattern">
 
             <div class="box-picture">
-              <%= image_tag(@first.images.last.attachment_file_name) if @first.images.last.present?  %>
+              <%= image_tag(@first.images.last.attachment.url) if @first.images.last.present?  %>
             </div>
 
             <div class="box-information">
@@ -289,7 +289,7 @@ the style on the first feature.  -->
           <div class="box-pattern">
 
             <div class="box-picture">
-              <%= image_tag(@second.images.last.attachment_file_name) if @second.images.last.present?  %>
+              <%= image_tag(@second.images.last.attachment.url) if @second.images.last.present?  %>
             </div>
 
             <div class="box-information">
@@ -326,7 +326,7 @@ the style on the first feature.  -->
           <div class="box-pattern">
 
             <div class="box-picture">
-              <%= image_tag(@third.images.last.attachment_file_name) if @third.images.last.present?  %>
+              <%= image_tag(@third.images.last.attachment.url) if @third.images.last.present?  %>
             </div>
 
             <div class="box-information">
@@ -362,7 +362,7 @@ the style on the first feature.  -->
         <div class="box-pattern">
 
           <div class="box-picture">
-            <%= image_tag(@fourth.images.last.attachment_file_name) if @fourth.images.last.present?  %>
+            <%= image_tag(@fourth.images.last.attachment.url) if @fourth.images.last.present?  %>
           </div>
 
           <div class="box-information">
@@ -398,7 +398,7 @@ the style on the first feature.  -->
       <div class="box-pattern">
 
         <div class="box-picture">
-          <%= image_tag(@fifth.images.last.attachment_file_name) if @fifth.images.last.present?  %>
+          <%= image_tag(@fifth.images.last.attachment.url) if @fifth.images.last.present?  %>
         </div>
 
         <div class="box-information">
