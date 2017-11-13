@@ -43,7 +43,7 @@ $(document).on('ready', function() {
 
 
     $('#address_submit').click(function (evt) {
-      var phone = $('#order_ship_address_attributes_phone').val();
+      let phone = $('#order_ship_address_attributes_phone').val();
       var firstname = $('#order_ship_address_attributes_firstname').val();
       var lastname = $('#order_ship_address_attributes_lastname').val();
       var address1 = $('#order_ship_address_attributes_address1').val();
@@ -215,28 +215,28 @@ $('form#update-cart a.submit').click(function() {
 
   $('.add-juice').click(function() {
 
-    var juiceBox = document.querySelectorAll('.juice-box-quantity');
-    var count = 1;
+    let juiceBox = document.querySelectorAll('.juice-box-quantity');
+    let count = 1;
     for (i=0; i<juiceBox.length; i++) {
       count += parseInt(juiceBox[i].innerHTML[0]);
     }
 
     if (count < 7) {
-      var quantity = $(this).siblings('.juice-box-quantity')[0].innerHTML;
-      var newQuantity = parseInt(quantity[0]) + 1;
+      let quantity = $(this).siblings('.juice-box-quantity')[0].innerHTML;
+      let newQuantity = parseInt(quantity[0]) + 1;
       $(this).siblings('.juice-box-quantity')[0].innerHTML = newQuantity.toString() + " x ";
     } 
     
     if (count == 6) {
-      var orderInput = document.querySelector('#juice-name').value;
+      let orderInput = document.querySelector('#juice-name').value;
 
       for (i=0; i<juiceBox.length; i++) {
         document.querySelectorAll('.add-juice')[i].classList.remove('hover-effect');
         if (parseInt(juiceBox[i].innerHTML[0]) > 0) {
-          var quantity = juiceBox[i].innerHTML[0];
-          var name = document.querySelectorAll('.custom-box-juice')[i].innerHTML;
+          let quantity = juiceBox[i].innerHTML[0];
+          let name = document.querySelectorAll('.custom-box-juice')[i].innerHTML;
           
-          orderInput += '${quantity}x ${name}, ';
+          orderInput += `${quantity}x ${name}, `;
         }
       }
 
@@ -254,20 +254,20 @@ $('form#update-cart a.submit').click(function() {
     $('#add-to-cart-button')[0].disabled = true;
 
     // count up how many juices there are
-    var juiceBox = document.querySelectorAll('.juice-box-quantity');
+    let juiceBox = document.querySelectorAll('.juice-box-quantity');
 
     // figure out how many juices there are to subtract
-    var quantity = $(this).siblings('.juice-box-quantity')[0].innerHTML;
+    let quantity = $(this).siblings('.juice-box-quantity')[0].innerHTML;
 
     // if it's zero do nothing, if it has juices selected do stuff
     if (parseInt(quantity[0]) > 0) {
 
       // reset the preferences
-      var orderInput = "";
+      let orderInput = "";
       document.querySelector('#juice-name').value = orderInput;
 
       // minus 1 and display it
-      var newQuantity = parseInt(quantity[0]) - 1;
+      let newQuantity = parseInt(quantity[0]) - 1;
       $(this).siblings('.juice-box-quantity')[0].innerHTML = newQuantity.toString() + " x ";
       
       // turn the add to selection buttons back on
@@ -282,23 +282,23 @@ $('form#update-cart a.submit').click(function() {
   $('.add-extra').click(function() {
 
         // Change the quantity in the DOM
-        var extra = document.querySelectorAll('.extra-quantity');
+        let extra = document.querySelectorAll('.extra-quantity');
 
-        var quantity = parseInt($(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML);
+        let quantity = parseInt($(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML);
         quantity += 1;
 
         $(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML = quantity.toString();
 
-        // Devare the input
+        // Delete the input
         document.querySelector('#addon-name').value = "";
 
         // Loop through the Extras and build an array and add the quantity of extras to the total input
-        var extraArray = [];
+        let extraArray = [];
         document.querySelector('#addon-quantity').value = 0;
         for (i=0; i<document.querySelectorAll('.custom-extra').length; i++) {
-          var quantity = $('.extra-quantity')[i].firstElementChild.innerHTML;
+          let quantity = $('.extra-quantity')[i].firstElementChild.innerHTML;
           document.querySelector('#addon-quantity').value = parseInt(document.querySelector('#addon-quantity').value) + parseInt(quantity);
-          var extraName = $('.custom-extra')[i].innerHTML;
+          let extraName = $('.custom-extra')[i].innerHTML;
           if (quantity != 0) {
             extraArray.push(extraName)
           }
@@ -306,14 +306,14 @@ $('form#update-cart a.submit').click(function() {
 
         // Add the Extras Array to the input
         document.querySelector('#addon-name').value = extraArray.join(", ");
-        document.querySelector('.addon-price').innerHTML = " + $${parseInt(document.querySelector('#addon-quantity').value) * 20}";
+        document.querySelector('.addon-price').innerHTML = ` + $${parseInt(document.querySelector('#addon-quantity').value) * 20}`;
       });
     
       $('.subtract-extra').click(function() {
         // subtract the number from the DOM
-        var extra = document.querySelectorAll('.extra-quantity');
+        let extra = document.querySelectorAll('.extra-quantity');
         
-        var quantity = parseInt($(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML);
+        let quantity = parseInt($(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML);
         if (quantity != 0) {
           quantity -= 1;
           $(this).siblings('.extra-quantity')[0].firstElementChild.innerHTML = quantity.toString();
@@ -321,19 +321,19 @@ $('form#update-cart a.submit').click(function() {
 
         document.querySelector('#addon-name').value = "";
 
-        var extraArray = [];
+        let extraArray = [];
         document.querySelector('#addon-quantity').value = 0;
         for (i=0; i<document.querySelectorAll('.custom-extra').length; i++) {
-          var quantity = $('.extra-quantity')[i].firstElementChild.innerHTML;
+          let quantity = $('.extra-quantity')[i].firstElementChild.innerHTML;
           document.querySelector('#addon-quantity').value = parseInt(document.querySelector('#addon-quantity').value) + parseInt(quantity);
-          var extraName = $('.custom-extra')[i].innerHTML;
+          let extraName = $('.custom-extra')[i].innerHTML;
           if (quantity != 0) {
             extraArray.push(extraName)
           }
         }
 
         document.querySelector('#addon-name').value = extraArray.join(", ");
-        document.querySelector('.addon-price').innerHTML = " + $${parseInt(document.querySelector('#addon-quantity').value) * 20}";
+        document.querySelector('.addon-price').innerHTML = ` + $${parseInt(document.querySelector('#addon-quantity').value) * 20}`;
   
       });
 
