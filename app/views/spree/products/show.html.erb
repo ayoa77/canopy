@@ -17,8 +17,8 @@
         <div class="col-md-6 flex-column">
           <div class="product-holder-image">
           <!-- This takes care of each menu item and< it's ingredients -->
-          <%#= product_image(@product, itemprop: "image") %>
-          <%= image_tag(@product.images.last.attachment.url) if @product.images.last.present?  %>
+          <%= large_image(@product, itemprop: "image") %>
+          <%#= image_tag(@product.images.last.attachment.url) if @product.images.last.present?  %>
                          
           </div>
 
