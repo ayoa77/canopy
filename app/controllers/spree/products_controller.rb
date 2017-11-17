@@ -48,8 +48,11 @@ end
         # @teas =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Tea"})
         @delivery =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Delivery"})
 
-      
-      else
+      #this will redirect any products that are not boxes to the menu
+    elsif !@product.taxons.pluck(:name).include?("Boxes")
+      redirect_to '/menu'
+
+    else
       
       @variants = @product.variants_including_master.
                            spree_base_scopes.
