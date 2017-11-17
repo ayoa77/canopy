@@ -1,0 +1,4 @@
+<p>Edit Event</p>
+<%= form_for @event, url: "/admin/menuitem/#{@menuitem.id}", html: { multipart: true } do |f| %>
+<%=render partial: 'spree/admin/menuitems/form', :locals => { :f => f } %>
+<%end%>

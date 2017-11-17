@@ -28,6 +28,15 @@ Rails.application.routes.draw do
 
     scope "/admin" do
 
+        get "/menuitems" => 'spree/admin/menuitems#index'
+        get "/menuitem-new" => 'spree/admin/menuitems#new'
+        post "/menuitem-new" => 'spree/admin/menuitems#create'
+        get "/menuitem-edit/:id" => 'spree/admin/menuitems#edit', as: :edit_menuitems
+        patch "/menuitem/:id" => 'spree/admin/menuitems#update'
+        get "/menuitems/:id" => 'spree/admin/menuitems#show'
+        get "/menuitem-delete/:id" => 'spree/admin/menuitems#destroy'
+        delete "/menuitem-delete/:id" => 'spree/admin/menuitems#destroy', as: :delete_menuitem
+       
        get "/customnew" => 'spree/admin/customs#new'
        post "/customnew" => 'spree/admin/customs#create'
        get "/custom" => 'spree/admin/customs#edit', as: :edit_custom

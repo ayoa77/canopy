@@ -1,0 +1,38 @@
+<div class="container">
+
+<div data-hook="file" class="form-group row pull-left">
+  <%= link_to 'New Event', "/admin/event-new" %>
+</div>
+</div>
+<div class="container">
+
+  <% @events.each do |e|%>
+  <div class="row <%= cycle('even', 'odd') %>">
+<div class="col-xs-3">
+  <p>Event Name: <%=e.name%></p>
+  <p>Location: <%=e.location%></p>
+  <p>Price: <%=e.price%></p>
+</div>
+<div class="col-xs-6">
+  <p>Description: <%=e.description%></p>
+  <p>Date:   <%= e.date.year.to_s[-2..-1]%>.<%= e.date.month %>.<%= e.date.day %> </p>
+  <p>Time: <%=e.time.strftime("%l:%M %P")%></p>
+  <% if e.recurring_weekly_event == true %>
+  <p>Recurring: weekly</p>
+
+  <% elsif e.recurring_monthly_event == true %>
+  <p>Recurring: monthly</p>
+  <% else %>
+  <p>Not Recurring</p>
+<%end%>
+</div>
+<div class="col-xs-3">
+  <%#=image_tag(e.event_photo.url(:small)) if e.event_photo.url(:small)%>
+  <%= link_to'edit',  "/admin/event-edit/#{e.id}", controller: 'spree/admin/events', action: 'edit' %>
+  <%= link_to 'delete', "/admin/event-delete/#{e.id}",  data: {confirm: 'Are you sure?'} %>
+
+</div>
+  </div>
+
+  <%end%>
+</div>
