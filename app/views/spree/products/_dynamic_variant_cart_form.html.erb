@@ -88,7 +88,7 @@
           </div>
 
           <div class="col-xs-12">
-            <% if @juices.nil? %>
+            <% if @delivery.nil? %>
               <%= button_tag class: 'add-to-cart-orange click-me-animation', id: 'add-to-cart-button', type: :submit do %>
               <%= Spree.t(:add_to_cart) %>
               <% end %>
