@@ -1,46 +1,58 @@
 <!-- /instoremenu -->
 
 <%# @juices.each do |j| %>
+  <div id="shop-picture">
+    <div class="container">
+      <div class="row flex-fix">
+
+        <div class="col-xs-6">
+          <div class="shop-slider-text">
+            <p>
+              <%= Spree.t(:menu) %>
+            </p>
+          </div>
+        </div>
+        <div class="col-xs-6"></div>
+
+      </div>
+    </div>
+  </div>
 
 <div class="container-fluid">
-  <div class="row">
 
-    <div class="menu-top-of-page-text">
 
-      <p>
-        <%= Spree.t(:menu) %>
-      </p>
+
+
+  <div class="container">
+    <div class="row">
+
+        <%= render partial: 'spree/custom/productBuilder', locals: { products: @delivery, taxon: @taxon } %>
+      
+    </div>
+
+    <div class="row">
+
+      <div class="menu-top-of-page-text">
+        <p class="titles"><%= Spree.t(:menu) %></p>
+        <p class="menu-subtext">杯裝 110 • 玻璃瓶裝 135</p>
+      </div>
+      <div class="language-selector">
+        <p class="zhongwen language-active">中文</p>
+        <p>•</p>
+        <p class="english">English</p>
+      </div>
 
     </div>
 
+    <div id="english-menu" class="row menu-deactivate">
+      <%= render partial: 'spree/custom/englishMenu' %>
+    </div>
+
+    <div id="zhongwen-menu" class="row">
+      <%= render partial: 'spree/custom/zhongwenMenu' %>
+    </div>
+
   </div>
+
+
 </div>
-
-<!-- <div class="category-for-menu instore">- <%= Spree.t(:delivery) %> - </div>
-<div class="deliverable-container">
-  <%= render partial: 'spree/custom/productBuilder', locals: { products: @delivery, taxon: @taxon } %>
-</div> -->
-  <div class="deliverable-container">
-  <div class="card Delivery-border-color card-delivery-title"><%= Spree.t(:Delivery) %></div>
-    <%#= render partial: 'spree/custom/productBuilder', locals: { products: @delivery, taxon: @taxon } %>
-  </div>
-
-  <div class="juice-container">
-  <div class="card Juices-border-color card-juices-title"><%= Spree.t(:juice) %></div>
-    <%= render partial: 'spree/custom/productBuilder', locals: { products: @juices, taxon: @taxon } %>
-  </div>
-
-  <div class="smoothie-container">
-  <div class="card Smoothies-border-color card-smoothies-title"><%= Spree.t(:smoothie) %></div>
-    <%= render partial: 'spree/custom/productBuilder', locals: { products: @smoothies, taxon: @taxon } %>
-  </div>
-
-  <div class="tea-container">
-  <div class="card Tea-border-color card-tea-title"><%= Spree.t(:tea) %></div>
-    <%= render partial: 'spree/custom/productBuilder', locals: { products: @teas, taxon: @taxon } %>
-  </div>
-
-  <div class="food-container">
-  <div class="card Food-border-color card-food-title"><%= Spree.t(:food) %></div>
-    <%= render partial: 'spree/custom/productBuilder', locals: { products: @food, taxon: @taxon } %>
-  </div>

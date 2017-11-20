@@ -338,12 +338,37 @@ $('form#update-cart a.submit').click(function() {
       });
 
       $('.card-juice-info').click(function() {
-        $(this).parents('.card-right').css('top', '-200px');
-      })
+        let cardElement = $(this).siblings('.card').children('.oversized-slide-card');
+        if (cardElement.css('top') == '0px') {
+          cardElement.css('top', '-300px');
+          $(this).children('span').removeClass('glyphicon-menu-down');
+          $(this).children('span').addClass('glyphicon glyphicon-remove')
+        } else {
+          cardElement.css('top', '0px');
+          $(this).children('span').removeClass('glyphicon-remove');
+          $(this).children('span').addClass('glyphicon-menu-down')
+        }
+      });
 
-      $('.card-back').click(function() {
-        $(this).parents('.card-right').css('top', '0px');
-      })
+      $('.zhongwen').click(function() {
+        if (!$(this).hasClass('language-active')){
+          $(this).addClass('language-active');
+          $(this).siblings('.english').removeClass('language-active');
+
+          $('#english-menu').addClass('menu-deactivate');
+          $('#zhongwen-menu').removeClass('menu-deactivate');
+        }
+      });
+
+      $('.english').click(function() {
+        if (!$(this).hasClass('language-active')){
+          $(this).addClass('language-active');
+          $(this).siblings('.zhongwen').removeClass('language-active');
+
+          $('#zhongwen-menu').addClass('menu-deactivate');
+          $('#english-menu').removeClass('menu-deactivate');
+        }
+      });
 
   $('#datepicker').datepicker({
     startDate: '+2d',
