@@ -1808,7 +1808,8 @@ margin-bottom: 30px;
 .about {
   font-size: 18px;
   line-height: 36px;
-  font-weight: 300px;
+  font-weight: 300;
+  color: #444;
 }
 
 .photo-gallery {
@@ -2204,7 +2205,7 @@ p.language-active {
   }
 
   .vert-box {
-    height: 350px;
+    height: 330px;
   }
 
   .box-picture{ 
@@ -2213,7 +2214,15 @@ p.language-active {
 
   .box-information {
     height: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
+  }
+
+  .box-name {
+    margin-top: 20px;
+  }
+
+  .slider-btn-container {
+    margin-bottom: 20px;
   }
 
 }
