@@ -413,6 +413,14 @@ a:hover{
   color: #39B54A;
   border: 2px solid #39B54A;
 }
+.gba-blue {
+  color: #00b7ff;
+  border: 2px solid #00b7ff;
+}
+.gba-violet {
+  color: #E1007D;
+  border: 2px solid #E1007d;
+}
 
 .gba-red:hover {
   cursor: pointer;
@@ -839,17 +847,27 @@ a:hover{
 
 .red-box {
   border: 2px solid rgba(255, 102, 102, 1);
-  background: -webkit-linear-gradient(top,rgba(255,102,102,1),rgba(255,0,0,0), rgba(255,0,0,0));
+  background: -webkit-linear-gradient(top,rgba(255,102,102,.3),rgba(255,0,0,0), rgba(255,0,0,0));
 }
 
 .yellow-box {
-  border: 2px solid #E4E409;
-  background: -webkit-linear-gradient(top,#E4E409,rgba(255,0,0,0), rgba(255,0,0,0));
+  border: 2px solid rgba(228, 228, 4, 1);
+  background: -webkit-linear-gradient(top,rgba(228, 228, 4, .5),rgba(255,0,0,0),rgba(255,0,0,0));
 }
 
 .green-box {
-  border: 2px solid rgba(57, 181, 74, 1);
-  background: -webkit-linear-gradient(top,rgba(57, 181, 74, 1), rgba(255,0,0,0), rgba(255,0,0,0));
+  border: 2px solid rgba(57, 181, 74, .7);
+  background: -webkit-linear-gradient(top,rgba(57, 181, 74, .2), rgba(255,0,0,0), rgba(255,0,0,0));
+}
+
+.blue-box {
+  border: 2px solid rgba(0, 183, 255, 1);
+  background: -webkit-linear-gradient(top,rgba(0, 183, 255, .5), rgba(255,0,0,0), rgba(255,0,0,0));
+}
+
+.violet-box {
+  border: 2px solid rgba(255, 0, 125, 1);
+  background: -webkit-linear-gradient(top,rgba(255, 0, 125, .5), rgba(255,0,0,0), rgba(255,0,0,0));
 }
 
 .box-pattern {
