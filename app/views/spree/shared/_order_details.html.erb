@@ -69,17 +69,17 @@
         </td>
         <td data-hook="order_item_description">
           <h4><%= item.name %></h4>
-          <%= truncate(item.description, length: 100) %>
+          <%= truncate(item.description, length: 50) %>
               <p class="beautiful-text-hierarchy nathan beautify">
-                <%= truncate(item.preference, length: 150) %>
+                <%= item.preference %>
               </p>    
                       <p class="line-item-juice-names">
-                        <%= truncate(item.juice_names) if item.juice_names.present? %>
+                        <%= item.juice_names if item.juice_names.present? %>
                       </p>
                       <p class="line-item-addon-names">
-                        <%= truncate(item.addon_names) if item.addon_names.present? %>
+                        <%= item.addon_names if item.addon_names.present? %>
                       </p>
-          <%= "(" + item.variant.options_text + ")" unless item.variant.option_values.empty? %>
+          <%#= "(" + item.variant.options_text + ")" unless item.variant.option_values.empty? %>
         </td>
         <td data-hook="order_item_price" class="lead text-primary price"><span><%= item.single_money.to_html[0..-4] %></span></td>
         <td data-hook="order_item_qty" class="order-qty"><%= item.quantity %></td>
