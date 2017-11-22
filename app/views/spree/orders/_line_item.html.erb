@@ -26,6 +26,21 @@
         <p class="beautiful-text-hierarchy nathan beautify"> 
           <%= line_item.preference %>
         </p>
+              <div class='row'>
+
+                <div class="col-xs-10 col-xs-offset-2">
+
+                  <p class="line-item-juice-names">
+                    <%= line_item.juice_names %>
+                  </p>
+                  <p class="line-item-addon-names">
+                    <%= line_item.addon_names %>
+                  </p>
+
+                </div>
+
+              </div>
+
         <% if line_item.insufficient_stock? %>
             <span class="out-of-stock">
               <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br />
@@ -75,20 +90,6 @@
     </div>
 
   </div>
-      <div class='row'>
-
-        <div class="col-xs-10 col-xs-offset-2">
-
-          <p class="line-item-juice-names">
-            <%= line_item.juice_names %>
-          </p>
-          <p class="line-item-addon-names">
-            <%= line_item.addon_names %>
-          </p>
-
-        </div>
-
-      </div>
 
 
 </div>
