@@ -1178,6 +1178,7 @@ margin-bottom: 30px;
   //change width to product image width
   width: 80%;
   max-width: 550px;
+  margin: 0 auto;
   height: auto;
   display: block;
   img {
@@ -1337,7 +1338,7 @@ margin-bottom: 30px;
 }
 
 .top-of-page-text {
-  height: 100px;
+  min-height: 100px;
   width: 100%;
   margin: 20px 0px 0px 0px;
   p {

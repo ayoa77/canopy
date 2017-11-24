@@ -17,7 +17,7 @@
         <div class="col-md-6 flex-column">
           <div class="product-holder-image">
           <!-- This takes care of each menu item and< it's ingredients -->
-          <%= large_image(@product, itemprop: "image") %>
+            <%= large_image(@product, itemprop: "image") %>
           <%#= image_tag(@product.images.last.attachment.url) if @product.images.last.present?  %>
                          
           </div>
@@ -88,7 +88,14 @@
           
           <% else %>  <!-- Custom Box Page -->
 
-      <div class="col-md-6 col-lg-5 col-lg-offset-1">
+      <div class="col-xs-12 col-md-6 col-lg-5 col-lg-offset-1">
+
+          <div class="product-holder-image">
+          <!-- This takes care of each menu item and< it's ingredients -->
+            <%= large_image(@product, itemprop: "image") %>
+          <%#= image_tag(@product.images.last.attachment.url) if @product.images.last.present?  %>
+                         
+          </div>
 
         <!-- Add-Ons -->
 

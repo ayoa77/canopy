@@ -13,11 +13,11 @@
   <div id = "user-info" data-hook="account_summary" class="account-summary well row">
     <div  class = "col-sm-4">
       <dt><%= Spree.t(:email) %></dt>
-      <dd><%= @user.email %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
+      <dd><%= @user.email %></dd>
     </div>
     <div  class = "col-sm-4">
       <dt><%= Spree.t(:phone) %></dt>
-      <dd><%= @user.ship_address.try(:phone) %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
+      <dd><%= @user.ship_address.try(:phone) %></dd>
     </div>
     <div  class = "col-sm-4">
       <dt><%= Spree.t(:address) %></dt>
@@ -26,8 +26,15 @@
       <dd><%= @user.ship_address.address2 %></dd>
         <% end %>
       <dd><%= @user.ship_address.try(:city) %></dd>
-      <dd><%= @user.ship_address.try(:zipcode) %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
+      <dd><%= @user.ship_address.try(:zipcode) %></dd>
 
+    </div>
+
+    <div class = 'col-xs-12' style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+      <%= link_to Spree.t(:edit), spree.edit_account_path, :style => 'color: #666; margin: 10px 0 0 0;' %>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <%= link_to Spree.t(:logout), :logout, :style => 'color: #666; margin: 10px 0 0 0;' %>
+      <!-- <a href="logout"><%#= Spree.t(:logout), :style => 'color: #666; margin: 10px 0;' %></a> -->
     </div>
   </div>
 

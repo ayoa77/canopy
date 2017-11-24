@@ -144,11 +144,22 @@ $(document).on('ready', function() {
             dots: true,
             arrows: false,
             centerMode: true,
-            centerPadding: '20px',
+            centerPadding: '40px',
             slidesToShow: 1,
             speed: 100
           }
+        },
+        {
+          breakpoint: 325,
+          settings: {
+            dots: true,
+            arrows: false,
+            centerMode: true,
+            centerPadding: '20px',
+            slidesToShow: 1,
+            speed: 100
         }
+      }
       ]
     });
 
@@ -298,7 +309,7 @@ $('form#update-cart a.submit').click(function() {
         for (i=0; i<document.querySelectorAll('.custom-extra').length; i++) {
           let quantity = $('.extra-quantity')[i].firstElementChild.innerHTML;
           document.querySelector('#addon-quantity').value = parseInt(document.querySelector('#addon-quantity').value) + parseInt(quantity);
-          let extraName = $('.custom-extra')[i].innerHTML;
+          let extraName = quantity + 'x ' + $('.custom-extra')[i].innerHTML;
           if (quantity != 0) {
             extraArray.push(extraName)
           }
