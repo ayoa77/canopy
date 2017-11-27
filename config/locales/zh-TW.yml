@@ -196,6 +196,10 @@ zh-TW:
         cannot_be_blank: "密碼不能空白."
         send_instructions: "您將在數分鐘內收到一封說明如何重置密碼的電子郵件."
         updated: "密碼變更成功, 現已登入."
+      spree_user:
+        cannot_be_blank: "密碼不能空白."
+        send_instructions: "您將在數分鐘內收到一封說明如何重置密碼的電子郵件."
+        updated: "密碼變更成功, 現已登入."
     user_registrations:
       destroyed: "再會! 您的帳號已註銷, 希望您再度造訪."
       inactive_signed_up: "您已註冊成功. 但由於您的帳號%{reason}, 故無法登入."
