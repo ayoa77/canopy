@@ -1,4 +1,5 @@
-<%= form_for :order, id:"add-to-cart-from-product-show", remote: true, :url => variant_populate_orders_path, method: 'post' do |f| %>
+<%= form_for :order, id:"add-to-cart-from-product-show", remote: false, :url => variant_populate_orders_path, method: 'post' do |f| %>
+
 <div id="inside-product-cart-form" data-hook="inside_dynamic_variant_product_cart_form">
 
     <div class = "dynamic-variants">
