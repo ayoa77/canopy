@@ -41,7 +41,7 @@
         <div class="row">
 
         <div class = "col-xs-12 col-sm-8 col-sm-offset-2">
-          <div class = "col-xs-6 mini-gutter-right">
+          <div class = "mini-gutter-right">
 
             <div class="quantity-cart" style="margin: 20px auto 0;">
 
@@ -62,10 +62,10 @@
 
           </div>
 
-          <div class = "col-xs-6 mini-gutter-left">
+          <div class = "">
             <div class="quantity-cart">
           
-              <%= number_field_tag :quantity, 1, class: 'title form-control col-xs-6', min: 1 %>
+              <%= hidden_field_tag :quantity, 1, class: 'title form-control col-xs-6', min: 1 %>
           
             </div>
           </div>
