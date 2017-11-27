@@ -1939,7 +1939,7 @@ p.language-active {
   font-size: 20px;
   text-align: left;
   font-weight: 700;
-  padding-bottom: 10px;
+  padding: 0 0 10px 0;
 }
 
 .instore {
@@ -2178,6 +2178,12 @@ p.language-active {
 
 
 // Responsive (<1200px width)
+
+@media screen and (max-width: 1376px) {
+  .box-picture img {
+    width: 80%;
+  }
+}
 
 @media screen and (max-width: 359px) {
 
@@ -2441,7 +2447,12 @@ p.language-active {
     margin: 20px auto;
   }
 
+  .box-picture img {
+    width: 90%;
+  }
+
 }
+
 @media screen and (min-width: 1700px) {
   .invisible-xl {
     display: none !important;
