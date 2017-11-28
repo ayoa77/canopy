@@ -90,14 +90,14 @@ $(document).on('ready', function() {
 
 });
 
-    $( '.click-me-animation' ).click(function () {
-        $( '.navCartCount' ).css({"box-shadow": "0px 0px 65px 23px"});
-        $( '.navCartCount p' ).animate({"font-size": "23px"}, 150);
-      setTimeout(function() {
-        $( '.navCartCount' ).css({"box-shadow": "0px 0px 0px"});
-      }, 200);
-        $( '.navCartCount p' ).animate({"font-size": "14px"}, 150);
-    });
+    // $( '.click-me-animation' ).click(function () {
+    //     $( '.navCartCount' ).css({"box-shadow": "0px 0px 65px 23px"});
+    //     $( '.navCartCount p' ).animate({"font-size": "23px"}, 150);
+    //   setTimeout(function() {
+    //     $( '.navCartCount' ).css({"box-shadow": "0px 0px 0px"});
+    //   }, 200);
+    //     $( '.navCartCount p' ).animate({"font-size": "14px"}, 150);
+    // });
 
 // Slick
 
