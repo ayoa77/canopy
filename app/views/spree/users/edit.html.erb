@@ -13,8 +13,8 @@
         <div class="form-group">
           <%= f.email_field :email, :class => 'form-control', :placeholder => Spree.t(:email) %>
         </div>
-        <p class="change-me-3"><%= Spree.t(:phone_number) %></p>
         <%= f.fields_for :ship_address do |address_fields| %>
+        <p class="change-me-3"><%= Spree.t(:phone_number) %></p>
         <div class="form-group">
           <%= address_fields.telephone_field :phone, :class => 'form-control', :style => 'margin-bottom: 35px;' %>
         </div>
