@@ -393,9 +393,9 @@ $('form#update-cart a.submit').click(function() {
 });
 
 function animateScroll() {
-  // if ($(window).width() > 425) {
-    window.scrollTo(0, 520);
-  // } else {
-  //   window.scrollTo(0, 260);
-  // }
+  $('body').animate({
+    scrollTop: 520
+    // window.scrollTo(0, 520);
+  }, 500);
+
 }
