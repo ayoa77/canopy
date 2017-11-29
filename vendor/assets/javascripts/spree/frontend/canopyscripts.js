@@ -2,7 +2,7 @@ $(window).on('resize', function() {
   if ($(window).width() > 1919) {
     $('.featurette-mobile').classList.remove('.visible-lg');
   };
-})
+});
 
 $(document).on('ready', function() {
 
@@ -393,7 +393,9 @@ $('form#update-cart a.submit').click(function() {
 });
 
 function animateScroll() {
-  $('html, body').animate({
-    scrollTop: 520
-  }, 500);
+  // if ($(window).width() > 425) {
+    window.scrollTo(0, 520);
+  // } else {
+  //   window.scrollTo(0, 260);
+  // }
 }
