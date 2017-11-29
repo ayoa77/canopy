@@ -393,9 +393,8 @@ $('form#update-cart a.submit').click(function() {
 });
 
 function animateScroll() {
-  $('body').animate({
+  $('html, body').animate({
     scrollTop: 520
-    // window.scrollTo(0, 520);
   }, 500);
 
 }
