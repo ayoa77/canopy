@@ -1830,7 +1830,7 @@ spree:
   order: "訂單"
   order_adjustments: "訂單調整"
   order_already_updated:
-  order_approved:
+  order_approved: "order 核准"
   order_canceled:
   order_details: "訂單資料"
   order_email_resent: "重新發送了訂單郵件"

@@ -178,6 +178,7 @@ zh-TW:
       timeout: "您的連線已過期, 請重新登入."
       unauthenticated: "您必須先登入或者註冊."
       unconfirmed: "您必須先驗證帳號才能繼續."
+      already_authenticated: "已驗證"
     mailer:
       confirmation_instructions:
         subject: "驗證說明"
@@ -1315,6 +1316,7 @@ devise:
     timeout: "您的連線已過期, 請重新登入."
     unauthenticated: "您必須先登入或者註冊."
     unconfirmed: "您必須先驗證帳號才能繼續."
+    already_authenticated: "已驗證"
   mailer:
     confirmation_instructions:
       subject: "驗證說明"
@@ -1868,7 +1870,7 @@ spree:
   order: "訂單"
   order_adjustments: "訂單調整"
   order_already_updated:
-  order_approved:
+  order_approved: "Order 核准"
   order_canceled:
   order_details: "訂單資料"
   order_email_resent: "重新發送了訂單郵件"

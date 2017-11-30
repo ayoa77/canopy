@@ -80,9 +80,12 @@
                         <%= item.addon_names if item.addon_names.present? %>
                       </p>
           <%#= "(" + item.variant.options_text + ")" unless item.variant.option_values.empty? %>
-        </td>
-        <td data-hook="order_item_price" class="lead text-primary price"><span><%= item.single_money.to_html[0..-4] %></span></td>
+        </td> $
+        <%#= (line_item.price*line_item.quantity + line_item.product.addon_price*line_item.addon_quantity*line_item.quantity).to_s[0..-3] %>
+        <td data-hook="order_item_price" class="lead text-primary price"><span>$ <%= (line_item.price*line_item.quantity + line_item.product.addon_price*line_item.addon_quantity*line_item.quantity).to_s[0..-3] %></span></td>
+        <!-- <td data-hook="order_item_price" class="lead text-primary price"><span><%#= item.single_money.to_html[0..-4] %></span></td> -->
         <td data-hook="order_item_qty" class="order-qty"><%= item.quantity %></td>
+        <!-- <td data-hook="order_item_total" class="lead text-primary total"><span><%#= item.display_amount.to_html[0..-4] %></span></td> -->
         <td data-hook="order_item_total" class="lead text-primary total"><span><%= item.display_amount.to_html[0..-4] %></span></td>
       </tr>
     <% end %>
