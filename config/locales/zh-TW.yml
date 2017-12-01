@@ -86,6 +86,8 @@ zh-TW:
         path: "途徑"
         starts_at: "起始日期"
         usage_limit: "使用次數限制"
+      spree/promotion_label:
+        name: '優惠推廣 (%{name})'
       spree/property:
         name: "名稱"
         presentation: "描述"
@@ -216,6 +218,9 @@ zh-TW:
       not_locked: "未鎖定"
       not_saved: "在儲存%{resource}時遭遇%{count} 個錯誤"
   spree:
+    promotion_label:
+        name: '優惠推廣 (%{name})'
+    promotion_label: '優惠推廣 (%{name})'
     no_payment_found: "很抱歉，您的付款方式有誤。請再嘗試一次，若依然無法順利付款，請聯絡我們或是歐付寶客服。"
     order_already_updated: "訂單更新失敗。若希望更改地址或是寄送方式，請點選頁面上的結帳步驟按鈕來做更變。"
     cash: "現金"
@@ -2002,6 +2007,7 @@ spree:
     match_policies:
       all: "符合所有條件"
       any: "符合任一條件"
+  promotion_label: '優惠推廣 (%{name})'
   promotion_rule: "促銷規則"
   promotion_rule_types:
     first_order:

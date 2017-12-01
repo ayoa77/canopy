@@ -14,7 +14,7 @@
     <% end %>
 
     <div data-hook="new_product_attrs" class="row">
-      <% unless @product.has_variants? %>
+      <!-- <% unless @product.has_variants? %>
         <div data-hook="new_product_sku" class="col-xs-12 col-md-4">
           <%= f.field_container :sku, class: ['form-group'] do %>
             <%= f.label :sku, Spree.t(:sku) %>
@@ -22,14 +22,14 @@
             <%= f.error_message_on :sku %>
           <% end %>
         </div>
-      <% end %>
+      <% end %> -->
 
-      <div data-hook="new_product_prototype" class="col-xs-12 col-md-4">
+      <!-- <div data-hook="new_product_prototype" class="col-xs-12 col-md-4">
         <%= f.field_container :prototype, class: ['form-group'] do %>
           <%= f.label :prototype_id, Spree.t(:prototype) %>
           <%= f.collection_select :prototype_id, Spree::Prototype.all, :id, :name, {include_blank: true}, {class: 'select2'} %>
         <% end %>
-      </div>
+      </div> -->
 
       <div data-hook="new_product_price" class="col-xs-12 col-md-4">
         <%= f.field_container :price, class: ['form-group'] do %>
@@ -43,7 +43,7 @@
         <%= f.field_container :available_on, class: ['form-group'] do %>
           <%= f.label :available_on, Spree.t(:available_on) %>
           <%= f.error_message_on :available_on %>
-          <%= f.text_field :available_on, class: 'datepicker form-control' %>
+          <%= f.text_field :available_on, value: Time.now, class: 'datepicker form-control' %>
         <% end %>
       </div>
 
