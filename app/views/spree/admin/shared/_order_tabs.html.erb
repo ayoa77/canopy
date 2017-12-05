@@ -35,7 +35,7 @@
       </li>
     <% end %>
 
-    <% if can? :index, Spree::ReturnAuthorization %>
+    <!-- <% if can? :index, Spree::ReturnAuthorization %>
       <% if @order.completed? %>
         <li<%== ' class="active"' if current == :return_authorizations %> data-hook='admin_order_tabs_return_authorizations'>
           <%= link_to_with_icon 'transfer', Spree.t(:return_authorizations), spree.admin_order_return_authorizations_url(@order) %>
@@ -49,7 +49,7 @@
           <%= link_to_with_icon 'transfer', Spree.t(:customer_returns), spree.admin_order_customer_returns_url(@order) %>
         </li>
       <% end %>
-    <% end %>
+    <% end %> -->
 
     <% if can? :update, @order %>
       <li<%== ' class="active"' if current == :state_changes %> data-hook='admin_order_tabs_state_changes'>
