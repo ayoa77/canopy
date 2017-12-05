@@ -13,7 +13,7 @@ module Canopy
     # config.i18n.default_locale = :en
     config.i18n.default_locale = :"zh-TW"
 
-    config.i18n.available_locales = [:"zh-TW", :en]
+    config.i18n.available_locales = :"zh-TW"
 
     config.to_prepare do
       # Load application's model / class decorators

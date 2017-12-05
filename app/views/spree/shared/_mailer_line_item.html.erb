@@ -1,0 +1,27 @@
+<% unless line_item.hidden == true %>
+  <tr>
+    <td class="six sub-columns">
+      <strong>
+        <% if frontend_available? %>
+          <%= link_to raw(line_item.variant.product.name), spree.product_url(line_item.variant.product) %>
+        <% else %>
+          <%= raw(line_item.variant.product.name) %>
+        <% end %>
+      </strong>
+  <p class="beautiful-text-hierarchy nathan beautify">
+    <%= line_item.preference %>
+  </p>
+  <p class="line-item-juice-names">
+    <%= line_item.juice_names if line_item.juice_names.present? %>
+  </p>
+  <p class="line-item-addon-names">
+    <%= line_item.addon_names if line_item.addon_names.present? %>
+  </p>    </td>
+    <td class="six sub-columns last right">
+      <!-- <%#= line_item.quantity %> x <%#= line_item.single_money %> = <%#= line_item.display_amount %> -->
+      <%= line_item.quantity %> x
+        <%= '$'+ (line_item.price*line_item.quantity + line_item.product.addon_price*line_item.addon_quantity*line_item.quantity).to_s[0..-3] =  <%= '$' +  (line_item.price*line_item.quantity + line_item.product.addon_price*line_item.addon_quantity*line_item.quantity).to_s[0..-3] %>
+          <%= '$' +  (line_item.price*line_item.quantity + line_item.product.addon_price*line_item.addon_quantity*line_item.quantity).to_s[0..-3] %>
+    </td>
+  </tr>
+  <%end%>

@@ -209,6 +209,8 @@ zh-TW:
       signed_up: "歡迎! 您已註冊成功."
       updated: "您的帳號已更新成功."
     user_sessions:
+      spree_user:
+        already_signed_out: "您已登出"
       signed_in: "登入成功."
       signed_out: "登出成功."
   errors:
@@ -722,14 +724,14 @@ zh-TW:
     order_information: "訂單資訊"
     order_mailer:
       cancel_email:
-        dear_customer: Dear Customer,
-        instructions: Your order has been CANCELED.  Please retain this cancellation information for your records.
-        order_summary_canceled: Order Summary [CANCELED]
+        dear_customer: Dear Customer， 親愛的用戶您好，
+        instructions: Your order has been CANCELED.  Please retain this cancellation information for your records. 您的訂單已被取消，請確認並保存此交易紀錄信件。
+        order_summary_canceled: Order Summary [CANCELED] 交易總結,
         subject: "註銷訂單"
         subtotal: "小計: %{subtotal}"
         total: "共計: %{total}"
       confirm_email:
-        dear_customer: Dear Customer, 親愛的用戶，
+        dear_customer: Dear Customer， 親愛的用戶，
         instructions: Please review and retain the following order information for your records. 請確認並保存此交易紀錄信件。
         order_summary: Order Summary 交易總結
         subject: "訂單確認"
@@ -1346,6 +1348,8 @@ devise:
     signed_up: "歡迎! 您已註冊成功."
     updated: "您的帳號已更新成功."
   user_sessions:
+    spree_user:
+      already_signed_out: "您已登出"    
     signed_in: "登入成功."
     signed_out: "登出成功."
 errors:
