@@ -1503,7 +1503,7 @@ spree:
   card_type:
   card_type_is: "信用卡類型"
   cart: "購物車"
-  cart_subtotal:
+  cart_subtotal: "商品總額: "
   categories: "分類"
   category: "分類"
   charged:
