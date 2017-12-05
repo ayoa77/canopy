@@ -56,7 +56,9 @@
           <label>
             <%#= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == @order.available_payment_methods.first %>
             <%= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == methods.first%>
-
+            <%if method.description != "cash" %>
+            <%= image_tag 'allpay_logo.png', class: "allpay-logo" %>
+            <%end%>
             <%= Spree.t(method.name, scope: :payment_methods, default: method.name) %>
           </label>
         </li>
