@@ -35,43 +35,43 @@
 <div data-hook="file" class="form-group">
   <%= f.label :photo1, Spree.t(:photo1) %>
   <%= f.file_field :photo1 %>
-  <%= image_tag @custom.photo1.url if @custom.photo1.url %>
+  <%= image_tag @custom.photo1.url(:product) if @custom.photo1.url(:product) %>
 </div>
 <div data-hook="file" class="form-group">
   <%= f.label :photo2, Spree.t(:photo2) %>
   <%= f.file_field :photo2 %>
-  <%= image_tag @custom.photo2.url if @custom.photo2.url %>
+  <%= image_tag @custom.photo2.url(:product) if @custom.photo2.url(:product) %>
 </div>
 <div data-hook="file" class="form-group">
   <%= f.label :photo3, Spree.t(:photo3) %>
   <%= f.file_field :photo3 %>
-  <%= image_tag @custom.photo3.url if @custom.photo3.url %>
+  <%= image_tag @custom.photo3.url(:product) if @custom.photo3.url(:product) %>
 </div>
 <div data-hook="file" class="form-group">
   <%= f.label :photo4, Spree.t(:photo4) %>
   <%= f.file_field :photo4 %>
-  <%= image_tag @custom.photo4.url if @custom.photo4.url %>
+  <%= image_tag @custom.photo4.url(:product) if @custom.photo4.url(:product) %>
 </div>
-<p><strong>InStore Menu photos</strong></p>
+<!-- <p><strong>InStore Menu photos</strong></p>
 <div data-hook="file" class="form-group">
   <%= f.label :photo5, Spree.t(:photo5) %>
   <%= f.file_field :photo5 %>
-  <%= image_tag @custom.photo5.url if @custom.photo5.url %>
+  <%= image_tag @custom.photo5.url(:product) if @custom.photo5.url(:product) %>
 </div>
 <div data-hook="file" class="form-group">
   <%= f.label :photo6, Spree.t(:photo6) %>
   <%= f.file_field :photo6 %>
-  <%= image_tag @custom.photo6.url if @custom.photo6.url %>
+  <%= image_tag @custom.photo6.url(:product) if @custom.photo6.url(:product) %>
 </div>
 <div data-hook="file" class="form-group">
   <%= f.label :photo7, Spree.t(:photo7) %>
   <%= f.file_field :photo7 %>
-  <%= image_tag @custom.photo7.url if @custom.photo7.url %>
-</div>
+  <%= image_tag @custom.photo7.url(:product) if @custom.photo7.url(:product) %>
+</div> -->
 <!-- <div data-hook="file" class="form-group">
   <%= f.label :photo8, Spree.t(:photo8) %>
   <%= f.file_field :photo8 %>
-  <%= image_tag @custom.photo8.url if @custom.photo8.url %>
+  <%= image_tag @custom.photo8.url(:product) if @custom.photo8.url(:product) %>
 </div> -->
 
 <div data-hook="file" class="form-group pull-right">

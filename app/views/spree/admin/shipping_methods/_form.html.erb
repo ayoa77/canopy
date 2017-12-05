@@ -21,17 +21,17 @@
     <div data-hook="admin_shipping_method_form_internal_name_field" class="col-xs-12 col-md-4">
       <%= f.field_container :admin_name, class: ['form-group'] do %>
         <%= f.label :admin_name, Spree.t(:internal_name) %>
-        <%= f.text_field :admin_name, class: 'form-control', label: false %>
+        <%= f.text_field :admin_name, class: 'form-control', label: false, disabled:'disabled' %>
         <%= f.error_message_on :admin_name %>
       <% end %>
     </div>
 
     <div data-hook="admin_shipping_method_form_code" class="col-xs-12 col-md-4">
-      <%= f.field_container :code, class: ['form-group'] do %>
+      <!-- <%= f.field_container :code, class: ['form-group'] do %>
         <%= f.label :code, Spree.t(:code) %>
         <%= f.text_field :code, class: 'form-control', label: false %>
         <%= f.error_message_on :code %>
-      <% end %>
+      <% end %> -->
     </div>
 
     <div data-hook="admin_shipping_method_form_tracking_url_field" class="col-xs-12 col-md-4">
@@ -101,7 +101,7 @@
   </div>
 
   <div class="col-xs-12 col-md-6">
-    <div class="panel panel-default tax_categories">
+    <!-- <div class="panel panel-default tax_categories">
       <div class="panel-heading">
         <h1 class="panel-title">
           <%= Spree.t(:tax_category) %>
@@ -114,6 +114,6 @@
           <%= f.error_message_on :tax_category_id %>
         <% end %>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>

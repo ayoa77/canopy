@@ -13,17 +13,17 @@
       <%= f.text_field :code, class: 'form-control' %>
     <% end %>
 
-    <%= f.field_container :path, class: ['form-group'] do %>
+    <!-- <%= f.field_container :path, class: ['form-group'] do %>
       <%= f.label :path %>
       <%= f.text_field :path, class: 'form-control' %>
-    <% end %>
+    <% end %> -->
 
-    <%= f.field_container :advertise, class: ['checkbox'] do %>
+    <!-- <%= f.field_container :advertise, class: ['checkbox'] do %>
       <%= f.label :advertise do %>
         <%= f.check_box :advertise %>
         <%= Spree.t(:advertise) %>
       <% end %>
-    <% end %>
+    <% end %> -->
   </div>
 
   <div class="col-xs-12 col-md-6">
@@ -32,10 +32,10 @@
       <%= f.text_area :description, rows: 7, class: 'form-control' %>
     <% end %>
 
-    <%= f.field_container :category, class: ['form-group'] do %>
+    <!-- <%= f.field_container :category, class: ['form-group'] do %>
       <%= f.label :promotion_category %>
       <%= f.collection_select(:promotion_category_id, @promotion_categories, :id, :name, { include_blank: Spree.t('match_choices.none') }, { class: 'select2' }) %>
-    <% end %>
+    <% end %> -->
   </div>
 
   <div id="expiry_fields" class="col-xs-6 col-md-3">
