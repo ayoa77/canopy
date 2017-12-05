@@ -1,13 +1,11 @@
 // Site-wide fixes
-html {
-  max-width: 100%;
+html { 
+  overflow-x: hidden;
 }
 
 body {
   max-width: 100%;
   min-height: 100vh;
-  // overflow-x: hidden;
-  // -webkit-overflow-scrolling: touch;
 }
 
 h1, h2, h3, h4, h5, h6, a, p, textarea, input, button {
