@@ -388,6 +388,7 @@ zh-TW:
     card_number: "信用卡卡號"
     card_type_is: "信用卡類型"
     cart: "購物車"
+    cart_subtotal: "商品總額: "
     categories: "分類"
     category: "分類"
     check_for_spree_alerts: "檢查 Spree的警告"
