@@ -27,7 +27,6 @@
 
   <div data-hook="cart_container">
 
-<%byebug%>
     <%# if @order.line_items.empty? %>
 <% if !(@order.line_items.pluck(:hidden).any? {|x| x != true}) %>
     <div id="no-items-in-cart">
