@@ -27,8 +27,8 @@
 
   <div data-hook="cart_container">
 
-    <%# if @order.line_items.empty? %>
-<% if !(@order.line_items.pluck(:hidden).any? {|x| x != true}) %>
+    <% if @order.line_items.empty? %>
+
     <div id="no-items-in-cart">
       <p>
       <%= Spree.t(:your_cart_is_empty) %>

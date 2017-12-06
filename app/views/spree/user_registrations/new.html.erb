@@ -11,7 +11,7 @@
     <div class="col-xs-12">
       <div class="top-of-page-text">
         <p>
-          Create an Account
+          <%= Spree.t(:create_a_new_account) %>
         </p>
       </div>
     </div>
@@ -23,7 +23,7 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p class="title-text">
-        Welcome to Canopy
+        <%= Spree.t(:welcome_to) %> Canopy
       </p>
       <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
       <p><%= f.submit Spree.t(:create), :class => 'ghost-button-green' %></p>
