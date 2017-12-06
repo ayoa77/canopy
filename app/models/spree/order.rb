@@ -196,6 +196,7 @@ module Spree
     # least one LineItem in the Order.  Feel free to override this logic in your
     # own application if you require additional steps before allowing a checkout.
     def checkout_allowed?
+      byebug
       line_items.count > 0
     end
 
@@ -260,6 +261,7 @@ module Spree
     end
 
     def contents
+      byebug
       @contents ||= Spree::OrderContents.new(self)
     end
 

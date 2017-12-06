@@ -29,7 +29,7 @@ module Spree
     end
 
     def checkout_progress(numbers: false)
-      index = @order.checkout_steps.find_index(params["state"])
+      index = @order.checkout_steps.find_index(params["state"]) || 0 
       states = @order.checkout_steps[0..index]
       items = states.each_with_index.map do |state, i|
         text = Spree.t("order_state.#{state}").titleize
