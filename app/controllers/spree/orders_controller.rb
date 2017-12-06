@@ -14,8 +14,9 @@ module Spree
     end
 
     def update
+      byebug
       if @order.contents.update_cart(order_params)
-          @order.empty! if !(@order.line_items.pluck(:hidden).all? {|x| x != true})  
+          @order.empty! if @order.line_items.pluck(:hidden).all? 
         respond_with(@order) do |format|
           format.html do
             if params.has_key?(:checkout)
