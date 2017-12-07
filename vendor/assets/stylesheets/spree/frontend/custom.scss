@@ -2178,6 +2178,19 @@ p.language-active {
   font-weight: 700;
 }
 
+.nav-justified > li, .nav-tabs.nav-justified > li {
+  display: block;
+  width: 25%;
+}
+
+.nav-justified > li {
+  float: left;
+}
+
+.nav-pills > li + li {
+  margin-left: 0px;
+}
+
 // -=-=-=-=-=- Responsive No Man's Land -=-=-=-=-=-
 
 #order_summary strong {
@@ -2295,6 +2308,17 @@ p.language-active {
 
   .instore-menu-category {
     justify-content: center;
+  }
+
+  // fix the pills
+
+  .nav-justified > li, .nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 100%;
+  }
+  
+  .nav-pills > li + li {
+    margin-left: 2px;
   }
 
 }
