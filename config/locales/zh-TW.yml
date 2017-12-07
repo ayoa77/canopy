@@ -736,9 +736,9 @@ zh-TW:
         instructions: Please review and retain the following order information for your records. 請確認並保存此交易紀錄信件。
         order_summary: Order Summary 交易總結
         subject: "訂單確認"
-        subtotal: "小計: %{subtotal}"
-        thanks: Thank you for your business. 感謝您的購買。
-        total: "共計: %{total}"
+        subtotal: "小計: "
+        thanks: "謝謝你的購物和信賴。"
+        total: "共計:"
     order_not_found: "找不到您的訂單. 請再試一次."
     order_number: "訂單編號"
     order_populator:
@@ -1886,6 +1886,9 @@ spree:
   order_email_resent: "重新發送了訂單郵件"
   order_information: "訂單資訊"
   order_mailer:
+    subtotal: "小計: "
+    thanks: "謝謝你的購物和信賴。"
+    total: "共計: "
     cancel_email:
       dear_customer: "親愛的顧客，"
       instructions: "您的訂單已被取消。請保留此取消信息記錄。"
@@ -1898,9 +1901,9 @@ spree:
       instructions: "請仔細閱讀並保留以下訂單信息記錄。"
       order_summary: "訂單總覽"
       subject: "訂單確認"
-      subtotal: "小計: %{subtotal}"
+      subtotal: "小計: "
       thanks: "謝謝你的購物和信賴。"
-      total: "共計: %{total}"
+      total: "共計:"
   order_not_found: "找不到您的訂單. 請再試一次."
   order_number: "訂單編號 %{number}"
   order_processed_successfully: "您的訂單已被接收"
