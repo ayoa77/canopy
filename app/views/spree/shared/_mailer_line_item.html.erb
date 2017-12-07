@@ -8,6 +8,7 @@
           <%= raw(line_item.variant.product.name) %>
         <% end %>
       </strong>
+      <%byebug%>
   <p class="beautiful-text-hierarchy nathan beautify">
     <%= line_item.preference %>
   </p>
@@ -20,7 +21,7 @@
     <td class="six sub-columns last right">
       <!-- <%#= line_item.quantity %> x <%#= line_item.single_money %> = <%#= line_item.display_amount %> -->
       <%= line_item.quantity %> x
-        <%= '$'+ (line_item.price*line_item.quantity + line_item.product.addon_price*line_item.addon_quantity*line_item.quantity).to_s[0..-3] =  <%= '$' +  (line_item.price*line_item.quantity + line_item.product.addon_price*line_item.addon_quantity*line_item.quantity).to_s[0..-3] %>
+        <%= '$'+ (line_item.price*line_item.quantity + line_item.product.addon_price*line_item.addon_quantity*line_item.quantity).to_s[0..-3] %> =  <%= '$' +  (line_item.price*line_item.quantity + line_item.product.addon_price*line_item.addon_quantity*line_item.quantity).to_s[0..-3] %>
           <%= '$' +  (line_item.price*line_item.quantity + line_item.product.addon_price*line_item.addon_quantity*line_item.quantity).to_s[0..-3] %>
     </td>
   </tr>
