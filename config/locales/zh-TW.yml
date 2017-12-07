@@ -1891,16 +1891,16 @@ spree:
       instructions: "您的訂單已被取消。請保留此取消信息記錄。"
       order_summary_canceled: "訂單總覽 [已取消]"
       subject: "註銷訂單"
-      subtotal:
-      total:
+      subtotal: "小計: %{subtotal}"
+      total: "共計: %{total}"
     confirm_email:
       dear_customer: "親愛的顧客，"
       instructions: "請仔細閱讀並保留以下訂單信息記錄。"
       order_summary: "訂單總覽"
       subject: "訂單確認"
-      subtotal:
+      subtotal: "小計: %{subtotal}"
       thanks: "謝謝你的購物和信賴。"
-      total:
+      total: "共計: %{total}"
   order_not_found: "找不到您的訂單. 請再試一次."
   order_number: "訂單編號 %{number}"
   order_processed_successfully: "您的訂單已被接收"
