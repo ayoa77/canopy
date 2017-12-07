@@ -220,6 +220,7 @@ zh-TW:
       not_locked: "未鎖定"
       not_saved: "在儲存%{resource}時遭遇%{count} 個錯誤"
   spree:
+    order_approved: "Order 核准"
     promotion_label:
         name: '優惠推廣 (%{name})'
     promotion_label: '優惠推廣 (%{name})'
