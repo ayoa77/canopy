@@ -2,13 +2,12 @@
   <tr>
     <td class="six sub-columns">
       <strong>
-        <% if frontend_available? %>
+        <%# if frontend_available? %>
           <%= link_to raw(line_item.variant.product.name), spree.product_url(line_item.variant.product) %>
-        <% else %>
-          <%= raw(line_item.variant.product.name) %>
-        <% end %>
+        <%# else %>
+          <%#= raw(line_item.variant.product.name) %>
+        <%# end %>
       </strong>
-      <%byebug%>
   <p class="beautiful-text-hierarchy nathan beautify">
     <%= line_item.preference %>
   </p>
