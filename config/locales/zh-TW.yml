@@ -731,7 +731,7 @@ zh-TW:
       cancel_email:
         dear_customer: Dear Customer， 親愛的用戶您好，
         instructions: Your order has been CANCELED.  Please retain this cancellation information for your records. 您的訂單已被取消，請確認並保存此交易紀錄信件。
-        order_summary_canceled: Order Summary [CANCELED] 交易總結,
+        order_summary_canceled: Order Summary 交易總結,
         subject: "註銷訂單"
         subtotal: "小計: %{subtotal}"
         total: "共計: %{total}"
