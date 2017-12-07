@@ -85,7 +85,7 @@
 
 <div class="col-xs-12 col-md-4 col-md-offset-8 save-and-continue-button" data-hook="buttons">
   <%byebug%>
-  <% if @order.instore == nil %>
+  <% if @order.instore == nil || @order.instore = false %>
   <%= submit_tag Spree.t(:save_and_continue), class: 'ghost-button-orange', data: { confirm: Spree.t(:allpay_alert) } %>
   <% else %>
     <%= submit_tag Spree.t(:save_and_continue), class: 'ghost-button-orange' %>
