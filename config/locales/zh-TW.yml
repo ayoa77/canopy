@@ -234,9 +234,9 @@ zh-TW:
     add_any_allergies_or_special_request_for_this_box: "如果您有不敢吃的食材或是已知過敏原，想加購的超級食物要添加到您選購的哪瓶果汁裡，都請留言在這裡讓我們知道。"
     thank_you_for_your_order_email: "如果您沒收到確認信，請列印此頁面資訊作為取貨證明。"
     no_preference: "無特別需求。"
-    delivery_notice: "我們會盡量滿足您的配送需求，您也可以在訂購之前先撥打我們的專線確認到貨日期與時間。"
-    delivery_days: "商品將於三至五個工作天內到貨。"
-    delivery_time: "我們一心一意的將最新鮮的果汁送到您手上，請您留意到貨時間，果汁需要冷藏"
+    delivery_notice: "商品將於三至五個工作天內到貨，付款確認後再預計送達日前一日製作完成出貨，未開瓶冷藏可放三日。(週日、週一、週四不接受到貨服務) "
+    delivery_days: "我們會盡量滿足您的配送需求，您也可以在訂購之前，先撥打我們的專線確認到貨日期與時間。"
+    delivery_time: "我們一心一意的將最新鮮的果汁送到您手上，請您留意到貨時間、宅配司機電話，並請為果汁預留冷藏空間。"
     before_1pm: "下午一點以前"
     from_two_to_four_pm: "下午兩點到四點"
     anytime: "任何時間"
@@ -731,7 +731,7 @@ zh-TW:
       cancel_email:
         dear_customer: Dear Customer， 親愛的用戶您好，
         instructions: Your order has been CANCELED.  Please retain this cancellation information for your records. 您的訂單已被取消，請確認並保存此交易紀錄信件。
-        order_summary_canceled: Order Summary 交易總結,
+        order_summary_canceled: Order Summaryv 交易總結,
         subject: "註銷訂單"
         subtotal: "小計: %{subtotal}"
         total: "共計: %{total}"
