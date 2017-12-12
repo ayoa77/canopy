@@ -24,7 +24,7 @@ module Spree
           quantity = line_item.quantity - units_count
 
           shipment = determine_target_shipment unless shipment
-          add_to_shipment(shipment, quantity)
+          # add_to_shipment(shipment, quantity)
         elsif (units_count > line_item.quantity) || (units_count == line_item.quantity && !line_item.changed?)
           remove(units_count, shipment)
         end
