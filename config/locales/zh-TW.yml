@@ -220,6 +220,7 @@ zh-TW:
       not_locked: "未鎖定"
       not_saved: "在儲存%{resource}時遭遇%{count} 個錯誤"
   spree:
+    order_canceled: "訂單已取消"
     order_approved: "Order 核准"
     promotion_label:
         name: '優惠推廣 (%{name})'
@@ -1885,7 +1886,7 @@ spree:
   order_adjustments: "訂單調整"
   order_already_updated:
   order_approved: "Order 核准"
-  order_canceled:
+  order_canceled: "訂單已取消"
   order_details: "訂單資料"
   order_email_resent: "重新發送了訂單郵件"
   order_information: "訂單資訊"

@@ -18,4 +18,4 @@
 
 
 
-<span class="payment-amount">(<%= payment.display_amount %>)</span>
+<span class="payment-amount">(<%= payment.display_amount.to_s[0..-4] %>)</span>
