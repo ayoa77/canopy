@@ -221,6 +221,7 @@ zh-TW:
       not_saved: "在儲存%{resource}時遭遇%{count} 個錯誤"
   spree:
     order_canceled: "訂單已取消"
+    order_resumed: "訂單已恢復"
     order_approved: "Order 核准"
     promotion_label:
         name: '優惠推廣 (%{name})'
