@@ -957,6 +957,7 @@ zh-TW:
         track_link: "追蹤連結: %{url}"
     shipment_state: "出貨狀態"
     shipment_states:
+      canceled: "取消"
       backorder: "預購"
       partial: "部份出貨"
       pending: "擱置"
@@ -2176,7 +2177,7 @@ spree:
   shipment_state: "出貨狀態"
   shipment_states:
     backorder: "預購"
-    canceled:
+    canceled: "取消"
     partial: "部份出貨"
     pending: "擱置"
     ready: "準備出貨"
