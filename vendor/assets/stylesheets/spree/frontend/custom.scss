@@ -1084,6 +1084,21 @@ a:hover{
   text-align: right;
 }
 
+#update-button {
+  width: 100px;
+  height: 40px;
+  background: linear-gradient(#0077a7, #0077a7, #006d9c);
+  // background: linear-gradient(#A0C060, #A0C060, #A0C060, #39B54A);
+  
+  border: 0px;
+
+  transition: box-shadow .5s ease-in-out;
+}
+
+#update-button:hover {
+  box-shadow: 0px 3px 10px #999;
+}
+
 #clear_cart_link {
   margin-top: 8px;
 }

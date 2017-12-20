@@ -59,7 +59,7 @@
   text-decoration: none;
   cursor: pointer;
   background-color: #B3D57C;
-  border: 2px solid #FFF;
+  border: 2px solid #B3D57C;
   color: #fff;
   // text-align: center;
 }
@@ -202,13 +202,13 @@
 #navigation.menuDown {
   transition: height 400;
   height: calc(100% - 120px);
-  background: -webkit-linear-gradient(#EAF7D6, #B3D57C);
+  background: -webkit-linear-gradient(#EAF7D6, 30%, #B3D57C);
   /* Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#EAF7D6, #B3D57C);
-  /* Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#EAF7D6, #B3D57C);
+  background: -o-linear-gradient(#EAF7D6, 30%, #B3D57C);
+  /* Opera 11.1 to 13.0 */
+  background: -moz-linear-gradient(#EAF7D6, 30%, #B3D57C);
   /* Firefox 3.6 to 15 */
-  background: linear-gradient(#EAF7D6, #B3D57C);
+  background: linear-gradient(#EAF7D6, 30%, #B3D57C);
   /* Standard syntax */
 }
 
