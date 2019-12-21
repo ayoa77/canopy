@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: canopy_production
-  username: aj
+  username: ayo
   password: canopyjuice

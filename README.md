@@ -52,3 +52,7 @@ new_task = Task.new(old_task.attributes.merge({:scheduled_on => some_new_date}))
 ### manually restart passenger
  passenger-config restart-app /var/www/canopy/current
  passenger start -a 0.0.0.0 -p 3000 -d -e production
+
+
+ sudo apt-get install libpq-dev
+ cap production deploy

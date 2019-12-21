@@ -3,25 +3,63 @@ lock "3.9.1"
 
 # set :application, "my_app_name"
 # set :repo_url, "git@example.com:me/my_repo.git"
+  # SSHKit.config.command_map[:git] = 'sudo git'
+  # SSHKit.config.command_map[:mkdir] = 'sudo mkdir'
+  # SSHKit.config.command_map[:tar] = 'sudo tar'
+  # SSHKit.config.command_map[:echo] = 'sudo echo'
+  # SSHKit.config.command_map[:rm] = 'sudo rm'
+  # SSHKit.config.command_map[:ln] = 'sudo ln'
+  # # SSHKit.config.command_map[:bundle] = 'sudo bundle'
+  SSHKit.config.command_map[:rm] = 'sudo rm'
+  # SSHKit.config.command_map[:default] = 'sudo default'
+  # SSHKit.config.command_map['~/.rvm/bin/rvm'] = 'sudo ~/.rvm/bin/rvm'
+  # MONKEY PATCH OH NO
+  # =======================
+
+  # you actually have to clear the old rake task 
+  # for yours to overwrite Capistrano's
+  Rake::Task['deploy:set_current_revision'].clear
+  desc "IT'S MINE"
+  task :set_current_revision do
+    on release_roles(:all) do
+      within release_path do
+        execute :echo, "\"$(sudo -u deployuser git rev-parse HEAD)\" | sudo -u deployuser tee REVISION"
+      end
+    end
+  end
+
+
+  Rake::Task['deploy:log_revision'].clear
+  desc "Log details of the deploy"
+  task :log_revision do
+    on release_roles(:all) do
+      within releases_path do
+        execute :echo, %Q{"#{revision_log_message}" | sudo -u deployuser tee #{revision_log}}
+      end
+    end
+  end
+
 
 set :application, 'canopy'
-set :repo_url, 'https://ayoa77:S6SMTfsmuF9vFRNeSy84@bitbucket.org/ayoa77/canopy.git'
+set :repo_url, 'https://github.com/ayoa77/canopy.git'
 set :branch, "master"
 
-set :user, "aj"
+server 'flexstudio.io', user: 'ayo'
+# server 'flexstudio.io', user: 'ayo', roles: %w{web app db live}, use_sudo: true
+set :user, "ayo"
 set :use_sudo, true
 set :pty, true
+# default_tasks[:pty] = true  
 set :rails_env, "production"
-set :deploy_via, :copy
-set :keep_releases, 10
-server '172.104.83.111', user: 'aj', roles: %w{web app db live}
+set :deploy_via, :remote_cache
+set :keep_releases, 3
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/var/www/canopy/'
 
-role :app, %w{172.104.83.111}
-role :web, %w{172.104.83.111}
-role :db,  %w{172.104.83.111}
-role :live, %w{172.104.83.111}
+role :app, %w{flexstudio.io}
+role :web, %w{flexstudio.io}
+role :db,  %w{flexstudio.io}
+role :live, %w{flexstudio.io}
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -36,7 +74,8 @@ role :live, %w{172.104.83.111}
 # set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
 
 # Default value for :pty is false
-# set :pty, true
+
+set :ssh_options, {:forward_agent => true}
 
 # Default value for :linked_files is []
 append :linked_files, "config/database.yml", "config/secrets.yml"
@@ -55,7 +94,7 @@ append :linked_dirs, "public/spree", "tmp/pids", "tmp/cache", "public/system", "
 # set :local_user, -> { `git config user.name`.chomp }
 
 # Default value for keep_releases is 5
-set :keep_releases, 10
+set :keep_releases, 3
 
 # namespace :bundle do
 #     desc "Bundling gems"

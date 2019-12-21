@@ -40,6 +40,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 
 # Use this gem to connect with AllPAy
 gem 'active_merchant_allpay', github: 'imgarylai/active_merchant_allpay'
@@ -49,6 +50,7 @@ gem 'allpay-web-service'
 # gem 'allpay_payment-2.0.8', github: 'allPay/allPayAIO_Ruby'
 # Use Capistrano for deployment
 group :development do
+  gem 'sshkit-backends-netssh_global'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
@@ -56,7 +58,7 @@ group :development do
   gem 'capistrano-rvm'
 end
 
-  gem 'passenger'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

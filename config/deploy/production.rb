@@ -47,8 +47,9 @@
 #    auth_methods: %w(password)
 #  }
  set :ssh_options, {
-   keys: %w(/Users/ayoamadi/.ssh/canopy_rsa),
-   forward_agent: true,
+   keys: %w(/Users/ayoamadi/.ssh/id_rsa),
+    forward_agent: true,
+    # auth_methods: %w(Bling#7744)
  }
 #
 # The server-based syntax can be used to override options:
