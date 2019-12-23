@@ -51,7 +51,7 @@ set :use_sudo, true
 set :pty, true
 # default_tasks[:pty] = true  
 set :rails_env, "production"
-set :deploy_via, :remote_cache
+set :deploy_via, :copy
 set :keep_releases, 3
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/var/www/canopy/'
