@@ -45,7 +45,7 @@ module Spree
       @fourth =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "fourth"}).first
       @fifth =  Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "fifth"}).first
 
-      @build_your_own_box = Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Build"}).first
+      # @build_your_own_box = Spree::Product.joins(:taxons).includes(:taxons).where(spree_taxons: { name: "Build"}).first
     end
   end
 end

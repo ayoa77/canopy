@@ -43,6 +43,7 @@
   <div class='center'>
 
      <div> <!-- First Slick Slider Div -->
+          <% if @first %>
          <%= link_to spree.product_path(@first) do %>
         <div class="vert-box red-box">
           <div class="box-pattern">
@@ -77,10 +78,12 @@
 
         </div>
         <%end%>
+        <%end%>
       </div>
 
 
       <div>  <!-- Second Slick Slider Div -->
+        <% if @second %>
           <%= link_to spree.product_path(@second) do %>
 
         <div class="vert-box yellow-box">
@@ -116,9 +119,11 @@
 
         </div>
         <%end%>
+        <%end%>
       </div>
 
       <div>  <!-- Third Slick Slider Div -->
+              <% if @third %>
                 <%= link_to spree.product_path(@third) do %>
 
         <div class="vert-box green-box">
@@ -156,9 +161,11 @@
 
         </div>
         <%end%>
+        <%end%>
       </div>
 
       <div>  <!-- Fourth Slick Slider Div -->
+        <% if @fourth %>
         <%= link_to spree.product_path(@fourth) do %>
        <div class="vert-box blue-box">
          <div class="box-pattern">
@@ -193,9 +200,11 @@
 
        </div>
        <%end%>
+       <%end%>
      </div>
 
      <div>  <!-- Fifth Slick Slider Div -->
+      <% if @fifth %>
       <%= link_to spree.product_path(@fifth) do %>
      <div class="vert-box violet-box">
        <div class="box-pattern">
@@ -230,6 +239,7 @@
 
      </div>
      <%end%>
+     <%end%>
    </div>
 
   </div>
@@ -244,7 +254,9 @@ the style on the first feature.  -->
   <div class="container-fluid">
     <div class="row flex-fix-featurette">
       
-      <div class = "index-products"> <!-- First Non-Slick Slider Proudct -->
+      <div class = "index-products"> 
+          <% if @first %>
+          <!-- First Non-Slick Slider Proudct -->
           <%= link_to spree.product_path(@first) do %>
         <div class="vert-box red-box">
           <div class="box-pattern">
@@ -279,11 +291,12 @@ the style on the first feature.  -->
           
         </div>
         <% end %>
+        <% end %>
       </div>
       
       
       <div class = "index-products">  <!-- Second Non-Slick Slider Proudct -->
-        
+        <% if @second %>
         <%= link_to spree.product_path(@second) do %>
         <div class="vert-box yellow-box">
           <div class="box-pattern">
@@ -317,10 +330,12 @@ the style on the first feature.  -->
           
         </div>
         <% end %>
+        <% end %>
       </div>
       
       
       <div class = "index-products">  <!-- Third Non-Slick Slider Proudct -->
+          <% if @third %>
           <%= link_to spree.product_path(@third) do %>
         <div class="vert-box green-box">
           <div class="box-pattern">
@@ -354,9 +369,11 @@ the style on the first feature.  -->
 
         </div>
         <% end %>
+        <% end %>
       </div>
 
       <div class = "index-products">  <!-- Fourth Non-Slick Slider Proudct -->
+        <% if @fourth %>
         <%= link_to spree.product_path(@fourth) do %>
       <div class="vert-box blue-box">
         <div class="box-pattern">
@@ -390,9 +407,11 @@ the style on the first feature.  -->
 
       </div>
       <% end %>
+      <% end %>
     </div>
 
     <div class = "index-products"> <!-- Fifth Non-Slick Slider Proudct -->
+      <% if @fifth %>
       <%= link_to spree.product_path(@fifth) do %>
     <div class="vert-box violet-box">
       <div class="box-pattern">
@@ -426,6 +445,7 @@ the style on the first feature.  -->
 
     </div>
     <% end %>
+    <% end %>
   </div>
 
   
@@ -437,11 +457,11 @@ the style on the first feature.  -->
   <div class="col-sm-offset-3 col-sm-6 build-button">
 
     
-        <%= link_to spree.product_path(@build_your_own_box) do %>
+        <%#= link_to spree.product_path(@build_your_own_box) do %>
           <div class =" ghost-button-blue" >
-           <p class = "build-box-text-or-button nathan beautify please"><%=@build_your_own_box.name%></p>
+           <p class = "build-box-text-or-button nathan beautify please"><%#=@build_your_own_box.name%></p>
           </div>
-         <% end %>
+         <%# end %>
 
    </div>
 </div> -->
