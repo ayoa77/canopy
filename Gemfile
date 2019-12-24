@@ -50,7 +50,7 @@ gem 'allpay-web-service'
 # gem 'allpay_payment-2.0.8', github: 'allPay/allPayAIO_Ruby'
 # Use Capistrano for deployment
 group :development do
-  gem 'listen'
+  # gem 'listen'
   gem 'sshkit-backends-netssh_global'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
