@@ -147,7 +147,7 @@ namespace :images do
         end
   end
 end
-after 'deploy:assets:precompile', 'deploy:assets:gzip'
+# after 'deploy:assets:precompile', 'deploy:assets:gzip'
 #  after "bundler:install", "symlink_database_yml"
 #  after "bundler:install", "images:symlink"
 # namespace :deploy do
