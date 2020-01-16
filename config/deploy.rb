@@ -170,7 +170,7 @@ end
 
 # namespace :assets do
 #   desc "Precompile assets locally and then rsync to web servers"
-#   task :precompile do
+#   task :precompiler do
 #     on roles(:web) do
 #       rsync_host = host.to_s # this needs to be done outside run_locally in order for host to exist
 #       run_locally do
@@ -184,7 +184,7 @@ end
 #     end
 #   end
 # end
-# after "deploy:cleanup", "deploy:assets:precompile"
+# after "deploy:assets:precompile", "deploy:assets:precompiler"
 
 
 namespace :deploy do
