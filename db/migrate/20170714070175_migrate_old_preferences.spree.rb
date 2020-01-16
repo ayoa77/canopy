@@ -1,9 +1,9 @@
 # This migration comes from spree (originally 20140309023735)
 class MigrateOldPreferences < ActiveRecord::Migration[4.2]
   def up
-    migrate_preferences(Spree::Calculator)
-    migrate_preferences(Spree::PaymentMethod)
-    migrate_preferences(Spree::PromotionRule)
+    # migrate_preferences(Spree::Calculator)
+    # migrate_preferences(Spree::PaymentMethod)
+    # migrate_preferences(Spree::PromotionRule)
   end
 
   def down

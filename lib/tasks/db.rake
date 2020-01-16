@@ -107,7 +107,7 @@ end
 
 
      if Spree::ShippingMethod.where(name:"Black Cat").empty?
-Spree::ShippingMethod.create!(name: "Black Cat", display_on: "both", tracking_url: "http://www.t-cat.com.tw/Inquire/Trace.aspx?no=")
+Spree::ShippingMethod.create!(name: "Black Cat", display_on: "both", tax_category_id: 1,tracking_url: "http://www.t-cat.com.tw/Inquire/Trace.aspx?no=")
 end
      
     if Spree::ShippingMethod.where(name:"In Store - 宜蘭市女中路三段117號 Yilan City").empty?
