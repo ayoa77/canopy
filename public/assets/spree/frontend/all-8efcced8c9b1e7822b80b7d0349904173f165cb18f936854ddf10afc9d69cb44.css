@@ -9015,7 +9015,7 @@ a:hover {
 #user-test {
   height: 40px;
   width: 40px;
-  background-image: url(/images/icons/user.png);
+  background-image: url(/assets/images/icons/user.png);
   background-size: 40px 40px;
   background-position: center center;
   transition: all 0.4s;
@@ -9023,7 +9023,7 @@ a:hover {
 
 /* line 116, /Users/ayoamadi/Documents/Projects/canopy/vendor/assets/stylesheets/spree/frontend/custom.scss */
 #user-test:hover {
-  background-image: url(/images/icons/user_hover.png);
+  background-image: url(/assets/images/icons/user_hover.png);
   transition: all 0.4s;
 }
 
@@ -9031,7 +9031,7 @@ a:hover {
 #cart-test {
   height: 40px;
   width: 40px;
-  background-image: url(/images/icons/cart.png);
+  background-image: url(/assets/images/icons/cart.png);
   background-size: 40px 40px;
   background-position: center center;
   transition: all 0.3s;
@@ -9044,7 +9044,7 @@ a:hover {
 
 /* line 133, /Users/ayoamadi/Documents/Projects/canopy/vendor/assets/stylesheets/spree/frontend/custom.scss */
 #cart-test:hover {
-  background-image: url(/images/icons/cart_hover.png);
+  background-image: url(/assets/images/icons/cart_hover.png);
   transition: all 0.3s;
 }
 
@@ -9146,7 +9146,7 @@ a:hover {
 /* line 227, /Users/ayoamadi/Documents/Projects/canopy/vendor/assets/stylesheets/spree/frontend/custom.scss */
 #splash-picture {
   position: relative;
-  background-image: url(/images/big-juice.jpg);
+  background-image: url(/assets/images/big-juice.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-origin: inherit;
@@ -9620,7 +9620,7 @@ a:hover {
 }
 /* line 661, /Users/ayoamadi/Documents/Projects/canopy/vendor/assets/stylesheets/spree/frontend/custom.scss */
 #big-links .big-picture-dog {
-  background-image: url(/images/dog-and-juice.jpg);
+  background-image: url(/assets/images/dog-and-juice.jpg);
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -9631,7 +9631,7 @@ a:hover {
 }
 /* line 672, /Users/ayoamadi/Documents/Projects/canopy/vendor/assets/stylesheets/spree/frontend/custom.scss */
 #big-links .big-picture-nutrition {
-  background-image: url(/images/desserts.jpg);
+  background-image: url(/assets/images/desserts.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -9644,7 +9644,7 @@ a:hover {
 /* line 686, /Users/ayoamadi/Documents/Projects/canopy/vendor/assets/stylesheets/spree/frontend/custom.scss */
 #shop-picture {
   position: relative;
-  background-image: url(/images/grapesforshopping.jpg);
+  background-image: url(/assets/images/grapesforshopping.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: 100% 0px;
@@ -9700,7 +9700,7 @@ a:hover {
 
 /* line 739, /Users/ayoamadi/Documents/Projects/canopy/vendor/assets/stylesheets/spree/frontend/custom.scss */
 .juice-picture {
-  background-image: url(/images/bottle_search.png);
+  background-image: url(/assets/images/bottle_search.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 50px auto;
@@ -9708,7 +9708,7 @@ a:hover {
 
 /* line 746, /Users/ayoamadi/Documents/Projects/canopy/vendor/assets/stylesheets/spree/frontend/custom.scss */
 .smoothie-picture {
-  background-image: url(/images/cup_search.png);
+  background-image: url(/assets/images/cup_search.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 70px auto;
@@ -9716,7 +9716,7 @@ a:hover {
 
 /* line 753, /Users/ayoamadi/Documents/Projects/canopy/vendor/assets/stylesheets/spree/frontend/custom.scss */
 .tea-picture {
-  background-image: url(/images/glass_search.png);
+  background-image: url(/assets/images/glass_search.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 60px auto;
@@ -9831,7 +9831,7 @@ a:hover {
 .box-pattern {
   height: 100%;
   width: 100%;
-  background-image: url(/images/food-background-fill.png);
+  background-image: url(/assets/images/food-background-fill.png);
   background-size: 300px 300px;
 }
 
@@ -10157,7 +10157,7 @@ a:hover {
   width: 50%;
   position: absolute;
   z-index: -200;
-  background-image: url(/images/splat.png);
+  background-image: url(/assets/images/splat.png);
   background-repeat: no-repeat;
   background-position: center right;
 }
